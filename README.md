@@ -1,14 +1,15 @@
 <img src="images/readme/header.jpg" />
 
 ## Objectifs
-- Maîtriser les syntaxes de la POO en ES6
-- Mettre en oeuvre le système de modules
+- Savoir intégrer React dans une appli JS
+- Développer un premier composant React
+- Utiliser le state d'un composant
 
 ## Sommaire
 Pour plus de clarté, les instructions du TP se trouvent dans des fichiers distincts (un fichier par sujet), procédez dans l'ordre sinon, ça fonctionnera beaucoup moins bien ! :
 
 1. [A. Préparatifs](A-preparatifs.md)
-2. [B. La POO](B-poo.md)
-3. [C. Compiler avec Babel](./C-babel.md)
-4. [D. Modules](D-modules.md)
-5. [E. Pour aller plus loin : POO avancée](E-poo-avancee.md)
+2. [B. Un premier composant](B-premier-composant.md)
+3. [C. Le composant VideoDetail](C-videodetail.md)
+4. [D. La VideoList](D-videolist.md)
+5. [E. Optimisations](E-optimisations.md)
