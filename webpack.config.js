@@ -2,11 +2,11 @@ const path = require('path');
 
 module.exports = {
 	// Fichier d'entrée :
-	entry: './src/main.js',
+	entry: './src/app.js',
 	// Fichier de sortie :
 	output: {
 		path: path.resolve(__dirname, './build'),
-		filename: 'main.bundle.js',
+		filename: 'app.bundle.js',
 	},
 	// connexion webpack <-> babel :
 	module: {
