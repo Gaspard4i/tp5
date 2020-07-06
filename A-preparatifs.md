@@ -7,15 +7,13 @@
 - [A.2. Lancement de l'API REST](#a2-lancement-de-lapi-rest)
 
 ## A.1. Installation & lancement projet
+
 **Ce repo contient une solution commentée du précédent TP.** <br>
 Pour ce TP vous pouvez soit repartir de vos fichiers du précédent TP (si vous l'aviez terminé) ou bien cloner ce repo et vous en servir comme base pour ce TP.
 
 ***NB :** Si vous repartez de vos fichiers, **pensez à faire un `git pull`** pour récupérer les dernières modifications du repo (probablement des modifs de CSS ou des corrections de dernière minute).*
 
 Vous commencez maintenant à avoir l'habitude, je ne rentrerais donc pas dans les détails mais voici les différentes étapes pour le lancement du projet en mode [TL;DR](https://en.wiktionary.org/wiki/tl;dr)
-
-***NB :** si vous souhaitez plus de précisions sur l'installation et la configuration du projet, vous pouvez vous référer au chapitre [A. Préparatifs](../tp2/A-preparatifs.md)) du TP2 ou simplement demander de l'aide au formateur* 😄
-
 
 1. **Tapez dans un terminal :**
 	```bash
@@ -32,6 +30,8 @@ Vous commencez maintenant à avoir l'habitude, je ne rentrerais donc pas dans le
 	npm i
 	npm run watch
 	```
+
+***NB :** si vous souhaitez plus de précisions sur les commandes précédentes et l'installation  / configuration du projet, vous pouvez vous référer au chapitre [A. Préparatifs](../tp2/A-preparatifs.md) du TP2 ou simplement demander de l'aide au formateur* 😄
 
 Le résultat attendu est le suivant :
 
