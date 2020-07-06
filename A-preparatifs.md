@@ -18,7 +18,7 @@ Pour ce TP vous pouvez soit repartir de vos fichiers du précédent TP (si vous 
 1. **Récupérez les fichiers de ce TP grâce à Git : clonez ce repo dans un dossier de votre choix** (*ici je clone dans mon dossier utilisateur/tps-react/tp2, attention au sens des slashs selon votre OS*) :
 	```bash
 	mkdir ~/tps-react
-	git clone https://framagit.org/formation/react/tp1.git ~/tps-react/tp2
+	git clone https://framagit.org/formation/react/tp2.git ~/tps-react/tp2
 	```
 
 2. **Ouvrez le projet dans VSCodium** (pour les différentes façon d'ouvrir le projet relisez les [instructions du TP0](../tp0/A-preparatifs.md#a3-ouvrir-le-projet-dans-vscodium) )
