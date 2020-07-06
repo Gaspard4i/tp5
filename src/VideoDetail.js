@@ -1,35 +1,34 @@
 import React, { Component } from 'react';
 import data from './data';
 
-const randomIndex = Math.floor(Math.random() * data.length);
-
 export default class VideoDetail extends Component {
 	state = {
-		video: data[randomIndex],
+		video: null,
 	};
+	player = null;
 
-	// componentDidMount() {
-	// 	setInterval(() => this.showNextVideo(), 5000);
-	// }
-
-	// showNextVideo() {
-	// 	const currentIndex = data.indexOf(this.state.video),
-	// 		nextIndex = (currentIndex + 1) % data.length;
-	// 	this.setState({
-	// 		video: data[nextIndex],
-	// 	});
-	// }
+	componentDidMount() {
+		const video = data.find(video => video.id === this.props.params.id);
+		this.setState({ video });
+	}
 
 	render() {
+		if (!this.state.video) {
+			return <div className="videoDetail is-loading"></div>;
+		}
 		const { title, description, file, likes, dislikes } = this.state.video;
 		return (
 			<div className="videoDetail">
+				<button onClick={() => this.props.push('list')}>&lt; Retour</button>
 				<video
 					style={{ width: '100%', backgroundColor: 'black' }}
 					height="400"
 					controls
 					src={'./uploads/' + file}
+					ref={el => (this.player = el)}
 				></video>
+				<button onClick={() => this.player.play()}>play</button>
+				<button onClick={() => this.player.pause()}>pause</button>
 				<header>
 					<h1>{title}</h1>
 					<div className="likesContainer">

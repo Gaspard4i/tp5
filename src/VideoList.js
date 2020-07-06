@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import data from './data';
+import VideoThumbnail from './VideoThumbnail';
 
 export default class VideoList extends Component {
 	state = {
 		videos: [],
 	};
 	componentDidMount() {
-		setTimeout(() => this.setState({ videos: data }), 2000);
+		setTimeout(() => this.setState({ videos: data }), 500);
 	}
 	render() {
 		const { videos } = this.state,
@@ -17,22 +18,16 @@ export default class VideoList extends Component {
 				<header>
 					<h1>Recommandations</h1>
 				</header>
-				<div className={classNames}>{this.renderThumbList()}</div>
+				<div className={classNames}>
+					{videos.map(video => (
+						<VideoThumbnail
+							onClick={() => this.props.push('detail', { id: video.id })}
+							video={video}
+							key={video.id}
+						/>
+					))}
+				</div>
 			</div>
-		);
-	}
-
-	renderThumbList() {
-		return this.state.videos.map(
-			({ id, title, description, thumbnail, file }) => (
-				<a href={`./uploads/${file}`} key={id}>
-					<img src={`https://source.unsplash.com/${thumbnail}/600x340`} />
-					<section className="infos">
-						<h4>{title}</h4>
-						<p>{description}</p>
-					</section>
-				</a>
-			)
 		);
 	}
 }
