@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import data from './data';
 import VideoThumbnail from './VideoThumbnail';
 
 export default class VideoList extends Component {
@@ -7,7 +6,9 @@ export default class VideoList extends Component {
 		videos: [],
 	};
 	componentDidMount() {
-		setTimeout(() => this.setState({ videos: data }), 500);
+		fetch('http://localhost:8080/api/videos')
+			.then(response => response.json())
+			.then(data => this.setState({ videos: data }));
 	}
 	render() {
 		const { videos } = this.state,
