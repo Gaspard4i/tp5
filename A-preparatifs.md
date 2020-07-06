@@ -9,9 +9,6 @@ Pour ce TP vous pouvez soit repartir de vos fichiers du précédent TP (si vous 
 
 Vous commencez maintenant à avoir l'habitude, je ne rentrerais donc pas dans les détails mais voici les différentes étapes pour le lancement du projet en mode [TL;DR](https://en.wiktionary.org/wiki/tl;dr)
 
-***NB :** si vous souhaitez plus de précisions sur l'installation et la configuration du projet, vous pouvez vous référer au chapitre [A. Préparatifs](../tp2/A-preparatifs.md)) du TP2 ou simplement demander de l'aide au formateur* 😄
-
-
 1. **Tapez dans un terminal :**
 	```bash
 	mkdir ~/tps-react
@@ -24,8 +21,11 @@ Vous commencez maintenant à avoir l'habitude, je ne rentrerais donc pas dans le
 	```
 	et
 	```bash
+	npm i
 	npm run watch
 	```
+
+***NB :** si vous souhaitez plus de précisions sur les commandes précédentes et l'installation  / configuration du projet, vous pouvez vous référer au chapitre [A. Préparatifs](../tp2/A-preparatifs.md) du TP2 ou simplement demander de l'aide au formateur* 😄
 
 Le résultat attendu est le suivant :
 
