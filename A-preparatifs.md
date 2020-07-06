@@ -121,7 +121,7 @@ Lorsque l'on fait du développement JS de manière sérieuse, on installe les li
 
 ## A.5. Lancement de l'application
 
-Comme dans le précédent TP (cf. [TP0 / B.1. Lancement d'un serveur HTTP](../tp0/B-integration.md#b1-lancement-dun-serveur-http) ) lancez un serveur HTTP et la compilation du projet dans deux terminaux côte à côte (terminaux splittés) :
+Comme dans le précédent TP lancez un serveur HTTP et la compilation du projet dans deux terminaux côte à côte ([terminaux splittés](https://code.visualstudio.com/docs/editor/integrated-terminal#_terminal-splitting)) :
 
 1. **Lancez un serveur http** dans un terminal intégré de VSCodium (<kbd>CTRL</kbd>+<kbd>J</kbd> *(PC)* / <kbd>CMD</kbd>+<kbd>J</kbd> *(Mac)*) :
 	```bash

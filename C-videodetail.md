@@ -64,7 +64,7 @@ On va donc :
 			<Menu />
 			<VideoDetail />
 		</>,
-		document.querySelector('.container > header')
+		document.querySelector('.appContainer')
 	);
 	```
 
