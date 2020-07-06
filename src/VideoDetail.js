@@ -19,7 +19,9 @@ export default class VideoDetail extends Component {
 		const { title, description, file, likes, dislikes } = this.state.video;
 		return (
 			<div className="videoDetail">
-				<button className="backButton" onClick={() => this.props.push('list')}>&lt; Retour</button>
+				<button className="backButton" onClick={() => this.props.push('list')}>
+					&lt; Retour
+				</button>
 				<video
 					style={{ width: '100%', backgroundColor: 'black' }}
 					height="400"
