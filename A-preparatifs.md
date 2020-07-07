@@ -31,14 +31,14 @@ Vous commencez maintenant à avoir l'habitude, je ne rentrerais donc pas dans le
 	npm run watch
 	```
 
-***NB :** si vous souhaitez plus de précisions sur les commandes précédentes et l'installation  / configuration du projet, vous pouvez vous référer au chapitre [A. Préparatifs](../tp2/A-preparatifs.md) du TP2 ou simplement demander de l'aide au formateur* 😄
+***NB :** si vous souhaitez plus de précisions sur les commandes précédentes et l'installation  / configuration du projet, vous pouvez vous référer au chapitre [A. Préparatifs](https://framagit.org/formation/react/tp2/-/blob/master/A-preparatifs.md) du TP2 ou simplement demander de l'aide au formateur* 😄
 
 Le résultat attendu est le suivant :
 
 <a href="images/screen/screen-00.png"><img src="images/readme/screen-00.png" ></a>
 
 ## A.2. Lancement de l'API REST
-Dans ce TP vous allez enfin connecter notre appli web à une base de données grâce à l'API REST que vous avez installée lors du TP0 (cf. [TP0 : C. Serveur API REST](./../tp0/C-serveur-rest.md)).
+Dans ce TP vous allez enfin connecter notre appli web à une base de données grâce à l'API REST que vous avez installée lors du TP0 (cf. [TP0 : C. Serveur API REST](https://framagit.org/formation/react/tp0/-/blob/master/C-serveur-rest.md)).
 
 C'est donc le moment de lancer le serveur Node / Express qui fait tourner l'API :
 ```bash
