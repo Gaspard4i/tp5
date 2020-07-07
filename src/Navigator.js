@@ -1,6 +1,7 @@
 import React from 'react';
 import VideoList from './VideoList';
 import VideoDetail from './VideoDetail';
+import VideoForm from './VideoForm';
 
 export default class Navigator extends React.Component {
 	state = {
@@ -20,6 +21,9 @@ export default class Navigator extends React.Component {
 				break;
 			case 'detail':
 				return <VideoDetail push={this.push} params={this.state.params} />;
+				break;
+			case 'form':
+				return <VideoForm push={this.push} params={this.state.params} />;
 				break;
 		}
 		return null;
