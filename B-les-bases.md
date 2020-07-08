@@ -78,7 +78,7 @@ Pour s'assurer que votre code fonctionne tout de même, **ajoutez des vidéos en
 
 2. Une fois Redux Devtools configuré et l'extension installée dans votre navigateur, **vous pouvez maintenant lancer le site, ouvrir les devtools du navigateur et y trouver un onglet "Redux"** dans lequel vous pouvez voir les actions qui sont lancées (*pour le moment une seule*) et inspecter le contenu du state global.
 
-2. **Au lieu de mettre en dur la liste des vidéos dans le `reducer`, nous allons démarrer avec un defaultState vide**. C'est l'action que nous allons créer qui lui enverra la liste des logements : remettez un tableau vide dans la propriété `videos` du `defaultState`
+2. **Au lieu de mettre en dur la liste des vidéos dans le `reducer`, nous allons démarrer avec un defaultState vide**. C'est l'action que nous allons créer qui lui enverra la liste des vidéos : remettez un tableau vide dans la propriété `videos` du `defaultState`
 
 3. **Dans le `componentDidMount()` du composant `VideoList`** :
 	+ Créez une variable nommée `action` et affectez lui un objet littéral avec deux propriétés :

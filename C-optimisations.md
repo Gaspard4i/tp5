@@ -54,6 +54,6 @@ Si tout s'est bien passé, ça fonctionne toujours comme avant, mais on a pu mai
 <br>*Notez dans Redux Devtools l'apparition de l'action et le résultat sur le state.*
 
 ## C.3. CombineReducers
-Si vous avez déjà réalisé l'exercice [B.4. Pour aller plus loin]() du précédent chapitre (conversion à Redux du `Navigator` et du `HousingDetail`) alors vous pouvez scinder le reducer en plusieurs "petits" reducers (un par state) à l'aide de la fonction `combineReducers`.
+Si vous avez déjà réalisé l'exercice [B.4. Pour aller plus loin]() du précédent chapitre (conversion à Redux du `Navigator` et du `VideoDetail`) alors vous pouvez scinder le reducer en plusieurs "petits" reducers (un par state) à l'aide de la fonction `combineReducers`.
 
 Si vous n'avez pas fait cet exercice, alors c'est le moment de s'y mettre !
