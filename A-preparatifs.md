@@ -21,7 +21,7 @@ Pour ce TP vous pouvez soit repartir de vos fichiers du précédent TP (si vous 
 	git clone https://framagit.org/formation/react/tp2.git ~/tps-react/tp2
 	```
 
-2. **Ouvrez le projet dans VSCodium** (pour les différentes façon d'ouvrir le projet relisez les [instructions du TP0](../tp0/A-preparatifs.md#a3-ouvrir-le-projet-dans-vscodium) )
+2. **Ouvrez le projet dans VSCodium** (pour les différentes façon d'ouvrir le projet relisez les [instructions du TP0](https://framagit.org/formation/react/tp0/-/blob/master/A-preparatifs.md#a3-ouvrir-le-projet-dans-vscodium) )
 	```bash
 	codium ~/tps-react/tp2
 	```
