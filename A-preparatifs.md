@@ -25,7 +25,7 @@ Vous commencez maintenant à avoir l'habitude, je ne rentrerais donc pas dans le
 	npm run watch
 	```
 
-***NB :** si vous souhaitez plus de précisions sur les commandes précédentes et l'installation  / configuration du projet, vous pouvez vous référer au chapitre [A. Préparatifs](../tp2/A-preparatifs.md) du TP2 ou simplement demander de l'aide au formateur* 😄
+***NB :** si vous souhaitez plus de précisions sur les commandes précédentes et l'installation  / configuration du projet, vous pouvez vous référer au chapitre [A. Préparatifs](https://framagit.org/formation/react/tp2/-/blob/master/A-preparatifs.md) du TP2 ou simplement demander de l'aide au formateur* 😄
 
 Le résultat attendu est le suivant :
 
