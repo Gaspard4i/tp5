@@ -55,7 +55,7 @@
 
 3. **Créez le store dans le fichier `app.js`** :
 	+ créez le store de l'application à l'aide de la fonction `createStore( reducer )`
-	+ Dans l'appel à la méthode `ReactDOM.render(...)`, utilisez le composant `<Provider>` autour du `Navigator`. Cela permettra au `connect()` de rendre le `state` accessible à la `VideoList`. (*n'oubliez pas de passer le `store` au `Provider` !*)
+	+ Dans l'appel à la méthode `ReactDOM.render(...)`, utilisez le composant `<Provider>` autour du `Navigator`. Cela permettra au `connect()` de rendre le `state` accessible dans la `VideoList` (*n'oubliez pas de passer le `store` au `Provider` !*).
 
 A ce stade, la compilation doit fonctionner et le site se lancer sans erreur !
 
@@ -76,11 +76,13 @@ Pour s'assurer que votre code fonctionne tout de même, **ajoutez des vidéos en
 
 	*Plus d'infos sur l'installation et la configuration de Redux Devtools : https://github.com/zalmoxisus/redux-devtools-extension*
 
-2. Une fois Redux Devtools configuré et l'extension installée dans votre navigateur, **vous pouvez maintenant lancer le site, ouvrir les devtools du navigateur et y trouver un onglet "Redux"** dans lequel vous pouvez voir les actions qui sont lancées (*pour le moment une seule*) et inspecter le contenu du state global.
+2. Une fois Redux Devtools configuré et l'extension installée dans votre navigateur, **vous pouvez maintenant lancer le site, ouvrir les devtools du navigateur et y trouver un onglet "Redux"**.
 
-2. **Au lieu de mettre en dur la liste des vidéos dans le `reducer`, nous allons démarrer avec un defaultState vide**. C'est l'action que nous allons créer qui lui enverra la liste des vidéos : remettez un tableau vide dans la propriété `videos` du `defaultState`
+	Vous pouvez y voir les actions qui sont lancées (*pour le moment une seule*) et inspecter le contenu du state global.
 
-3. **Dans le `componentDidMount()` du composant `VideoList`** :
+4. **Au lieu de mettre en dur la liste des vidéos dans le `reducer`, nous allons maintenant démarrer avec un defaultState vide**. C'est l'action que nous allons déclencher qui lui enverra la liste des vidéos : remettez un tableau vide dans la propriété `videos` du `defaultState`
+
+5. **Dans le `componentDidMount()` du composant `VideoList`** :
 	+ Créez une variable nommée `action` et affectez lui un objet littéral avec deux propriétés :
 		* Une propriété `type` qui vaudra la chaîne de caractères `'VIDEO_LIST_COMPLETE'`
 		* Une propriété `videos` qui aura comme valeur un tableau de videos en dur (*vous pouvez reprendre la liste contenue dans le fichier `data.js` des précédents tps*)
