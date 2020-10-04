@@ -47,4 +47,4 @@ Le résultat doit être le suivant (ça ressemble à ce qu'on a fait au TP1 hein
 
 
 ## Étape suivante
-Une fois cette partie terminée, passons à quelques exercices avancés dans la partie [E. Optimisations](E-optimisations.md).
+Une fois cette partie terminée, passons à quelques exercices avancés dans la partie [E. Pour aller plus loin](E-optimisations.md).

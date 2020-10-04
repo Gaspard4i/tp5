@@ -1,6 +1,6 @@
 <img src="images/readme/header-small.jpg" >
 
-# D. VideoList <!-- omit in toc -->
+# E. Pour aller plus loin <!-- omit in toc -->
 
 ## Sommaire <!-- omit in toc -->
 - [E.1. setState](#e1-setstate)

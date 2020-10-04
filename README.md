@@ -12,4 +12,4 @@ Pour plus de clarté, les instructions du TP se trouvent dans des fichiers disti
 2. [B. Un premier composant](B-premier-composant.md)
 3. [C. Le composant VideoDetail](C-videodetail.md)
 4. [D. La VideoList](D-videolist.md)
-5. [E. Optimisations](E-optimisations.md)
+5. [E. Pour aller plus loin](E-optimisations.md)
