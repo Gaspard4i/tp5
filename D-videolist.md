@@ -7,7 +7,7 @@
 - [D.2. Ajout du state](#d2-ajout-du-state)
 - [Étape suivante](#étape-suivante)
 
-***Maintenant que l'on est capables d'afficher un composant qui dispose d'un state, voyons si vous êtes à même d'en créer un autre, un peu plus complexe.***
+_**Maintenant que l'on est capables d'afficher un composant qui dispose d'un state, voyons si vous êtes à même d'en créer un autre, un peu plus complexe.**_
 
 ## D.1. Création du composant
 

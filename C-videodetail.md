@@ -88,7 +88,7 @@ Le rendu HTML doit rester inchangé :
 
 C'est donc dans cette propriété qu'on stocke en général toutes les valeurs qui vont pouvoir varier au cours de l'exécution, et dont on veut qu'elles soit affichées à l'écran.
 
-Le state est représenté par une propriété `this.state` et la première chose à faire c'est de définir sa valeur initiale (on parle aussi parfois de *"state par défaut"*).
+Le state est représenté par une propriété `this.state` et la première chose à faire c'est de définir sa valeur initiale (on parle aussi parfois de _"state par défaut"_).
 
 ## C.3. Ajout du state par défaut
 
@@ -116,7 +116,7 @@ Le state est représenté par une propriété `this.state` et la première chose
 			//...
 		}
 		```
-	Pour ma part, je trouve cette deuxième syntaxe beaucoup plus agréable à utiliser et plus facile à lire, c'est donc celle là que je vous recommande. En revanche sachez-le, comme vu dans le [TP1 B.1.1. class & propriétés publiques](#b11-class-propriétés-publiques) cette syntaxe n'est pas encore dans la spec officielle (mais c'est tout comme) et nécessite une config de babel spéciale (qu'on a déjà fait au TP1 justement).
+	Pour ma part, je trouve cette deuxième syntaxe beaucoup plus agréable à utiliser et plus facile à lire, c'est donc celle là que je vous recommande. En revanche sachez-le, comme vu dans le [TP1 B.1.1. class & propriétés publiques](#b11-class-propriétés-publiques) cette syntaxe n'est pas encore dans la spec officielle (mais c'est tout comme) et nécessite une config de babel spéciale (_qu'on a déjà fait au TP1 justement_).
 
 2. **Configurez donc votre state avec une propriété `title`, comme ceci :**
 
@@ -125,7 +125,7 @@ Le state est représenté par une propriété `this.state` et la première chose
 		title: 'Le Top 10 des frameworks JS',
 	};
 	```
-3. **Utilisez le state dans votre render.** (*Vous vous souvenez, que pour injecter des valeurs JS dans le JSX il faut utiliser les accolades `{}` ? Et que l'on fait référence à une valeur du state en utilisant `this.state.propriete` ? Si vous ne vous en souvenez pas, c'est le moment de relire le pdf du cours* 📖). Le rendu ne doit pas avoir bougé :
+3. **Utilisez le state dans votre render.** (_Vous vous souvenez que pour injecter des valeurs JS dans le JSX il faut utiliser les accolades `{}` ? Et que l'on fait référence à une valeur du state en utilisant `this.state.propriete` ? Si vous ne vous en souvenez pas, c'est le moment de relire le pdf du cours_ 📖). Le rendu ne doit pas avoir bougé :
 
 <a href="images/screen/screen-03.png"><img src="images/readme/screen-03.png" ></a>
 

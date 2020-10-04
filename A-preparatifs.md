@@ -26,20 +26,19 @@ Pour ce TP vous pouvez soit repartir de vos fichiers du précédent TP (si vous 
 	codium ~/tps-react/tp2
 	```
 
-
 3. **Installez les paquets npm nécessaires au projet** notamment le compilateur [Babel](https://babeljs.io)<br>
 	Ouvrez un terminal intégré à VSCodium (kbd>CTRL</kbd>+<kbd>J</kbd> *(PC)* / <kbd>CMD</kbd>+<kbd>J</kbd> *(Mac)*) et tapez juste :
 	```bash
 	npm install
 	```
 
-	Vous noterez qu'on ne précise pas les paquets à installer. npm va en effet les déterminer automatiquement à partir du contenu du fichier `package.json` et plus particulièrement à partir des sections `"dependencies"` et `"devDependencies"` qui indiquent quels sont les paquets qui ont été installés précédemment.
+	Vous noterez qu'on ne précise pas les paquets à installer. npm va en effet les déterminer **automatiquement** à partir du contenu du fichier `package.json` et plus particulièrement à partir des sections `"dependencies"` et `"devDependencies"` qui indiquent quels sont les paquets qui ont été installés précédemment.
 
 	Magique !
 
 ## A.2. Configuration de Prettier
 
-***Lors des précédents TPs, vous avez en principe installé l'extension Prettier.***
+_**Lors des précédents TPs, vous avez en principe installé l'extension Prettier.**_
 
 Prettier est un formateur de code automatique qui est le plus populaire à l'heure actuelle dans l'écosystème React.
 
@@ -91,9 +90,9 @@ Lorsque l'on fait du développement JS de manière sérieuse, on installe les li
 	```bash
 	npm i react
 	```
-	***NB :** `npm i ...` est un raccourci pour `npm install ...`*
+	_**NB :** `npm i ...` est un raccourci pour `npm install ...`_
 
-	***NB :** vous remarquerez que `react` s'est ajouté dans la section `"dependencies"` du `package.json` (et plus `"devDependencies"` comme pour Babel, Webpack, etc.) c'est pour distinguer les dépendances qui servent juste pour la phase de développement (comme les outils de build) de celles qui ont un impact sur l'appli compilée.*
+	_**NB :** vous remarquerez que `react` s'est ajouté dans la section `"dependencies"` du `package.json` (et plus `"devDependencies"` comme pour Babel, Webpack, etc.) c'est pour distinguer les dépendances qui servent juste pour la phase de développement (comme les outils de build) de celles qui ont un impact sur l'appli compilée._
 
 2. Comme vous le savez, React permet de développer des applis web mais aussi des apps mobiles (avec [React Native](https://reactnative.dev/)).
 
@@ -105,7 +104,7 @@ Lorsque l'on fait du développement JS de manière sérieuse, on installe les li
 	```bash
 	npm i -D @babel/preset-react
 	```
-	***NB :** `-D` est un raccourci pour l'option `--save-dev`*
+	_**NB :** `-D` est un raccourci pour l'option `--save-dev`_
 
 	Ajoutez ensuite le preset `@babel/preset-react` nouvellement installé dans le fichier `.babelrc`
 	```json
@@ -143,7 +142,7 @@ Comme dans le précédent TP lancez un serveur HTTP et la compilation du projet 
 
 	<a href="images/screen/screen-01.png"><img src="images/readme/screen-01.png" ></a>
 
-	***NB: Si la page ne s'affiche pas correctement**, vérifiez que vous avez bien lancé le serveur http dans le dossier du projet, c'est à dire celui où se trouve le fichier `index.html`. Puis vérifiez dans la `Console` ou dans l'onglet `Sources` (Chrome) ou `Debugger` (Firefox) qu'l n'y a pas d'erreur JS lorsque la page se charge.*
+	_**NB: Si la page ne s'affiche pas correctement**, vérifiez que vous avez bien lancé le serveur http dans le dossier du projet, c'est à dire celui où se trouve le fichier `index.html`. Puis vérifiez dans la `Console` ou dans l'onglet `Sources` (Chrome) ou `Debugger` (Firefox) qu'l n'y a pas d'erreur JS lorsque la page se charge._
 
 ## Étape suivante <!-- omit in toc -->
 Si tout fonctionne, vous pouvez passer à l'étape suivante : [B. Un premier composant](B-premier-composant.md)

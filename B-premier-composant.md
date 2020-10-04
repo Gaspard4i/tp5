@@ -86,7 +86,7 @@ ReactDOM est la librairie qui permet d'injecter des composants React dans une pa
 
 On vient de voir que l'on peut passer à `ReactDOM.render()` du code JSX tapé inline. Mais on va surtout l'employer avec des composants custom !
 
-1. **Toujours dans le `src/app.js`** (*on mettra tout ça dans des modules à part plus tard*), **au dessus de l'appel à `render()`, créez une classe nommée `VideoDetail` comme ceci :**
+1. **Toujours dans le `src/app.js`** (_on mettra tout ça dans des modules à part plus tard_), **au dessus de l'appel à `render()`, créez une classe nommée `VideoDetail` comme ceci :**
 	```js
 	class VideoDetail extends React.Component {
 		render() {

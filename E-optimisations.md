@@ -10,7 +10,7 @@
 
 ## E.1. setState
 
-***On va dans cet exercice voir comment modifier le state d'un composant.***
+_**On va dans cet exercice voir comment modifier le state d'un composant.**_
 
 1. **Remplacez la valeur du state `videos` de `VideoList` par un tableau vide.**
 
@@ -57,4 +57,4 @@ Maintenant que vous êtes aguérris aux Components de React, au JSX, au state, p
 	<a href="images/readme/screen-09.png"><img src="images/readme/screen-09.png" ></a>
 3. **Enfin, faites en sorte que lorsque l'utilisateur clique sur les deux boutons, ça augmente les valeurs des states correspondants et que l'affichage se mette à jour !**
 
-	***NB :** Pour détecter le clic sur les boutons, la technique est d'ajouter des attributs `onClick` :* https://reactjs.org/docs/handling-events.html
+	_**NB :** Pour détecter le clic sur les boutons, la technique est d'ajouter des attributs `onClick` :_ https://reactjs.org/docs/handling-events.html
