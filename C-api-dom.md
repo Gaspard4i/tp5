@@ -8,7 +8,7 @@
 - [Étape suivante](#étape-suivante)
 
 ## C.1. Rappels
-***En temps normal, toutes les modifications du DOM doivent passer par le render() du composant : l'utilisation de querySelector(), de innerHTML, de setAttribute etc. est INTERDIT.***
+_**En temps normal, toutes les modifications du DOM doivent passer par le render() du composant : l'utilisation de querySelector(), de innerHTML, de setAttribute etc. est INTERDITE.**_
 
 En revanche il existe des modifications de la page qui ne passent pas par un changement de code HTML, et qui donc ne sont pas réalisables via la méthode render :
 - la mise du focus sur un champ de saisie
