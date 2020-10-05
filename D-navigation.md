@@ -6,10 +6,11 @@
 - [D.1. Cahier des charges](#d1-cahier-des-charges)
 - [D.2. Indices](#d2-indices)
 
-***Pour terminer ce TP, nous allons tenter de mettre en place un système de navigation maison***
+_**Pour terminer ce TP, nous allons tenter de mettre en place un système de navigation maison !**_
 
-***L'idée est d'afficher par défaut la `VideoList` mais de permettre à l'utilisateur, s'il clique sur une vignette, de consulter le `VideoDetail` associé.***
+_**L'idée est d'afficher par défaut la `VideoList` mais de permettre à l'utilisateur, s'il clique sur une vignette, de consulter le `VideoDetail` associé :**_
 
+<img src="images/readme/navigator.gif" />
 
 ## D.1. Cahier des charges
 

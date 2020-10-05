@@ -13,15 +13,19 @@
 
 Actuellement notre VideoList contient tout le JSX associé aux vignettes ce qui alourdi inutilement le composant (dans l'absolu, le boulot de la VideoList c'est de rendre une liste de vignette, peu importe ce que les vignettes contiennent, ce n'est pas vraiment son affaire).
 
-On va donc externaliser ce code dans un autre composant qu'on va appeler `VideoThumbnail`.
+On va donc **externaliser le code des vignettes dans un sous-composant que l'on va appeler `VideoThumbnail`**.
+
+La `VideoList` contiendra donc autant de `VideoThumbnail` qu'il y a de vidéos dans le tableau, ce qui nous donnera la structure suivante :
+
+<img src="images/readme/screen-01.jpg" />
 
 1. **Créez un composant `VideoThumbnail` dans un module `src/VideoThumbnail.js`.**
 
-2. **Externalisez dans `VideoThumbnail` le JSX de chaque vignette de vidéo** (tout le `<a href>...</a>`)
+2. **Externalisez dans `VideoThumbnail` le JSX de chaque vignette de vidéo** (_tout le `<a href>...</a>`_)
 
 
 ## B.2. Function Components
-Pour rappel React permet de déclarer ses composants non seulement sous forme de classe comme on l'a fait jusqu'ici mais aussi sous la forme de simples fonctions : on parle alors de **"Function Components"**.
+_**Pour rappel React permet de déclarer ses composants non seulement sous forme de classe comme on l'a fait jusqu'ici mais aussi sous la forme de simples fonctions : on parle alors de "Function Components".**_
 
 Imaginons ce Class Component :
 ```jsx
@@ -35,7 +39,7 @@ class Link extends React.Component {
 	}
 }
 ```
-Il ne contient qu'une méthode `render()` et rien d'autre. C'est typiquement le genre de composant qu'il est intéressant de transformer en **Function Component**. Le composant peut alors s'écrire de cette façon :
+Il ne contient qu'une méthode `render()` et rien d'autre. C'est typiquement le genre de composant qu'il est intéressant de transformer en **Function Component** :
 ```jsx
 function Link( props ) {
 	return (

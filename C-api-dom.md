@@ -21,12 +21,21 @@ Toutes ces opérations se font obligatoirement via des méthodes JS associées a
 C'est là que le concept de ["refs"](https://fr.reactjs.org/docs/refs-and-the-dom.html#when-to-use-refs) entre en jeu.
 
 ## C.2. Mise en oeuvre
-1. **Commencez par ajouter dans le composant `VideoDetail` deux boutons "play" et "pause" juste en dessous de la vidéo** :
+1. **Commencez par ajouter dans le composant `VideoDetail` deux boutons "play" et "pause" juste en dessous de la vidéo**.
+
+	Si vous utilisez le code HTML suivant :
 	```html
 	<button>play</button>
 	<button>pause</button>
 	```
-2. **A l'aide des refs, et des [méthodes de la balise `<video>`](https://developer.mozilla.org/fr/docs/Web/API/HTMLMediaElement#M%C3%A9thodes), faites en sorte que la lecture commence/s'arrête quand l'utilisateur clique sur les 2 boutons "play"/"pause".**
+	Vous devriez obtenir un rendu comme ceci :
+	<img src="images/readme/screen-02.png" />
+
+2. **A l'aide des refs, et des [méthodes de la balise `<video>`](https://developer.mozilla.org/fr/docs/Web/API/HTMLMediaElement#M%C3%A9thodes), faites en sorte que la lecture commence ou s'arrête quand l'utilisateur clique sur les 2 boutons "play" et "pause".**
+
+	On pourra ainsi contrôler la vidéo de cette façon :
+
+	<img src="imageS/../images/readme/play-pause.gif" />
 
 
 
