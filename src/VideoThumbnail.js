@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 const VideoThumbnail = ({
 	video: { title, description, thumbnail, file },
@@ -20,11 +19,4 @@ const VideoThumbnail = ({
 	</a>
 );
 
-VideoThumbnail.propTypes = {
-	video: PropTypes.shape({
-		title: PropTypes.string.isRequired,
-		description: PropTypes.string,
-		thumbnail: PropTypes.string.isRequired,
-	}).isRequired,
-};
 export default VideoThumbnail;
