@@ -108,6 +108,7 @@ _**Si vous avez compris l'idée, allons-y :**_
 1. **Au lieu de mettre en dur la liste des vidéos dans le `reducer`, nous allons maintenant démarrer avec un `defaultState` vide**. C'est l'action que la `VideoList` var déclencher qui lui enverra la liste des vidéos : remettez donc un tableau vide dans la propriété `videos` du `defaultState`
 
 2. **Dé-commentez le `componentDidMount()` du composant `VideoList` et à la fin de l'appel AJAX** (_dans le dernier `.then()` du fetch_)
+	+ Supprimez l'appel à `this.setState(..)`
 	+ Créez une variable nommée `action` contenant un objet littéral avec deux propriétés :
 		* Une propriété `type` qui vaudra la chaîne de caractères `'VIDEO_LIST_COMPLETE'`
 		* Une propriété `videos` qui aura comme valeur le tableau retourné par le serveur
