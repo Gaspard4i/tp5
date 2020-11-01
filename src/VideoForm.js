@@ -1,20 +1,20 @@
-import React, { Component } from 'react';
+import { createRef, Component } from 'react';
 
 export default class VideoForm extends Component {
 	state = {
 		isLoading: false,
 	};
-	titleInput = null;
-	descriptionInput = null;
-	thumbnailInput = null;
+	titleInput = createRef();
+	descriptionInput = createRef();
+	thumbnailInput = createRef();
 
 	handleSubmit(event) {
 		event.preventDefault();
 		this.setState({ isLoading: true });
 		const body = JSON.stringify({
-			title: this.titleInput.value,
-			description: this.descriptionInput.value,
-			thumbnail: this.thumbnailInput.value,
+			title: this.titleInput.current.value,
+			description: this.descriptionInput.current.value,
+			thumbnail: this.thumbnailInput.current.value,
 		});
 		fetch(`http://localhost:8080/api/videos`, { method: 'POST', body })
 			.then(response => response.json())
@@ -25,19 +25,14 @@ export default class VideoForm extends Component {
 		return (
 			<form className="videoForm" onSubmit={event => this.handleSubmit(event)}>
 				<label htmlFor="title">Titre</label>
-				<input
-					required
-					type="text"
-					id="title"
-					ref={el => (this.titleInput = el)}
-				/>
+				<input required type="text" id="title" ref={this.titleInput} />
 				<label htmlFor="description">Description</label>
 				<textarea
 					required
 					id="description"
 					cols="30"
 					rows="10"
-					ref={el => (this.descriptionInput = el)}
+					ref={this.descriptionInput}
 				></textarea>
 				<label htmlFor="thumbnail">
 					Vignette
@@ -48,12 +43,7 @@ export default class VideoForm extends Component {
 						</a>
 					</small>
 				</label>
-				<input
-					required
-					type="text"
-					id="thumbnail"
-					ref={el => (this.thumbnailInput = el)}
-				/>
+				<input required type="text" id="thumbnail" ref={this.thumbnailInput} />
 				<button type="submit" disabled={this.state.isLoading}>
 					{!this.state.isLoading ? 'Envoyer' : 'Loading...'}
 				</button>
