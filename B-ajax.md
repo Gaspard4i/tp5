@@ -2,13 +2,11 @@
 
 # B. AJAX <!-- omit in toc -->
 
+_**Pour commencer ce TP nous allons connecter notre application React à l'API REST que l'on vient de lancer**_
+
 ## Sommaire <!-- omit in toc -->
 - [B.1. Rappels : XMLHttpRequest vs fetch](#b1-rappels-xmlhttprequest-vs-fetch)
 - [B.2. Chargement de la liste des vidéos](#b2-chargement-de-la-liste-des-vidéos)
-- [B.3. VideoDetail](#b3-videodetail)
-- [Étape suivante](#étape-suivante)
-
-***Pour commencer ce TP nous allons connecter notre application React à l'API REST que l'on vient d'installer***
 
 
 ## B.1. Rappels : XMLHttpRequest vs fetch
@@ -29,7 +27,7 @@ Pour rappel, le support navigateur de l'API fetch est plutôt bon, mais il reste
 Comme on peut le voir, **aucune version d'Internet Explorer n'est compatible avec l'API fetch**. C'est aussi le cas des versions d'android 4.4.4 et inférieures. Heureusement, un [polyfill](https://fr.wikipedia.org/wiki/Polyfill) développé par Github est disponible ici : https://github.com/github/fetch. Sur un projet réel il faudrait mettre en place ce polyfill, mais pour gagner du temps nous ignorerons cette problématique dans le TP (ne faites pas ça dans la vraie vie !).
 
 ## B.2. Chargement de la liste des vidéos
-1. **Commencez par supprimer l'import du module `data.js` dans la `VideoList`.** Comme on va charger les données de la bdd, on n'a plus besoin de cet import (*ne supprimez cependant pas tout de suite le fichier, le `VideoDetail` l'utilise encore... pour l'instant !*)
+1. **Commencez par supprimer l'import du module `data.js` dans la `VideoList`.** Comme on va charger les données de la bdd, on n'a plus besoin de cet import (_ne supprimez cependant pas tout de suite le fichier, le `VideoDetail` l'utilise encore... pour l'instant !_)
 2. **Supprimez ensuite le `setTimeout(...)` contenu dans la méthode componentDidMount de la `VideoList`.**
 3.  **A la place, lancez le chargement de la liste des vidéos avec l'API fetch** :
 	```js
@@ -38,9 +36,9 @@ Comme on peut le voir, **aucune version d'Internet Explorer n'est compatible ave
 
 	Rechargez la page html dans le navigateur et vérifiez dans l'onglet Network/Réseau des devtools que votre page lance bien une requête HTTP vers http://localhost:8080/api/videos :
 
-	<a href="images/readme/screen-02.png"><img src="images/readme/screen-02.png"></a>
+	<img src="images/readme/screen-02.png">
 
-	Maintenant que l'on arrive à lancer la requête, reste à exploiter la réponse renvoyée par le serveur et les données qu'elle contient !
+	Maintenant que l'on arrive à lancer la requête, reste à exploiter la réponse renvoyée par le serveur et à utiliser les données qu'elle contient !
 
 4. **Commencez par inspecter la réponse retournée par `fetch()` grâce à la méthode `.then()`** :
 	```js
@@ -60,11 +58,13 @@ Comme on peut le voir, **aucune version d'Internet Explorer n'est compatible ave
 	```
 	Vérifiez que la console affiche bien la chaîne au format JSON :
 
-	<a href="images/readme/screen-03.png"><img src="images/readme/screen-03.png"></a>
+	<img src="images/readme/screen-03.png">
 
-	*Maintenant que l'on est capable de récupérer le contenu de la réponse sous forme de chaîne de caractères, il ne reste encore à **convertir la chaîne JSON en objets JS** !*
+	_Maintenant que l'on est capable de récupérer le contenu de la réponse sous forme de chaîne de caractères, il reste encore à **convertir la chaîne JSON en objets JS** !_
 
-5. **Pour convertir la réponse en objets JS, nous avons 2 solutions : utiliser `response.text()` et `JSON.parse()` ou bien utiliser juste `response.json()`.** C'est cette technique que nous allons employer, elle est quand même beaucoup plus simple :
+5. **Pour convertir la réponse en objets JS, nous avons 2 solutions :**
+	- utiliser `response.text()` et `JSON.parse()`
+	- ou bien utiliser juste `response.json()`. C'est cette technique que nous allons employer, car elle est quand même beaucoup plus simple :
 	```js
 	fetch('http://localhost:8080/api/videos')
 	  .then( response => response.json() )
@@ -72,7 +72,7 @@ Comme on peut le voir, **aucune version d'Internet Explorer n'est compatible ave
 	```
 	En théorie, vous devriez maintenant voir dans la console, le tableaux de vidéos décodé : vous pouvez utiliser les flèches pour déplier/replier chaque objet et consulter ses propriétés.
 
-	<a href="images/readme/screen-03b.png"><img src="images/readme/screen-03b.png"></a>
+	<img src="images/readme/screen-03b.png">
 
 6. **Maintenant que vous avez réussi à récupérer les infos de la base, que vous les avez converties en données exploitables en JS, reste à les exploiter dans notre `VideoList` simplement à l'aide de `setState()` !**
 
@@ -82,16 +82,9 @@ Comme on peut le voir, **aucune version d'Internet Explorer n'est compatible ave
 	  .then( data => this.setState({videos: data}) );
 	```
 
-	<a href="images/readme/screen-04.png"><img src="images/readme/screen-04.png"></a>
+	<img src="images/readme/screen-04.png">
 
 	Ca y est ! La page s'affiche maintenant avec la liste complète des vidéos contenues dans la base de données du serveur REST !! :metal: :tada: :trophy: :pizza: :beers:
 
-
-## B.3. VideoDetail
-
-En vous inspirant de ce que vous venez de faire dans la `VideoList`, connectez le composant `VideoDetail` au webservice http://localhost:8080/api/videos/:id (ou `:id` correspond à l'id de la vidéo à afficher)
-
-Vous pouvez maintenant supprimer le fichier `src/data.js` qui n'est plus utile.
-
-## Étape suivante
-Une fois cette partie terminée, voyons comment créer un formulaire dans React : [C. VideoForm](C-VideoForm.md).
+## Étape suivante <!-- omit in toc -->
+Maintenant que l'on est capables de communiquer avec notre API REST, voyons comment créer un formulaire dans React pour envoyer des données en base : [C. VideoForm](C-VideoForm.md).

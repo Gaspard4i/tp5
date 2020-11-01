@@ -2,27 +2,47 @@
 
 # D. Perfectionnement <!-- omit in toc -->
 
+_**Notre application commence à prendre forme : on est capables de lire et d'écrire dans la base de données, c'est déjà pas mal !**_
+
+_**En revanche il reste un certain nombre de choses qui sont encore en dur dans le code et que l'on doit dynamiser. <br>C'est parti !**_
+
 ## Sommaire <!-- omit in toc -->
-- [D.1. API likes/dislikes](#d1-api-likesdislikes)
-- [D.2. Les commentaires](#d2-les-commentaires)
+- [D.1. VideoDetail](#d1-videodetail)
+- [D.2. Redirection VideoForm -> VideoDetail](#d2-redirection-videoform-videodetail)
+- [D.3. API likes/dislikes](#d3-api-likesdislikes)
+- [D.4. Les commentaires](#d4-les-commentaires)
 
 
-## D.1. API likes/dislikes
-Dans ce TP nous allons connecter les boutons like/dislike de la page `VideoDetail` à l'API.
+## D.1. VideoDetail
 
-1. **Pour que ce soit plus simple à tester, remettez la page `VideoList` comme page par défaut dans le `Navigator`.**
-1. **Dans la page `VideoDetail`, faites en sorte que le clic sur le bouton "like" lance un POST vers https://localhost:8080/api/videos/:id/likes** et que le click sur le bouton "dislike" appelle https://localhost:8080/api/videos/:id/dislikes (ou `:id` est l'id de la vidéo actuellement affichée dans `CideoDetail`)
-2. **Une fois le POST terminé, le nombre de likes doit se mettre à jour** (avec les données en bdd, quelques fois qu'un autre utilisateur aurait lui aussi entre temps cliqué sur les boutons ;) ).
+**En vous inspirant de ce que vous avez fait à la partie [B. AJAX](B-ajax.md) dans la `VideoList`, connectez le composant `VideoDetail` au webservice http://localhost:8080/api/videos/:id** (_ou `:id` correspond à l'id de la vidéo à afficher_)
 
-## D.2. Les commentaires
+> _**NB :** Pour que ce soit plus simple à tester, je vous conseille de remettre la page `VideoList` comme page par défaut dans le `Navigator`._
 
-**Dans ce dernier exercice, je vous propose de mettre en place un système de commentaires dans la page de détail.**
+> _**NB2 :** une fois le `VideoDetail` connecté à l'API, vous pouvez supprimer le fichier `src/data.js` qui n'est plus utile._
+
+## D.2. Redirection VideoForm -> VideoDetail
+**Maintenant que le `VideoDetail` est dynamisé, profitons en pour modifier le comportement du `VideoForm`** : une fois l'enregistrement d'une nouvelle vidéo terminé, au lieu de rediriger l'utilisateur vers la page liste, **redirigez le plutôt vers la page détail** de la vidéo qu'il vient d'enregistrer !
+
+> _**Indice :** inspectez bien le corps de la réponse à votre requête POST...)_
+
+## D.3. API likes/dislikes
+_**Connectons maintenant les boutons like/dislike de la page `VideoDetail` à l'API.**_
+
+1. **Dans la page `VideoDetail`, faites en sorte que le clic sur le bouton "like" lance un POST vers http://localhost:8080/api/videos/:id/likes** et que le click sur le bouton "dislike" appelle http://localhost:8080/api/videos/:id/dislikes (_où `:id` est l'id de la vidéo actuellement affichée dans `VideoDetail`_)
+2. **Une fois le POST terminé, mettez à jour le nombre de likes affichés dans la page** (_à partir des données en bdd, quelques fois qu'un autre utilisateur aurait lui aussi entre temps cliqué sur les boutons_ ;)).
+
+## D.4. Les commentaires
+
+_**Dans ce dernier exercice, je vous propose de mettre en place un système de commentaires dans la page de détail.**_
+
+<img src="images/readme/commentaires.png" >
 
 Plusieurs contraintes :
-- le formulaire d'ajout de commentaire doit être un composant contrôlé
-- l'API pour les commentaires est déjà fournie :
-	- GET http://localhost:8080/api/videos/1/comments retourne les commentaires de la vidéo d'id 1
-	- POST http://localhost:8080/api/videos/1/comments ajoute un nouveau commentaire.
+- le formulaire d'ajout de commentaire doit être un composant **contrôlé**
+- l'API pour les commentaires est **déjà fournie** :
+	- **GET http://localhost:8080/api/videos/1/comments** retourne les commentaires de la vidéo d'id 1
+	- **POST http://localhost:8080/api/videos/1/comments** ajoute un nouveau commentaire.
 
 		Le body de la requête sera de la forme :
 		```json
@@ -30,7 +50,7 @@ Plusieurs contraintes :
 			"content": "Le message saisi par l'utilisateur"
 		}
 		```
-- Une fois un commentaire ajouté, la liste des commentaires doit se rafraîchir
+- Une fois un commentaire ajouté, la **liste des commentaires doit se rafraîchir**
 - le commentaire le plus récent est en haut
 - pour chaque commentaire on affiche son contenu et sa date de publication au format `"Le 06/07/2020 à 13:37:42"`
 - pendant le chargement l'utilisateur ne doit pas pouvoir saisir de texte ou re-cliquer sur le bouton submit

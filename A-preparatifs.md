@@ -38,7 +38,7 @@ Le résultat attendu est le suivant :
 <img src="images/readme/screen-00.png" >
 
 ## A.2. Lancement de l'API REST
-Dans ce TP vous allez enfin connecter notre appli web à une base de données grâce à l'API REST que vous avez installée lors du TP0 (cf. [TP0 : C. Serveur API REST](https://framagit.org/formation/react/tp0/-/blob/master/C-serveur-rest.md)).
+Dans ce TP on va enfin connecter notre appli web à une base de données grâce à l'API REST que l'on a installée lors du TP0 (cf. [TP0 : C. Serveur API REST](https://framagit.org/formation/react/tp0/-/blob/master/C-serveur-rest.md)).
 
 C'est donc le moment de lancer le serveur Node / Express qui fait tourner l'API :
 ```bash
@@ -48,7 +48,7 @@ npm start
 
 **Vérifiez que l'API tourne bien en ouvrant http://localhost:8080/api/videos dans votre navigateur.** Si tout se passe bien vous devez voir un JSON s'afficher avec des vidéos dedans :
 
-<a href="images/screen/screen-01.png"><img src="images/readme/screen-01.png" ></a>
+<img src="images/readme/screen-01.png" >
 
 ## Étape suivante <!-- omit in toc -->
 Si tout fonctionne, vous pouvez passer à l'étape suivante : [B. AJAX](B-ajax.md)
