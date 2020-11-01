@@ -1,6 +1,6 @@
-import React from 'react';
+import { Component } from 'react';
 
-export default class Menu extends React.Component {
+export default class Menu extends Component {
 	render() {
 		return (
 			<header>

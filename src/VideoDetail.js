@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
 import data from './data';
 
 const randomIndex = Math.floor(Math.random() * data.length);
