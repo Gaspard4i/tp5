@@ -1,9 +1,9 @@
-import React from 'react';
+import { Component } from 'react';
 import VideoList from './VideoList';
 import VideoDetail from './VideoDetail';
 import VideoForm from './VideoForm';
 
-export default class Navigator extends React.Component {
+export default class Navigator extends Component {
 	state = {
 		currentPage: 'list',
 		params: {},
@@ -18,13 +18,10 @@ export default class Navigator extends React.Component {
 		switch (this.state.currentPage) {
 			case 'list':
 				return <VideoList push={this.push} params={this.state.params} />;
-				break;
 			case 'detail':
 				return <VideoDetail push={this.push} params={this.state.params} />;
-				break;
 			case 'form':
 				return <VideoForm push={this.push} params={this.state.params} />;
-				break;
 		}
 		return null;
 	}

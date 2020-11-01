@@ -1,5 +1,3 @@
-import React from 'react';
-
 const VideoThumbnail = ({
 	video: { title, description, thumbnail, file },
 	onClick,

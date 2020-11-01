@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
 import VideoThumbnail from './VideoThumbnail';
 
 export default class VideoList extends Component {

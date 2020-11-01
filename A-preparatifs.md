@@ -4,7 +4,7 @@
 
 Vous commencez maintenant à avoir l'habitude, je ne rentrerais donc pas dans les détails mais voici les différentes étapes pour le lancement du projet en mode [TL;DR](https://en.wiktionary.org/wiki/tl;dr)
 
-***NB :** Si vous repartez de vos fichiers, **pensez à faire un `git pull`** pour récupérer les dernières modifications du repo (probablement des modifs de CSS ou des corrections de dernière minute).*
+> _**NB :** Si vous repartez de vos fichiers, **pensez à faire un `git pull`** pour récupérer les dernières modifications du repo (probablement des modifs de CSS ou des corrections de dernière minute)._
 
 1. **Tapez dans un terminal :**
 	```bash
@@ -27,11 +27,11 @@ Vous commencez maintenant à avoir l'habitude, je ne rentrerais donc pas dans le
 	npm start
 	```
 
-***NB :** si vous souhaitez plus de précisions sur les commandes précédentes et l'installation  / configuration du projet, vous pouvez vous référer au chapitre [A. Préparatifs](https://framagit.org/formation/react/tp2/-/blob/master/A-preparatifs.md) du TP2 ou simplement demander de l'aide au formateur* 😄
+> _**NB :** si vous souhaitez plus de précisions sur les commandes précédentes et l'installation  / configuration du projet, vous pouvez vous référer au chapitre [A. Préparatifs](https://framagit.org/formation/react/tp2/-/blob/master/A-preparatifs.md) du TP2 ou simplement demander de l'aide au formateur_ 😄
 
 Le résultat attendu est le suivant :
 
-<a href="images/screen/screen-00.png"><img src="images/readme/screen-00.png" ></a>
+<img src="images/readme/screen-00.png" >
 
 ## Étape suivante <!-- omit in toc -->
 Si tout fonctionne, vous pouvez passer à l'étape suivante : [B. Les bases de Redux](B-les-bases.md)
