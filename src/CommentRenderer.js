@@ -1,5 +1,3 @@
-import React from 'react';
-
 export default function CommentRenderer({ comment: { created_at, content } }) {
 	const date = new Date(created_at);
 	return (
