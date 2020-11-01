@@ -9,7 +9,7 @@
 ## B.1. useState()
 **À l'aide du pdf du cours, convertissez la classe `Navigator` en function component** en utilisant le hook **[useState](https://reactjs.org/docs/hooks-reference.html#usestate)** pour remplacer le `state` local et les instructions `this.setState()`.
 
-> _**NB :** comme le state de `Navigator` contient 2 valeurs indépendantes, je vous recommande d'utiliser 2 `useState()` distincts : 1 pour `currentPage` et 1 autre pour `params`._
+> _**NB :** comme le state de `Navigator` contient 2 valeurs qui sont liées et toujours mises à jour ensemble, je vous recommande d'utiliser un seul `useState()` avec à l'intérieur un objet contenant les 2 propriétés `currentPage` et `params`. Cela permet en outre d'éviter des problèmes de [double render liés aux batch updates](https://github.com/facebook/react/issues/14259)._
 
 Vous devriez en principe remarquer rapidement que le nouveau code est beaucoup plus léger que le précédent alors que pourtant on n'a rien perdu en fonctionnalité ! C'est l'un des avantages majeurs des function components avec les hooks : un code moins verbeux et où le code "important" est mieux mis en avant.
 

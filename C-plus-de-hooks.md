@@ -14,6 +14,8 @@
 
 Vous aurez besoin pour cela des hooks déjà vu comme [useState()](https://reactjs.org/docs/hooks-reference.html#usestate), [useEffect()](https://reactjs.org/docs/hooks-reference.html#useeffect) **mais aussi du hook [useRef()](https://reactjs.org/docs/hooks-reference.html#useref) pour remplacer `this.player`** (_référence vers la balise `<video>`_)
 
+> _**NB :** contrairement au state de `Navigator`, les deux states de `VideoDetail` sont indépendants c'est à dire qu'ils ne sont pas mis à jour en même temps, je vous recommande donc d'utiliser 2 `useState()` distincts : 1 pour `video` et 1 autre pour `comments`._
+
 ## C.2. VideoForm
 **Attaquons-nous maintenant au composant `VideoForm`.**
 
