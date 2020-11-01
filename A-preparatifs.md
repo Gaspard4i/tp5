@@ -15,26 +15,27 @@ Pour ce TP vous pouvez soit repartir de vos fichiers du précédent TP (si vous 
 
 *Si vous repartez de vos fichiers, **pensez à faire un `git pull`** pour récupérer les dernières modifications du repo (probablement des modifs de CSS ou des corrections de dernière minute).*
 
-1. **Récupérez les fichiers de ce TP grâce à Git : clonez ce repo dans un dossier de votre choix** (*ici je clone dans mon dossier utilisateur/tps-react/tp2, attention au sens des slashs selon votre OS*) :
+1. **Récupérez les fichiers de ce TP grâce à Git : clonez ce repo dans un dossier de votre choix** :
 	```bash
 	mkdir ~/tps-react
 	git clone https://framagit.org/formation/react/tp2.git ~/tps-react/tp2
 	```
+	> _**NB :** ici je clone dans mon dossier `/home/thomas/tps-react/tp2`. **Si vous êtes sous windows faites attention au sens des slashs et au caractère `"~"`** qui représente le dossier de l'utilisateur sur système unix. Si vous êtes sous windows utilisez **Git bash** (qui comprend cette syntaxe) ou si vous tenez vraiment à utiliser **cmd** pensez à adapter !_
 
 2. **Ouvrez le projet dans VSCodium** (pour les différentes façon d'ouvrir le projet relisez les [instructions du TP0](https://framagit.org/formation/react/tp0/-/blob/master/A-preparatifs.md#a3-ouvrir-le-projet-dans-vscodium) )
 	```bash
 	codium ~/tps-react/tp2
 	```
 
-3. **Installez les paquets npm nécessaires au projet** notamment le compilateur [Babel](https://babeljs.io)<br>
-	Ouvrez un terminal intégré à VSCodium (kbd>CTRL</kbd>+<kbd>J</kbd> *(PC)* / <kbd>CMD</kbd>+<kbd>J</kbd> *(Mac)*) et tapez juste :
+3. **Installez les paquets npm nécessaires au projet** notamment le compilateur [Babel](https://babeljs.io).<br>
+	Ouvrez un terminal intégré à VSCodium (<kbd>CTRL</kbd>+<kbd>J</kbd> *(PC)* / <kbd>CMD</kbd>+<kbd>J</kbd> *(Mac)*) et tapez juste :
 	```bash
 	npm install
 	```
 
-	Vous noterez qu'on ne précise pas les paquets à installer. npm va en effet les déterminer **automatiquement** à partir du contenu du fichier `package.json` et plus particulièrement à partir des sections `"dependencies"` et `"devDependencies"` qui indiquent quels sont les paquets qui ont été installés précédemment.
-
-	Magique !
+	> _**NB :** Vous noterez qu'on ne précise pas les paquets à installer. npm va en effet les déterminer **automatiquement** à partir du contenu du fichier `package.json` et plus particulièrement à partir des sections `"dependencies"` et `"devDependencies"` qui indiquent quels sont les paquets qui ont été installés précédemment._
+	>
+	> **Magique !** 🙌
 
 ## A.2. Configuration de Prettier
 
@@ -90,21 +91,21 @@ Lorsque l'on fait du développement JS de manière sérieuse, on installe les li
 	```bash
 	npm i react
 	```
-	_**NB :** `npm i ...` est un raccourci pour `npm install ...`_
+	> _**NB :** `npm i ...` est un raccourci pour `npm install ...`_
 
-	_**NB :** vous remarquerez que `react` s'est ajouté dans la section `"dependencies"` du `package.json` (et plus `"devDependencies"` comme pour Babel, Webpack, etc.) c'est pour distinguer les dépendances qui servent juste pour la phase de développement (comme les outils de build) de celles qui ont un impact sur l'appli compilée._
+	> _**NB :** vous remarquerez que `react` s'est ajouté dans la section `"dependencies"` du `package.json` (et plus `"devDependencies"` comme pour Babel, Webpack, etc.) c'est pour distinguer les dépendances qui servent juste pour la phase de développement (comme les outils de build) de celles qui ont un impact sur l'appli compilée._
 
-2. Comme vous le savez, React permet de développer des applis web mais aussi des apps mobiles (avec [React Native](https://reactnative.dev/)).
+2. **Comme vous le savez, React permet de développer des applis web mais aussi des apps mobiles** (_avec [React Native](https://reactnative.dev/)_).
 
 	Dans notre cas il faut donc, en plus de [`react`](https://www.npmjs.com/package/react), **installer la lib [`react-dom`](https://www.npmjs.com/package/react-dom) :**
 	```bash
 	npm i react-dom
 	```
-3. Puisque l'on souhaite utiliser du JSX, il faut **permettre à Babel de compiler le JSX en JS à l'aide du preset [@babel/preset-react](https://babeljs.io/docs/en/babel-preset-react/)** (vous vous souvenez, les presets sont des sortes de "dictionnaires" de traduction) :
+3. Puisque l'on souhaite utiliser du JSX, il faut **permettre à Babel de compiler le JSX en JS à l'aide du preset [@babel/preset-react](https://babeljs.io/docs/en/babel-preset-react/)** (_vous vous souvenez ? Les presets sont des sortes de "dictionnaires" de traduction_) :
 	```bash
 	npm i -D @babel/preset-react
 	```
-	_**NB :** `-D` est un raccourci pour l'option `--save-dev`_
+	> _**NB :** `-D` est un raccourci pour l'option `--save-dev`_
 
 	Ajoutez ensuite le preset `@babel/preset-react` nouvellement installé dans le fichier `.babelrc`
 	```json
@@ -112,11 +113,13 @@ Lorsque l'on fait du développement JS de manière sérieuse, on installe les li
 	```
 4. **Supprimez tous les fichiers `.js` du dossier `src`, à l'exception du fichier `src/data.js` puis créez un fichier `src/app.js`** qui servira de point d'entrée à notre application React.
 
-	Placez-y pour le moment un `console.log` :
+	Placez-y pour le moment juste un `console.log` :
 	```js
 	console.log('REACTube en React !');
 	```
-5. **Enfin, modifiez la configuration de webpack** pour lui indiquer que c'est ce fichier `src/app.js` qui est désormais le point d'entrée, que le fichier de sortie s'appelle désormais `app.bundle.js`. N'oubliez pas de **mettre à jour la balise `<script>`** du fichier `index.html` !
+5. **Enfin, modifiez la configuration de webpack** pour lui indiquer que c'est ce fichier `src/app.js` qui est désormais le point d'entrée, que le fichier de sortie s'appelle désormais `app.bundle.js`.
+
+	N'oubliez pas de **mettre à jour la balise `<script>`** du fichier `index.html` !
 
 ## A.5. Lancement de l'application
 
@@ -136,13 +139,13 @@ Comme dans le précédent TP lancez un serveur HTTP et la compilation du projet 
 
 	Le résultat attendu est le suivant :
 
-	<a href="images/screen/screen-00.png"><img src="images/readme/screen-00.png" ></a>
+	<img src="images/readme/screen-00.png" >
 
 	**Dans la console, vérifiez que le message *`"REACTube en React !"`* s'affiche bien.**
 
-	<a href="images/screen/screen-01.png"><img src="images/readme/screen-01.png" ></a>
+	<img src="images/readme/screen-01.png" >
 
-	_**NB: Si la page ne s'affiche pas correctement**, vérifiez que vous avez bien lancé le serveur http dans le dossier du projet, c'est à dire celui où se trouve le fichier `index.html`. Puis vérifiez dans la `Console` ou dans l'onglet `Sources` (Chrome) ou `Debugger` (Firefox) qu'l n'y a pas d'erreur JS lorsque la page se charge._
+	> _**NB : Si la page ne s'affiche pas correctement**, vérifiez que vous avez bien lancé le serveur http dans le dossier du projet, c'est à dire celui où se trouve le fichier `index.html`. Puis vérifiez dans la `Console` ou dans l'onglet `Sources` (Chrome) ou `Debugger` (Firefox) qu'l n'y a pas d'erreur JS lorsque la page se charge._
 
 ## Étape suivante <!-- omit in toc -->
 Si tout fonctionne, vous pouvez passer à l'étape suivante : [B. Un premier composant](B-premier-composant.md)

@@ -6,9 +6,8 @@
 - [B.1. ReactDOM](#b1-reactdom)
 - [B.2. Un premier composant](#b2-un-premier-composant)
 - [B.3. Un composant = un module](#b3-un-composant-un-module)
-- [Étape suivante](#étape-suivante)
 
-***Maintenant que votre environnement de développement est prêt, que votre serveur http tourne, attaquons nous au développement d'un premier composant React.***
+_**Maintenant que votre environnement de développement est prêt, que votre serveur http tourne, attaquons nous au développement d'un premier composant React.**_
 
 ## B.1. ReactDOM
 
@@ -34,7 +33,7 @@ ReactDOM est la librairie qui permet d'injecter des composants React dans une pa
 
 	<a href="images/screen/screen-00.png"><img src="images/readme/screen-00.png" ></a>
 
-	Bon, contrairement à ce qu'on aurait pu espérer, rien ne s'affiche dans la page. 🤔
+	Bon, contrairement à ce qu'on aurait pu espérer, **rien ne s'affiche dans la page**. 🤔
 
 	Mais, comme vous êtes un.e vrai.e développeur.euse, vous avez bien entendu déjà les devtools ouverts et remarqué qu'on a maintenant une erreur JS à l'exécution :
 
@@ -44,7 +43,9 @@ ReactDOM est la librairie qui permet d'injecter des composants React dans une pa
 
 	Mais pourquoi notre code cherche à charger `React` alors qu'on ne l'a pas utilisé dans notre code ? Et bien, c'est la faute au JSX !
 
-	Vous vous souvenez que le JSX est en fait une syntaxe compilée ? Un raccourci ? Lorsqu'on écrit :
+	Vous vous souvenez que le JSX est en fait une syntaxe compilée ? Un raccourci ?
+
+	Lorsqu'on écrit :
 	```html
 	<h1>Le Top 10 des frameworks JS</h1>
 	```
@@ -68,7 +69,22 @@ ReactDOM est la librairie qui permet d'injecter des composants React dans une pa
 	import React from 'react';
 	```
 	Rechargez votre navigateur, cette fois miracle, plus d'erreur et le titre s'affiche :
-	<a href="images/screen/screen-03.png"><img src="images/readme/screen-03.png" ></a>
+
+	<img src="images/readme/screen-03.png" >
+
+	> _**NB :** depuis la sortie de la version 17 de React sortie fin octobre 2020, une [nouvelle méthode de compilation du JSX](https://reactjs.org/blog/2020/10/20/react-v17.html#new-jsx-transform) est sortie. Cette méthode permet de se passer de l'import de React pour utiliser du JSX !_
+	>
+	> _Pour l'utiliser il faut ajouter au .babelrc une option au `preset-react` comme ceci :_
+	> ```json
+	> {
+	> 	"presets": [
+	> 		"@babel/preset-env",
+	> 		["@babel/preset-react", { "runtime": "automatic" }]
+	> 	],
+	> 	"plugins": ["@babel/plugin-proposal-class-properties"]
+	> }
+	> ```
+	> _Notez que cette configuration supplémentaire ne sera plus nécessaire lors de la [sortie de Babel 8](https://github.com/babel/babel/issues/10746). Si ça vous intéresse vous trouverez plus d'infos sur cette nouvelle méthode sur le blog de react : https://reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html_
 
 5. **Notez que la méthode `render` est en fait une fonction qu'on peut importer indépendamment.** À la place de `import ReactDOM from 'react-dom';` écrivez :
 	```js
@@ -101,12 +117,15 @@ On vient de voir que l'on peut passer à `ReactDOM.render()` du code JSX tapé i
 		document.querySelector('.container > header')
 	);
 	```
-	Le rendu dans le navigateur ne doit pas avoir bougé puisque le composant `VideoDetail` retourne le même JSX que ce qu'on avait mis auparavant (pour vous assurer que la modif de votre code est bien prise en compte, vous pouvez modifier le JSX retourné par le composant `VideoDetail`) :
-	<a href="images/screen/screen-03.png"><img src="images/readme/screen-03.png" ></a>
+	Le rendu dans le navigateur ne doit pas avoir bougé puisque le composant `VideoDetail` retourne le même JSX que ce qu'on avait mis auparavant :
+
+	<img src="images/readme/screen-03.png" >
+
+	> _**NB :** pour vous assurer que la modif de votre code est bien prise en compte, vous pouvez modifier le JSX retourné par le composant `VideoDetail` et voir si le changement se fait bien dans le navigateur._
 
 ## B.3. Un composant = un module
 
 Maintenant que vous avez compris le principe, déplacez la classe `VideoDetail` dans un module à part `src/VideoDetail.js`. En effet, le fichier `app.js` n'est que le point d'entrée de notre appli, le détail du code de nos composant doit être externalisé. Pensez à modifier le module `app.js` et aux `import`/`export` qui vont bien.
 
-## Étape suivante
+## Étape suivante <!-- omit in toc -->
 Une fois cette partie terminée, il est temps de travailler plus en détail sur le composant `VideoDetail` : [C. Le composant VideoDetail](C-videodetail.md).

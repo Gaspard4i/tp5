@@ -5,7 +5,6 @@
 ## Sommaire <!-- omit in toc -->
 - [D.1. Création du composant](#d1-création-du-composant)
 - [D.2. Ajout du state](#d2-ajout-du-state)
-- [Étape suivante](#étape-suivante)
 
 _**Maintenant que l'on est capables d'afficher un composant qui dispose d'un state, voyons si vous êtes à même d'en créer un autre, un peu plus complexe.**_
 
@@ -29,7 +28,7 @@ _**Maintenant que l'on est capables d'afficher un composant qui dispose d'un sta
 
 ## D.2. Ajout du state
 1. **Commencez par importer la constante `data`** définie dans le module `src/data.js`.
-2. **Utilisez la pour remplir le state par défaut de votre composant `VideoList`** : créez une propriété `videos`
+2. **Utilisez la pour remplir le state par défaut de votre composant `VideoList`** : créez une propriété `videos` qui contient le tableau `data`.
 3. **Adaptez le render** pour retourner à l'intérieur de la `div class="videoList">` autant de balises de ce type que de cellules dans le state `videos` :
 	```html
 	<a href="uploads/video1.mp4">
@@ -41,10 +40,10 @@ _**Maintenant que l'on est capables d'afficher un composant qui dispose d'un sta
 	</a>
 	```
 
-Le résultat doit être le suivant (ça ressemble à ce qu'on a fait au TP1 hein ?):
+Le résultat doit être le suivant (_ça ressemble à ce qu'on avait fait au TP1 hein ?_) :
 
-<a href="images/readme/screen-06.png"><img src="images/readme/screen-06.png" ></a>
+<img src="images/readme/screen-06.png" >
 
 
-## Étape suivante
+## Étape suivante <!-- omit in toc -->
 Une fois cette partie terminée, passons à quelques exercices avancés dans la partie [E. Pour aller plus loin](E-optimisations.md).
