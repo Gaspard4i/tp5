@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
 
-export default class CommentsForm extends Component {
+export default class CommentForm extends Component {
 	state = {
 		content: '',
 		isLoading: false,
