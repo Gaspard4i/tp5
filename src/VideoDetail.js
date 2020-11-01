@@ -1,4 +1,4 @@
-import { Component } from 'react';
+import { createRef, Component } from 'react';
 import CommentForm from './CommentForm';
 import CommentRenderer from './CommentRenderer';
 
@@ -7,7 +7,7 @@ export default class VideoDetail extends Component {
 		video: null,
 		comments: [],
 	};
-	player = null;
+	player = createRef();
 
 	componentDidMount() {
 		this.fetchDetail();
@@ -43,10 +43,10 @@ export default class VideoDetail extends Component {
 					height="400"
 					controls
 					src={'./uploads/' + file}
-					ref={el => (this.player = el)}
+					ref={this.player}
 				></video>
-				<button onClick={() => this.player.play()}>play</button>
-				<button onClick={() => this.player.pause()}>pause</button>
+				<button onClick={() => this.player.current.play()}>play</button>
+				<button onClick={() => this.player.current.pause()}>pause</button>
 				<header>
 					<h1>{title}</h1>
 					<div className="likesContainer">
