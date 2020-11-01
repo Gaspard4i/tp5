@@ -34,4 +34,4 @@ Le résultat attendu est le suivant :
 <img src="images/readme/screen-00.png" >
 
 ## Étape suivante <!-- omit in toc -->
-Si tout fonctionne, vous pouvez passer à l'étape suivante : [B. Les bases de Redux](B-les-bases.md)
+Si tout fonctionne, vous pouvez passer à l'étape suivante : [B. Les hooks de base](B-hooks.md)

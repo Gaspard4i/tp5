@@ -1,6 +1,6 @@
 <img src="images/readme/header-small.jpg" >
 
-# B. Hooks  <!-- omit in toc -->
+# B. Hooks de base <!-- omit in toc -->
 
 ## Sommaire <!-- omit in toc -->
 - [B.1. useState()](#b1-usestate)
