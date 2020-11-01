@@ -11,7 +11,7 @@
 **Ce repo contient une solution commentée du précédent TP.** <br>
 Pour ce TP vous pouvez soit repartir de vos fichiers du précédent TP (si vous l'aviez terminé) ou bien cloner ce repo et vous en servir comme base pour ce TP.
 
-***NB :** Si vous repartez de vos fichiers, **pensez à faire un `git pull`** pour récupérer les dernières modifications du repo (probablement des modifs de CSS ou des corrections de dernière minute).*
+> _**NB :** Si vous repartez de vos fichiers, **pensez à faire un `git pull`** pour récupérer les dernières modifications du repo (probablement des modifs de CSS ou des corrections de dernière minute)._
 
 Vous commencez maintenant à avoir l'habitude, je ne rentrerais donc pas dans les détails mais voici les différentes étapes pour le lancement du projet en mode [TL;DR](https://en.wiktionary.org/wiki/tl;dr)
 
@@ -31,11 +31,11 @@ Vous commencez maintenant à avoir l'habitude, je ne rentrerais donc pas dans le
 	npm run watch
 	```
 
-***NB :** si vous souhaitez plus de précisions sur les commandes précédentes et l'installation  / configuration du projet, vous pouvez vous référer au chapitre [A. Préparatifs](https://framagit.org/formation/react/tp2/-/blob/master/A-preparatifs.md) du TP2 ou simplement demander de l'aide au formateur* 😄
+> _**NB :** si vous souhaitez plus de précisions sur les commandes précédentes et l'installation  / configuration du projet, vous pouvez vous référer au chapitre [A. Préparatifs](https://framagit.org/formation/react/tp2/-/blob/master/A-preparatifs.md) du TP2 ou simplement demander de l'aide au formateur_ 😄
 
 Le résultat attendu est le suivant :
 
-<a href="images/screen/screen-00.png"><img src="images/readme/screen-00.png" ></a>
+<img src="images/readme/screen-00.png" >
 
 ## A.2. Lancement de l'API REST
 Dans ce TP vous allez enfin connecter notre appli web à une base de données grâce à l'API REST que vous avez installée lors du TP0 (cf. [TP0 : C. Serveur API REST](https://framagit.org/formation/react/tp0/-/blob/master/C-serveur-rest.md)).
