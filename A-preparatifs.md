@@ -20,9 +20,11 @@ Pour ce TP vous pouvez soit repartir de vos fichiers du précédent TP (si vous 
 	mkdir ~/tps-react
 	git clone https://framagit.org/formation/react/tp2.git ~/tps-react/tp2
 	```
-	> _**NB :** ici je clone dans mon dossier `/home/thomas/tps-react/tp2`. **Si vous êtes sous windows faites attention au sens des slashs et au caractère `"~"`** qui représente le dossier de l'utilisateur sur système unix. Si vous êtes sous windows utilisez **Git bash** (qui comprend cette syntaxe) ou si vous tenez vraiment à utiliser **cmd** pensez à adapter !_
+	> _**NB :** Comme pour le TP1, ici je clone dans mon dossier `/home/thomas/tps-react/tp2`. **Si vous êtes sous windows faites attention au sens des slashs et au caractère `"~"`** qui représente le dossier de l'utilisateur sur système unix. Si vous êtes sous windows utilisez **Git bash** (qui comprend cette syntaxe) ou si vous tenez vraiment à utiliser **cmd** pensez à adapter !_
 
-2. **Ouvrez le projet dans VSCodium** (pour les différentes façon d'ouvrir le projet relisez les [instructions du TP0](https://framagit.org/formation/react/tp0/-/blob/master/A-preparatifs.md#a3-ouvrir-le-projet-dans-vscodium) )
+	> _**NB2 :** Comme pour le TP1 aussi, si vous préférez **cloner en SSH** pour ne pas avoir à taper votre mot de passe à chaque fois, renseignez votre clé SSH dans votre [compte utilisateur gitlab](https://framagit.org/profile/keys) et clonez à partir de cette URL : `git@framagit.org:formation/react/tp2.git`_
+
+2. **Ouvrez le projet dans VSCodium** (pour les différentes façon d'ouvrir le projet relisez les [instructions du TP0](https://framagit.org/formation/react/tp0/-/blob/master/A-preparatifs.md#a4-ouvrir-le-projet-dans-vscodium) )
 	```bash
 	codium ~/tps-react/tp2
 	```
@@ -37,15 +39,18 @@ Pour ce TP vous pouvez soit repartir de vos fichiers du précédent TP (si vous 
 	>
 	> **Magique !** 🙌
 
+
 ## A.2. Configuration de Prettier
 
-_**Lors des précédents TPs, vous avez en principe installé l'extension Prettier.**_
+<img src="images/readme/header-prettier.jpg" />
 
-Prettier est un formateur de code automatique qui est le plus populaire à l'heure actuelle dans l'écosystème React.
+_**Lors des précédents TP, vous avez en principe installé l'extension Prettier dans VSCodium.**_
+
+Prettier est un formateur de code automatique qui est le plus populaire à l'heure actuelle dans l'écosystème JavaScript.
 
 **C'est le moment de configurer cette extension** pour l'utiliser dans notre projet.
 
-1. **Ajoutez un fichier `.vscode/settings.json` dans le dossier du tp** avec le contenu suivant :
+1. **Ajoutez un dossier `.vscode` dans le dossier du TP et placez y un fichier nommé `settings.json`** avec le contenu suivant :
 
 	```json
 	{
@@ -55,24 +60,23 @@ Prettier est un formateur de code automatique qui est le plus populaire à l'heu
 		}
 	}
 	```
-	Créez ensuite un fichier `.prettierrc` à la racine du TP :
+2. **Créez ensuite un fichier `.prettierrc`** à la racine du TP :
 	```json
 	{
 		"singleQuote": true,
 		"trailingComma": "es5",
 		"endOfLine": "lf",
 		"useTabs": true,
-		"jsxBracketSameLine": false,
 		"arrowParens": "avoid"
 	}
 	```
-	Enfin, installez prettier avec npm :
+3. **Enfin, installez le paquet npm `prettier`** dans le projet (_nécessaire pour que l'extension vscodium fonctionne_) :
 	```bash
 	npm install --save-dev prettier
 	```
-	Avec cette configuration, vos fichiers JS seront maintenant automatiquement formatés à chaque sauvegarde !
+	Avec cette configuration, vos fichiers JS seront maintenant automatiquement formatés à chaque sauvegarde ! Plus besoin de vous tracasser avec les retours à la ligne, les tabulations, les espaces, tout sera géré automatiquement par Prettier !
 
-	Pour voir la liste des configurations possibles, rendez vous sur https://prettier.io/docs/en/configuration.html
+	> _**NB :** si vous souhaitez en savoir plus sur la liste des configurations possibles, rendez vous sur https://prettier.io/docs/en/configuration.html_
 
 
 ## A.3. Outils de dev
@@ -83,17 +87,29 @@ Installez l'extension **React Developer Tools** :
 
 
 ## A.4. Installation de React
-Comme vu en cours React est une **librairie** JS.
 
-Lorsque l'on fait du développement JS de manière sérieuse, on installe les librairies qu'on utilise dans notre code avec `npm`. Comme nous sommes de gens sérieux, allons y :
+<img src="images/readme/header-react.jpg" />
 
-1. **Installez la librairie [`react`](https://www.npmjs.com/package/react) avec npm :**
+**Comme vu en cours React est une _librairie_ JS.**
+
+Pour l'utiliser dans notre appli on va d'abord devoir récupérer le code de cette librairie. Et pour récupérer une librairie quand on fait du JS de manière sérieuse, c'est **`npm`** qu'on utilise ! \
+Comme nous sommes de gens sérieux, allons y :
+
+1. **Installez la librairie [`react`](https://www.npmjs.com/package/react) avec npm :** Dans le dossier du TP (`à la racine, là où se trouve le package.json`), lancez la commande
 	```bash
 	npm i react
 	```
 	> _**NB :** `npm i ...` est un raccourci pour `npm install ...`_
 
-	> _**NB :** vous remarquerez que `react` s'est ajouté dans la section `"dependencies"` du `package.json` (et plus `"devDependencies"` comme pour Babel, Webpack, etc.) c'est pour distinguer les dépendances qui servent juste pour la phase de développement (comme les outils de build) de celles qui ont un impact sur l'appli compilée._
+	> _**NB2 :** vous avez peut-être remarqué que contrairement aux autres packages que l'on avait installé jusque là (`babel`, `webpack`, etc.), **`react` a été ajouté dans la section `"dependencies"` et pas `"devDependencies"`** du `package.json`._
+	>
+	> _En effet, tous les paquets que l'on a installé précédemment ne sont utilisés que pendant la **phase de développement** (pour la compilation ou le formatage de code source) mais ne contiennent rien qui soit vraiment utilisé "dans" notre code. C'est la raison pour laquelle on avait installé tous ces paquets avec **l'option `--save-dev`** (par exemple dans le TP1, on avait fait : `npm install --save-dev @babel/core @babel/cli`, vous vous souvenez ?_ :thinking: _) ce qui avait pour conséquence d'ajouter ces paquets dans les **`"devDependencies"`**._
+	>
+	> _**Pour React, on n'a pas utilisé l'option `--save-dev` car on va utiliser React dans notre code, de fait il est installé dans la section `"dependencies"`.**_
+	>
+	> _Documentation officielle :_
+	> - _dependencies : https://docs.npmjs.com/cli/v7/configuring-npm/package-json#dependencies_
+	> - _devDependencies : https://docs.npmjs.com/cli/v7/configuring-npm/package-json#devdependencies_
 
 2. **Comme vous le savez, React permet de développer des applis web mais aussi des apps mobiles** (_avec [React Native](https://reactnative.dev/)_).
 
@@ -107,7 +123,7 @@ Lorsque l'on fait du développement JS de manière sérieuse, on installe les li
 	```
 	> _**NB :** `-D` est un raccourci pour l'option `--save-dev`_
 
-	Ajoutez ensuite le preset `@babel/preset-react` nouvellement installé dans le fichier `.babelrc`
+	Ajoutez ensuite le preset `@babel/preset-react` nouvellement installé dans le fichier `.babelrc` en remplaçant la ligne `"presets"` par celle-ci
 	```json
 	"presets": ["@babel/preset-env", "@babel/preset-react"]
 	```
@@ -117,9 +133,9 @@ Lorsque l'on fait du développement JS de manière sérieuse, on installe les li
 	```js
 	console.log('REACTube en React !');
 	```
-5. **Enfin, modifiez la configuration de webpack** pour lui indiquer que c'est ce fichier `src/app.js` qui est désormais le point d'entrée, que le fichier de sortie s'appelle désormais `app.bundle.js`.
+5. **Enfin, modifiez la configuration de webpack** pour lui indiquer que c'est ce fichier `src/app.js` qui est désormais le point d'entrée, et que le fichier de sortie s'appelle désormais `app.bundle.js`.
 
-	N'oubliez pas de **mettre à jour la balise `<script>`** du fichier `index.html` !
+	> _**NB:** N'oubliez pas de **mettre à jour la balise `<script>`** du fichier `index.html` !_
 
 ## A.5. Lancement de l'application
 
@@ -130,12 +146,12 @@ Comme dans le précédent TP lancez un serveur HTTP et la compilation du projet 
 	npx serve -l 8000
 	```
 
-2. **Lancez la compilation de votre projet** dans un **deuxième** terminal splitté (*le `watch` et `npx serve` doivent tourner en parallèle*) :
+2. **Lancez la compilation de votre projet** dans un **deuxième** [terminal splitté](https://code.visualstudio.com/docs/editor/integrated-terminal#_terminal-splitting) (*le `watch` et `npx serve` doivent tourner en parallèle*) :
 	```bash
 	npm run watch
 	```
 
-5. **Vérifiez dans le navigateur que la page index.html s'affiche correctement** en ouvrant l'url http://localhost:8000.
+3. **Vérifiez dans le navigateur que la page index.html s'affiche correctement** en ouvrant l'url http://localhost:8000.
 
 	Le résultat attendu est le suivant :
 

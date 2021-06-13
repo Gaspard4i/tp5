@@ -2,12 +2,12 @@
 
 # B. Un premier composant <!-- omit in toc -->
 
+_**Maintenant que votre environnement de développement est prêt, que votre serveur http tourne, attaquons nous au développement d'un premier composant React.**_
+
 ## Sommaire <!-- omit in toc -->
 - [B.1. ReactDOM](#b1-reactdom)
 - [B.2. Un premier composant](#b2-un-premier-composant)
 - [B.3. Un composant = un module](#b3-un-composant-un-module)
-
-_**Maintenant que votre environnement de développement est prêt, que votre serveur http tourne, attaquons nous au développement d'un premier composant React.**_
 
 ## B.1. ReactDOM
 
@@ -60,7 +60,7 @@ ReactDOM est la librairie qui permet d'injecter des composants React dans une pa
 		 document.querySelector('.container > header')
 	);
 	```
-	Bien qu'on ait pas utilisé React dans notre code, **le code compilé en a besoin**.
+	Bien qu'on ait pas utilisé React dans notre code, **le code compilé en a quand même besoin** !
 
 	Voilà pourquoi, à chaque fois que vous écrirez du JSX dans un module, il faudra **systématiquement importer `React`**.
 
@@ -80,13 +80,12 @@ ReactDOM est la librairie qui permet d'injecter des composants React dans une pa
 	> 	"presets": [
 	> 		"@babel/preset-env",
 	> 		["@babel/preset-react", { "runtime": "automatic" }]
-	> 	],
-	> 	"plugins": ["@babel/plugin-proposal-class-properties"]
+	> 	]
 	> }
 	> ```
 	> _Notez que cette configuration supplémentaire ne sera plus nécessaire lors de la [sortie de Babel 8](https://github.com/babel/babel/issues/10746). Si ça vous intéresse vous trouverez plus d'infos sur cette nouvelle méthode sur le blog de react : https://reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html_
 
-5. **Notez que la méthode `render` est en fait une fonction qu'on peut importer indépendamment.** À la place de `import ReactDOM from 'react-dom';` écrivez :
+5. **Notez que la méthode `ReactDOM.render()` est en fait une fonction qu'on peut importer indépendamment.** À la place de `import ReactDOM from 'react-dom';` écrivez :
 	```js
 	import {render} from 'react-dom';
 	```

@@ -2,14 +2,14 @@
 
 # C. Le composant VideoDetail <!-- omit in toc -->
 
+_**Voilà, notre appli est maintenant capable d'embarquer des composants React. Voyons maintenant comment utiliser le `state` pour améliorer un peu notre composant `VideoDetail`.**_
+
 ## Sommaire <!-- omit in toc -->
 - [C.1. appContainer](#c1-appcontainer)
-- [C.2. Le state, c'est quoi ?](#c2-le-state-cest-quoi)
+- [C.2. Le state, c'est quoi ?](#c2-le-state-cest-quoi-)
 - [C.3. Ajout du state par défaut](#c3-ajout-du-state-par-défaut)
 - [C.4. React Devtools](#c4-react-devtools)
 - [C.5. Finalisation du composant](#c5-finalisation-du-composant)
-
-_**Voilà, notre appli est maintenant capable d'embarquer des composants React. Voyons maintenant comment utiliser le `state` pour améliorer un peu notre composant `VideoDetail`.**_
 
 ## C.1. appContainer
 
@@ -39,11 +39,11 @@ Dans cet exercice on va donc  :
 - créer un nouveau composant `Menu` pour rendre le `<header><nav>...</nav></header>`
 - rendre l'un en dessous de l'autre les composants `Menu` et `VideoDetail` de manière à reproduire le code HTML jusque là en dur
 
-1. **Commencez par supprimer tout le CONTENU de la balise `<section class="appContainer">`:**
+1. **Commencez par supprimer tout le CONTENU de la balise `<section class="appContainer">`.** Vous devriez maintenant avoir dans votre fichier `index.html` une balise vide comme ceci :
 	```html
 	<section class="appContainer"></section>
 	```
-2. **Créez un nouveau composant React nommé `Menu` qui retourne le code html suivant :**
+2. **Créez un nouveau composant React nommé `Menu` et qui retourne le code html suivant :**
 	```html
 	<header>
 		<nav>
@@ -56,7 +56,7 @@ Dans cet exercice on va donc  :
 	</header>
 	```
 
-3. **Modifiez le `app.js` pour rendre à la fois le composant `VideoDetail` et ce nouveau composant `Menu` dans la `<section class="appContainer">` :**
+3. **Modifiez le `app.js` pour rendre à la fois le composant `VideoDetail` et ce nouveau composant `Menu` dans la `<section class="appContainer">` comme ceci :**
 	```jsx
 	render(
 		<>
@@ -116,7 +116,7 @@ Le state est représenté par une propriété `this.state` et la première chose
 			//...
 		}
 		```
-	Pour ma part, je trouve cette deuxième syntaxe beaucoup plus agréable à utiliser et plus facile à lire, c'est donc celle là que je vous recommande. En revanche sachez-le, comme vu dans le [TP1 B.1.1. class & propriétés publiques](#b11-class-propriétés-publiques) cette syntaxe n'est pas encore dans la spec officielle (mais c'est tout comme) et nécessite une config de babel spéciale (_qu'on a déjà faite au TP1 justement_).
+	Pour ma part, je trouve cette deuxième syntaxe beaucoup plus agréable à utiliser et plus facile à lire, c'est donc celle là que je vous recommande. En revanche sachez-le, comme vu dans le [TP1 B.1.1. class & propriétés publiques](https://framagit.org/formation/react/tp1/-/blob/master/B-poo.md#b11-class-propri%C3%A9t%C3%A9s-publiques) cette syntaxe n'est pas encore dans la spec officielle (mais c'est tout comme).
 
 2. **Configurez donc votre state avec une propriété `title`, comme ceci :**
 

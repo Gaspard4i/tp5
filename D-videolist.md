@@ -2,11 +2,11 @@
 
 # D. VideoList <!-- omit in toc -->
 
+_**Maintenant que l'on est capables d'afficher un composant qui dispose d'un state, voyons si vous êtes à même d'en créer un autre, un peu plus complexe.**_
+
 ## Sommaire <!-- omit in toc -->
 - [D.1. Création du composant](#d1-création-du-composant)
 - [D.2. Ajout du state](#d2-ajout-du-state)
-
-_**Maintenant que l'on est capables d'afficher un composant qui dispose d'un state, voyons si vous êtes à même d'en créer un autre, un peu plus complexe.**_
 
 ## D.1. Création du composant
 
@@ -28,7 +28,7 @@ _**Maintenant que l'on est capables d'afficher un composant qui dispose d'un sta
 
 ## D.2. Ajout du state
 1. **Commencez par importer la constante `data`** définie dans le module `src/data.js`.
-2. **Utilisez la pour remplir le state par défaut de votre composant `VideoList`** : créez une propriété `videos` qui contient le tableau `data`.
+2. **Utilisez la pour remplir le state par défaut de votre composant `VideoList`** : créez une propriété dans le state nommée `videos` et qui contient le tableau `data`.
 3. **Adaptez le render** pour retourner à l'intérieur de la `div class="videoList">` autant de balises de ce type que de cellules dans le state `videos` :
 	```html
 	<a href="uploads/video1.mp4">
