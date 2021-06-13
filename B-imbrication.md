@@ -2,11 +2,11 @@
 
 # B. Imbrication & props <!-- omit in toc -->
 
+_**Maintenant que votre environnement de développement est prêt, que votre serveur http tourne, nous allons modifier notre application pour mettre en oeuvre le principe d'imbrication et la technique des props.**_
+
 ## Sommaire <!-- omit in toc -->
 - [B.1. VideoThumbnail](#b1-videothumbnail)
 - [B.2. Function Components](#b2-function-components)
-
-_**Maintenant que votre environnement de développement est prêt, que votre serveur http tourne, nous allons modifier notre application pour mettre en oeuvre le principe d'imbrication et la technique des props.**_
 
 ## B.1. VideoThumbnail
 

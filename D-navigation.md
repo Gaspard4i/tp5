@@ -2,15 +2,15 @@
 
 # D. Navigation maison <!-- omit in toc -->
 
-## Sommaire <!-- omit in toc -->
-- [D.1. Cahier des charges](#d1-cahier-des-charges)
-- [D.2. Indices](#d2-indices)
-
 _**Pour terminer ce TP, nous allons tenter de mettre en place un système de navigation maison !**_
 
 _**L'idée est d'afficher par défaut la `VideoList` mais de permettre à l'utilisateur, s'il clique sur une vignette, de consulter le `VideoDetail` associé :**_
 
 <img src="images/readme/navigator.gif" />
+
+## Sommaire <!-- omit in toc -->
+- [D.1. Cahier des charges](#d1-cahier-des-charges)
+- [D.2. Indices](#d2-indices)
 
 ## D.1. Cahier des charges
 
@@ -146,9 +146,10 @@ Si vraiment vous voulez des indices, alors il va falloir scroller un peu !
 <br>
 <br>
 <br>
-1. Il faudra un state dans le `Navigator`
-2. Dans ce state vous devrez avoir une propriété qui indique la page en cours (par exemple un identifiant sous forme de chaîne comme 'list' ou 'detail')
-3. C'est en fonction de ce state que vous afficherez tel ou tel composant
-4. Il faut trouver un moyen de dire au `Navigator` que l'utilisateur a cliqué sur une vignette de la `VideoList`. Pour ça, sachez que lorsque vous passez des props à un composant enfant, on a jusque là passé des valeurs simples (chaînes, nombres, objets) mais en fait vous avez aussi le droit de passer des références vers des fonctions ou des méthodes du composant parent !
+
+1. Il faudra un **`state`** dans le `Navigator`
+2. Dans ce `state` vous devrez avoir une valeur qui indique la page en cours (_par exemple sous la forme d'un identifiant de type string comme 'list' ou 'detail'_)
+3. C'est **en fonction de ce state** que vous afficherez soit la `VideoList` soit `VideoDetail`
+4. Il faudra aussi trouver un moyen de dire au `Navigator` que l'utilisateur a cliqué sur une vignette de la `VideoList` de manière à changer le state et donc afficher le `VideoDetail`. Pour ça, sachez que lorsque vous passez des **`props`** à un composant enfant, on a jusque là passé des valeurs simples (_chaînes, nombres, objets_) mais en fait vous avez aussi le droit de **passer des références vers des fonctions ou des méthodes du composant parent** !
 
 Si après ça vous avez encore besoin d'aide, interrogez moi ! :)
