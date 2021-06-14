@@ -12,18 +12,14 @@ Vous commencez maintenant à avoir l'habitude, je ne rentrerais donc pas dans le
 	git clone https://framagit.org/formation/react/tp5.git ~/tps-react/tp5
 	codium ~/tps-react/tp5
 	```
-2. **Puis dans 3 terminaux splittés de VSCodium :**
-	```bash
-	npx serve -l 8000
-	```
-	puis
+2. **Puis dans 2 terminaux splittés de VSCodium :**
 	```bash
 	npm i
-	npm run watch
+	npm start
 	```
-	enfin :
+	et :
 	```bash
-	cd ~/tps-js/api-server
+	cd ~/tps-react/api-server
 	npm start
 	```
 

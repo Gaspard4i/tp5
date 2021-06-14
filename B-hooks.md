@@ -31,6 +31,7 @@ Vous aurez là aussi besoin du hook [useState()](https://reactjs.org/docs/hooks-
 > function MyComponent( {name} ) {
 > 	return `My name is ${name}`;
 > }
+> ```
 
 ## Étape suivante <!-- omit in toc -->
 Si tout fonctionne, vous pouvez passer à l'étape suivante : [C. plus de hooks](C-plus-de-hooks.md)
