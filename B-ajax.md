@@ -8,14 +8,13 @@ _**Pour commencer ce TP nous allons connecter notre application React à l'API R
 - [B.1. Rappels : XMLHttpRequest vs fetch](#b1-rappels-xmlhttprequest-vs-fetch)
 - [B.2. Chargement de la liste des vidéos](#b2-chargement-de-la-liste-des-vidéos)
 
-
 ## B.1. Rappels : XMLHttpRequest vs fetch
-Comme vu en cours (*récupérez si ce n'est pas déjà fait le pdf !*) il existe deux méthodes pour charger/envoyer des données en JS : [XMLHttpRequest](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest) et l'[API fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)
+Comme vu en cours (_récupérez si ce n'est pas déjà fait le pdf !_) il existe deux méthodes pour charger/envoyer des données en JS : [XMLHttpRequest](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest) et l'[API fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)
 
-**C'est l'API fetch que nous utiliserons dans ce TP.**
-<br>En effet, elle dispose d'une syntaxe plus concise, avec laquelle il est plus facile de chaîner les traitements grâce aux [Promises](https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide/Utiliser_les_promesses).
+**C'est l'API fetch que nous utiliserons dans ce TP.** \
+En effet, elle dispose d'une syntaxe plus concise, avec laquelle il est plus facile de chaîner les traitements grâce aux [Promises](https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide/Utiliser_les_promesses).
 
-Pour rappel, le support navigateur de l'API fetch est plutôt bon, mais il reste encore plusieurs points problématiques :
+Pour rappel, le support navigateur de l'API fetch est plutôt bon :
 
 <a href="http://caniuse.com/#feat=fetch">
 	<picture>
@@ -24,7 +23,7 @@ Pour rappel, le support navigateur de l'API fetch est plutôt bon, mais il reste
 	</picture>
 </a>
 
-Comme on peut le voir, **aucune version d'Internet Explorer n'est compatible avec l'API fetch**. C'est aussi le cas des versions d'android 4.4.4 et inférieures. Heureusement, un [polyfill](https://fr.wikipedia.org/wiki/Polyfill) développé par Github est disponible ici : https://github.com/github/fetch. Sur un projet réel il faudrait mettre en place ce polyfill, mais pour gagner du temps nous ignorerons cette problématique dans le TP (ne faites pas ça dans la vraie vie !).
+> _**NB :** Comme on peut le voir, **aucune version d'Internet Explorer n'est compatible avec l'API fetch**. C'est aussi le cas des versions d'android 4.4.4 et inférieures. Heureusement, un [polyfill](https://fr.wikipedia.org/wiki/Polyfill) développé par Github est disponible ici : https://github.com/github/fetch. Sur un projet réel, s'il fallait supporter ces navigateurs anciens, vous devriez mettre en place ce polyfill mais pour gagner du temps nous ignorerons cette problématique dans le TP._
 
 ## B.2. Chargement de la liste des vidéos
 1. **Commencez par supprimer l'import du module `data.js` dans la `VideoList`.** Comme on va charger les données de la bdd, on n'a plus besoin de cet import (_ne supprimez cependant pas tout de suite le fichier, le `VideoDetail` l'utilise encore... pour l'instant !_)

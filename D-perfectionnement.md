@@ -29,8 +29,12 @@ _**En revanche il reste un certain nombre de choses qui sont encore en dur dans 
 ## D.3. API likes/dislikes
 _**Connectons maintenant les boutons like/dislike de la page `VideoDetail` à l'API.**_
 
-1. **Dans la page `VideoDetail`, faites en sorte que le clic sur le bouton "like" lance un POST vers http://localhost:8080/api/videos/:id/likes** et que le click sur le bouton "dislike" appelle http://localhost:8080/api/videos/:id/dislikes (_où `:id` est l'id de la vidéo actuellement affichée dans `VideoDetail`_)
-2. **Une fois le POST terminé, mettez à jour le nombre de likes affichés dans la page** (_à partir des données en bdd, quelques fois qu'un autre utilisateur aurait lui aussi entre temps cliqué sur les boutons_ ;)).
+1. **Dans la page `VideoDetail`, faites en sorte que :**
+	- le clic sur le bouton **"like"** lance un **POST vers http://localhost:8080/api/videos/:id/likes**
+	- et que le click sur le bouton **"dislike"** lance un **POST http://localhost:8080/api/videos/:id/dislikes**
+
+		(_où **`:id`** est l'id de la vidéo actuellement affichée dans `VideoDetail`_)
+3. **Une fois le POST terminé, mettez à jour le nombre de likes affichés dans la page** (_à partir des données en bdd, quelques fois qu'un autre utilisateur aurait lui aussi entre temps cliqué sur les boutons_ 😉 ).
 
 ## D.4. Les commentaires
 
@@ -39,7 +43,7 @@ _**Dans ce dernier exercice, je vous propose de mettre en place un système de c
 <img src="images/readme/commentaires.png" >
 
 Plusieurs contraintes :
-- le formulaire d'ajout de commentaire doit être un composant **contrôlé**
+- le formulaire d'ajout de commentaire doit être un formulaire **contrôlé**
 - l'API pour les commentaires est **déjà fournie** :
 	- **GET http://localhost:8080/api/videos/1/comments** retourne les commentaires de la vidéo d'id 1
 	- **POST http://localhost:8080/api/videos/1/comments** ajoute un nouveau commentaire.

@@ -8,11 +8,9 @@ _**Maintenant que l'on est capables de récupérer des informations de la bdd av
 - [C.1. Création du formulaire](#c1-création-du-formulaire)
 - [C.2. Gestion du formulaire](#c2-gestion-du-formulaire)
 
-
-
 ## C.1. Création du formulaire
 
-1. Créez un nouveau composant `VideoForm` dont le render retournera le code HTML suivant :
+1. **Créez un nouveau composant `VideoForm`** dont le render retournera le code HTML suivant :
 	```html
 	<form class="videoForm">
 		<label for="title">Titre</label>
@@ -53,7 +51,7 @@ _**Maintenant que l'on est capables de récupérer des informations de la bdd av
 1. **A l'aide de la technique des composants non-contrôlés** (_cf. pdf du cours_) faites en sorte d'afficher dans la console les valeurs saisies par l'utilisateur lorsqu'il soumet le formulaire (touche <kbd>Entrée</kbd> ou click sur le bouton "Envoyer")
 2. **Une fois les valeurs récupérées, envoyez une requête POST vers le webservice http://localhost:8080/api/videos** (_cf. documentation de fetch avec POST : https://developer.mozilla.org/fr/docs/Web/API/Fetch_API/Using_Fetch#Corps_)
 
-	> _**NB :** Pour envoyer vos données dans le `body` de votre `fetch`, il faut que ces données soient **encodées sous forme de chaîne de caractères JSON**. Pensez donc à utiliser `JSON.stringify()` autour de l'objet que vous souhaitez envoyer dans le `body`!_
+	> _**NB :** Pour envoyer vos données dans le `body` de votre `fetch`, il faut que ces données soient **encodées sous forme de chaîne de caractères JSON**. Pensez donc à utiliser `JSON.stringify()` autour de l'objet que vous souhaitez envoyer dans le `body` !_
 3. **Enfin, quand l'enregistrement en bdd a été effectué par le webservice, et si aucune erreur n'a été remontée, alors redirigez l'utilisateur vers la page liste, en principe la nouvelle vidéo doit y apparaître !**
 
 
