@@ -21,7 +21,7 @@ export default class VideoList extends Component {
 				<div className={classNames}>
 					{videos.map(video => (
 						<VideoThumbnail
-							onClick={() => this.props.push('detail', { id: video.id })}
+							onClick={() => this.props.navigate('detail', { id: video.id })}
 							video={video}
 							key={video.id}
 						/>

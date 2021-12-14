@@ -10,20 +10,20 @@ export default class Navigator extends Component {
 
 	constructor(...args) {
 		super(...args);
-		this.push = this.push.bind(this);
+		this.navigate = this.navigate.bind(this);
 	}
 
 	render() {
 		switch (this.state.currentPage) {
 			case 'list':
-				return <VideoList push={this.push} params={this.state.params} />;
+				return <VideoList navigate={this.navigate} params={this.state.params} />;
 			case 'detail':
-				return <VideoDetail push={this.push} params={this.state.params} />;
+				return <VideoDetail navigate={this.navigate} params={this.state.params} />;
 		}
 		return null;
 	}
 
-	push(screen, params = {}) {
+	navigate(screen, params = {}) {
 		this.setState({ currentPage: screen, params: params });
 	}
 }

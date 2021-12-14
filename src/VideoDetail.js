@@ -19,7 +19,7 @@ export default class VideoDetail extends Component {
 		const { title, description, file, likes, dislikes } = this.state.video;
 		return (
 			<div className="videoDetail">
-				<button className="backButton" onClick={() => this.props.push('list')}>
+				<button className="backButton" onClick={() => this.props.navigate('list')}>
 					&lt; Retour
 				</button>
 				<video
