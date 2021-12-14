@@ -10,6 +10,8 @@
 ## A.1. Récupération du projet
 Vous commencez maintenant à avoir l'habitude, je ne rentrerais donc pas dans les détails mais voici les différentes étapes pour le lancement du projet en mode [TL;DR](https://en.wiktionary.org/wiki/tl;dr)
 
+**Attention** : La commande pour lancer la compilation et le serveur http a changé !
+
 1. **Tapez dans un terminal :**
 	```bash
 	mkdir ~/tps-react
