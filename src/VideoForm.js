@@ -18,7 +18,7 @@ export default class VideoForm extends Component {
 		});
 		fetch(`http://localhost:8080/api/videos`, { method: 'POST', body })
 			.then(response => response.json())
-			.then(({ id }) => this.props.push('detail', { id }));
+			.then(({ id }) => this.props.navigate('detail', { id }));
 	}
 
 	render() {
