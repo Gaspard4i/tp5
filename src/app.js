@@ -1,11 +1,11 @@
-import { render } from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import Menu from './Menu';
 import Navigator from './Navigator';
 
-render(
+const root = createRoot(document.querySelector('.appContainer'));
+root.render(
 	<>
 		<Menu />
 		<Navigator />
-	</>,
-	document.querySelector('.appContainer')
+	</>
 );
