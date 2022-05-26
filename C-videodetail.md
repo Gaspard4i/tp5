@@ -58,12 +58,11 @@ Dans cet exercice on va donc  :
 
 3. **Modifiez le `app.js` pour rendre à la fois le composant `VideoDetail` et ce nouveau composant `Menu` dans la `<section class="appContainer">` comme ceci :**
 	```jsx
-	render(
+	root.render(
 		<>
 			<Menu />
 			<VideoDetail />
-		</>,
-		document.querySelector('.appContainer')
+		</>
 	);
 	```
 

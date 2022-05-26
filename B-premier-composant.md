@@ -15,19 +15,19 @@ ReactDOM est la librairie qui permet d'injecter des composants React dans une pa
 
 1. **Dans votre fichier `src/app.js`, commencez par importer `ReactDOM` :**
 	```js
-	import ReactDOM from 'react-dom';
+	import ReactDOM from 'react-dom/client';
 	```
 
 2. **Toujours dans `src/app.js`, ajoutez le code suivant :**
-	```js
-	ReactDOM.render(
-		<h1>Le Top 10 des frameworks JS</h1>,
-		document.querySelector('.container > header')
+	```jsx
+	const root = ReactDOM.createRoot( document.querySelector('.container > header') );
+	root.render(
+		<h1>Le Top 10 des frameworks JS</h1>
 	);
 	```
-	Comme vu en cours, ReactDOM expose une méthode statique `ReactDOM.render()` à laquelle on envoie 2 choses :
-	- **le JSX** à injecter dans la page
-	- et **l'élément DOM** dans lequel injecter le code HTML retourné par le JSX
+	Comme vu en cours, ReactDOM expose une méthode statique `ReactDOM.createRoot()` à laquelle on passe **l'élément DOM** dans lequel on souhaite travailler.
+
+	Cette méthode retourne un objet qui dispose d'une méthode `render()` à laquelle on peut simplement envoyer **le JSX** à injecter dans la page
 
 3. **Rechargez la page** dans votre navigateur, vous devriez obtenir ceci :
 
@@ -53,14 +53,11 @@ ReactDOM est la librairie qui permet d'injecter des composants React dans une pa
 	```js
 	React.createElement('h1', null, 'Le Top 10 des frameworks JS');
 	```
-	La preuve ? Ouvrez un peu le fichier `build/app.bundle.js` et rendez-vous tout à la fin du fichier (ligne 28617 environ ^^), vous y trouverez quelque chose qui ressemble à ça :
+	La preuve ? Ouvrez un peu le fichier `build/app.bundle.js` et rendez-vous tout à la fin du fichier (ligne 33338 environ ^^), vous y trouverez quelque chose qui ressemble à ça :
 	```js
-	react_dom__WEBPACK_IMPORTED_MODULE_0___default.a.render(/*#__PURE__*/
-		 React.createElement("h1", null, "Le Top 10 des frameworks JS"),
-		 document.querySelector('.container > header')
-	);
+	root.render( /*#__PURE__*/React.createElement("h1", null, "Le Top 10 des frameworks JS"));
 	```
-	Bien qu'on ait pas utilisé React dans notre code, **le code compilé en a quand même besoin** !
+	Bien qu'on ait pas utilisé React dans notre code, on voit bien que **le code compilé en a quand même besoin** !
 
 	Voilà pourquoi, à chaque fois que vous écrirez du JSX dans un module, il faudra **systématiquement importer `React`**.
 
@@ -85,16 +82,13 @@ ReactDOM est la librairie qui permet d'injecter des composants React dans une pa
 	> ```
 	> _Notez que cette configuration supplémentaire ne sera plus nécessaire lors de la [sortie de Babel 8](https://github.com/babel/babel/issues/10746). Si ça vous intéresse vous trouverez plus d'infos sur cette nouvelle méthode sur le blog de react : https://reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html_
 
-5. **Notez que la méthode `ReactDOM.render()` est en fait une fonction qu'on peut importer indépendamment.** À la place de `import ReactDOM from 'react-dom';` écrivez :
+5. **Notez que la méthode `ReactDOM.createRoot()` est en fait une fonction qu'on peut importer indépendamment.** À la place de `import ReactDOM from 'react-dom/client';` écrivez :
 	```js
-	import {render} from 'react-dom';
+	import {createRoot} from 'react-dom/client';
 	```
-	Puis à la place de `ReactDOM.render(...` écrivez juste :
+	Puis à la place de `ReactDOM.createRoot(...` écrivez juste :
 	```js
-	render(
-		<h1>Le Top 10 des frameworks JS</h1>,
-		document.querySelector('.container > header')
-	);
+	const root = createRoot( document.querySelector('.container > header') );
 	```
 
 ## B.2. Un premier composant
@@ -111,9 +105,8 @@ On vient de voir que l'on peut passer à `ReactDOM.render()` du code JSX tapé i
 	```
 2. **À la place du `<h1>` en dur utilisez le composant `VideoDetail` dans l'appel à `render()` :**
 	```js
-	render(
-		<VideoDetail />,
-		document.querySelector('.container > header')
+	root.render(
+		<VideoDetail />
 	);
 	```
 	Le rendu dans le navigateur ne doit pas avoir bougé puisque le composant `VideoDetail` retourne le même JSX que ce qu'on avait mis auparavant :
