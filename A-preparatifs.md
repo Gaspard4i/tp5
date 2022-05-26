@@ -107,7 +107,7 @@ npm i -D react-refresh webpack-dev-server @pmmmwh/react-refresh-webpack-plugin
 				watch: false, // évite de recharger toute la page quand un fichier est modifié
 			},
 		},
-		devtool: 'eval-cheap-module-source-map',
+		devtool: 'source-map',
 	});
 	```
 
