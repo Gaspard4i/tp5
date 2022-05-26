@@ -41,5 +41,5 @@ module.exports = (env, { mode }) => ({
 			watch: false, // évite de recharger toute la page quand un fichier est modifié
 		},
 	},
-	devtool: 'eval-cheap-module-source-map',
+	devtool: 'source-map',
 });
