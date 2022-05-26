@@ -16,14 +16,18 @@ export default class Navigator extends Component {
 	render() {
 		switch (this.state.currentPage) {
 			case 'list':
-				return <VideoList navigate={this.navigate} params={this.state.params} />;
+				return (
+					<VideoList navigate={this.navigate} params={this.state.params} />
+				);
 			case 'detail':
-				return <VideoDetail navigate={this.navigate} params={this.state.params} />;
+				return (
+					<VideoDetail navigate={this.navigate} params={this.state.params} />
+				);
 		}
 		return null;
 	}
 
-	navigate(screen, params = {}) {
-		this.setState({ currentPage: screen, params: params });
+	navigate(newPage, newParams = {}) {
+		this.setState({ currentPage: newPage, params: newParams });
 	}
 }
