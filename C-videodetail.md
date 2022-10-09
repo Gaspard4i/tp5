@@ -67,9 +67,13 @@ Dans cet exercice on va donc  :
 	);
 	```
 
-	> _**NB :** le mieux ici est d'utiliser comme on le fait les [Fragments](https://reactjs.org/docs/fragments.html) pour que les deux composants se rendent côte à côte sans balise HTML (div, section, etc.) parente._
+	> _**NB :** vous remarquerez qu'on a entouré `<Menu />` et `<VideoDetail />` de balises "vides" `<>...</>`. En effet comme la méthode `root.render()` ne peut prendre en paramètre qu'une seule valeur, on ne peut pas lui passer comme ça 2 balises côte à côte. Il faut obligatoirement les regrouper dans une seule balise parente._
+	>
+	> _On aurait pu encadrer les 2 balises d'une balise HTML "classique", comme une `<div>...</div>` par exemple, mais cela aurait surchargé inutilement le code HTML avec une balise div intermédiaire, et cela aurait aussi cassé la CSS._
+	>
+	> _Le mieux dans ce genre de situation c'est donc d'utiliser comme on le fait ces balises "vides" qui sont des raccourcis pour des balises `<React.Fragment>...</React.Fragment>`. Ces balises `Fragment` permettent de rendre deux composants côte à côte sans générer de balise parente dans le code HTML (cf. la [documentation des Fragments : https://reactjs.org/docs/fragments.html](https://reactjs.org/docs/fragments.html)._
 
-5. **Modifiez le composant `VideoDetail` pour lui faire retourner le code HTML suivant :**
+4. **Modifiez le composant `VideoDetail` pour lui faire retourner le code HTML suivant :**
 	```html
 	<div class="container">
 		<header>
