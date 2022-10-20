@@ -8,7 +8,7 @@ _**En revanche il reste un certain nombre de choses qui sont encore en dur dans 
 
 ## Sommaire <!-- omit in toc -->
 - [D.1. VideoDetail](#d1-videodetail)
-- [D.2. Redirection VideoForm -> VideoDetail](#d2-redirection-videoform-videodetail)
+- [D.2. Redirection VideoForm -\> VideoDetail](#d2-redirection-videoform-videodetail)
 - [D.3. API likes/dislikes](#d3-api-likesdislikes)
 - [D.4. Les commentaires](#d4-les-commentaires)
 
@@ -38,17 +38,17 @@ _**Connectons maintenant les boutons like/dislike de la page `VideoDetail` à l'
 
 ## D.4. Les commentaires
 
-_**Dans ce dernier exercice, je vous propose de mettre en place un système de commentaires dans la page de détail.**_
+_**Dans ce dernier exercice, je vous propose de travailler avec les formulaires contrôlés en ajoutant un système de commentaires dans la page de détail.**_
 
 <img src="images/readme/commentaires.png" >
 
 Plusieurs contraintes :
-- le formulaire d'ajout de commentaire doit être un formulaire **contrôlé**
+- le formulaire d'ajout de commentaire doit donc être un formulaire **contrôlé**
 - l'API pour les commentaires est **déjà fournie** :
 	- **GET http://localhost:8080/api/videos/1/comments** retourne les commentaires de la vidéo d'id 1
 	- **POST http://localhost:8080/api/videos/1/comments** ajoute un nouveau commentaire.
 
-		Le body de la requête sera de la forme :
+		Le body de la requête POST doit être de la forme :
 		```json
 		{
 			"content": "Le message saisi par l'utilisateur"
@@ -57,6 +57,8 @@ Plusieurs contraintes :
 - Une fois un commentaire ajouté, la **liste des commentaires doit se rafraîchir**
 - le commentaire le plus récent est en haut
 - pour chaque commentaire on affiche son contenu et sa date de publication au format `"Le 06/07/2020 à 13:37:42"`
+- comme nous sommes dans un formulaire contrôlé, on peut modifier la valeur tapée par l'utilisateur : remplacez automatiquement certains mots au fur et à mesure de la frappe (par exemple on peut remplacer "angular" par "react" 😁)
+- comme le texte tapé par l'utilisateur est stocké dans le state du composant, il est facile d'adapter le JSX retourné à la valeur saisie : désactivez donc le bouton submit tant qu'il n'y a pas plus de 2 caractères saisis
 - pendant le chargement l'utilisateur ne doit pas pouvoir saisir de texte ou re-cliquer sur le bouton submit
 
 Voici une proposition de code HTML qui devrait rendre à peu près bien dans la page :
