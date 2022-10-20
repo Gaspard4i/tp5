@@ -15,7 +15,7 @@ _**En revanche il reste un certain nombre de choses qui sont encore en dur dans 
 
 ## D.1. VideoDetail
 
-**En vous inspirant de ce que vous avez fait à la partie [B. AJAX](B-ajax.md) dans la `VideoList`, connectez le composant `VideoDetail` au webservice http://localhost:8080/api/videos/:id** (_ou `:id` correspond à l'id de la vidéo à afficher_)
+**En vous inspirant de ce que vous avez fait à la partie [B. AJAX](B-ajax.md) dans la `VideoList`, connectez le composant `VideoDetail` au webservice http://localhost:8080/api/videos/:id** (_où `:id` correspond à l'id de la vidéo à afficher_)
 
 > _**NB :** Pour que ce soit plus simple à tester, je vous conseille de remettre la page `VideoList` comme page par défaut dans le `Navigator`._
 
