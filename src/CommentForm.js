@@ -22,7 +22,7 @@ export default class CommentForm extends Component {
 					disabled={isLoading}
 					placeholder="Ajouter un commentaire public"
 				/>
-				<button type="submit" disabled={isLoading}>
+				<button type="submit" disabled={isLoading || content.length <= 2}>
 					{!isLoading ? 'Envoyer' : 'Envoi en cours...'}
 				</button>
 			</form>
@@ -30,7 +30,9 @@ export default class CommentForm extends Component {
 	}
 	handleInputChange(event) {
 		event.preventDefault();
-		this.setState({ content: event.target.value });
+		this.setState({
+			content: event.target.value.replace(/angular/i, 'React'),
+		});
 	}
 	handleSubmit(event) {
 		event.preventDefault();
