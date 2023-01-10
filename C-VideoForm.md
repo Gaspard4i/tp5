@@ -49,9 +49,14 @@ _**Maintenant que l'on est capables de récupérer des informations de la bdd av
 
 ## C.2. Gestion du formulaire
 1. **A l'aide de la technique des composants non-contrôlés** (_cf. pdf du cours_) faites en sorte d'afficher dans la console les valeurs saisies par l'utilisateur lorsqu'il soumet le formulaire (touche <kbd>Entrée</kbd> ou click sur le bouton "Envoyer")
-2. **Une fois les valeurs récupérées, envoyez une requête POST vers le webservice http://localhost:8080/api/videos** (_cf. documentation de fetch avec POST : https://developer.mozilla.org/fr/docs/Web/API/Fetch_API/Using_Fetch#corps_)
+2. **Une fois les valeurs récupérées, envoyez une requête POST vers le webservice http://localhost:8080/api/videos**
+
+	Aidez vous pour cela de :
+	- la documentation (_[openapi/swagger](https://swagger.io/specification/)_) de l'API REST : https://framagit.org/formation/react/api-server/-/blob/master/openapi.yaml
+	- la documentation de `fetch` avec POST : https://developer.mozilla.org/fr/docs/Web/API/Fetch_API/Using_Fetch#corps
 
 	> _**NB :** Pour envoyer vos données dans le `body` de votre `fetch`, il faut que ces données soient **encodées sous forme de chaîne de caractères JSON**. Pensez donc à utiliser `JSON.stringify()` autour de l'objet que vous souhaitez envoyer dans le `body` !_
+
 3. **Enfin, quand l'enregistrement en bdd a été effectué par le webservice, et si aucune erreur n'a été remontée, alors redirigez l'utilisateur vers la page liste, en principe la nouvelle vidéo doit y apparaître !**
 
 
