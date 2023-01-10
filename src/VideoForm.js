@@ -45,7 +45,7 @@ export default class VideoForm extends Component {
 				</label>
 				<input required type="text" id="thumbnail" ref={this.thumbnailInput} />
 				<button type="submit" disabled={this.state.isLoading}>
-					{!this.state.isLoading ? 'Envoyer' : 'Loading...'}
+					{!this.state.isLoading ? 'Envoyer' : 'Envoi en cours...'}
 				</button>
 			</form>
 		);
