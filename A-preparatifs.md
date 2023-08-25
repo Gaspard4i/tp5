@@ -13,21 +13,21 @@ Pour ce TP vous pouvez soit repartir de vos fichiers du précédent TP (si vous 
 1. **Récupérez les fichiers de ce TP grâce à Git : clonez ce repo dans un dossier de votre choix** :
 	```bash
 	mkdir ~/tps-react
-	git clone https://framagit.org/formation/react/tp1.git ~/tps-react/tp1
+	git clone git@github.com:formation-react/tp1.git ~/tps-react/tp1
 	```
 	> _**NB :** Comme pour le TP0, ici je clone dans mon dossier `/home/thomas/tps-react/tp1`. **Si vous êtes sous windows faites attention au sens des slashs et au caractère `"~"`** qui représente le dossier de l'utilisateur sur système unix : utilisez **Git bash** (qui comprend cette syntaxe) ou si vous tenez vraiment à utiliser **cmd** ou **powershell** pensez à adapter la commande !_
 
-	> _**NB2 :** Comme pour le TP0 aussi, si vous préférez **cloner en SSH** pour ne pas avoir à taper votre mot de passe à chaque fois que vous clonerez un TP, renseignez votre clé SSH dans votre [compte utilisateur framagit](https://framagit.org/-/profile/keys) et clonez à partir de cette URL : `git@framagit.org:formation/react/tp1.git`_
+	> _**NB2 :** Comme pour le TP0 aussi, si vous préférez **cloner en https**, adaptez l'URL du repo en clonant à partir de cette URL : `https://github.com/formation-react/tp1.git`_
 
 
-2. **Ouvrez le projet dans VSCodium** (pour les différentes façon d'ouvrir le projet relisez les [instructions du TP0](https://framagit.org/formation/react/tp0/-/blob/master/A-preparatifs.md#a3-ouvrir-le-projet-dans-vscodium) )
+2. **Ouvrez le projet dans VSCodium** (pour les différentes façon d'ouvrir le projet relisez les [instructions du TP0](https://github.com/formation-react/tp0/blob/github/A-preparatifs.md#a4-ouvrir-le-projet-dans-vscodium) )
 	```bash
 	codium ~/tps-react/tp1
 	```
 
 ## A.2. Lancement du serveur HTTP
 
-**Comme dans le précédent TP (cf. [TP0 / B.1. Lancement d'un serveur HTTP](https://framagit.org/formation/react/tp0/-/blob/master/B-integration.md#b1-lancement-dun-serveur-http) ) lancez un serveur HTTP dans un terminal intégré de VSCodium :**
+**Comme dans le précédent TP (cf. [TP0 / B.1. Lancement d'un serveur HTTP](https://github.com/formation-react/tp0/blob/github/B-integration.md#b1-lancement-dun-serveur-http) ) lancez un serveur HTTP dans un terminal intégré de VSCodium :**
 
 1. **Ouvrez un terminal intégré dans VSCodium** en tapant <kbd>CTRL</kbd>+<kbd>J</kbd> (PC) / <kbd>CMD</kbd>+<kbd>J</kbd> (Mac) (ou <kbd>CTRL</kbd>+<kbd>SHIFT</kbd>+<kbd>P</kbd> puis `View: toggle panel`).
 
