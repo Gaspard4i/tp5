@@ -120,7 +120,7 @@ Le state est représenté par une propriété `this.state` et la première chose
 			//...
 		}
 		```
-	Pour ma part, je trouve cette deuxième syntaxe beaucoup plus agréable à utiliser et plus facile à lire, c'est donc celle là que je vous recommande. En revanche sachez-le, comme vu dans le [TP1 B.1.1. class & propriétés publiques](https://framagit.org/formation/react/tp1/-/blob/master/B-poo.md#b11-class-propri%C3%A9t%C3%A9s-publiques) cette syntaxe n'est pas encore dans la spec officielle (mais c'est tout comme).
+	Pour ma part, je trouve cette deuxième syntaxe beaucoup plus agréable à utiliser et plus facile à lire, c'est donc celle là que je vous recommande. En revanche sachez-le, comme vu dans le [TP1 B.1.1. class & propriétés publiques](https://github.com/formation-react/tp1/blob/github/B-poo.md#b11-class-propri%C3%A9t%C3%A9s-publiques) cette syntaxe n'est pas encore dans la spec officielle (mais c'est tout comme).
 
 2. **Configurez donc votre state avec une propriété `title`, comme ceci :**
 
