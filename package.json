@@ -9,7 +9,7 @@
     "watch": "webpack --mode=development --watch"
   },
   "author": "Thomas Fritsch <thomas@uidlt.fr> (https://uidlt.fr)",
-  "homepage": "https://framagit.org/formation/react/",
+  "homepage": "https://github.com/formation-react/",
   "license": "ISC",
   "devDependencies": {
     "@babel/cli": "^7.22.10",

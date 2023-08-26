@@ -13,7 +13,7 @@ Vous commencez maintenant à avoir l'habitude, je ne rentrerais donc pas dans le
 1. **Tapez dans un terminal :**
 	```bash
 	mkdir ~/tps-react
-	git clone https://framagit.org/formation/react/tp3.git ~/tps-react/tp3
+	git clone git@github.com:formation-react/tp3.git ~/tps-react/tp3
 	codium ~/tps-react/tp3
 	```
 2. **Puis dans 2 terminaux splittés de VSCodium :**
@@ -26,7 +26,7 @@ Vous commencez maintenant à avoir l'habitude, je ne rentrerais donc pas dans le
 	npm run watch
 	```
 
-> _**NB :** si vous souhaitez plus de précisions sur les commandes précédentes et l'installation  / configuration du projet, vous pouvez vous référer au chapitre [A. Préparatifs](https://framagit.org/formation/react/tp2/-/blob/master/A-preparatifs.md) du TP2 ou simplement demander de l'aide au formateur_ 😄
+> _**NB :** si vous souhaitez plus de précisions sur les commandes précédentes et l'installation  / configuration du projet, vous pouvez vous référer au chapitre [A. Préparatifs](https://github.com/formation-react/tp2/blob/github/A-preparatifs.md) du TP2 ou simplement demander de l'aide au formateur_ 😄
 
 Le résultat attendu est le suivant :
 
