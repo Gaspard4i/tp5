@@ -31,7 +31,7 @@ Le résultat attendu est le suivant :
 <img src="images/readme/screen-00.png" >
 
 ## A.2. Lancement de l'API REST
-Dans ce TP on va enfin connecter notre appli web à une base de données grâce à l'API REST que l'on a installée lors du TP0 (cf. [TP0 : C. Serveur API REST](https://framagit.org/formation/react/tp0/-/blob/master/C-serveur-rest.md)).
+Dans ce TP on va enfin connecter notre appli web à une base de données grâce à l'API REST que l'on a installée lors du TP0 (cf. [TP0 : C. Serveur API REST](https://github.com/formation-react/tp0/blob/github/C-serveur-rest.md)).
 
 C'est donc le moment de lancer le serveur Node / Express qui fait tourner l'API :
 ```bash
