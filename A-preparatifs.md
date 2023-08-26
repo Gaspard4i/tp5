@@ -15,7 +15,7 @@ Vous commencez maintenant à avoir l'habitude, je ne rentrerais donc pas dans le
 1. **Tapez dans un terminal :**
 	```bash
 	mkdir ~/tps-react
-	git clone https://framagit.org/formation/react/tp4.git ~/tps-react/tp4
+	git clone git@github.com:formation-react/tp4.git ~/tps-react/tp4
 	codium ~/tps-react/tp4
 	```
 2. **Puis dans un terminal intégré de VSCodium** (<kbb>CTRL/Cmd</kbd>+<kbd>J</kbd>) :
@@ -24,7 +24,7 @@ Vous commencez maintenant à avoir l'habitude, je ne rentrerais donc pas dans le
 	npm start
 	```
 
-> _**NB :** si vous souhaitez plus de précisions sur les commandes précédentes et l'installation  / configuration du projet, vous pouvez vous référer au chapitre [A. Préparatifs](https://framagit.org/formation/react/tp2/-/blob/master/A-preparatifs.md) du TP2 ou simplement demander de l'aide au formateur_ 😄
+> _**NB :** si vous souhaitez plus de précisions sur les commandes précédentes et l'installation  / configuration du projet, vous pouvez vous référer au chapitre [A. Préparatifs](https://github.com/formation-react/tp2/blob/github/A-preparatifs.md) du TP2 ou simplement demander de l'aide au formateur_ 😄
 
 Le résultat attendu est le suivant :
 
