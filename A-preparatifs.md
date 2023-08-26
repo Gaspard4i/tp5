@@ -65,8 +65,8 @@ Prettier est un formateur de code automatique qui est le plus populaire à l'heu
 	{
 		"singleQuote": true,
 		"trailingComma": "es5",
-		"endOfLine": "lf",
 		"useTabs": true,
+		"bracketSameLine": false,
 		"arrowParens": "avoid"
 	}
 	```
