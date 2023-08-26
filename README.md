@@ -1,15 +1,15 @@
 <img src="images/readme/header.jpg" />
 
 ## Objectifs
-- Maîtriser les syntaxes de la POO en ES6+
-- Être capable de compiler son code avec Babel pour le rendre compatible avec tous les navigateurs
-- Répartir son code dans plusieurs fichiers grâce aux modules et à Webpack
+- Maîtriser les principales syntaxes ES6+
+- Répartir son code dans plusieurs fichiers grâce aux modules
+- Être capable de compiler son code avec Vite
 
 ## Sommaire
 Pour plus de clarté, les instructions du TP se trouvent dans des fichiers distincts (un fichier par sujet), procédez dans l'ordre sinon, ça fonctionnera beaucoup moins bien !
 
 1. [A. Préparatifs](A-preparatifs.md)
-2. [B. La POO](B-poo.md)
-3. [C. Compiler avec Babel](./C-babel.md)
-4. [D. Modules](D-modules.md)
-5. [E. Pour aller plus loin : POO avancée](E-poo-avancee.md)
+2. [B. La fonction renderElement](B-renderelement.md)
+3. [C. Modules](C-modules.md)
+4. [D. Vite](D-vite.md)
+5. [E. Pour aller plus loin](E-plus-loin.md)
