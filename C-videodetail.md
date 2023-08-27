@@ -1,15 +1,13 @@
 <img src="images/readme/header-small.jpg" >
 
-# C. Le composant VideoDetail <!-- omit in toc -->
+# C. JSX : les bases <!-- omit in toc -->
 
-_**Voilà, notre appli est maintenant capable d'embarquer des composants React. Voyons maintenant comment utiliser le `state` pour améliorer un peu notre composant `VideoDetail`.**_
+_**Voilà, notre appli est maintenant capable d'embarquer des composants React. Entraînons nous un peu à manipuler le JSX plus en détail.**_
 
 ## Sommaire <!-- omit in toc -->
 - [C.1. appContainer](#c1-appcontainer)
-- [C.2. Le state, c'est quoi ?](#c2-le-state-cest-quoi-)
-- [C.3. Ajout du state par défaut](#c3-ajout-du-state-par-défaut)
-- [C.4. React Devtools](#c4-react-devtools)
-- [C.5. Finalisation du composant](#c5-finalisation-du-composant)
+- [C.2. Le composant Menu](#c2-le-composant-menu)
+- [C.2. Injecter des valeurs en JSX](#c2-injecter-des-valeurs-en-jsx)
 
 ## C.1. appContainer
 
@@ -33,17 +31,35 @@ Actuellement notre fichier `index.html` contient ce code :
 </section>
 ```
 
-L'idée c'est maintenant de faire en sorte que tout le contenu de la `<section class="appContainer">` soit généré avec React.
+L'idée c'est maintenant de faire en sorte que tout le contenu de la `<section class="appContainer">` soit généré avec React pour nous permettre de travailler un peu les syntaxes JSX (_et préparer les prochains TPs_ 😉)
 
 Dans cet exercice on va donc  :
 - créer un nouveau composant `Menu` pour rendre le `<header><nav>...</nav></header>`
 - rendre l'un en dessous de l'autre les composants `Menu` et `VideoDetail` de manière à reproduire le code HTML jusque là en dur
 
-1. **Commencez par supprimer tout le CONTENU de la balise `<section class="appContainer">`.** Vous devriez maintenant avoir dans votre fichier `index.html` une balise vide comme ceci :
+1. **Pour ça commencez par supprimer tout le CONTENU de la balise `<section class="appContainer">`** (_on parle bien du **contenu** de la section, pas de la balise en elle-même !_). Vous devriez maintenant avoir dans votre fichier `index.html` une balise vide comme ceci :
 	```html
 	<section class="appContainer"></section>
 	```
-2. **Créez un nouveau composant React nommé `Menu` et qui retourne le code html suivant :**
+
+2. **Une fois la balise `<div class="container">` supprimée, votre application plante**, dans le navigateur l'erreur suivante apparaît :
+	```
+	Uncaught Error: createRoot(...): Target container is not a DOM element.
+	```
+
+	Effectivement, dans notre `app.jsx`, ce n'est plus dans cette balise qu'il faut qu'on rende notre application, mais directement dans la `<section class="appContainer">`. Modifiez l'appel à `createRoot` comme ceci :
+
+	```js
+	const root = createRoot(document.querySelector('.appContainer'));
+	```
+
+	**L'erreur a disparu, mais le Menu aussi !**\
+	Recréons-le maintenant en React...
+
+## C.2. Le composant Menu
+Maintenant que ces préparatifs sont faits, créons donc notre deuxième composant, `Menu`, qui sera chargé de rendre le header du haut.
+
+1. **Dans un module `src/Menu.jsx`, créez ce nouveau composant nommé `Menu` et qui retourne le code html suivant :**
 	```html
 	<header>
 		<nav>
@@ -56,9 +72,8 @@ Dans cet exercice on va donc  :
 	</header>
 	```
 
-3. **Modifiez le `app.js` pour rendre à la fois le composant `VideoDetail` et ce nouveau composant `Menu` dans la `<section class="appContainer">` comme ceci :**
+2. **Modifiez le `app.jsx` pour rendre à la fois le composant `VideoDetail` et ce nouveau composant `Menu` côte à côte dans la `<section class="appContainer">`, comme ceci :**
 	```jsx
-	const root = createRoot(document.querySelector('.appContainer'));
 	root.render(
 		<>
 			<Menu />
@@ -69,11 +84,11 @@ Dans cet exercice on va donc  :
 
 	> _**NB :** vous remarquerez qu'on a entouré `<Menu />` et `<VideoDetail />` de balises "vides" `<>...</>`. En effet comme la méthode `root.render()` ne peut prendre en paramètre qu'une seule valeur, on ne peut pas lui passer comme ça 2 balises côte à côte. Il faut obligatoirement les regrouper dans une seule balise parente._
 	>
-	> _On aurait pu encadrer les 2 balises d'une balise HTML "classique", comme une `<div>...</div>` par exemple, mais cela aurait surchargé inutilement le code HTML avec une balise div intermédiaire, et cela aurait aussi cassé la CSS._
+	> _On aurait pu encadrer les 2 balises d'une balise parente HTML "classique", comme une `<div>...</div>` par exemple, mais cela aurait surchargé inutilement le code HTML avec une balise div intermédiaire, et cela aurait aussi cassé la CSS._
 	>
-	> _Le mieux dans ce genre de situation c'est donc d'utiliser comme on le fait ces balises "vides" qui sont des raccourcis pour des balises `<React.Fragment>...</React.Fragment>`. Ces balises `Fragment` permettent de rendre deux composants côte à côte sans générer de balise parente dans le code HTML (cf. la [documentation des Fragments : https://reactjs.org/docs/fragments.html](https://reactjs.org/docs/fragments.html)._
+	> _Le mieux dans ce genre de situation c'est donc d'utiliser ces fameuses balises "vides" qui sont des raccourcis pour des balises `<React.Fragment>...</React.Fragment>`. Ces balises `Fragment` permettent de rendre deux composants côte à côte sans générer de balise parente dans le code HTML (cf. la [documentation des Fragments : https://reactjs.org/docs/fragments.html](https://reactjs.org/docs/fragments.html)._
 
-4. **Modifiez le composant `VideoDetail` pour lui faire retourner le code HTML suivant :**
+3. **Modifiez le composant `VideoDetail` pour lui faire retourner le code HTML suivant :**
 	```html
 	<div class="container">
 		<header>
@@ -82,92 +97,45 @@ Dans cet exercice on va donc  :
 	</div>
 	```
 
-Le rendu HTML doit rester inchangé :
+Le rendu HTML doit rester inchangé par rapport à avant nos modifications, mais cette fois avec tout le code de la page généré en React :
 
 <img src="images/readme/screen-03.png" >
 
-## C.2. Le state, c'est quoi ?
+## C.2. Injecter des valeurs en JSX
 
-**Pour rappel, le `state` est une propriété spéciale des composants React qui, lorsqu'elle est modifiée, re-déclenche automatiquement un `render()` de notre composant.**
-
-C'est donc dans cette propriété qu'on stocke en général toutes les valeurs qui vont pouvoir varier au cours de l'exécution, et dont on veut qu'elles soit affichées à l'écran.
-
-Le state est représenté par une propriété `this.state` et la première chose à faire c'est de définir sa valeur initiale (on parle aussi parfois de _"state par défaut"_).
-
-## C.3. Ajout du state par défaut
-
-1. **Dans votre classe `VideoDetail.js`, commencez par ajouter une propriété d'instance `state` :**
-
-	Vous pouvez le faire de deux manières :
-	- Dans le constructeur :
-		```js
-		class MyComponent extends React.Component {
-			constructor(...args) {
-				super(...args);
-				this.state = {
-					propriete: "valeur",
-				};
-			}
-			//...
-		}
-		```
-	- ou alors en utilisant la syntaxe des public fields :
-		```js
-		class MyComponent extends React.Component {
-			state = {
-				propriete: "valeur",
-			};
-			//...
-		}
-		```
-	Pour ma part, je trouve cette deuxième syntaxe beaucoup plus agréable à utiliser et plus facile à lire, c'est donc celle là que je vous recommande.
-
-2. **Configurez donc votre state avec une propriété `title`, comme ceci :**
+1. **Dans `VideoDetail`, commencez par ajouter une constante `title` au début de votre fonction, comme ceci :**
 
 	```js
-	state = {
-		title: 'Le Top 10 des frameworks JS',
-	};
+	export default function VideoDetail() {
+		const title = 'Le Top 10 des frameworks JS';
+		// ...
 	```
-3. **Utilisez le state dans votre render.** (_Vous vous souvenez que pour injecter des valeurs JS dans le JSX il faut utiliser les accolades `{}` ? Et que l'on fait référence à une valeur du state en utilisant `this.state.propriete` ? Si vous ne vous en souvenez pas, c'est le moment de relire le pdf du cours_ 📖). Le rendu ne doit pas avoir bougé :
+2. **Utilisez cette valeur dans votre JSX.** (_Vous vous souvenez que pour injecter des valeurs JS dans le JSX il faut utiliser les accolades `{}` ? Si vous ne vous en souvenez pas, c'est le moment de relire le pdf du cours_ 📖). Le rendu ne doit pas avoir bougé :
 
-<img src="images/readme/screen-03.png" >
+	<img src="images/readme/screen-03.png" >
 
-## C.4. React Devtools
+3. **Ajoutez maintenant 2 autres constantes :**
+	- `description` avec un texte fictif
+	- et `file` avec la chaîne `video1.mp4`
 
-Maintenant que notre composant a un state, voyons un peu comment utiliser l'extension React Devtools que l'on a installée au chapitre [A.2. Outils de dev](./A-preparatifs.md#a2-outils-de-dev).
+	Faites en sorte que le code retourné ressemble à ceci :
+	```html
+	<div class="videoDetail">
+		<video
+			style="width:100%; background-color:black"
+			height="300"
+			controls
+			src="./uploads/video1.mp4"
+		>
+		</video>
+		<h1>Le Top 10 des frameworks JS</h1>
+		<p>Vous n’en croirez pas vos yeux</p>
+	</div>
+	```
 
-Dans la barre d'onglets des devtools de votre navigateur, ouvrez l'onglet `"Components"`, vous verrez en principe ceci :
+	Le résultat attendu dans le navigateur est le suivant :
 
-<img src="images/readme/screen-04.png" >
-
-Vous voyez le composant rendu dans la page, et son state : React Devtools détecte que le state contient une propriété `title` et sa valeur.
-
-Essayez de modifier la valeur du state en cliquant sur le texte `"Le Top 10 des frameworks JS"` et en tapant n'importe quel texte : vous voyez que l'affichage se met à jour automatiquement ? 🙌 C'est la magie du state qui opère !
-
-## C.5. Finalisation du composant
-
-Ajoutez maintenant dans le state 2 autres propriétés :
-- `description` avec un texte fictif
-- et `file` avec la chaîne `video1.mp4`
-
-Faites en sorte que le code retourné ressemble à ceci :
-```html
-<div class="videoDetail">
-	<video
-		style="width:100%; background-color:black"
-		height="300"
-		controls
-		src="./uploads/video1.mp4"
-	>
-	</video>
-	<h1>Le Top 10 des frameworks JS</h1>
-	<p>Vous n’en croirez pas vos yeux</p>
-</div>
-```
-Le résultat attendu dans le navigateur est le suivant :
-
-<img src="images/readme/screen-05.png" >
+	<img src="images/readme/screen-05.png" >
 
 ## Étape suivante <!-- omit in toc -->
-Une fois cette partie terminée, passons à la `VideoList` : [D. VideoList](D-videolist.md).
+Une fois cette partie terminée, passons à la prochaine partie : [D. JSX : les boucles](D-videolist.md).
