@@ -1,11 +1,9 @@
-import data from './data';
-import VideoList from './VideoList';
-import PageRenderer from './PageRenderer';
+import data from "./data.js";
+import renderElement from "./renderElement.js";
+import renderVideoList from "./renderVideoList.js";
 
-PageRenderer.titleElement = document.querySelector('.container > header');
-PageRenderer.contentElement = document.querySelector('.page');
+const title = renderElement( 'h1', null, ['Vos', ' ', 'recommandations'] );
+document.querySelector('.container > header').innerHTML = title;
 
-const videoList = new VideoList([]);
-PageRenderer.renderPage(videoList); // affiche une page vide
-videoList.videos = data;
-PageRenderer.renderPage(videoList); // affiche la liste des vidéos
+const videoList = renderVideoList(data);
+document.querySelector( '.page' ).innerHTML = videoList;
