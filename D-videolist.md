@@ -1,16 +1,16 @@
 <img src="images/readme/header-small.jpg" >
 
-# D. VideoList <!-- omit in toc -->
+# D. JSX : Les boucles <!-- omit in toc -->
 
-_**Maintenant que l'on est capables d'afficher un composant qui dispose d'un state, voyons si vous êtes à même d'en créer un autre, un peu plus complexe.**_
+_**Maintenant que l'on est capables d'afficher des composants, d'injecter des valeurs JS à l'intérieur du JSX, voyons si vous êtes à même d'en créer un autre, qui nécessite une boucle.**_
 
 ## Sommaire <!-- omit in toc -->
 - [D.1. Création du composant](#d1-création-du-composant)
-- [D.2. Ajout du state](#d2-ajout-du-state)
+- [D.2. Récupération des données](#d2-récupération-des-données)
 
 ## D.1. Création du composant
 
-1. **Créez un nouveau composant nommé `VideoList` dans un module `src/VideoList.js`.**
+1. **Créez un nouveau composant nommé `VideoList` dans un module `src/VideoList.jsx`.**
 
 	Pour le moment faites en sorte qu'il retourne juste le code suivant :
 
@@ -23,13 +23,12 @@ _**Maintenant que l'on est capables d'afficher un composant qui dispose d'un sta
 		</div>
 	```
 
-2. **Modifiez le `app.js` pour qu'il rende le composant `VideoList` au lieu du `VideoDetail`.**
+2. **Modifiez le `app.jsx` pour qu'il rende le composant `VideoList` au lieu du `VideoDetail`.**
 
 
-## D.2. Ajout du state
+## D.2. Récupération des données
 1. **Commencez par importer la constante `data`** définie dans le module `src/data.js`.
-2. **Utilisez la pour remplir le state par défaut de votre composant `VideoList`** : créez une propriété dans le state nommée `videos` et qui contient le tableau `data`.
-3. **Adaptez le render** pour retourner à l'intérieur de la `div class="videoList">` autant de balises de ce type que de cellules dans le state `videos` :
+2. **Utilisez la pour retourner à l'intérieur de la `<div class="videoList">` autant de balises de ce type que de cellules dans `data`** :
 	```html
 	<a href="uploads/video1.mp4">
 		<img src="https://source.unsplash.com/L8KQIPCODV8/600x340" />

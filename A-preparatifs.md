@@ -11,7 +11,7 @@
 
 ## A.1. Récupération du projet
 **Ce repo contient une solution commentée du précédent TP.** <br>
-Pour ce TP vous pouvez soit repartir de vos fichiers du précédent TP (si vous l'aviez terminé et que le formateur a validé que tout était correct notamment au niveau de la config Babel et webpack) ou bien cloner ce repo et vous en servir comme base pour ce TP.
+Pour ce TP vous pouvez soit repartir de vos fichiers du précédent TP (si vous l'aviez terminé et que le formateur a validé que tout était correct) ou bien cloner ce repo et vous en servir comme base pour ce TP.
 
 *Si vous repartez de vos fichiers, **pensez à faire un `git pull`** pour récupérer les dernières modifications du repo (probablement des modifs de CSS ou des corrections de dernière minute).*
 
@@ -29,7 +29,7 @@ Pour ce TP vous pouvez soit repartir de vos fichiers du précédent TP (si vous 
 	codium ~/tps-react/tp2
 	```
 
-3. **Installez les paquets npm nécessaires au projet** notamment le compilateur [Babel](https://babeljs.io).<br>
+3. **Installez les paquets npm nécessaires au projet** notamment [Vite](https://vitejs.dev).<br>
 	Ouvrez un terminal intégré à VSCodium (<kbd>CTRL</kbd>+<kbd>J</kbd> *(PC)* / <kbd>CMD</kbd>+<kbd>J</kbd> *(Mac)*) et tapez juste :
 	```bash
 	npm install
@@ -50,16 +50,22 @@ Prettier est un formateur de code automatique qui est le plus populaire à l'heu
 
 **C'est le moment de configurer cette extension** pour l'utiliser dans notre projet.
 
-1. **Ajoutez un dossier `.vscode` dans le dossier du TP et placez y un fichier nommé `settings.json`** avec le contenu suivant :
+1. **Remplacez le contenu du fichier `.vscode/settings.json` par les lignes suivantes** :
 
 	```json
 	{
 		"[javascript]": {
 			"editor.formatOnSave": true,
 			"editor.defaultFormatter": "esbenp.prettier-vscode"
+		},
+		"[javascriptreact]": {
+			"editor.formatOnSave": true,
+			"editor.defaultFormatter": "esbenp.prettier-vscode"
 		}
 	}
 	```
+	> _**NB :** on n'a plus besoin de la clé `"javascript.preferences.importModuleSpecifierEnding"` puisque Vite supporte les import sans l'extension js à la fin, ce qui est ce que fait vscode par défaut._
+
 2. **Créez ensuite un fichier `.prettierrc`** à la racine du TP :
 	```json
 	{
@@ -101,67 +107,71 @@ Comme nous sommes de gens sérieux, allons y :
 	```
 	> _**NB :** `npm i ...` est un raccourci pour `npm install ...`_
 
-	> _**NB2 :** vous avez peut-être remarqué que contrairement aux autres packages que l'on avait installé jusque là (`babel`, `webpack`, etc.), **`react` a été ajouté dans la section `"dependencies"` et pas `"devDependencies"`** du `package.json`._
+	> _**NB2 :** vous avez peut-être remarqué que contrairement aux autres packages que l'on avait installé jusque là (`vite` et `prettier`), **`react` a été ajouté dans la section `"dependencies"` et pas `"devDependencies"`** du `package.json`._
 	>
-	> _En effet, tous les paquets que l'on a installé précédemment ne sont utilisés que pendant la **phase de développement** (pour la compilation ou le formatage de code source) mais ne contiennent rien qui soit vraiment utilisé "dans" notre code. C'est la raison pour laquelle on avait installé tous ces paquets avec **l'option `--save-dev`** (par exemple dans le TP1, on avait fait : `npm install --save-dev @babel/core @babel/cli`, vous vous souvenez ?_ :thinking: _) ce qui avait pour conséquence d'ajouter ces paquets dans les **`"devDependencies"`**._
+	> _En effet, tous les paquets que l'on a installé précédemment ne sont utilisés que pendant la **phase de développement** (pour la compilation ou le formatage de code source) mais ne contiennent rien qui soit vraiment utilisé dans "notre" code. C'est la raison pour laquelle on avait installé tous ces paquets avec **l'option `--save-dev`** (par exemple dans le TP1, on avait fait : `npm install --save-dev vite`, vous vous souvenez ?_ 🤔 _) ce qui avait pour conséquence d'ajouter ces paquets dans les **`"devDependencies"`**._
 	>
 	> _**Pour React, on n'a pas utilisé l'option `--save-dev` car on va utiliser React dans notre code, de fait il est installé dans la section `"dependencies"`.**_
 	>
 	> _Documentation officielle :_
-	> - _dependencies : https://docs.npmjs.com/cli/v7/configuring-npm/package-json#dependencies_
-	> - _devDependencies : https://docs.npmjs.com/cli/v7/configuring-npm/package-json#devdependencies_
+	> - _dependencies : https://docs.npmjs.com/cli/v9/configuring-npm/package-json#dependencies_
+	> - _devDependencies : https://docs.npmjs.com/cli/v9/configuring-npm/package-json#devdependencies_
 
 2. **Comme vous le savez, React permet de développer des applis web mais aussi des apps mobiles** (_avec [React Native](https://reactnative.dev/)_).
 
-	Dans notre cas il faut donc, en plus de [`react`](https://www.npmjs.com/package/react), **installer la lib [`react-dom`](https://www.npmjs.com/package/react-dom) :**
+	Dans notre cas il faut donc, en plus de [`react`](https://www.npmjs.com/package/react), **installer la lib [`react-dom`](https://www.npmjs.com/package/react-dom)** qui contient le code spécifique aux applis web :
 	```bash
 	npm i react-dom
 	```
-3. Puisque l'on souhaite utiliser du JSX, il faut **permettre à Babel de compiler le JSX en JS à l'aide du preset [@babel/preset-react](https://babeljs.io/docs/en/babel-preset-react/)** (_vous vous souvenez ? Les presets sont des sortes de "dictionnaires" de traduction_) :
+3. Puisque l'on souhaite utiliser du JSX, il faut **permettre à Vite de compiler le JSX en JS à l'aide du plugin [@vitejs/plugin-react](https://www.npmjs.com/package/@vitejs/plugin-react)** (_permet en plus d'avoir du hot-reload/fast-refresh_) :
 	```bash
-	npm i -D @babel/preset-react
+	npm i -D @vitejs/plugin-react
 	```
 	> _**NB :** `-D` est un raccourci pour l'option `--save-dev`_
 
-	Ajoutez ensuite le preset `@babel/preset-react` nouvellement installé dans le fichier `.babelrc` en remplaçant la ligne `"presets"` par celle-ci
-	```json
-	"presets": ["@babel/preset-env", "@babel/preset-react"]
+4. Pour indiquer à Vite que l'on souhaite utiliser ce plugin dans notre code, on va ajouter un fichier de config `vite.config.js` à la racine de notre TP, avec le contenu suivant :
+	```js
+	import react from '@vitejs/plugin-react';
+
+	/** @type {import('vite').UserConfig} */
+	export default {
+		plugins: [react()],
+	}
 	```
-4. **Supprimez tous les fichiers `.js` du dossier `src`, à l'exception du fichier `src/data.js` puis créez un fichier `src/app.js`** qui servira de point d'entrée à notre application React.
+5. **Supprimez tous les fichiers `.js` du dossier `src`, à l'exception du fichier `src/data.js` puis créez un fichier `src/app.jsx`** qui servira de point d'entrée à notre application React.
 
 	Placez-y pour le moment juste un `console.log` :
 	```js
 	console.log('REACTube en React !');
 	```
-5. **Enfin, modifiez la configuration de webpack** pour lui indiquer que c'est ce fichier `src/app.js` qui est désormais le point d'entrée, et que le fichier de sortie s'appelle désormais `app.bundle.js`.
 
-	> _**NB:** N'oubliez pas de **mettre à jour la balise `<script>`** du fichier `index.html` !_
+	> _**NB :** on utilise ici l'extension de fichier `.jsx` car c'est l'extension supportée par défaut par Vite._ \
+	> _Personnellement je ne suis pas favorable à l'utilisation de cette extension, qui était celle employée lors des toutes premières alpha de React, mais qui avait été depuis délaissée pour revenir à l'extension `.js` (plus logique car on peut tout à faire faire des composants React qui n'utilisent pas de JSX, qui retournent par exemple juste une chaîne de caractères...)._
+	> _Or le plugin `vite-plugin-react` [bride l'emploi du Fast Refresh si l'on utilise `.js`](https://github.com/vitejs/vite-plugin-react/issues/155) et n'offre pour le moment aucune possibilité de configuration._
+	>
+	> _En attendant que le plugin évolue, on est donc contraints à utiliser cette extension `.jsx` pour tous nos fichiers contenant du JSX si l'on veut avoir un refresh rapide des composants..._
+
+6. **Enfin, modifiez le fichier `index.html`** pour lui indiquer que c'est ce fichier `src/app.jsx` qui est désormais le point d'entrée.
 
 ## A.5. Lancement de l'application
 
-Comme dans le précédent TP lancez un serveur HTTP et la compilation du projet dans deux terminaux côte à côte ([terminaux splittés](https://code.visualstudio.com/docs/editor/integrated-terminal#_terminal-splitting)) :
+Comme dans le précédent TP, **lancez le serveur de développement de Vite** dans un terminal intégré de VSCodium (<kbd>CTRL</kbd>+<kbd>J</kbd> *(PC)* / <kbd>CMD</kbd>+<kbd>J</kbd> *(Mac)*) :
 
-1. **Lancez un serveur http** dans un terminal intégré de VSCodium (<kbd>CTRL</kbd>+<kbd>J</kbd> *(PC)* / <kbd>CMD</kbd>+<kbd>J</kbd> *(Mac)*) :
-	```bash
-	npx serve -l 8000
-	```
+```bash
+npm start
+```
 
-2. **Lancez la compilation de votre projet** dans un **deuxième** [terminal splitté](https://code.visualstudio.com/docs/editor/integrated-terminal#_terminal-splitting) (*le `watch` et `npx serve` doivent tourner en parallèle*) :
-	```bash
-	npm run watch
-	```
+**Vérifiez ensuite dans le navigateur que la page index.html s'affiche correctement** en ouvrant l'url http://localhost:8000.
 
-3. **Vérifiez dans le navigateur que la page index.html s'affiche correctement** en ouvrant l'url http://localhost:8000.
+Le résultat attendu est le suivant :
 
-	Le résultat attendu est le suivant :
+<img src="images/readme/screen-00.png" >
 
-	<img src="images/readme/screen-00.png" >
+**Dans la console, vérifiez que le message *`"REACTube en React !"`* s'affiche bien.**
 
-	**Dans la console, vérifiez que le message *`"REACTube en React !"`* s'affiche bien.**
+<img src="images/readme/screen-01.png" >
 
-	<img src="images/readme/screen-01.png" >
-
-	> _**NB : Si la page ne s'affiche pas correctement**, vérifiez que vous avez bien lancé le serveur http dans le dossier du projet, c'est à dire celui où se trouve le fichier `index.html`. Puis vérifiez dans la `Console` ou dans l'onglet `Sources` (Chrome) ou `Debugger` (Firefox) qu'l n'y a pas d'erreur JS lorsque la page se charge._
+> _**NB : Si la page ne s'affiche pas correctement**, vérifiez dans la `Console` ou dans l'onglet `Sources` (Chrome) ou `Debugger` (Firefox) qu'l n'y a pas d'erreur JS lorsque la page se charge._
 
 ## Étape suivante <!-- omit in toc -->
 Si tout fonctionne, vous pouvez passer à l'étape suivante : [B. Un premier composant](B-premier-composant.md)
