@@ -5,25 +5,17 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --mode=production",
-    "watch": "webpack --mode=development --watch",
-    "start": "webpack serve --hot --mode=development"
+    "start": "vite --port 8000",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "author": "Thomas Fritsch <thomas@uidlt.fr> (https://uidlt.fr)",
   "homepage": "https://framagit.org/formation/react/",
   "license": "ISC",
   "devDependencies": {
-    "@babel/cli": "^7.22.10",
-    "@babel/core": "^7.22.11",
-    "@babel/preset-env": "^7.22.10",
-    "@babel/preset-react": "^7.22.5",
-    "@pmmmwh/react-refresh-webpack-plugin": "^0.5.11",
-    "babel-loader": "^9.1.3",
+    "@vitejs/plugin-react": "^4.0.4",
     "prettier": "^3.0.2",
-    "react-refresh": "^0.14.0",
-    "webpack": "^5.88.2",
-    "webpack-cli": "^5.1.4",
-    "webpack-dev-server": "^4.15.1"
+    "vite": "^4.4.9"
   },
   "dependencies": {
     "react": "^18.2.0",
