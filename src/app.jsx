@@ -1,11 +1,13 @@
 import { createRoot } from 'react-dom/client';
 import Menu from './Menu';
-import Navigator from './Navigator';
+import VideoDetail from './VideoDetail';
+import VideoList from './VideoList';
 
 const root = createRoot(document.querySelector('.appContainer'));
 root.render(
 	<>
 		<Menu />
-		<Navigator />
+		{/* <VideoDetail /> */}
+		<VideoList />
 	</>
 );
