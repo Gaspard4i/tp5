@@ -123,13 +123,25 @@ Comme nous sommes de gens sérieux, allons y :
 	```bash
 	npm i react-dom
 	```
-3. Puisque l'on souhaite utiliser du JSX, il faut **permettre à Vite de compiler le JSX en JS à l'aide du plugin [@vitejs/plugin-react](https://www.npmjs.com/package/@vitejs/plugin-react)** (_permet en plus d'avoir du hot-reload/fast-refresh_) :
+3. Puisque l'on souhaite utiliser du JSX, il faut **permettre à Vite de compiler le JSX en JS à l'aide du plugin [@vitejs/plugin-react](https://www.npmjs.com/package/@vitejs/plugin-react)** :
 	```bash
 	npm i -D @vitejs/plugin-react
 	```
 	> _**NB :** `-D` est un raccourci pour l'option `--save-dev`_
 
-4. Pour indiquer à Vite que l'on souhaite utiliser ce plugin dans notre code, on va ajouter un fichier de config `vite.config.js` à la racine de notre TP, avec le contenu suivant :
+	En plus du support de JSX, `@vitejs/plugin-react` offre le support automatique du **Fast Refresh**.
+
+	Jusqu'ici dans le TP vous bénéficiez grâce à Vite d'une technique qui s'appelle le "live reload" : c'est ce qui permet de recharger automatiquement le navigateur dès qu'un fichier html, js, ou css est modifié. Mais dans l'écosystème React, il existe encore mieux : le **Fast Refresh**.
+
+	Le principe du Fast refresh, c'est que quand un composant de votre application est modifié, SEUL ce composant va être rechargé, sans avoir besoin de rafraîchir toute la page. Quels avantages ? Il y en a plein :
+	- **on ne recharge pas toute la page**, donc pas le html, ni les CSS, ni les images ça va donc **beaucoup plus vite**
+	- l'application **reste dans son état actuel** : notre navigateur reste là où il était dans la page (conservation du scroll, de la navigation, etc.)
+
+	<img src="images/readme/fast-refresh.gif">
+
+	Génial non ? Et tout ça sans avoir rien d'autre à faire que d'intégrer `@vitejs/plugin-react` ! 😎
+
+4. **Pour indiquer à Vite que l'on souhaite donc utiliser ce plugin dans notre code, on va ajouter un fichier de config `vite.config.js`** à la racine de notre TP, avec le contenu suivant :
 	```js
 	import react from '@vitejs/plugin-react';
 
@@ -147,7 +159,8 @@ Comme nous sommes de gens sérieux, allons y :
 
 	> _**NB :** on utilise ici l'extension de fichier `.jsx` car c'est l'extension supportée par défaut par Vite._ \
 	> _Personnellement je ne suis pas favorable à l'utilisation de cette extension, qui était celle employée lors des toutes premières alpha de React, mais qui avait été depuis délaissée pour revenir à l'extension `.js` (plus logique car on peut tout à faire faire des composants React qui n'utilisent pas de JSX, qui retournent par exemple juste une chaîne de caractères...)._
-	> _Or le plugin `vite-plugin-react` [bride l'emploi du Fast Refresh si l'on utilise `.js`](https://github.com/vitejs/vite-plugin-react/issues/155) et n'offre pour le moment aucune possibilité de configuration._
+	>
+	> _Malheureusement le plugin `@vitejs/plugin-react` [bride l'emploi du Fast Refresh si l'on utilise `.js`](https://github.com/vitejs/vite-plugin-react/issues/155) et n'offre pour le moment aucune possibilité de configuration._
 	>
 	> _En attendant que le plugin évolue, on est donc contraints à utiliser cette extension `.jsx` pour tous nos fichiers contenant du JSX si l'on veut avoir un refresh rapide des composants..._
 
