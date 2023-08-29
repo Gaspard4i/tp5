@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 import data from './data';
+import VideoThumbnail from './VideoThumbnail';
 
-export default function VideoList() {
+export default function VideoList({ navigate }) {
 	const [videos, setVideos] = useState([]);
 
 	// après le premier render simulation d'un chargement AJAX
@@ -18,14 +19,12 @@ export default function VideoList() {
 				<h1>Recommandations</h1>
 			</header>
 			<div className={classNames}>
-				{videos.map(({ id, title, description, thumbnail, file }) => (
-					<a href={`./uploads/${file}`} key={id}>
-						<img src={`https://source.unsplash.com/${thumbnail}/600x340`} />
-						<section className="infos">
-							<h4>{title}</h4>
-							<p>{description}</p>
-						</section>
-					</a>
+				{videos.map(video => (
+					<VideoThumbnail
+						onClick={() => navigate('detail', { id: video.id })}
+						video={video}
+						key={video.id}
+					/>
 				))}
 			</div>
 		</div>
