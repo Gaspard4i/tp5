@@ -15,7 +15,7 @@ Vous commencez maintenant à avoir l'habitude, je ne rentrerais donc pas dans le
 1. **Tapez dans un terminal :**
 	```bash
 	mkdir ~/tps-react
-	git clone https://framagit.org/formation/react/tp5.git ~/tps-react/tp5
+	git clone git@github.com:formation-react/tp5.git ~/tps-react/tp5
 	codium ~/tps-react/tp5
 	```
 2. **Puis dans un terminal intégré de VSCodium** (<kbb>CTRL/Cmd</kbd>+<kbd>J</kbd>) :
@@ -24,14 +24,14 @@ Vous commencez maintenant à avoir l'habitude, je ne rentrerais donc pas dans le
 	npm start
 	```
 
-> _**NB :** si vous souhaitez plus de précisions sur les commandes précédentes et l'installation  / configuration du projet, vous pouvez vous référer au chapitre [A. Préparatifs](https://framagit.org/formation/react/tp2/-/blob/master/A-preparatifs.md) du TP2 ou simplement demander de l'aide au formateur_ 😄
+> _**NB :** si vous souhaitez plus de précisions sur les commandes précédentes et l'installation  / configuration du projet, vous pouvez vous référer au chapitre [A. Préparatifs](https://github.com/formation-react/tp2/blob/github/A-preparatifs.md) du TP2 ou simplement demander de l'aide au formateur_ 😄
 
 Le résultat attendu est le suivant :
 
 <img src="images/readme/screen-00.png" >
 
 ## A.2. Lancement de l'API REST
-Dans ce TP on va enfin connecter notre appli web à une base de données grâce à l'API REST que l'on a installée lors du TP0 (cf. [TP0 : C. Serveur API REST](https://framagit.org/formation/react/tp0/-/blob/master/C-serveur-rest.md)).
+Dans ce TP on va enfin connecter notre appli web à une base de données grâce à l'API REST que l'on a installée lors du TP0 (cf. [TP0 : C. Serveur API REST](https://github.com/formation-react/tp0/blob/github/C-serveur-rest.md)).
 
 C'est donc le moment de lancer le serveur Node / Express qui fait tourner l'API :
 ```bash
