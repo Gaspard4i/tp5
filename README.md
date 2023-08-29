@@ -1,14 +1,14 @@
 <img src="images/readme/header.jpg" />
 
 ## Objectifs
-- Connecter une appli React à une API REST
-- Intégrer des formulaires non contrôlés
-- Intégrer des formulaires contrôlés
+- Savoir imbriquer des composants
+- Utiliser les props
+- Utiliser les refs
 
 ## Sommaire
 Pour plus de clarté, les instructions du TP se trouvent dans des fichiers distincts (un fichier par sujet), procédez dans l'ordre sinon, ça fonctionnera beaucoup moins bien !
 
 1. [A. Préparatifs](A-preparatifs.md)
-2. [B. AJAX](B-ajax.md)
-3. [C. VideoForm](C-VideoForm.md)
-4. [D. Perfectionnement](D-perfectionnement.md).
+2. [B. Imbrication & props](B-imbrication.md)
+4. [C. Les refs](C-refs.md)
+5. [D. Navigation maison](D-navigation.md)
