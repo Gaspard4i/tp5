@@ -26,4 +26,4 @@ Le résultat attendu est le suivant :
 
 
 ## Étape suivante <!-- omit in toc -->
-Si tout fonctionne, vous pouvez passer à l'étape suivante : [B. useState](B-usestate.md)
+Si tout fonctionne, vous pouvez passer à l'étape suivante : [B. Imbrication & props](B-imbrication.md)
