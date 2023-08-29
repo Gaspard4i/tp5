@@ -18,12 +18,12 @@ export default function VideoDetail({ navigate, params: { id } }) {
 	}
 
 	// gestion player
-	const player = useRef(null);
+	const videoRef = useRef(null);
 	function handlePlayClick() {
-		player.current.play();
+		videoRef.current.play();
 	}
 	function handlePauseClick() {
-		player.current.pause();
+		videoRef.current.pause();
 	}
 
 	// premier render sans vidéo
@@ -42,7 +42,7 @@ export default function VideoDetail({ navigate, params: { id } }) {
 				height="400"
 				controls
 				src={'./uploads/' + file}
-				ref={player}
+				ref={videoRef}
 			></video>
 			<button onClick={handlePlayClick}>play</button>
 			<button onClick={handlePauseClick}>pause</button>

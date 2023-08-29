@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import VideoList from './VideoList';
 import VideoDetail from './VideoDetail';
-// import VideoForm from './VideoForm';
 
 export default function Navigator() {
 	const [{ currentPage, params }, setState] = useState({
@@ -18,8 +17,6 @@ export default function Navigator() {
 			return <VideoList navigate={navigate} params={params} />;
 		case 'detail':
 			return <VideoDetail navigate={navigate} params={params} />;
-		case 'form':
-			return <VideoForm navigate={navigate} params={params} />;
 	}
 	return null;
 }
