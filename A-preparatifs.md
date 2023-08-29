@@ -2,12 +2,6 @@
 
 # A. Préparatifs <!-- omit in toc -->
 
-## Sommaire <!-- omit in toc -->
-- [A.1. Récupération du projet](#a1-récupération-du-projet)
-- [A.2. Lancement de l'API REST](#a2-lancement-de-lapi-rest)
-
-
-## A.1. Récupération du projet
 Vous commencez maintenant à avoir l'habitude, je ne rentrerais donc pas dans les détails mais voici les différentes étapes pour le lancement du projet en mode [TL;DR](https://en.wiktionary.org/wiki/tl;dr)
 
 **Attention** : La commande pour lancer la compilation et le serveur http a changé !
@@ -30,18 +24,6 @@ Le résultat attendu est le suivant :
 
 <img src="images/readme/screen-00.png" >
 
-## A.2. Lancement de l'API REST
-Dans ce TP on va enfin connecter notre appli web à une base de données grâce à l'API REST que l'on a installée lors du TP0 (cf. [TP0 : C. Serveur API REST](https://github.com/formation-react/tp0/blob/github/C-serveur-rest.md)).
-
-C'est donc le moment de lancer le serveur Node / Express qui fait tourner l'API :
-```bash
-cd ~/tps-react/api-server
-npm start
-```
-
-**Vérifiez que l'API tourne bien en ouvrant http://localhost:8080/api/videos dans votre navigateur.** Si tout se passe bien vous devez voir un JSON s'afficher avec des vidéos dedans :
-
-<img src="images/readme/screen-01.png" >
 
 ## Étape suivante <!-- omit in toc -->
-Si tout fonctionne, vous pouvez passer à l'étape suivante : [B. AJAX](B-ajax.md)
+Si tout fonctionne, vous pouvez passer à l'étape suivante : [B. useState](B-usestate.md)
