@@ -13,7 +13,7 @@ La `VideoList` contiendra autant d'instances de `VideoThumbnail` qu'il y a de vi
 
 <img src="images/readme/screen-01.jpg" />
 
-1. **Créez donc un composant `VideoThumbnail` dans un module `src/VideoThumbnail.js`.**
+1. **Créez donc un composant `VideoThumbnail` dans un module `src/VideoThumbnail.jsx`.**
 
 2. **Externalisez dans `VideoThumbnail` le JSX de chaque vignette de vidéo** (_tout le `<a href>...</a>`_)
 
