@@ -27,7 +27,7 @@ Pour rappel, le support navigateur de l'API fetch est plutôt bon :
 
 ## B.2. Chargement de la liste des vidéos
 1. **Commencez par supprimer l'import du module `data.js` dans la `VideoList`.** Comme on va charger les données de la bdd, on n'a plus besoin de cet import (_ne supprimez cependant pas tout de suite le fichier, le `VideoDetail` l'utilise encore... pour l'instant !_)
-2. **Supprimez ensuite le `setTimeout(...)` contenu dans la méthode componentDidMount de la `VideoList`.**
+2. **Supprimez ensuite le `setTimeout(...)` contenu dans le `useEffect` de la `VideoList`.**
 3.  **A la place, lancez le chargement de la liste des vidéos avec l'API fetch** :
 	```js
 	fetch('http://localhost:8080/api/videos');
