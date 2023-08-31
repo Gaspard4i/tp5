@@ -4,8 +4,6 @@
 
 Vous commencez maintenant à avoir l'habitude, je ne rentrerais donc pas dans les détails mais voici les différentes étapes pour le lancement du projet en mode [TL;DR](https://en.wiktionary.org/wiki/tl;dr)
 
-**Attention** : La commande pour lancer la compilation et le serveur http a changé !
-
 1. **Tapez dans un terminal :**
 	```bash
 	mkdir ~/tps-react
@@ -22,7 +20,6 @@ Vous commencez maintenant à avoir l'habitude, je ne rentrerais donc pas dans le
 
 Le résultat attendu est le suivant :
 
-<img src="images/readme/screen-00.png" >
 
 
 ## Étape suivante <!-- omit in toc -->
