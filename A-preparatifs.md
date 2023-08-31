@@ -20,6 +20,7 @@ Vous commencez maintenant à avoir l'habitude, je ne rentrerais donc pas dans le
 
 Le résultat attendu est le suivant :
 
+<img src="images/readme/screen-00.png" >
 
 
 ## Étape suivante <!-- omit in toc -->
