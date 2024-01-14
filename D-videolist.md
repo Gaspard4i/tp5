@@ -25,10 +25,12 @@ _**Maintenant que l'on est capables d'afficher des composants, d'injecter des va
 
 2. **Modifiez le `app.jsx` pour qu'il rende le composant `VideoList` au lieu du `VideoDetail`.**
 
+	> _**Conseil :** comme d'habitude, vérifiez bien que vous n'avez pas d'erreur ou de warning dans la console !_
+
 
 ## D.2. Récupération des données
 1. **Commencez par importer la constante `data`** définie dans le module `src/data.js`.
-2. **Utilisez la pour retourner à l'intérieur de la `<div class="videoList">` autant de balises de ce type que de cellules dans `data`** :
+2. **Utilisez-la pour retourner à l'intérieur de la `<div class="videoList">` autant de balises de ce type que de cellules dans `data`** :
 	```html
 	<a href="uploads/video1.mp4">
 		<img src="https://source.unsplash.com/L8KQIPCODV8/600x340" />

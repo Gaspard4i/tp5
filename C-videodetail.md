@@ -71,6 +71,7 @@ Maintenant que ces préparatifs sont faits, créons donc notre deuxième composa
 		</nav>
 	</header>
 	```
+	> _**Conseil :** vérifiez régulièrement que vous n'avez pas d'erreur ou de warning dans la console, on ne sait jamais..._
 
 2. **Modifiez le `app.jsx` pour rendre à la fois le composant `VideoDetail` et ce nouveau composant `Menu` côte à côte dans la `<section class="appContainer">`, comme ceci :**
 	```jsx
@@ -82,7 +83,7 @@ Maintenant que ces préparatifs sont faits, créons donc notre deuxième composa
 	);
 	```
 
-	> _**NB :** vous remarquerez qu'on a entouré `<Menu />` et `<VideoDetail />` de balises "vides" `<>...</>`. En effet comme la méthode `root.render()` ne peut prendre en paramètre qu'une seule valeur, on ne peut pas lui passer comme ça 2 balises côte à côte. Il faut obligatoirement les regrouper dans une seule balise parente._
+	> _**NB :** vous remarquerez qu'on a entouré `<Menu />` et `<VideoDetail />` de balises "vides" `<>...</>`. En effet, comme la méthode `root.render()` ne peut prendre en paramètre qu'une seule valeur, on ne peut pas lui passer comme ça 2 balises côte à côte. Il faut obligatoirement les regrouper dans une seule balise parente._
 	>
 	> _On aurait pu encadrer les 2 balises d'une balise parente HTML "classique", comme une `<div>...</div>` par exemple, mais cela aurait surchargé inutilement le code HTML avec une balise div intermédiaire, et cela aurait aussi cassé la CSS._
 	>
@@ -136,6 +137,8 @@ Le rendu HTML doit rester inchangé par rapport à avant nos modifications, mais
 	Le résultat attendu dans le navigateur est le suivant :
 
 	<img src="images/readme/screen-05.png" >
+
+	Modifiez les valeurs des 3 constantes title, description et file, et vérifiez que le contenu se met bien à jour !
 
 ## Étape suivante <!-- omit in toc -->
 Une fois cette partie terminée, passons à la prochaine partie : [D. JSX : les boucles](D-videolist.md).
