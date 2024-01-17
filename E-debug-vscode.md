@@ -65,7 +65,7 @@ Il y a plusieurs techniques pour configurer tout ça dans vscode mais la solutio
 	> 		"url": "http://localhost:8080",
 	> -		"webRoot": "${workspaceFolder}"
 	> +		"webRoot": "${workspaceFolder}",
-	> + 	"runtimeExecutable": "/bin/chromium",
+	> +		"runtimeExecutable": "/bin/chromium"
 	> 	}
 	> ]
 	> ```
