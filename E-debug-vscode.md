@@ -1,6 +1,6 @@
 <img src="images/readme/header-small.jpg" >
 
-# B. Debugger dans vscode <!-- omit in toc -->
+# E. Debugger dans vscode <!-- omit in toc -->
 
 _**Pour débugger notre code, on a jusqu'ici toujours utilisé les devtools intégrés dans notre navigateur. Mais il faut admettre que ce n'est pas très pratique de devoir passer d'une fenêtre à l'autre notamment quand on utilise les points d'arrêt car on a le _MÊME_ code affiché à 2 endroits différents :**_
 - **dans vscode** (_le code qu'on édite_)

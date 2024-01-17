@@ -35,7 +35,7 @@ Il va vous servir de base pour ce nouveau TP.
 
 	> _**NB2 :** Comme pour le TP1 aussi, si vous préférez **cloner en SSH** pour ne pas avoir à taper votre mot de passe à chaque fois que vous clonerez un TP, renseignez votre clé SSH dans votre [compte utilisateur gitlab](https://gitlab.univ-lille.fr/-/profile/keys) et clonez à partir de cette URL : `git@gitlab.univ-lille.fr:votre-username/tp2.git`_
 
-4. **Ouvrez le projet dans VSCodium** (pour les différentes façon d'ouvrir le projet relisez les [instructions du TP1](https://gitlab.univ-lille.fr/react/tp1/-/blob/cours-iut/A-preparatifs.md?ref_type=heads#a5-ouvrir-le-projet-dans-vscodium) )
+4. **Ouvrez le projet dans VSCodium** (pour les différentes façons d'ouvrir le projet relisez les [instructions du TP1](https://gitlab.univ-lille.fr/react/tp1/-/blob/cours-iut/A-preparatifs.md?ref_type=heads#a5-ouvrir-le-projet-dans-vscodium) )
 	```bash
 	codium ~/tps-react/tp2
 	```
@@ -50,7 +50,7 @@ Il va vous servir de base pour ce nouveau TP.
 	>
 	> **Magique !** 🙌
 
-6. **Avant de vous lancer dans ce TP, prenez 5 à 10 minutes pour lire le code contenu dans le dossier `/src`** et comparez le avec votre code du précédent TP.
+6. **Avant de vous lancer dans ce TP, prenez 5 à 10 minutes pour lire le code contenu dans le dossier `/src`** et comparez-le avec votre code du précédent TP.
 
 	**C'est important de bien comprendre le code qui vous est fourni car il utilise un certain nombre de syntaxes de base qu'il vous faut maîtriser pour être à l'aise dans la suite du TP** : si des points ne sont pas clairs interrogez votre encadrant.e de TP !
 
@@ -103,7 +103,7 @@ Prettier est un formateur de code automatique qui est le plus populaire à l'heu
 	```
 	Avec cette configuration, vos fichiers JS seront maintenant automatiquement formatés à chaque sauvegarde ! Plus besoin de vous tracasser avec les retours à la ligne, les tabulations, les espaces, tout sera géré automatiquement par Prettier !
 
-	> _**NB :** si vous souhaitez en savoir plus sur la liste des configurations possibles, rendez vous sur https://prettier.io/docs/en/configuration.html_
+	> _**NB :** si vous souhaitez en savoir plus sur la liste des configurations possibles, rendez-vous sur https://prettier.io/docs/en/configuration.html_
 
 
 ## A.3. Outils de dev
@@ -120,7 +120,7 @@ Installez l'extension **React Developer Tools** :
 **Comme vu en cours React est une _librairie_ JS.**
 
 Pour l'utiliser dans notre appli on va d'abord devoir récupérer le code de cette librairie. Et pour récupérer une librairie quand on fait du JS de manière sérieuse, c'est **`npm`** qu'on utilise ! \
-Comme nous sommes de gens sérieux, allons y :
+Comme nous sommes de gens sérieux, allons-y :
 
 1. **Installez la librairie [`react`](https://www.npmjs.com/package/react) avec npm :** Dans le dossier du TP (`à la racine, là où se trouve le package.json`), lancez la commande
 	```bash
@@ -128,9 +128,9 @@ Comme nous sommes de gens sérieux, allons y :
 	```
 	> _**NB :** `npm i ...` est un raccourci pour `npm install ...`_
 
-	> _**NB2 :** vous avez peut-être remarqué que contrairement aux autres packages que l'on avait installé jusque là (`vite` et `prettier`), **`react` a été ajouté dans la section `"dependencies"` et pas `"devDependencies"`** du `package.json`._
+	> _**NB2 :** vous avez peut-être remarqué que contrairement aux autres packages que l'on avait installés jusque là (`vite` et `prettier`), **`react` a été ajouté dans la section `"dependencies"` et pas `"devDependencies"`** du `package.json`._
 	>
-	> _En effet, tous les paquets que l'on a installé précédemment ne sont utilisés que pendant la **phase de développement** (pour la compilation ou le formatage de code source) mais ne contiennent rien qui soit vraiment utilisé dans "notre" code. C'est la raison pour laquelle on avait installé tous ces paquets avec **l'option `--save-dev`** (par exemple dans le TP1, on avait fait : `npm install --save-dev vite`, vous vous souvenez ?_ 🤔 _) ce qui avait pour conséquence d'ajouter ces paquets dans les **`"devDependencies"`**._
+	> _En effet, tous les paquets que l'on a installés précédemment ne sont utilisés que pendant la **phase de développement** (pour la compilation ou le formatage de code source) mais ne contiennent rien qui soit vraiment utilisé dans "notre" code. C'est la raison pour laquelle on avait installé tous ces paquets avec **l'option `--save-dev`** (par exemple dans le TP1, on avait fait : `npm install --save-dev vite`, vous vous souvenez ?_ 🤔 _) ce qui avait pour conséquence d'ajouter ces paquets dans les **`"devDependencies"`**._
 	>
 	> _**Pour React, on n'a pas utilisé l'option `--save-dev` car on va utiliser React dans notre code, de fait il est installé dans la section `"dependencies"`.**_
 	>
@@ -205,7 +205,7 @@ Le résultat attendu est le suivant :
 
 <img src="images/readme/screen-01.png" >
 
-> _**NB : Si la page ne s'affiche pas correctement**, vérifiez dans la `Console` ou dans l'onglet `Sources` (Chrome) ou `Debugger` (Firefox) qu'l n'y a pas d'erreur JS lorsque la page se charge._
+> _**NB : Si la page ne s'affiche pas correctement**, vérifiez dans la `Console` ou dans l'onglet `Sources` (Chrome) ou `Debugger` (Firefox) qu'il n'y a pas d'erreur JS lorsque la page se charge._
 
 ## Étape suivante <!-- omit in toc -->
 Si tout fonctionne, vous pouvez passer à l'étape suivante : [B. Un premier composant](B-premier-composant.md)
