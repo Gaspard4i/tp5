@@ -15,27 +15,27 @@ Il va vous servir de base pour ce nouveau TP.
 
 1. **Commencez par faire un fork de ce TP :**
 	- soit en cliquant sur le bouton `"Créer une divergence"` (_`"Fork"` sur la version anglaise de gitlab_)
-	- soit en vous rendant directement sur https://framagit.org/cours-react/tp2/-/forks/new
+	- soit en vous rendant directement sur https://gitlab.univ-lille.fr/react/tp2/-/forks/new
 
 	**⚠️ ATTENTION :** Choisissez de placer votre fork **dans VOTRE profil utilisateur** (`namespace`) \
 	et vérifiez que le repo est **bien en mode "private"** (`Visibility Level`)
 
-2. **Ajoutez moi en tant que "reporter" pour que j'ai accès à votre code :**
+2. **Ajoutez votre encadrant de TP en tant que "reporter" pour qu'il ait accès à votre code :**
 	- dans le menu de gauche, cliquez sur **`Manage`** &gt; **`Members`** (`Gestion` &gt; `Membres` _si vous êtes sur la VF de gitlab_)
 	- cliquez sur le bouton en haut à droite **`"Invite members"`** (`Inviter des membres`)
-	- entrez comme **nom d'utilisateur** mon username : `@tf`
+	- entrez comme **nom d'utilisateur** celui de votre encadrant de TP (`@gery.casiez` ou `@thomas.fritsch`)
 	- ... et `"reporter"` comme **rôle**.
 
-3. **Récupérez les fichiers de ce TP grâce à Git : clonez votre fork dans un dossier de votre choix** :
+3. **Récupérez les fichiers de ce TP grâce à Git : clonez ce repo dans un dossier de votre choix** :
 	```bash
 	mkdir ~/tps-react
-	git clone https://framagit.org/<votre-username>/tp2.git ~/tps-react/tp2
+	git clone https://gitlab.univ-lille.fr/<votre-username>/tp2.git ~/tps-react/tp2
 	```
 	> _**NB1 :** Comme pour le TP1, ici je clone dans mon dossier `/home/thomas/tps-react/tp2`. **Si vous êtes sous Windows faites attention au sens des slashs et au caractère `"~"`** qui représente le dossier de l'utilisateur sur système unix : utilisez **Git bash** (qui comprend cette syntaxe) ou si vous tenez vraiment à utiliser **cmd** ou **powershell** pensez à adapter la commande !_
 
-	> _**NB2 :** Comme pour le TP1 aussi, si vous préférez **cloner en SSH** pour ne pas avoir à taper votre mot de passe à chaque fois que vous clonerez un TP, renseignez votre clé SSH dans votre [compte utilisateur framagit](https://framagit.org/-/profile/keys) et clonez à partir de cette URL : `git@framagit.org:votre-username/tp2.git`_
+	> _**NB2 :** Comme pour le TP1 aussi, si vous préférez **cloner en SSH** pour ne pas avoir à taper votre mot de passe à chaque fois que vous clonerez un TP, renseignez votre clé SSH dans votre [compte utilisateur gitlab](https://gitlab.univ-lille.fr/-/profile/keys) et clonez à partir de cette URL : `git@gitlab.univ-lille.fr:votre-username/tp2.git`_
 
-4. **Ouvrez le projet dans VSCodium** (pour les différentes façon d'ouvrir le projet relisez les [instructions du TP1](https://framagit.org/cours-react/tp1/-/blob/master/A-preparatifs.md#a4-ouvrir-le-projet-dans-vscodium) )
+4. **Ouvrez le projet dans VSCodium** (pour les différentes façon d'ouvrir le projet relisez les [instructions du TP1](https://gitlab.univ-lille.fr/react/tp1/-/blob/cours-iut/A-preparatifs.md?ref_type=heads#a5-ouvrir-le-projet-dans-vscodium) )
 	```bash
 	codium ~/tps-react/tp2
 	```
@@ -49,6 +49,16 @@ Il va vous servir de base pour ce nouveau TP.
 	> _**NB :** Vous noterez qu'on ne précise pas les paquets à installer. npm va en effet les déterminer **automatiquement** à partir du contenu du fichier `package.json` et plus particulièrement à partir des sections `"dependencies"` et `"devDependencies"` qui indiquent quels sont les paquets qui ont été installés précédemment._
 	>
 	> **Magique !** 🙌
+
+6. **Avant de vous lancer dans ce TP, prenez 5 à 10 minutes pour lire le code contenu dans le dossier `/src`** et comparez le avec votre code du précédent TP.
+
+	**C'est important de bien comprendre le code qui vous est fourni car il utilise un certain nombre de syntaxes de base qu'il vous faut maîtriser pour être à l'aise dans la suite du TP** : si des points ne sont pas clairs interrogez votre encadrant.e de TP !
+
+	**Attention : si vous n'aviez pas eu le temps de terminer le précédent TP**, portez une attention toute particulière aux fichiers :
+	- `renderElement.js`
+	- `renderImg.js`
+	- `renderVideoList.js`
+	- et `renderVideoItem.js`
 
 
 ## A.2. Configuration de Prettier
