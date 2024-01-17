@@ -12,7 +12,7 @@ _**Maintenant que l'on est capables d'afficher des composants, d'injecter des va
 
 1. **Créez un nouveau composant nommé `VideoList` dans un module `src/VideoList.jsx`.**
 
-	Pour le moment faites en sorte qu'il retourne juste le code suivant :
+	Pour le moment, faites en sorte qu'il retourne juste le code suivant :
 
 	```html
 		<div class="container">

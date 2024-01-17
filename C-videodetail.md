@@ -2,7 +2,7 @@
 
 # C. JSX : les bases <!-- omit in toc -->
 
-_**Voilà, notre appli est maintenant capable d'embarquer des composants React. Entraînons nous un peu à manipuler le JSX plus en détail.**_
+_**Voilà, notre appli est maintenant capable d'embarquer des composants React. Entraînons-nous un peu à manipuler le JSX plus en détail.**_
 
 ## Sommaire <!-- omit in toc -->
 - [C.1. appContainer](#c1-appcontainer)
@@ -31,7 +31,7 @@ Actuellement notre fichier `index.html` contient ce code :
 </section>
 ```
 
-L'idée c'est maintenant de faire en sorte que tout le contenu de la `<section class="appContainer">` soit généré avec React pour nous permettre de travailler un peu les syntaxes JSX (_et préparer les prochains TPs_ 😉)
+L'idée est maintenant de faire en sorte que tout le contenu de la `<section class="appContainer">` soit généré avec React pour nous permettre de travailler un peu les syntaxes JSX (_et préparer les prochains TPs_ 😉)
 
 Dans cet exercice on va donc  :
 - créer un nouveau composant `Menu` pour rendre le `<header><nav>...</nav></header>`
@@ -73,7 +73,7 @@ Maintenant que ces préparatifs sont faits, créons donc notre deuxième composa
 	```
 	> _**Conseil :** vérifiez régulièrement que vous n'avez pas d'erreur ou de warning dans la console, on ne sait jamais..._
 
-2. **Modifiez le `app.jsx` pour rendre à la fois le composant `VideoDetail` et ce nouveau composant `Menu` côte à côte dans la `<section class="appContainer">`, comme ceci :**
+2. **Modifiez-le `app.jsx` pour rendre à la fois le composant `VideoDetail` et ce nouveau composant `Menu` côte à côte dans la `<section class="appContainer">`, comme ceci :**
 	```jsx
 	root.render(
 		<>
