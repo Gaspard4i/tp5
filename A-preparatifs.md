@@ -17,25 +17,30 @@ Il va vous servir de base pour ce nouveau TP.
 	- soit en cliquant sur le bouton `"Créer une divergence"` (_`"Fork"` sur la version anglaise de gitlab_)
 	- soit en vous rendant directement sur https://framagit.org/cours-react/tp2/-/forks/new
 
-	**⚠️ ATTENTION :** Choisissez de placer votre fork **dans VOTRE profil utilisateur** et vérifiez que le repo est **bien en mode "privé"**
+	**⚠️ ATTENTION :** Choisissez de placer votre fork **dans VOTRE profil utilisateur** (`namespace`) \
+	et vérifiez que le repo est **bien en mode "private"** (`Visibility Level`)
 
-3. **Ajoutez moi en tant que "reporter" pour que j'ai accès à votre code :** dans le menu de gauche, cliquez sur `"Manage"` &gt; `"Members"` puis sur le bouton `"Invite members"` (_ou_ `"Gestion"` &gt; `"Membres"` : `"Inviter des membres"`_sur la version française de Gitlab_), et entrez `@tf` comme nom d'utilisateur, et donc `"reporter"` comme rôle.
+2. **Ajoutez moi en tant que "reporter" pour que j'ai accès à votre code :**
+	- dans le menu de gauche, cliquez sur **`Manage`** &gt; **`Members`** (`Gestion` &gt; `Membres` _si vous êtes sur la VF de gitlab_)
+	- cliquez sur le bouton en haut à droite **`"Invite members"`** (`Inviter des membres`)
+	- entrez comme **nom d'utilisateur** mon username : `@tf`
+	- ... et `"reporter"` comme **rôle**.
 
-4. **Récupérez les fichiers de ce TP grâce à Git : clonez ce repo dans un dossier de votre choix** :
+3. **Récupérez les fichiers de ce TP grâce à Git : clonez votre fork dans un dossier de votre choix** :
 	```bash
 	mkdir ~/tps-react
-	git clone https://framagit.org/cours-react/tp2.git ~/tps-react/tp2
+	git clone https://framagit.org/<votre-username>/tp2.git ~/tps-react/tp2
 	```
 	> _**NB1 :** Comme pour le TP1, ici je clone dans mon dossier `/home/thomas/tps-react/tp2`. **Si vous êtes sous Windows faites attention au sens des slashs et au caractère `"~"`** qui représente le dossier de l'utilisateur sur système unix : utilisez **Git bash** (qui comprend cette syntaxe) ou si vous tenez vraiment à utiliser **cmd** ou **powershell** pensez à adapter la commande !_
 
-	> _**NB2 :** Comme pour le TP1 aussi, si vous préférez **cloner en SSH** pour ne pas avoir à taper votre mot de passe à chaque fois que vous clonerez un TP, renseignez votre clé SSH dans votre [compte utilisateur framagit](https://framagit.org/-/profile/keys) et clonez à partir de cette URL : `git@framagit.org:cours-react/tp2.git`_
+	> _**NB2 :** Comme pour le TP1 aussi, si vous préférez **cloner en SSH** pour ne pas avoir à taper votre mot de passe à chaque fois que vous clonerez un TP, renseignez votre clé SSH dans votre [compte utilisateur framagit](https://framagit.org/-/profile/keys) et clonez à partir de cette URL : `git@framagit.org:votre-username/tp2.git`_
 
-5. **Ouvrez le projet dans VSCodium** (pour les différentes façon d'ouvrir le projet relisez les [instructions du TP1](https://framagit.org/formation/cours-react/tp1/-/blob/master/A-preparatifs.md#a4-ouvrir-le-projet-dans-vscodium) )
+4. **Ouvrez le projet dans VSCodium** (pour les différentes façon d'ouvrir le projet relisez les [instructions du TP1](https://framagit.org/cours-react/tp1/-/blob/master/A-preparatifs.md#a4-ouvrir-le-projet-dans-vscodium) )
 	```bash
 	codium ~/tps-react/tp2
 	```
 
-6. **Installez les paquets npm nécessaires au projet** notamment [Vite](https://vitejs.dev).<br>
+5. **Installez les paquets npm nécessaires au projet** notamment [Vite](https://vitejs.dev).<br>
 	Ouvrez un terminal intégré à VSCodium (<kbd>CTRL</kbd>+<kbd>J</kbd> *(PC)* / <kbd>CMD</kbd>+<kbd>J</kbd> *(Mac)*) et tapez juste :
 	```bash
 	npm install
