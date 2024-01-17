@@ -47,4 +47,4 @@ Le résultat doit être le suivant (_ça ressemble à ce qu'on avait fait au TP1
 
 
 ## Étape suivante <!-- omit in toc -->
-Une fois cette partie terminée, passons à quelques exercices avancés dans la partie [E. Pour aller plus loin](E-optimisations.md).
+La VideoList étant terminée, passons à la partie [E. Debugger dans vscode](E-debug-vscode.md).

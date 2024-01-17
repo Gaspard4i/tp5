@@ -141,7 +141,7 @@ Comme nous sommes de gens sérieux, allons y :
 
 	Génial non ? Et tout ça sans avoir rien d'autre à faire que d'intégrer `@vitejs/plugin-react` ! 😎
 
-4. **Pour indiquer à Vite que l'on souhaite donc utiliser ce plugin dans notre code, on va ajouter un fichier de config `vite.config.js`** à la racine de notre TP, avec le contenu suivant :
+4. **Pour indiquer à Vite que l'on souhaite donc utiliser ce plugin dans notre code, on va ajouter un fichier de config `vite.config.mjs`** à la racine de notre TP, avec le contenu suivant :
 	```js
 	import react from '@vitejs/plugin-react';
 

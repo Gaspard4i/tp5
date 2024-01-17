@@ -12,4 +12,5 @@ Pour plus de clarté, les instructions du TP se trouvent dans des fichiers disti
 2. [B. Un premier composant](B-premier-composant.md)
 3. [C. JSX : les bases](C-videodetail.md)
 4. [D. JSX : les boucles](D-videolist.md)
-5. [E. Pour aller plus loin](E-optimisations.md)
+5. [E. Debugger dans vscode](E-debug-vscode.md)
+6. [F. Pour aller plus loin](F-optimisations.md)
