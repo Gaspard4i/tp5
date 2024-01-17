@@ -19,3 +19,35 @@ Si vous avez terminé les précédents exercices, bravo ! Voici quelques exercic
 	- n'avoir ni barre de menu ni barre d'outils
 	- être affichée au centre de l'écran
 
+5. **Dans le composant `VideoDetail`, créez un formulaire d'ajout de commentaires.** Le code HTML du formulaire devra être le suivant :
+	```html
+	<aside className="commentList">
+		<form className="commentForm">
+			<textarea
+				name="content"
+				rows="2"
+				placeholder="Ajouter un commentaire public"
+			/>
+			<button type="submit">Envoyer</button>
+		</form>
+	</aside>
+	```
+	A la soumission du formulaire, faites en sorte d'afficher une alerte "Ajout de commentaire !"
+
+6. **Toujours dans le composant `VideoDetail`, affichez en dessous du formulaire (à _l'INTÉRIEUR_ de la balise `<aside class="commentList">`) une liste de commentaires, stockés dans un tableau `comments`.**
+
+	Ce tableau `comments` contient des objets littéraux avec des propriétés :
+	- id : number
+	- created_at : string contenant un datetime au format ISO (ex. `'2024-01-12 13:22:34'`)
+	- content : string contenant le texte du commentaire (ex. `'Superbe ! Ce tp est fantastique.'`)
+
+	Le code HTML de chaque commentaire sera le suivant :
+	```html
+	<article class="commentRenderer">
+		<time dateTime="2024-01-12 13:22:34">
+			Le 12/01/2024 à 13:22:34
+		</time>
+		<p>Superbe ! Ce tp est fantastique.</p>
+	</article>
+	```
+	Enfin, ajouter en haut de la balise `<aside class="commentList">` une balise `<h2>X commentaires</h2>` où `X` est le nombre de commentaires.
