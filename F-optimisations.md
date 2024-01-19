@@ -21,8 +21,8 @@ Si vous avez terminé les précédents exercices, bravo ! Voici quelques exercic
 
 5. **Dans le composant `VideoDetail`, créez un formulaire d'ajout de commentaires.** Le code HTML du formulaire devra être le suivant :
 	```html
-	<aside className="commentList">
-		<form className="commentForm">
+	<aside class="commentList">
+		<form class="commentForm">
 			<textarea
 				name="content"
 				rows="2"
