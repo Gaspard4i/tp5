@@ -2,7 +2,7 @@
 
 # B. Un premier composant <!-- omit in toc -->
 
-_**Maintenant que votre environnement de développement est prêt, que votre serveur http tourne, attaquons nous au développement d'un premier composant React.**_
+_**Maintenant que votre environnement de développement est prêt, que votre serveur http tourne, attaquons-nous au développement d'un premier composant React.**_
 
 ## Sommaire <!-- omit in toc -->
 - [B.1. ReactDOM](#b1-reactdom)
@@ -72,7 +72,7 @@ On vient de voir que l'on peut passer à `root.render()` du code JSX tapé inlin
 
 ## B.3. Un composant = un module
 
-Maintenant que vous avez compris le principe, déplacez la fonction `VideoDetail` dans un module à part `src/VideoDetail.jsx`. En effet, le fichier `app.jsx` n'est que le point d'entrée de notre appli, le détail du code de nos composant doit être externalisé. Pensez bien à modifier le module `app.jsx` et aux `import`/`export` qui vont bien !
+Maintenant que vous avez compris le principe, déplacez la fonction `VideoDetail` dans un module à part `src/VideoDetail.jsx`. En effet, le fichier `app.jsx` n'est que le point d'entrée de notre appli, le détail du code de nos composants doit être externalisé. Pensez bien à modifier le module `app.jsx` et aux `import`/`export` qui vont bien !
 
 ## Étape suivante <!-- omit in toc -->
 Une fois cette partie terminée, il est temps de travailler plus en "détail" sur le composant `VideoDetail` : [C. Le composant VideoDetail](C-videodetail.md).

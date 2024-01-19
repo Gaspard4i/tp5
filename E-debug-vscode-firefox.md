@@ -69,9 +69,7 @@ Il y a plusieurs techniques pour configurer tout ça dans vscode mais la solutio
 
 5. **Vous pouvez maintenant lancer la session de debug, en appuyant simplement sur <kbd>F5</kbd>**
 
-	Une nouvelle fenêtre de Firefox s'ouvre alors avec ReacTube :
-
-	<img src="images/readme/vscode-run-firefox.png">
+	Une nouvelle fenêtre de Firefox s'ouvre alors avec ReacTube.
 
 	> _**NB :** cette fenêtre de Firefox est ouverte en mode debug et avec un compte utilisateur "vide", c'est donc normal que vous ne retrouviez pas vos extensions et paramétrages._
 
