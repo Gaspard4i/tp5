@@ -46,7 +46,7 @@ Dans la barre d'onglets des devtools de votre navigateur, ouvrez l'onglet `"Comp
 
 Vous voyez le composant rendu dans la page, et son state : React Devtools détecte que le composant `VideoDetail` contient 2 states, tous les deux à `0`.
 
-Pour savoir à quel state (`like` ou `dislike`) correspond quelle valeur, de base ce n'est pas évident car ils s'appellent tous les deux "`State`", seul leur index diffère.
+Pour savoir à quel state (`likes` ou `dislikes`) correspond quelle valeur, de base ce n'est pas évident car ils s'appellent tous les deux "`State`", seul leur index diffère.
 
 Heureusement vous pouvez cliquer sur la petite icône à droite en forme de "baguette magique" pour afficher le nom des constantes associées :
 
@@ -60,7 +60,7 @@ Essayez de modifier la valeur d'un des deux states en cliquant sur l'un des `0` 
 
 ## B.3. Modifier le state
 
-**Maintenant que l'on a vu que la modification du state entraînait bien un refresh de la page, faites en sorte que lorsque l'utilisateur clique sur les deux boutons, les valeurs des states correspondants augmentent et que l'affichage se mette à jour !**
+**Maintenant que l'on a vu que la modification du state entraînait bien un refresh de la page, faites en sorte que lorsque l'utilisateur clique sur les deux boutons, les valeurs des states correspondants augmente et que l'affichage se mette à jour !**
 
 > _**NB :** Pour rappel, comme vu dans le chapitre précédent, la technique pour détecter le clic sur les boutons est d'ajouter un attribut `onClick` et d'y injecter une fonction (nommée, anonyme ou arrow). Reprenez le pdf du cours si vous n'êtes plus au clair sur la syntaxe !_
 
