@@ -17,8 +17,13 @@ La `VideoList` contiendra autant d'instances de `VideoThumbnail` qu'il y a de vi
 
 2. **Externalisez dans `VideoThumbnail` le JSX de chaque vignette de vidéo** (_tout le `<a href>...</a>`_)
 
-> **Astuce :** pensez à utiliser les React Devtools pour inspecter l'arborescence du virtual DOM, et détecter les éventuelles anomalies de structure
+	> **Astuce :** pensez à utiliser les React Devtools pour inspecter l'arborescence du virtual DOM, et détecter les éventuelles anomalies de structure
 
+3. **Améliorez le code de VideoDetail en sortant tout ce qui concerne les commentaires dans un sous composant `CommentList`** (`src/CommentList.jsx`)
+
+	Ce sous-composant sera lui-même composé :
+	- d'un composant `CommentForm` contenant le formulaire d'ajout de commentaires,
+	- et de plusieurs composants `CommentRenderer` pour le rendu de chaque commentaire (_une instance de `CommentRenderer` par commentaire dans la liste_).
 
 ## Étape suivante <!-- omit in toc -->
 Une fois cette partie terminée, voyons comment utiliser conjointement React et l'API DOM : [C. Les refs](C-refs.md).
