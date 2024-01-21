@@ -56,13 +56,13 @@ Heureusement vous pouvez cliquer sur la petite icône à droite en forme de "bag
 
 Essayez de modifier la valeur d'un des deux states en cliquant sur l'un des `0` : vous voyez que l'affichage se met à jour automatiquement ? 🙌 C'est la magie du state qui opère !
 
-> _**NB : Vous noterez qu'à chaque fois qu'on modifie le state, la vidéo affichée, son titre et sa description sont mise à jour...** 🤔 je vous propose de laisser de côté ce problème pour le moment et de se le réserver pour la toute fin s'il vous reste du temps, au pire on en reparlera à la correction !_
+> _**NB : Vous noterez qu'à chaque fois qu'on modifie le state, la vidéo affichée, son titre et sa description sont mise à jour...**_ 🤔 _je vous propose de laisser de côté ce problème pour le moment et de se le réserver pour la toute fin s'il vous reste du temps, au pire on en reparlera à la correction !_
 
 ## B.3. Modifier le state
 
 **Maintenant que l'on a vu que la modification du state entraînait bien un refresh de la page, faites en sorte que lorsque l'utilisateur clique sur les deux boutons, les valeurs des states correspondants augmentent et que l'affichage se mette à jour !**
 
-> _**NB :** Pour rappel, comme vu dans le chapitre précédent, la technique détecter le clic sur les boutons est d'ajouter un attribut `onClick` et d'y injecter une fonction (nommée, anonyme ou arrow). Reprenez le pdf du cours si vous n'êtes plus au clair sur la syntaxe !_
+> _**NB :** Pour rappel, comme vu dans le chapitre précédent, la technique pour détecter le clic sur les boutons est d'ajouter un attribut `onClick` et d'y injecter une fonction (nommée, anonyme ou arrow). Reprenez le pdf du cours si vous n'êtes plus au clair sur la syntaxe !_
 
 ## Étape suivante <!-- omit in toc -->
 Si tout fonctionne, vous pouvez passer à l'étape suivante : [C. useEffect](C-useeffect.md)
