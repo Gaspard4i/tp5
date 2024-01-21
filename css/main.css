@@ -99,7 +99,7 @@ body > footer img {
 	min-height: 200px;
 }
 .is-loading * {
-	display: none;
+	display: none !important;
 }
 .is-loading:before {
 	content: '';
