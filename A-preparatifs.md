@@ -21,9 +21,9 @@ Vous commencez maintenant à avoir l'habitude, je ne rentrerais donc pas dans le
 	npm i
 	npm start
 	```
-> _**NB1 :** comme vu au TP précédent, `npm i ...` est un raccourci pour `npm install ...`_
+	> _**NB1 :** comme vu au TP précédent, `npm i ...` est un raccourci pour `npm install ...`_
 
-> _**NB2 :** si vous souhaitez plus de précisions sur les commandes précédentes et l'installation  / configuration du projet, vous pouvez vous référer au chapitre [A. Préparatifs](https://framagit.org/cours-react/tp2/-/blob/master/A-preparatifs.md) du TP2 ou simplement demander de l'aide au formateur_ 😄
+	> _**NB2 :** si vous souhaitez plus de précisions sur les commandes précédentes et l'installation  / configuration du projet, vous pouvez vous référer au chapitre [A. Préparatifs](https://framagit.org/cours-react/tp2/-/blob/master/A-preparatifs.md) du TP2 ou simplement demander de l'aide au formateur_ 😄
 
 2. **Pour afficher votre site, plutôt que d'ouvrir vous-même votre navigateur, utilisez la fonctionnalité de debug dans VSCode configurée lors du précédent TP :**
 
