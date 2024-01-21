@@ -2,7 +2,7 @@
 
 # C. JSX : les bases <!-- omit in toc -->
 
-_**Voilà, notre appli est maintenant capable d'embarquer des composants React. Entraînons nous un peu à manipuler le JSX plus en détail.**_
+_**Voilà, notre appli est maintenant capable d'embarquer des composants React. Entraînons-nous un peu à manipuler le JSX plus en détail.**_
 
 ## Sommaire <!-- omit in toc -->
 - [C.1. appContainer](#c1-appcontainer)
@@ -31,7 +31,7 @@ Actuellement notre fichier `index.html` contient ce code :
 </section>
 ```
 
-L'idée c'est maintenant de faire en sorte que tout le contenu de la `<section class="appContainer">` soit généré avec React pour nous permettre de travailler un peu les syntaxes JSX (_et préparer les prochains TPs_ 😉)
+L'idée est maintenant de faire en sorte que tout le contenu de la `<section class="appContainer">` soit généré avec React pour nous permettre de travailler un peu les syntaxes JSX (_et préparer les prochains TPs_ 😉)
 
 Dans cet exercice on va donc  :
 - créer un nouveau composant `Menu` pour rendre le `<header><nav>...</nav></header>`
@@ -71,8 +71,9 @@ Maintenant que ces préparatifs sont faits, créons donc notre deuxième composa
 		</nav>
 	</header>
 	```
+	> _**Conseil :** vérifiez régulièrement que vous n'avez pas d'erreur ou de warning dans la console, on ne sait jamais..._
 
-2. **Modifiez le `app.jsx` pour rendre à la fois le composant `VideoDetail` et ce nouveau composant `Menu` côte à côte dans la `<section class="appContainer">`, comme ceci :**
+2. **Modifiez-le `app.jsx` pour rendre à la fois le composant `VideoDetail` et ce nouveau composant `Menu` côte à côte dans la `<section class="appContainer">`, comme ceci :**
 	```jsx
 	root.render(
 		<>
@@ -82,7 +83,7 @@ Maintenant que ces préparatifs sont faits, créons donc notre deuxième composa
 	);
 	```
 
-	> _**NB :** vous remarquerez qu'on a entouré `<Menu />` et `<VideoDetail />` de balises "vides" `<>...</>`. En effet comme la méthode `root.render()` ne peut prendre en paramètre qu'une seule valeur, on ne peut pas lui passer comme ça 2 balises côte à côte. Il faut obligatoirement les regrouper dans une seule balise parente._
+	> _**NB :** vous remarquerez qu'on a entouré `<Menu />` et `<VideoDetail />` de balises "vides" `<>...</>`. En effet, comme la méthode `root.render()` ne peut prendre en paramètre qu'une seule valeur, on ne peut pas lui passer comme ça 2 balises côte à côte. Il faut obligatoirement les regrouper dans une seule balise parente._
 	>
 	> _On aurait pu encadrer les 2 balises d'une balise parente HTML "classique", comme une `<div>...</div>` par exemple, mais cela aurait surchargé inutilement le code HTML avec une balise div intermédiaire, et cela aurait aussi cassé la CSS._
 	>
@@ -136,6 +137,8 @@ Le rendu HTML doit rester inchangé par rapport à avant nos modifications, mais
 	Le résultat attendu dans le navigateur est le suivant :
 
 	<img src="images/readme/screen-05.png" >
+
+	Modifiez les valeurs des 3 constantes title, description et file, et vérifiez que le contenu se met bien à jour !
 
 ## Étape suivante <!-- omit in toc -->
 Une fois cette partie terminée, passons à la prochaine partie : [D. JSX : les boucles](D-videolist.md).
