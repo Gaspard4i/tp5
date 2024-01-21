@@ -3,6 +3,21 @@
 	src: url("./fonts/oswald.ttf");
 	font-weight: normal;
 }
+@font-face {
+	font-family: Roboto;
+	src: url("./fonts/roboto.ttf");
+	font-weight: 400;
+}
+@font-face {
+	font-family: Roboto;
+	src: url("./fonts/roboto.ttf");
+	font-weight: 500;
+}
+@font-face {
+	font-family: Roboto;
+	src: url("./fonts/roboto.ttf");
+	font-weight: bold;
+}
 
 * {
 	box-sizing: border-box;
@@ -13,12 +28,15 @@ body {
 	/* height: 100%; */
 	padding: 0;
 	background: #f1f1f1;
+	position: relative;
+	z-index: -3;
 }
 body {
 	min-height: 100vh;
 	color: black;
 	font-size: 12px;
-	font-family: 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	/* font-family: 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif; */
+	font-family: "Roboto","Arial",sans-serif;
 	display: flex;
 	flex-direction: column;
 	padding-top: 58px;
@@ -31,7 +49,7 @@ a:hover {
 }
 body > .appContainer {
 	flex-grow: 1;
-	padding: 80px 0;
+	padding: 50px 0;
 }
 .container,
 .videoDetail,
@@ -74,7 +92,7 @@ body > footer a {
 	min-height: 200px;
 }
 .is-loading * {
-	display: none;
+	display: none !important;
 }
 .is-loading:before {
 	content: '';
