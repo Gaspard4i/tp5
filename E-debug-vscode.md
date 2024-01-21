@@ -1,6 +1,6 @@
 <img src="images/readme/header-small.jpg" >
 
-# B. Debugger dans vscode <!-- omit in toc -->
+# E. Debugger dans vscode <!-- omit in toc -->
 
 _**Pour débugger notre code, on a jusqu'ici toujours utilisé les devtools intégrés dans notre navigateur. Mais il faut admettre que ce n'est pas très pratique de devoir passer d'une fenêtre à l'autre notamment quand on utilise les points d'arrêt car on a le _MÊME_ code affiché à 2 endroits différents :**_
 - **dans vscode** (_le code qu'on édite_)
@@ -54,11 +54,26 @@ Il y a plusieurs techniques pour configurer tout ça dans vscode mais la solutio
 	}
 	```
 	Tout est presque bon, seule l'URL n'est pas correcte car le port indiqué n'est pas celui que l'on utilise (_`8080` au lieu de `8000`. Souvenez-vous : notre site est lancé avec la commande `vite --port 8000` !_)
-3. **Corrigez donc le numéro de port dans le fichier `launch.json` :**
+
+	> NB si vous utilisez chromium, il faut que vous rajoutiez la ligne suivante dans la clé configurations :
+	> ```diff
+	> "configurations": [
+	> 	{
+	> 		"type": "chrome",
+	> 		"request": "launch",
+	> 		"name": "Launch Chrome against localhost",
+	> 		"url": "http://localhost:8080",
+	> -		"webRoot": "${workspaceFolder}"
+	> +		"webRoot": "${workspaceFolder}",
+	> +		"runtimeExecutable": "/bin/chromium"
+	> 	}
+	> ]
+	> ```
+4. **Corrigez donc le numéro de port dans le fichier `launch.json` :**
 	```json
 	"url": "http://localhost:8000",
 	```
-4. **Vous pouvez maintenant lancer la session de debug, en appuyant simplement sur <kbd>F5</kbd>**
+5. **Vous pouvez maintenant lancer la session de debug, en appuyant simplement sur <kbd>F5</kbd>**
 
 	Une nouvelle fenêtre de Chrome s'ouvre alors avec ReacTube :
 
