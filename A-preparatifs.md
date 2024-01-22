@@ -2,7 +2,7 @@
 
 # A. Préparatifs <!-- omit in toc -->
 
-Vous commencez maintenant à avoir l'habitude, je ne rentrerais donc pas dans les détails mais voici les différentes étapes pour le lancement du projet en mode [TL;DR](https://en.wiktionary.org/wiki/tl;dr)
+Vous commencez maintenant à avoir l'habitude, je ne rentrerai donc pas dans les détails mais voici les différentes étapes pour le lancement du projet en mode [TL;DR](https://en.wiktionary.org/wiki/tl;dr)
 
 1. **Commencez par fork le TP sur https://gitlab.univ-lille.fr/react/tp3/-/forks/new**
 
@@ -38,9 +38,9 @@ Vous commencez maintenant à avoir l'habitude, je ne rentrerais donc pas dans le
 	<img src="images/readme/screen-00.png" >
 
 
-6. **Avant de vous lancer dans ce TP, prenez 5 à 10 minutes pour lire le code contenu dans le dossier `/src`** et comparez le avec votre code du précédent TP.
+6. **Avant de vous lancer dans ce TP, prenez 5 à 10 minutes pour lire le code contenu dans le dossier `/src`** et comparez-le avec votre code du précédent TP.
 
-	**C'est important de bien comprendre le code qui vous est fourni car il servira de base aux exercices de ce TP** : si des points ne sont pas clairs interrogez votre encadrant.e de TP !
+	**C'est important de bien comprendre le code qui vous est fourni car il servira de base aux exercices de ce TP** : si des points ne sont pas clairs, interrogez votre encadrant.e de TP !
 
 	**Attention : si vous n'aviez pas eu le temps de terminer le précédent TP**, portez une attention toute particulière aux fichiers :
 	- `app.jsx`
