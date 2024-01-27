@@ -163,6 +163,13 @@ button:active {
 	color: #030303;
 	font-size: 20px;
 }
+.commentList > .is-loading {
+	min-height: 80px;
+	&:after {
+		width: 35px;
+		height: 35px;
+	}
+}
 
 .commentRenderer,
 .commentForm {
@@ -218,7 +225,20 @@ button:disabled {
 	cursor: not-allowed;
 	background-color: transparent;
 	outline: 1px currentColor solid;
+	&.is-loading {
+		cursor: progress;
+		min-height: auto;
+		padding-left: 35px;
+		&:after {
+			width: 16px;
+			height: 16px;
+			left: 18px;
+			border-color: currentColor;
+			border-top-color: #ccc3;
+		}
+	}
 }
+
 .commentForm button:focus:not(:disabled),
 .commentForm button:hover:not(:disabled) {
 	cursor: pointer;
