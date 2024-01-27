@@ -60,3 +60,6 @@ Plusieurs contraintes :
 - Comme nous sommes dans un formulaire contrôlé, on peut modifier la valeur tapée par l'utilisateur : **remplacez automatiquement certains mots au fur et à mesure de la frappe** (_par exemple on peut choisir de remplacer "angular" par "react"_ 😁)
 - Comme le texte tapé par l'utilisateur est stocké dans un state, il est facile d'adapter le JSX retourné à la valeur saisie : **désactivez donc le bouton submit** tant qu'il n'y a pas plus de 2 caractères saisis
 - Pendant le **chargement** de la liste des commentaires et pendant **l'envoi** d'un nouveau commentaire l'utilisateur ne doit pas pouvoir saisir de texte ou re-cliquer sur le bouton submit
+
+	> _si vous le souhaitez, des styles sont présents dans la CSS pour l'état `disabled` du `textarea` et du `button` submit._ \
+	> _Le bouton submit supporte par ailleurs la classe "is-loading" pour afficher un petit loader à l'intérieur du bouton._

@@ -1,10 +1,10 @@
 export default function CommentForm() {
-	function handleCommentSubmit(event) {
+	function handleSubmit(event) {
 		event.preventDefault();
 		alert('Ajout de commentaire !');
 	}
 	return (
-		<form className="commentForm" onSubmit={handleCommentSubmit}>
+		<form className="commentForm" onSubmit={handleSubmit}>
 			<textarea
 				name="content"
 				rows="2"
