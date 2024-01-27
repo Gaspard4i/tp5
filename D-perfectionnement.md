@@ -19,7 +19,6 @@ _**En revanche il reste un certain nombre de choses qui sont encore en dur dans 
 
 > _**NB :** Pour que ce soit plus simple à tester, je vous conseille de remettre la page `VideoList` comme page par défaut dans le `Navigator`._
 
-> _**NB2 :** une fois le `VideoDetail` connecté à l'API, vous pouvez supprimer le fichier `src/data.js` qui n'est plus utile._
 
 ## D.2. Redirection VideoForm -> VideoDetail
 **Maintenant que le `VideoDetail` est dynamisé, profitons en pour modifier le comportement du `VideoForm`** : une fois l'enregistrement d'une nouvelle vidéo terminé, au lieu de rediriger l'utilisateur vers la page liste, **redirigez le plutôt vers la page détail** de la vidéo qu'il vient d'enregistrer !
@@ -38,44 +37,26 @@ _**Connectons maintenant les boutons like/dislike de la page `VideoDetail` à l'
 
 ## D.4. Les commentaires
 
-_**Dans ce dernier exercice, je vous propose de travailler avec les formulaires contrôlés en ajoutant un système de commentaires dans la page de détail.**_
+_**Dans ce dernier exercice, je vous propose de travailler encore un peu les appels AJAX ainsi que les formulaires contrôlés en dynamisant les commentaires dans la page de détail.**_
 
-<img src="images/readme/commentaires.png" >
+L'API pour les commentaires est **déjà fournie** dans api-server :
+- **GET http://localhost:8080/api/videos/1/comments** retourne les commentaires de la vidéo d'id "1"
+- **POST http://localhost:8080/api/videos/1/comments** ajoute un nouveau commentaire à la vidéo d'id "1"
+
+	Comme indiqué dans la doc du serveur REST (_n'hésitez pas à la consulter sur http://localhost:8080_), le body de la requête POST doit être de la forme :
+	```json
+	{
+		"content": "Le message saisi par l'utilisateur"
+	}
+	```
 
 Plusieurs contraintes :
-- le formulaire d'ajout de commentaire doit donc être un formulaire **contrôlé**
-- l'API pour les commentaires est **déjà fournie** :
-	- **GET http://localhost:8080/api/videos/1/comments** retourne les commentaires de la vidéo d'id 1
-	- **POST http://localhost:8080/api/videos/1/comments** ajoute un nouveau commentaire.
+- Quand on arrive sur la page de détail d'une vidéo, **la liste des commentaires doit se charger** en fonction de la vidéo affichée
 
-		Le body de la requête POST doit être de la forme :
-		```json
-		{
-			"content": "Le message saisi par l'utilisateur"
-		}
-		```
+	> _**NB :** une fois les commentaires connectés à l'API, vous pouvez supprimer le fichier `src/data.js` qui n'est plus utile !_
+- Le commentaire le plus récent est **en haut**
+- Le formulaire d'ajout de commentaire doit être un formulaire **contrôlé**
 - Une fois un commentaire ajouté, la **liste des commentaires doit se rafraîchir**
-- le commentaire le plus récent est en haut
-- pour chaque commentaire on affiche son contenu et sa date de publication au format `"Le 06/07/2020 à 13:37:42"`
-- comme nous sommes dans un formulaire contrôlé, on peut modifier la valeur tapée par l'utilisateur : remplacez automatiquement certains mots au fur et à mesure de la frappe (par exemple on peut remplacer "angular" par "react" 😁)
-- comme le texte tapé par l'utilisateur est stocké dans le state du composant, il est facile d'adapter le JSX retourné à la valeur saisie : désactivez donc le bouton submit tant qu'il n'y a pas plus de 2 caractères saisis
-- pendant le chargement l'utilisateur ne doit pas pouvoir saisir de texte ou re-cliquer sur le bouton submit
-
-Voici une proposition de code HTML qui devrait rendre à peu près bien dans la page :
-```html
-<aside class="commentList">
-	<h2>X commentaires</h2>
-	<form class="commentForm">
-		<textarea
-			name="content"
-			rows="2"
-			placeholder="Ajouter un commentaire public"
-		></textarea>
-		<button type="submit">Envoyer</button>
-	</form>
-	<article class="commentRenderer">
-		<time datetime="2020-06-08 22:40:41">Le 08/06/2020 à 22:40:41</time>
-		<p>Génial ! Vive React</p>
-	</article>
-</aside>
-```
+- Comme nous sommes dans un formulaire contrôlé, on peut modifier la valeur tapée par l'utilisateur : **remplacez automatiquement certains mots au fur et à mesure de la frappe** (_par exemple on peut choisir de remplacer "angular" par "react"_ 😁)
+- Comme le texte tapé par l'utilisateur est stocké dans un state, il est facile d'adapter le JSX retourné à la valeur saisie : **désactivez donc le bouton submit** tant qu'il n'y a pas plus de 2 caractères saisis
+- Pendant le **chargement** de la liste des commentaires et pendant **l'envoi** d'un nouveau commentaire l'utilisateur ne doit pas pouvoir saisir de texte ou re-cliquer sur le bouton submit
