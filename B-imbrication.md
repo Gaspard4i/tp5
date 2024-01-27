@@ -5,9 +5,9 @@
 _**Dans cette partie du TP, nous allons modifier notre application pour mettre en oeuvre le principe d'imbrication et la technique des props.**_
 
 
-Actuellement notre VideoList contient tout le JSX associé aux vignettes ce qui alourdi inutilement le composant (_dans l'absolu, le boulot de la VideoList c'est de rendre une liste de vignette, peu importe ce que les vignettes contiennent, ce n'est pas vraiment son affaire_).
+Actuellement notre VideoList contient tout le JSX associé aux vignettes ce qui alourdit inutilement le composant (_dans l'absolu, le boulot de la VideoList c'est de rendre une liste de vignette, peu importe ce que les vignettes contiennent, ce n'est pas vraiment son affaire_).
 
-On va donc **externaliser le code des vignettes dans des sous-composant, qu'on appellera `VideoThumbnail`**.
+On va donc **externaliser le code des vignettes dans des sous-composants, qu'on appellera `VideoThumbnail`**.
 
 La `VideoList` contiendra autant d'instances de `VideoThumbnail` qu'il y a de vidéos dans le tableau `data.js`, ce qui nous donnera la structure suivante :
 

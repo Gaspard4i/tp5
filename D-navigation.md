@@ -14,7 +14,7 @@ _**L'idée est d'afficher par défaut la `VideoList` mais de permettre à l'util
 
 ## D.1. Cahier des charges
 
-1. **Dans le fichier `app.jsx`, au lieu de rendre le composant `VideoList` ou `VideoDetail` instanciez un nouveau composant nommé `Navigator`.**
+1. **Dans le fichier `app.jsx`, au lieu de rendre le composant `VideoList` ou `VideoDetail`, instanciez un nouveau composant nommé `Navigator`.**
 2. **Ce composant `Navigator` affichera par défaut la `VideoList`**
 3. **Au clic sur un des `VideoThumbnail`, la `VideoList` doit demander au `Navigator` d'afficher le `VideoDetail` et lui passer l'id de la vidéo à afficher.**
 4. **Le `VideoDetail` devra récupérer dans `data.js` la vidéo correspondant à l'id demandé** (*attention, on considère que les ids ne sont pas forcément dans l'ordre : utilisez plutôt la méthode [`array.find()`](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Array/find)*).
@@ -151,4 +151,4 @@ Si vraiment vous voulez des indices, alors il va falloir scroller un peu !
 3. C'est **en fonction de ce state** que vous afficherez soit la `VideoList` soit `VideoDetail`
 4. Il faudra aussi trouver un moyen de dire au `Navigator` que l'utilisateur a cliqué sur une vignette de la `VideoList` de manière à changer le state et donc afficher le `VideoDetail`. Pour ça, sachez que lorsque vous passez des **`props`** à un composant enfant, même si on a jusque là toujours passé des valeurs simples (_chaînes, nombres, objets_), vous avez aussi le droit de **passer des références vers des fonctions ou des méthodes du composant parent** !
 
-Si après ça vous avez encore besoin d'aide, interrogez moi ! 😄
+Si après ça vous avez encore besoin d'aide, interrogez-moi ! 😄
