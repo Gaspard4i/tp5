@@ -7,9 +7,33 @@
 		{
 			"type": "pwa-chrome",
 			"request": "launch",
-			"name": "Reactube dans Chrome",
+			"name": "Debug Reactube dans Chrome",
 			"url": "http://localhost:8000",
 			"webRoot": "${workspaceFolder}"
-		}
+		},
+		{
+			"type": "pwa-chrome",
+			"request": "launch",
+			"name": "Debug Reactube dans Chromium",
+			"url": "http://localhost:8000",
+			"webRoot": "${workspaceFolder}",
+			"runtimeExecutable": "/bin/chromium"
+		},
+		{
+			"name": "Debug Reactube dans Firefox",
+			"type": "firefox",
+			"request": "launch",
+			"reAttach": true,
+			"port": 8008,
+			"timeout": 25,
+			"url": "http://localhost:8000",
+			"webRoot": "${workspaceFolder}",
+			"pathMappings": [
+				{
+					"url": "http://localhost:8000/src",
+					"path": "${workspaceFolder}/src"
+				}
+			]
+		},
 	]
 }
