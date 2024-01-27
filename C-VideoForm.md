@@ -47,6 +47,8 @@ _**Maintenant que l'on est capables de récupérer des informations de la bdd av
 2. **Ajoutez cet écran dans le `Navigator` avec un identifiant de route associé** (_pour `VideoList` on avait `'list'`, pour `VideoDetail` on avait `'detail'`, je vous propose donc pour `VideoForm` de partir sur... `'form'`, original non ?_)
 3. **Affichez `VideoForm` par défaut au chargement de l'appli en modifiant le `state` par défaut du `Navigator`**
 
+	<img src="images/readme/screen-05.png" />
+
 ## C.2. Gestion du formulaire
 1. **A l'aide de la technique des composants non-contrôlés** (_cf. pdf du cours_) faites en sorte d'afficher dans la console les valeurs saisies par l'utilisateur lorsqu'il soumet le formulaire (touche <kbd>Entrée</kbd> ou click sur le bouton "Envoyer")
 2. **Une fois les valeurs récupérées, envoyez une requête POST vers le webservice http://localhost:8080/api/videos**
