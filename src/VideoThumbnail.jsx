@@ -1,12 +1,12 @@
 const VideoThumbnail = ({
-	video: { title, description, thumbnail, file },
-	onClick,
+	video: { title, description, thumbnail, file }, // nested destructuring !
+	onClick, // une prop peut être une fonction définie dans le composant parent !
 }) => (
 	<a
 		href={`./uploads/${file}`}
 		onClick={event => {
 			event.preventDefault();
-			onClick();
+			onClick(); // on appelle la fonction passée dans les props
 		}}
 	>
 		<img src={`https://source.unsplash.com/${thumbnail}/600x340`} />
