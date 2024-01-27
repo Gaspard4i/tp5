@@ -12,16 +12,16 @@
 ## A.1. Récupération du projet
 Vous commencez maintenant à avoir l'habitude, je ne rentrerai donc pas dans les détails mais voici les différentes étapes pour le lancement du projet en mode [TL;DR](https://en.wiktionary.org/wiki/tl;dr)
 
-1. **Commencez par fork le TP sur https://framagit.org/cours-react/tp5/-/forks/new**
+1. **Commencez par fork le TP sur https://gitlab.univ-lille.fr/react/tp5/-/forks/new**
 
 	- **placé dans VOTRE profil utilisateur** (`namespace`)
 	- **en mode "private"** (`Visibility Level`)
-	- ⚠️ **ajoutez-moi en `"reporter"`** ⚠️
+	- ⚠️ **ajoutez votre encadrant de TP (`@gery.casiez` ou `@thomas.fritsch`) en `"reporter"`** ⚠️
 
 2. **Tapez dans un terminal :**
 	```bash
 	mkdir ~/tps-react
-	git clone https://framagit.org/<votre-username>/tp5.git ~/tps-react/tp5
+	git clone https://gitlab.univ-lille.fr/<votre-username>/tp5.git ~/tps-react/tp5
 	codium ~/tps-react/tp5
 	```
 3. **Puis dans un terminal intégré de VSCodium** (<kbb>CTRL/Cmd</kbd>+<kbd>J</kbd>) :
@@ -29,7 +29,7 @@ Vous commencez maintenant à avoir l'habitude, je ne rentrerai donc pas dans les
 	npm i
 	npm start
 	```
-	> _**NB :** si vous souhaitez plus de précisions sur les commandes précédentes et l'installation  / configuration du projet, vous pouvez vous référer au chapitre [A. Préparatifs](https://framagit.org/cours-react/tp2/-/blob/master/A-preparatifs.md) du TP2 ou simplement demander de l'aide au formateur_ 😄
+	> _**NB :** si vous souhaitez plus de précisions sur les commandes précédentes et l'installation  / configuration du projet, vous pouvez vous référer au chapitre [A. Préparatifs](https://gitlab.univ-lille.fr/react/tp2/-/blob/cours-iut/A-preparatifs.md) du TP2 ou simplement demander de l'aide au formateur_ 😄
 
 4. **Lancez votre site en mode "debug dans vscode"** : tapez <kbd>CTRL</kbd>+<kbd>SHIFT</kbd>+<kbd>P</kbd> puis sélectionnez `"Debug: Select and start debugging"` ou appuyez simplement sur la touche <kbd>F5</kbd>.
 
@@ -37,14 +37,25 @@ Vous commencez maintenant à avoir l'habitude, je ne rentrerai donc pas dans les
 
 	<img src="images/readme/screen-00.png" >
 
+5. **Avant de vous lancer dans ce TP, prenez 5 à 10 minutes pour lire le code contenu dans le dossier `/src`** et comparez-le avec votre code du précédent TP.
+
+	**C'est important de bien comprendre le code qui vous est fourni car il servira de base aux exercices de ce TP** : si des points ne sont pas clairs, interrogez votre encadrant.e de TP !
+
+	**Attention : si vous n'aviez pas eu le temps de terminer le précédent TP**, portez une attention toute particulière aux fichiers :
+	- `Navigator.jsx`
+	- `VideoDetail.jsx` et `CommentList.jsx`
+	- `VideoList.jsx` et `VideoThumbnail.jsx`
+
+
+
 ## A.2. Lancement de l'API REST
-_**Dans ce TP on va enfin connecter notre appli web à une base de données grâce à une API REST qui vous est fournie ici : https://framagit.org/cours-react/api-server**_
+_**Dans ce TP on va enfin connecter notre appli web à une base de données grâce à une API REST qui vous est fournie ici : https://gitlab.univ-lille.fr/react/api-server**_
 
 Ce serveur (_basé sur [Express.js](http://expressjs.com/)_) fournit une API REST minimaliste mais qui va être suffisante pour connecter notre appli React à une base de données [SQLite](https://sqlite.org/index.html) (_générée à la volée_).
 
 1. **Commencez par cloner le serveur :**
 	```bash
-	git clone https://framagit.org/cours-react/api-server.git ~/tps-react/api-server
+	git clone https://gitlab.univ-lille.fr/react/api-server.git ~/tps-react/api-server
 	```
 2. **Installez ensuite les dépendances du serveur :**
 	```bash
