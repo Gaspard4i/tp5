@@ -2,7 +2,7 @@
 
 # A. Préparatifs <!-- omit in toc -->
 
-Vous commencez maintenant à avoir l'habitude, je ne rentrerais donc pas dans les détails mais voici les différentes étapes pour le lancement du projet en mode [TL;DR](https://en.wiktionary.org/wiki/tl;dr)
+Vous commencez maintenant à avoir l'habitude, je ne rentrerai donc pas dans les détails mais voici les différentes étapes pour le lancement du projet en mode [TL;DR](https://en.wiktionary.org/wiki/tl;dr)
 
 1. **Tapez dans un terminal :**
 	```bash
@@ -18,9 +18,11 @@ Vous commencez maintenant à avoir l'habitude, je ne rentrerais donc pas dans le
 
 > _**NB :** si vous souhaitez plus de précisions sur les commandes précédentes et l'installation  / configuration du projet, vous pouvez vous référer au chapitre [A. Préparatifs](https://github.com/formation-react/tp2/blob/github/A-preparatifs.md) du TP2 ou simplement demander de l'aide au formateur_ 😄
 
-Le résultat attendu est le suivant :
+3. **Lancez votre site en mode "debug dans vscode"** : tapez <kbd>CTRL</kbd>+<kbd>SHIFT</kbd>+<kbd>P</kbd> puis sélectionnez `"Debug: Select and start debugging"` ou appuyez simplement sur la touche <kbd>F5</kbd>.
 
-<img src="images/readme/screen-00.png" >
+	Le résultat attendu est le suivant :
+
+	<img src="images/readme/screen-00.png" >
 
 
 ## Étape suivante <!-- omit in toc -->
