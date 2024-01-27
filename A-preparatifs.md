@@ -12,20 +12,26 @@
 ## A.1. Récupération du projet
 Vous commencez maintenant à avoir l'habitude, je ne rentrerai donc pas dans les détails mais voici les différentes étapes pour le lancement du projet en mode [TL;DR](https://en.wiktionary.org/wiki/tl;dr)
 
-1. **Tapez dans un terminal :**
+1. **Commencez par fork le TP sur https://framagit.org/cours-react/tp5/-/forks/new**
+
+	- **placé dans VOTRE profil utilisateur** (`namespace`)
+	- **en mode "private"** (`Visibility Level`)
+	- ⚠️ **ajoutez-moi en `"reporter"`** ⚠️
+
+2. **Tapez dans un terminal :**
 	```bash
 	mkdir ~/tps-react
-	git clone https://framagit.org/formation/react/tp5.git ~/tps-react/tp5
+	git clone https://framagit.org/<votre-username>/tp5.git ~/tps-react/tp5
 	codium ~/tps-react/tp5
 	```
-2. **Puis dans un terminal intégré de VSCodium** (<kbb>CTRL/Cmd</kbd>+<kbd>J</kbd>) :
+3. **Puis dans un terminal intégré de VSCodium** (<kbb>CTRL/Cmd</kbd>+<kbd>J</kbd>) :
 	```bash
 	npm i
 	npm start
 	```
-	> _**NB :** si vous souhaitez plus de précisions sur les commandes précédentes et l'installation  / configuration du projet, vous pouvez vous référer au chapitre [A. Préparatifs](https://framagit.org/formation/react/tp2/-/blob/master/A-preparatifs.md) du TP2 ou simplement demander de l'aide au formateur_ 😄
+	> _**NB :** si vous souhaitez plus de précisions sur les commandes précédentes et l'installation  / configuration du projet, vous pouvez vous référer au chapitre [A. Préparatifs](https://framagit.org/cours-react/tp2/-/blob/master/A-preparatifs.md) du TP2 ou simplement demander de l'aide au formateur_ 😄
 
-3. **Lancez votre site en mode "debug dans vscode"** : tapez <kbd>CTRL</kbd>+<kbd>SHIFT</kbd>+<kbd>P</kbd> puis sélectionnez `"Debug: Select and start debugging"` ou appuyez simplement sur la touche <kbd>F5</kbd>.
+4. **Lancez votre site en mode "debug dans vscode"** : tapez <kbd>CTRL</kbd>+<kbd>SHIFT</kbd>+<kbd>P</kbd> puis sélectionnez `"Debug: Select and start debugging"` ou appuyez simplement sur la touche <kbd>F5</kbd>.
 
 	Le résultat attendu est le suivant :
 
