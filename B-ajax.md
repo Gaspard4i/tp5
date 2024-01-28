@@ -69,7 +69,7 @@ Pour rappel, le support navigateur de l'API fetch est plutôt bon :
 	  .then( response => response.json() )
 	  .then( data => console.log(data) );
 	```
-	En théorie, vous devriez maintenant voir dans la console, le tableaux de vidéos décodé : vous pouvez utiliser les flèches pour déplier/replier chaque objet et consulter ses propriétés.
+	En théorie, vous devriez maintenant voir dans la console, le tableau de vidéos décodé : vous pouvez utiliser les flèches pour déplier/replier chaque objet et consulter ses propriétés.
 
 	<img src="images/readme/screen-03b.png">
 
