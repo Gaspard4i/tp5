@@ -10,7 +10,7 @@
     "preview": "vite preview"
   },
   "author": "Thomas Fritsch <thomas@uidlt.fr> (https://uidlt.fr)",
-  "homepage": "https://framagit.org/cours-react/",
+  "homepage": "https://github.com/cours-react/",
   "license": "ISC",
   "devDependencies": {
     "@vitejs/plugin-react": "^4.2.1",
