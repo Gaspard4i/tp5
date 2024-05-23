@@ -9,12 +9,12 @@ _**Pour débugger notre code, on a jusqu'ici toujours utilisé les devtools int�
 **Dans ce TP nous allons découvrir comment debugger notre code DIRECTEMENT DANS VSCODE 😱 sans avoir besoin des devtools du navigateur !**
 
 ## Sommaire <!-- omit in toc -->
-- [B.1. Configuration](#b1-configuration)
-- [B.2. Utilisation du mode debug](#b2-utilisation-du-mode-debug)
-	- [B.2.1. La Debug console](#b21-la-debug-console)
-	- [B.2.2. Les points d'arrêt](#b22-les-points-darrêt)
+- [E.1. Configuration](#e1-configuration)
+- [E.2. Utilisation du mode debug](#e2-utilisation-du-mode-debug)
+	- [E.2.1. La Debug console](#e21-la-debug-console)
+	- [E.2.2. Les points d'arrêt](#e22-les-points-darrêt)
 
-## B.1. Configuration
+## E.1. Configuration
 
 **Pour pouvoir debugger directement dans vscode, vscode a besoin d'une instance de Chrome en mode debug, ce qui va lui permettre de communiquer avec les devtools de Chrome.**
 
@@ -83,11 +83,11 @@ Il y a plusieurs techniques pour configurer tout ça dans vscode mais la solutio
 
 	**Profitez-en pour installer l'extension chrome "React Developer Tools"** dans cette instance de Chrome !
 
-## B.2. Utilisation du mode debug
+## E.2. Utilisation du mode debug
 
 Cette nouvelle fenêtre de Chrome (ou Firefox) communique maintenant avec vscode. C'est ce qui va permettre à vscode d'offrir plusieurs fonctionnalités de debug intéressantes :
 
-### B.2.1. La Debug console
+### E.2.1. La Debug console
 **La "Debug console" qui s'affiche en bas, correspond plus ou moins à la "Console" de Chrome.**
 
 <img src="images/readme/vscode-console.png" >
@@ -95,7 +95,7 @@ Cette nouvelle fenêtre de Chrome (ou Firefox) communique maintenant avec vscode
 La principale différence avec la console de Chrome, c'est que quand on **clique** sur un nom de fichier (_comme à droite sur la capture d'écran ci-dessus_) vscode affiche directement le fichier et la ligne responsable du `console.log` ! \
 Pratique !
 
-### B.2.2. Les points d'arrêt
+### E.2.2. Les points d'arrêt
 **Vous pouvez maintenant mettre vos points d'arrêt (_breakpoints_) directement dans l'interface de vscode et y faire exactement ce que vous faisiez avec l'onglet "Sources" de Chrome !**
 
 Cliquez simplement à gauche d'un numéro de ligne, et une puce rouge s'affiche indiquant qu'un point d'arrêt a été ajouté !
