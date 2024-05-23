@@ -15,12 +15,12 @@ Pour ce TP vous pouvez soit repartir de vos fichiers du précédent TP (si vous 
 
 *Si vous repartez de vos fichiers, **pensez à faire un `git pull`** pour récupérer les dernières modifications du repo (probablement des modifs de CSS ou des corrections de dernière minute).*
 
-1. **Récupérez les fichiers de ce TP grâce à Git : clonez ce repo dans un dossier de votre choix** :
+1. **Récupérez les fichiers de ce TP grâce à Git : clonez ce repo dans un dossier de votre choix** (_dans mon exemple /home/thomas/tps-react/tp2_):
 	```bash
 	mkdir ~/tps-react
 	git clone https://framagit.org/formation/react/tp2.git ~/tps-react/tp2
 	```
-	> _**NB1 :** Comme pour le TP1, ici je clone dans mon dossier `/home/thomas/tps-react/tp2`. **Si vous êtes sous Windows faites attention au sens des slashs et au caractère `"~"`** qui représente le dossier de l'utilisateur sur système unix : utilisez **Git bash** (qui comprend cette syntaxe) ou si vous tenez vraiment à utiliser **cmd** ou **powershell** pensez à adapter la commande !_
+	> _**NB1 :** Comme pour le TP1, je clone ici dans mon dossier `/home/thomas/tps-react/tp2`. **Si vous êtes sous Windows faites attention au sens des slashs et au caractère `"~"`** qui représente le dossier de l'utilisateur sur système unix : utilisez **Git bash** (qui comprend cette syntaxe) ou si vous tenez vraiment à utiliser **cmd** ou **powershell** pensez à adapter la commande !_
 
 	> _**NB2 :** Comme pour le TP1 aussi, si vous préférez **cloner en SSH** pour ne pas avoir à taper votre mot de passe à chaque fois que vous clonerez un TP, renseignez votre clé SSH dans votre [compte utilisateur framagit](https://framagit.org/-/profile/keys) et clonez à partir de cette URL : `git@framagit.org:formation/react/tp2.git`_
 
@@ -28,6 +28,7 @@ Pour ce TP vous pouvez soit repartir de vos fichiers du précédent TP (si vous 
 	```bash
 	codium ~/tps-react/tp2
 	```
+	> _**NB :** Si vous utilisez VSCode, la commande `codium` doit être remplacée par `code`_
 
 3. **Installez les paquets npm nécessaires au projet** notamment [Vite](https://vitejs.dev).<br>
 	Ouvrez un terminal intégré à VSCodium (<kbd>CTRL</kbd>+<kbd>J</kbd> *(PC)* / <kbd>CMD</kbd>+<kbd>J</kbd> *(Mac)*) et tapez juste :
