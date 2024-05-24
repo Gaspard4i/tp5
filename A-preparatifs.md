@@ -2,7 +2,7 @@
 
 # A. Préparatifs <!-- omit in toc -->
 
-Vous commencez maintenant à avoir l'habitude, je ne rentrerais donc pas dans les détails mais voici les différentes étapes pour le lancement du projet en mode [TL;DR](https://en.wiktionary.org/wiki/tl;dr)
+Vous commencez maintenant à avoir l'habitude, je ne rentrerai donc pas dans les détails mais voici les différentes étapes pour le lancement du projet en mode [TL;DR](https://en.wiktionary.org/wiki/tl;dr)
 
 1. **Commencez par fork le TP sur https://framagit.org/cours-react/tp3/-/forks/new**
 
