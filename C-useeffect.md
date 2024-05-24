@@ -27,5 +27,5 @@ _**Pour s'exercer à `useEffect`, je vous propose de travailler sur le composant
 	Rechargez la page, les vidéos doivent apparaître après ce délai ! Youpi !
 
 ## Étape suivante <!-- omit in toc -->
-Si tout fonctionne, et qu'il vous reste du temps vous pouvez passer à des exercice supplémentaires dans la partie : [D. Pour aller plus loin](D-plus-loin.md)
+Si tout fonctionne, et qu'il vous reste du temps vous pouvez passer à des exercices supplémentaires dans la partie : [D. Pour aller plus loin](D-plus-loin.md)
 
