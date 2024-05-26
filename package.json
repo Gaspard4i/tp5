@@ -15,7 +15,7 @@
   "devDependencies": {
     "@vitejs/plugin-react": "^4.2.1",
     "prettier": "^3.2.4",
-    "vite": "^5.0.12"
+    "vite": "^5.2.11"
   },
   "dependencies": {
     "react": "^18.2.0",
