@@ -33,7 +33,7 @@ _**Connectons maintenant les boutons like/dislike de la page `VideoDetail` à l'
 	- et que le click sur le bouton **"dislike"** lance un **POST http://localhost:8080/api/videos/:id/dislikes**
 
 		(_où **`:id`** est l'id de la vidéo actuellement affichée dans `VideoDetail`_)
-3. **Une fois le POST terminé, mettez à jour le nombre de likes affichés dans la page** (_à partir des données en bdd, quelques fois qu'un autre utilisateur aurait lui aussi entre temps cliqué sur les boutons_ 😉 ).
+3. **Une fois le POST terminé, mettez à jour le nombre de likes affichés dans la page** (_à partir des données en bdd, quelques fois qu'un autre utilisateur ait lui aussi entre temps cliqué sur les boutons_ 😉 ).
 
 ## D.4. Les commentaires
 
