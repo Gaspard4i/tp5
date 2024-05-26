@@ -50,10 +50,10 @@ _**Maintenant que l'on est capables de récupérer des informations de la bdd av
 	<img src="images/readme/screen-05.png" />
 
 ## C.2. Gestion du formulaire
-1. **A l'aide de la technique des composants non-contrôlés** (_cf. pdf du cours_) faites en sorte d'afficher dans la console les valeurs saisies par l'utilisateur lorsqu'il soumet le formulaire (touche <kbd>Entrée</kbd> ou click sur le bouton "Envoyer")
+1. **A l'aide de la technique des composants non contrôlés** (_cf. pdf du cours_) faites en sorte d'afficher dans la console les valeurs saisies par l'utilisateur lorsqu'il soumet le formulaire (touche <kbd>Entrée</kbd> ou click sur le bouton "Envoyer")
 2. **Une fois les valeurs récupérées, envoyez une requête POST vers le webservice http://localhost:8080/api/videos**
 
-	Aidez vous pour cela de :
+	Aidez-vous pour cela de :
 	- la documentation (_[openapi/swagger](https://swagger.io/specification/)_) de l'API REST directement à la racine de votre serveur REST : http://localhost:8080/ (_si vous souhaitez accéder au fichier de description de l'API au format yaml vous le trouverez à la racine du dossier `api-server` : https://github.com/cours-react/api-server/blob/cours-github/openapi.yaml_)
 	- la documentation de `fetch` avec POST : https://developer.mozilla.org/fr/docs/Web/API/Fetch_API/Using_Fetch#corps
 
