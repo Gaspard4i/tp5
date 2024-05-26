@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import CommentList from './CommentList';
 import data from './data';
 
 export default function VideoDetail({ navigate, params: { id } }) {
@@ -58,6 +59,7 @@ export default function VideoDetail({ navigate, params: { id } }) {
 				</div>
 			</header>
 			{description && <p>{description}</p>}
+			<CommentList />
 		</div>
 	);
 }

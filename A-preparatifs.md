@@ -10,7 +10,7 @@
 
 
 ## A.1. Récupération du projet
-Vous commencez maintenant à avoir l'habitude, je ne rentrerais donc pas dans les détails mais voici les différentes étapes pour le lancement du projet en mode [TL;DR](https://en.wiktionary.org/wiki/tl;dr)
+Vous commencez maintenant à avoir l'habitude, je ne rentrerai donc pas dans les détails mais voici les différentes étapes pour le lancement du projet en mode [TL;DR](https://en.wiktionary.org/wiki/tl;dr)
 
 1. **Tapez dans un terminal :**
 	```bash
@@ -23,12 +23,13 @@ Vous commencez maintenant à avoir l'habitude, je ne rentrerais donc pas dans le
 	npm i
 	npm start
 	```
+	> _**NB :** si vous souhaitez plus de précisions sur les commandes précédentes et l'installation  / configuration du projet, vous pouvez vous référer au chapitre [A. Préparatifs](https://github.com/formation-react/tp2/blob/github/A-preparatifs.md) du TP2 ou simplement demander de l'aide au formateur_ 😄
 
-> _**NB :** si vous souhaitez plus de précisions sur les commandes précédentes et l'installation  / configuration du projet, vous pouvez vous référer au chapitre [A. Préparatifs](https://github.com/formation-react/tp2/blob/github/A-preparatifs.md) du TP2 ou simplement demander de l'aide au formateur_ 😄
+3. **Lancez votre site en mode "debug dans vscode"** : tapez <kbd>CTRL</kbd>+<kbd>SHIFT</kbd>+<kbd>P</kbd> puis sélectionnez `"Debug: Select and start debugging"` ou appuyez simplement sur la touche <kbd>F5</kbd>.
 
-Le résultat attendu est le suivant :
+	Le résultat attendu est le suivant :
 
-<img src="images/readme/screen-00.png" >
+	<img src="images/readme/screen-00.png" >
 
 ## A.2. Lancement de l'API REST
 Dans ce TP on va enfin connecter notre appli web à une base de données grâce à l'API REST que l'on a installée lors du TP0 (cf. [TP0 : C. Serveur API REST](https://github.com/formation-react/tp0/blob/github/C-serveur-rest.md)).
