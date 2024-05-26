@@ -97,12 +97,12 @@ Installez l'extension **React Developer Tools** :
 
 <img src="images/readme/header-react.jpg" />
 
-**Comme vu en cours React est une _librairie_ JS.**
+**Comme vu en cours React est une _bibliothèque_ JS.**
 
-Pour l'utiliser dans notre appli on va d'abord devoir récupérer le code de cette librairie. Et pour récupérer une librairie quand on fait du JS de manière sérieuse, c'est **`npm`** qu'on utilise ! \
-Comme nous sommes de gens sérieux, allons-y :
+Pour l'utiliser dans notre appli on va d'abord devoir récupérer le code de cette bibliothèque. Et pour récupérer une bibliothèque quand on fait du JS de manière sérieuse, c'est **`npm`** qu'on utilise ! \
+Comme nous sommes des gens sérieux, allons-y :
 
-1. **Installez la librairie [`react`](https://www.npmjs.com/package/react) avec npm :** Dans le dossier du TP (`à la racine, là où se trouve le package.json`), lancez la commande
+1. **Installez la bibliothèque [`react`](https://www.npmjs.com/package/react) avec npm :** Dans le dossier du TP (`à la racine, là où se trouve le package.json`), lancez la commande
 	```bash
 	npm i react
 	```

@@ -13,6 +13,6 @@
   "homepage": "https://github.com/formation-react/",
   "license": "ISC",
   "devDependencies": {
-    "vite": "^5.0.11"
+    "vite": "^5.2.11"
   }
 }
