@@ -9,7 +9,7 @@ const VideoThumbnail = ({
 			onClick(); // on appelle la fonction passée dans les props
 		}}
 	>
-		<img src={`https://source.unsplash.com/${thumbnail}/600x340`} />
+		<img src={`https://unsplash.uidlt.fr/${thumbnail}/600x340`} />
 		<section className="infos">
 			<h4>{title}</h4>
 			<p>{description}</p>
