@@ -20,7 +20,7 @@ export default function VideoList() {
 			<div className="videoList">
 				{data.map(({ id, title, description, thumbnail, file }) => (
 					<a href={`./uploads/${file}`} key={id} onClick={handleClick}>
-						<img src={`https://source.unsplash.com/${thumbnail}/600x340`} />
+						<img src={`https://unsplash.uidlt.fr/${thumbnail}/600x340`} />
 						<section className="infos">
 							<h4>{title}</h4>
 							<p>{description}</p>
