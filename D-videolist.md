@@ -33,7 +33,7 @@ _**Maintenant que l'on est capables d'afficher des composants, d'injecter des va
 2. **Utilisez-la pour retourner à l'intérieur de la `<div class="videoList">` autant de balises de ce type que de cellules dans `data`** :
 	```html
 	<a href="uploads/video1.mp4">
-		<img src="https://source.unsplash.com/L8KQIPCODV8/600x340" />
+		<img src="https://unsplash.uidlt.fr/L8KQIPCODV8/600x340" />
 		<section class="infos">
 			<h4>Le Top 10 des framework JS</h4>
 			<p>Vous n'en croirez pas vos yeux</p>
