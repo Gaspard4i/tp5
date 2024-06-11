@@ -3,13 +3,13 @@ import VideoList from './VideoList';
 import VideoDetail from './VideoDetail';
 
 export default function Navigator() {
-	const [{ currentPage, params }, setState] = useState({
+	const [{ currentPage, params }, setNavigationState] = useState({
 		currentPage: 'list',
 		params: {},
 	});
 
 	function navigate(newPage, newParams = {}) {
-		setState({ currentPage: newPage, params: newParams });
+		setNavigationState({ currentPage: newPage, params: newParams });
 	}
 
 	switch (currentPage) {
