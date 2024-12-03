@@ -33,11 +33,11 @@ Actuellement notre fichier `index.html` contient ce code :
 
 L'idée est maintenant de faire en sorte que tout le contenu de la `<section class="appContainer">` soit généré avec React pour nous permettre de travailler un peu les syntaxes JSX (_et préparer les prochains TPs_ 😉)
 
-Dans cet exercice on va donc  :
+Dans cet exercice on va donc :
 - créer un nouveau composant `Menu` pour rendre le `<header><nav>...</nav></header>`
 - rendre l'un en dessous de l'autre les composants `Menu` et `VideoDetail` de manière à reproduire le code HTML jusque là en dur
 
-1. **Pour ça commencez par supprimer tout le CONTENU de la balise `<section class="appContainer">`** (_on parle bien du **contenu** de la section, pas de la balise en elle-même !_). Vous devriez maintenant avoir dans votre fichier `index.html` une balise vide comme ceci :
+1. **Pour ça commencez par supprimer tout le CONTENU de la balise `<section class="appContainer">`** (_on parle bien du **CONTENU** de la section, pas de la balise en elle-même !_). Vous devriez maintenant avoir dans votre fichier `index.html` une balise vide comme ceci :
 	```html
 	<section class="appContainer"></section>
 	```
