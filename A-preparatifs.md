@@ -161,9 +161,9 @@ Comme nous sommes des gens sérieux, allons-y :
 	> _**NB :** on utilise ici l'extension de fichier `.jsx` car c'est l'extension supportée par défaut par Vite._ \
 	> _Personnellement je ne suis pas favorable à l'utilisation de cette extension, qui était celle employée lors des toutes premières alpha de React, mais qui avait été depuis délaissée pour revenir à l'extension `.js` (plus logique car on peut tout à faire faire des composants React qui n'utilisent pas de JSX, qui retournent par exemple juste une chaîne de caractères...)._
 	>
-	> _Malheureusement le plugin `@vitejs/plugin-react` [bride l'emploi du Fast Refresh si l'on utilise `.js`](https://github.com/vitejs/vite-plugin-react/issues/155) et n'offre pour le moment aucune possibilité de configuration._
+	> _Malheureusement le plugin `@vitejs/plugin-react` [bride l'emploi du Fast Refresh si l'on utilise `.js`](https://github.com/vitejs/vite-plugin-react/issues/155) (pour des questions de perfs) et n'offre pour le moment aucune possibilité de configuration._
 	>
-	> _En attendant que le plugin évolue, on est donc contraints à utiliser cette extension `.jsx` pour tous nos fichiers contenant du JSX si l'on veut avoir un refresh rapide des composants..._
+	> _En attendant que le plugin évolue (_🤞_), on est donc contraints à utiliser cette extension `.jsx` pour tous nos fichiers contenant du JSX si l'on veut avoir un refresh rapide des composants..._
 
 6. **Enfin, modifiez le fichier `index.html`** pour lui indiquer que c'est ce fichier `src/app.jsx` qui est désormais le point d'entrée.
 
