@@ -1,8 +1,9 @@
 import renderElement from './renderElement.js';
 import renderImg from './renderImg.js';
+import { Video } from './types.js';
 
 // arrow function et destructuring 😍
-export default ( { title, description, file, thumbnail } ) =>
+export default ( { title, description, file, thumbnail }:Video ) =>
 	// plein d'appels imbriqués 😬
 	renderElement( 'a', { name: 'href', value: `./uploads/${file}` }, [
 		renderImg( `https://unsplash.uidlt.fr/${thumbnail}/600x340` ),

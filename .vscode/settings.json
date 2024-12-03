@@ -1,5 +1,5 @@
 {
-	"[javascript]": {
-		"javascript.preferences.importModuleSpecifierEnding": "js"
-	}
+    "[typescript]": {
+        "typescript.preferences.importModuleSpecifierEnding": "js"
+    }
 }

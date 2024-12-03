@@ -1,4 +1,10 @@
-export default function renderElement( tagName = 'div', attribute, children ) {
+type Attribute = null | {
+	name: string,
+	value: string,
+};
+type Children = string | string[];
+
+export default function renderElement( tagName:string = 'div', attribute?: Attribute, children?:Children ) {
 	let attributeHtml = '';
 	if ( attribute ) {
 		attributeHtml = `${attribute.name}="${attribute.value}"`;
