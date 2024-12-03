@@ -164,7 +164,7 @@ L'installation de TypeScript se fait avec **npm** (_Node Package Manager - l'out
 
 5. Relancez la compilation mais cette fois avec l'option "--watch" :
 	```bash
-	./node-modules/.bin/tsc --watch
+	./node_modules/.bin/tsc --watch
 	```
 	Avec ce paramètre, le compilateur va tourner "en boucle" et relancer la compilation dès qu'un fichier sera modifié. Faites une modif rapide du fichier `/src/main.ts` et constatez que le compilateur régénère automatiquement le fichier `/build/main.js`. Pratique !
 
