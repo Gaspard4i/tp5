@@ -1,6 +1,6 @@
 <img src="images/readme/header.jpg" />
 
-## Objectifs
+## 🎯 Objectifs
 - Savoir intégrer React dans une appli JS
 - Développer un premier composant React
 - Utiliser la syntaxe JSX
