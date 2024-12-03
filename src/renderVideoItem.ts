@@ -1,6 +1,6 @@
-import renderElement from './renderElement.js';
-import renderImg from './renderImg.js';
-import { Video } from './types.js';
+import renderElement from './renderElement.ts';
+import renderImg from './renderImg.ts';
+import { Video } from './types.ts';
 
 // arrow function et destructuring 😍
 export default ( { title, description, file, thumbnail }:Video ) =>

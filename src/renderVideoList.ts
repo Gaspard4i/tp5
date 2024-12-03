@@ -1,6 +1,6 @@
-import renderElement from './renderElement.js';
-import renderVideoItem from './renderVideoItem.js';
-import { Video } from './types.js';
+import renderElement from './renderElement.ts';
+import renderVideoItem from './renderVideoItem.ts';
+import { Video } from './types.ts';
 
 export default function renderVideoList( videos:Video[] ) {
 	return renderElement(
