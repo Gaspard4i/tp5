@@ -59,7 +59,7 @@ L'installation de TypeScript se fait avec **npm** (_Node Package Manager - l'out
 	    "skipLibCheck": true,
 	    "outDir": "build",
 	    /* Bundler mode */
-	    "moduleResolution": "Bundler",
+	    "moduleResolution": "bundler",
 	    "allowImportingTsExtensions": true,
 	    "rewriteRelativeImportExtensions": true,
 	    "isolatedModules": true,

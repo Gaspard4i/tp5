@@ -4,7 +4,7 @@
 
 _**Jusque là on a configuré notre environnement de développement manuellement, outil par outil, et si l'on a déjà quelque chose d'à peu près fonctionnel (tsc watch + npx serve) on peut faire bien mieux.**_
 
-Je vous propose d'adopter l'un des outils les plus populaires dans le monde du dev front : [Vite](https://vitejs.dev/).
+Je vous propose d'adopter l'un des outils les plus populaires dans le monde du dev front : [Vite](https://vite.dev/).
 
 ## Sommaire <!-- omit in toc -->
 - [E.1. Présentation](#e1-présentation)
@@ -21,7 +21,7 @@ Je vous propose d'adopter l'un des outils les plus populaires dans le monde du d
 _**Vite est un outil qui vise à simplifier le setup d'un projet JS/TS en embarquant plusieurs outils déjà pré-configurés, notamment :**_
 - _**un bundler ([rollup](https://rollupjs.org/)) :**  qui permet de fusionner les modules en un seul fichier (appelé "bundle")_
 - _**un compilateur de code TypeScript et ES6+ ([esbuild](https://esbuild.github.io/)) :** qui compile [selon la doc](https://vite.dev/guide/features.html#typescript) entre 20 et 30 fois plus rapidement que tsc !!_
-- _**différents outils qui simplifient la vie du développeur+** comme par exemple un serveur de développement qui permet de tester son appli sans passer par `npx serve`, un système de ["hot reload"](https://vitejs.dev/guide/features.html#hot-module-replacement), la [minimisation des CSS](https://vitejs.dev/guide/features.html#css), le [support de React](https://vitejs.dev/guide/features.html#jsx), etc._
+- _**différents outils qui simplifient la vie du développeur+** comme par exemple un serveur de développement qui permet de tester son appli sans passer par `npx serve`, un système de ["hot reload"](https://vite.dev/guide/features.html#hot-module-replacement), la [minimisation des CSS](https://vite.dev/guide/features.html#css), le [support de React](https://vite.dev/guide/features.html#jsx), etc._
 
 L'avantage d'utiliser Vite est donc que l'on a, avec un seul package, un environnement de dev et de build prêt à l'emploi, qu'il aurait fallu sinon installer et configurer à la main, et c'est souvent très compliqué (_à titre d'exemple, les précédentes versions de ce TP utilisaient Webpack comme bundler, Babel comme compilateur, webpack-dev-server comme serveur de développement, et enfin react-refresh + react-refresh-webpack-plugin pour le hot reload, ça faisait beaucoup !_).
 
@@ -77,7 +77,7 @@ Le serveur de développement de Vite va nous permettre d'avoir en une commande l
 
 	<img src="images/readme/vite-reload.gif">
 
-	> _**NB :** ce serveur est utile uniquement pendant la phase de développement, pour le déploiement en production, Vite dispose d'une commande `vite build` qui permet de compiler le TS et de fusionner tous les modules en un seul fichier (le "bundle"). Pour plus d'informations sur cette fonction, ça se passe dans la doc officielle : https://vitejs.dev/guide/build.html_
+	> _**NB :** ce serveur est utile uniquement pendant la phase de développement, pour le déploiement en production, Vite dispose d'une commande `vite build` qui permet de compiler le TS et de fusionner tous les modules en un seul fichier (le "bundle"). Pour plus d'informations sur cette fonction, ça se passe dans la doc officielle : https://vite.dev/guide/build.html_
 
 ## E.4. Le fichier `package.json`
 
