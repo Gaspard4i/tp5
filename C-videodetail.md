@@ -47,10 +47,10 @@ Dans cet exercice on va donc :
 	Uncaught Error: createRoot(...): Target container is not a DOM element.
 	```
 
-	Effectivement, dans notre `app.jsx`, ce n'est plus dans cette balise qu'il faut qu'on rende notre application, mais directement dans la `<section class="appContainer">`. Modifiez l'appel à `createRoot` comme ceci :
+	Effectivement, dans notre `app.tsx`, ce n'est plus dans cette balise qu'il faut qu'on rende notre application, mais directement dans la `<section class="appContainer">`. Modifiez l'appel à `createRoot` comme ceci :
 
 	```js
-	const root = createRoot(document.querySelector('.appContainer'));
+	const root = createRoot(document.querySelector('.appContainer')!);
 	```
 
 	**L'erreur a disparu, mais le Menu aussi !**\
@@ -59,7 +59,7 @@ Dans cet exercice on va donc :
 ## C.2. Le composant Menu
 Maintenant que ces préparatifs sont faits, créons donc notre deuxième composant, `Menu`, qui sera chargé de rendre le header du haut.
 
-1. **Dans un module `src/Menu.jsx`, créez ce nouveau composant nommé `Menu` et qui retourne le code html suivant :**
+1. **Dans un module `src/Menu.tsx`, créez ce nouveau composant nommé `Menu` qui retourne le code html suivant :**
 	```html
 	<header>
 		<nav>
@@ -71,9 +71,9 @@ Maintenant que ces préparatifs sont faits, créons donc notre deuxième composa
 		</nav>
 	</header>
 	```
-	> _**Conseil :** vérifiez régulièrement que vous n'avez pas d'erreur ou de warning dans la console, on ne sait jamais..._
+	> 💡 _**Conseil :** vérifiez régulièrement que vous n'avez pas d'erreur ou de warning dans la console, on ne sait jamais..._
 
-2. **Modifiez-le `app.jsx` pour rendre à la fois le composant `VideoDetail` et ce nouveau composant `Menu` côte à côte dans la `<section class="appContainer">`, comme ceci :**
+2. **Modifiez le fichier `app.tsx` pour rendre à la fois le composant `VideoDetail` et ce nouveau composant `Menu` côte à côte dans la `<section class="appContainer">`, comme ceci :**
 	```jsx
 	root.render(
 		<>
@@ -83,11 +83,16 @@ Maintenant que ces préparatifs sont faits, créons donc notre deuxième composa
 	);
 	```
 
-	> _**NB :** vous remarquerez qu'on a entouré `<Menu />` et `<VideoDetail />` de balises "vides" `<>...</>`. En effet, comme la méthode `root.render()` ne peut prendre en paramètre qu'une seule valeur, on ne peut pas lui passer comme ça 2 balises côte à côte. Il faut obligatoirement les regrouper dans une seule balise parente._
+	> <details><summary>ℹ️ <em>Euh c'est quoi ces balises vides <code>&lt;&gt;...&lt;/&gt;</code> ??</em> 😰</summary>
 	>
-	> _On aurait pu encadrer les 2 balises d'une balise parente HTML "classique", comme une `<div>...</div>` par exemple, mais cela aurait surchargé inutilement le code HTML avec une balise div intermédiaire, et cela aurait aussi cassé la CSS._
+	> _On a effectivement entouré `<Menu />` et `<VideoDetail />` de balises "vides" `<>...</>`._
 	>
-	> _Le mieux dans ce genre de situation c'est donc d'utiliser ces fameuses balises "vides" qui sont des raccourcis pour des balises `<React.Fragment>...</React.Fragment>`. Ces balises `Fragment` permettent de rendre deux composants côte à côte sans générer de balise parente dans le code HTML (cf. la [documentation des Fragments : https://reactjs.org/docs/fragments.html](https://reactjs.org/docs/fragments.html)._
+	> _Comme la méthode `root.render()` ne peut prendre en paramètre qu'une seule valeur, on ne peut pas lui passer 2 balises côte à côte. Il faut **obligatoirement** les regrouper dans une seule balise parente._
+	>
+	> _On aurait pu encadrer nos 2 balises d'une balise parente HTML "classique", comme une `<div>...</div>` par exemple, mais cela aurait surchargé inutilement le code HTML avec une balise `div` intermédiaire, qui aurait probablement cassé la CSS._
+	>
+	> _Le mieux dans ce genre de situation c'est donc d'utiliser ces fameuses balises "vides" qui sont des **raccourcis** pour des **balises `<React.Fragment>...</React.Fragment>`**. Ces balises `Fragment` permettent de rendre deux composants côte à côte sans générer de balise parente dans le code HTML (cf. la [documentation des Fragments : https://react.dev/reference/react/Fragment](https://react.dev/reference/react/Fragment)._
+	> </details>
 
 3. **Modifiez le composant `VideoDetail` pour lui faire retourner le code HTML suivant :**
 	```html
