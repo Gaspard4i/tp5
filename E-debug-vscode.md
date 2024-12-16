@@ -115,9 +115,7 @@ Cliquez simplement à gauche d'un numéro de ligne, et une puce rouge s'affiche 
 
 	<img src="images/readme/vscode-stepover.png"/>
 
-	Vous remarquerez qu'on a pas changé de ligne car la ligne sur laquelle on a mis un point d'arrêt contient en fait 2 instructions : le `document.querySelector('.appContainer')` et `const root = createRoot(...)`. L'exécution pas à pas s'arrête donc sur chacune de ces étapes : d'abord sur le `querySelector()` puis ensuite sur le `createRoot()`.
-
-5. **Cliquez donc une 2e fois sur le bouton "Step Over (F10)" : la valeur de `root` est maintenant calculée, survolez le nom de la constante directement dans vscode pour voir sa valeur en live !**
+5. **la valeur de `root` est maintenant calculée, survolez le nom de la constante directement dans vscode pour voir sa valeur en live !**
 
 	> _le contenu de cette constante est un peu obscur car il s'agit un peu des entrailles de ReactDOM, mais vous pourrez quand même remarquer dans la propriété `root._internalRoot.containerInfo` que l'on a bien notre balise `<section class="appContainer">` !_
 

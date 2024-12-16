@@ -30,7 +30,7 @@ Pour ce TP vous pouvez soit repartir de vos fichiers du précédent TP (si vous 
 	```
 	> _**NB :** Si vous utilisez VSCode, la commande `codium` doit être remplacée par `code`_
 
-3. **Installez les paquets npm nécessaires au projet** notamment [Vite](https://vitejs.dev).<br>
+3. **Installez les paquets npm nécessaires au projet** notamment [Vite](https://vite.dev) et TypeScript.<br>
 	Ouvrez un terminal intégré à VSCodium (<kbd>CTRL</kbd>+<kbd>J</kbd> *(PC)* / <kbd>CMD</kbd>+<kbd>J</kbd> *(Mac)*) et tapez juste :
 	```bash
 	npm install

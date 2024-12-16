@@ -4,7 +4,9 @@
 
 Si vous avez terminé les précédents exercices, bravo ! Voici quelques exercices supplémentaires :
 
-1. **Le champ description devient facultatif :** la balise `<p>` qui la contient ne doit pas s'afficher s'il `description` est vide.
+1. Dans le composant `VideoDetail` **la description devient facultative :** la balise `<p>` qui la contient ne doit pas s'afficher si la constante `description` est vide.
+
+	> ⚠️ _Pensez que pour travailler sur `VideoDetail`, c'est mieux si ce composant est affiché à l'écran. Si vous voyez la `VideoList` dans votre navigateur c'est probablement que quelque chose ne va pas..._
 
 2. **Faites en sorte que le composant `VideoDetail` aille chercher ses infos depuis le fichier `data.js`** en prenant les infos de la première cellule.
 
