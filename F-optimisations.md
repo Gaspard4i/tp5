@@ -4,11 +4,13 @@
 
 Si vous avez terminé les précédents exercices, bravo ! Voici quelques exercices supplémentaires :
 
+> ⚠️ _Vérifiez à chaque étape que `npx tsc --watch` ne remonte pas d'erreurs de typage !!_
+
 1. Dans le composant `VideoDetail` **la description devient facultative :** la balise `<p>` qui la contient ne doit pas s'afficher si la constante `description` est vide.
 
-	> ⚠️ _Pensez que pour travailler sur `VideoDetail`, c'est mieux si ce composant est affiché à l'écran. Si vous voyez la `VideoList` dans votre navigateur c'est probablement que quelque chose ne va pas..._
+	> ℹ️ _Pensez que pour travailler sur `VideoDetail`, c'est mieux si ce composant est affiché à l'écran. Si vous voyez la `VideoList` dans votre navigateur c'est probablement que quelque chose ne va pas..._
 
-2. **Faites en sorte que le composant `VideoDetail` aille chercher ses infos depuis le fichier `data.js`** en prenant les infos de la première cellule.
+2. **Faites en sorte que le composant `VideoDetail` aille chercher ses infos depuis le fichier `data.ts`** en prenant les infos de la première cellule.
 
 3. **Utilisez la fonction `Math.random()` pour récupérer une vidéo aléatoire dans `VideoDetail`.**
 
@@ -52,4 +54,4 @@ Si vous avez terminé les précédents exercices, bravo ! Voici quelques exercic
 		<p>Superbe ! Ce tp est fantastique.</p>
 	</article>
 	```
-	Enfin, ajouter en haut de la balise `<aside class="commentList">` une balise `<h2>X commentaires</h2>` où `X` est le nombre de commentaires.
+	Enfin, ajoutez en haut de la balise `<aside class="commentList">` une balise `<h2>X commentaires</h2>` où `X` est le nombre de commentaires.
