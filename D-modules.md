@@ -79,11 +79,11 @@ Nous verrons plus tard dans le TP comment rendre nos modules compatibles avec le
 
 4.  **Créez votre premier module en externalisant la fonction `renderElement` dans un module distinct `src/renderElement.ts`.**
 
-	> _**NB :** Rappelez-vous : tout ce qui est défini dans un module (variables, fonctions, classes), n'existe qu'à l'intérieur de ce module **SAUF** s'il est exporté, puis **importé** dans un autre fichier._
+	> ℹ️ _Rappelez-vous : tout ce qui est défini dans un module (variables, fonctions, classes), n'existe qu'à l'intérieur de ce module **SAUF** s'il est exporté, puis **importé** dans un autre fichier._
 
-	> <details><summary>ℹ️ Exporter <strong>par défaut</strong> une constante sur la même ligne que sa création est interdit !!</summary>
+	> <details><summary>⚠️ <em>Exporter <strong>par défaut</strong> une constante sur la même ligne que sa création est interdit !!</em></summary>
 	>
-	> _Source la Bible : [stackoverflow](https://stackoverflow.com/a/36261387)) :_
+	> _Source la Bible : [stackoverflow](https://stackoverflow.com/a/36261387) :_
 	> ```js
 	> export default const data = [...]; // ERREUR !
 	> ```
@@ -93,14 +93,14 @@ Nous verrons plus tard dans le TP comment rendre nos modules compatibles avec le
 	> export default data; // OK !
 	> ```
 
-	> <details><summary>ℹ️ ... par contre un export nommé (pas par défaut) d'une const est autorisé...</summary>
+	> <details><summary>ℹ️ <em>... par contre un export nommé (pas par défaut) d'une const est autorisé...</em></summary>
 	>
 	> ```js
 	> export const data = [...]; // OK !
 	> ```
 	> </details>
 
-	> <details><summary>ℹ️ ... cette restriction ne s'applique pas aux fonctions et aux classes !</summary>
+	> <details><summary>ℹ️ <em>... cette restriction ne s'applique pas aux fonctions et aux classes !</em></summary>
 	>
 	> _On peut tout à fait faire :_
 	> ```js

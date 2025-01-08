@@ -35,12 +35,12 @@ Pour que notre VideoItem ne se limite pas à une image, mais qu'il dispose aussi
 	- soit une **chaîne de caractères** (comme c'est déjà le cas actuellement)
 	- soit un **tableau de chaînes de caractères.** <br>Par exemple : si `tagName` vaut `"div"` et que `children` vaut `[ "youpi", "ça", "marche" ]` alors `renderElement` retournera la chaîne `"<div>youpiçamarche</div>"`.
 
-	> <details><summary>ℹ️ Comment on fait pour tester si children est un tableau ?</summary>
+	> <details><summary>ℹ️ <em>Comment on fait pour tester si children est un tableau ?</em></summary>
 	>
 	> _Pour tester si une valeur est un `Array`, vous pouvez utiliser l'opérateur [`instanceof` (mdn)](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Op%C3%A9rateurs/instanceof) ou alors la fonction [Array.isArray (mdn)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/isArray)_
 	> </details>
 
-	> <details><summary>ℹ️ On type comment déjà les tableaux ?</summary>
+	> <details><summary>ℹ️ <em>On type comment déjà les tableaux ?</em></summary>
 	>
 	> _C'est expliqué dans le pdf du cours !_ 🤓
 	> </details>
@@ -92,9 +92,11 @@ Pour que notre VideoItem ne se limite pas à une image, mais qu'il dispose aussi
 
 	<img src="images/readme/screen-04.png" >
 
-	> <details><summary>💡 <strong>pro tip :</strong> C'est probablement le moment d'utiliser...</summary>
+	> <details><summary>💡 <em><strong>pro tip :</strong> C'est probablement le moment d'utiliser...</em></summary>
 	>
-	> _les [alias de type (doc)](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#type-aliases) !_
+	> _les [alias de type (doc)](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#type-aliases)..._
+	>
+	> _...ou mieux : [une "interface" (doc)](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#differences-between-type-aliases-and-interfaces) !_
 	> </details>
 
 ## F.3. la fonction renderVideoList

@@ -76,7 +76,7 @@ L'installation de TypeScript se fait avec **npm** (_Node Package Manager - l'out
 	  "include": ["src"]
 	}
 	```
-	> <details><summary>ℹ️ C'est quoi toutes ces clés de config ???</summary>
+	> <details><summary>ℹ️ <em>C'est quoi toutes ces clés de config ???</em></summary>
 	>
 	> _Ce fichier de config est un peu gros pour un projet aussi simple que le notre. A ce stade les seules clés vraiment importantes sont :_
 	> - _`target` : version d'ECMAScript vers laquelle compiler le code TS_
@@ -145,7 +145,7 @@ L'installation de TypeScript se fait avec **npm** (_Node Package Manager - l'out
 	```
 	Comme vous le voyez la seule modif vraiment visible c'est le typage du paramètre `value` qui a disparu. Et c'est à peu près tout (_tsc a aussi ajouté une instruction "use strict" au début mais c'est anecdotique_).
 
-	> <details><summary>ℹ️ C'est quoi "use strict" ?</summary>
+	> <details><summary>ℹ️ <em>C'est quoi "use strict" ?</em></summary>
 	>
 	> _Le mode strict permet de rendre le navigateur qui exécute notre code JS moins "tolérant" quand il se trouve face à du code ES5._
 	>

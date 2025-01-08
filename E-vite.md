@@ -38,7 +38,7 @@ _**L'installation de Vite se fait comme pour TypeScript avec npm (Node Package M
 	npm install --save-dev vite
 	```
 
-	> <details><summary>ℹ️ Ça fait quoi déjà npm install ?</summary>
+	> <details><summary>ℹ️ <em>Ça fait quoi déjà <code>npm install</code> ?</em></summary>
 	>
 	> _`npm install ...` télécharge les paquets demandés pour qu'ils soient disponibles dans notre projet._
 	>
@@ -57,7 +57,7 @@ Le serveur de développement de Vite va nous permettre d'avoir en une commande l
 	<script src="/src/main.ts" type="module"></script>
 	```
 
-	> <details><summary>ℹ️ Mais ?!! 🤯 On avait dit que le navigateur comprenait pas TypeScript et qu'il fallait le compiler en JS !</summary>
+	> <details><summary>ℹ️ <em>Mais ?!!</em> 🤯 <em>On avait pas dit que le navigateur comprenait pas TypeScript et qu'il fallait le compiler en JS ????</em></summary>
 	>
 	> _Oui c'est vrai, mais en fait Vite va le faire de manière transparente : quand le navigateur recevra le contenu du fichier `src/main.ts` Vite l'aura au préalable compilé en JS à la volée !_
 	>
@@ -88,10 +88,10 @@ Ce fichier sert à plusieurs choses et notamment :
 
 	À chaque fois qu'on installe un paquet npm :
 
-	1. le paquet en question se télécharge dans le dossier `node_modules` (vous devez normalement voir un dossier `/node_modules/vite` dans votre projet)
+	1. le paquet en question se télécharge dans le dossier `node_modules` (_vous devez normalement voir un dossier `/node_modules/vite` dans votre projet_)
 	2. puis le nom du paquet ainsi que sa version sont automatiquement ajoutés dans le fichier `package.json`.
 
-	> <details><summary>⚠️ Le dossier <code>node_modules</code> n'est <strong>JAMAIS</strong> versionné</summary>
+	> <details><summary>⚠️ <em>Le dossier <code>node_modules</code> n'est <strong>JAMAIS</strong> versionné</em></summary>
 	>
 	> _En effet c'est en général un dossier relativement volumineux et plein de tout petits fichiers._
 	>
@@ -141,7 +141,7 @@ Grâce au `package.json` on va créer **un "raccourci"** pour lancer cette comma
 
 	<img src="images/readme/npm-run-dev.gif" />
 
-	> <details><summary>🚧 La compilation ne fonctionne pas ?</summary>
+	> <details><summary>🚧 <em>La compilation ne fonctionne pas ?</em></summary>
 	>
 	> _Si la compilation ne se lance pas, plusieurs raisons sont possibles :_
 	> - _soit Vite n'est pas correctement installé,_

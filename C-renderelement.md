@@ -52,7 +52,7 @@ const makeEpisode = (hero:string) => { // arrow function ("lambda")
 }
 ```
 
-> <details><summary>ℹ️ On avait pas dit qu'on pouvait simplifier encore plus l'écriture des arrow functions ?</summary>
+> <details><summary>ℹ️ <em>On avait pas dit qu'on pouvait simplifier encore plus l'écriture des arrow functions ?</em></summary>
 >
 > _Si si, quand le corps de la fonction ne contient qu'un `return`, on peut alors retirer les accolades et le mot clé `return` :_
 > ```ts
@@ -99,14 +99,14 @@ const newEpisode = makeEpisode('Benjen Stark');
 		```js
 		'<h1></h1>'
 		```
-	> <details><summary>💡 <strong>pro tip :</strong> pour cet exercice utilisez les template strings...</summary>
+	> <details><summary>💡 <em><strong>pro tip :</strong> pour cet exercice utilisez les template strings...</em></summary>
 	>
 	> _Cela vous permettra d'injecter facilement des valeurs dans votre chaîne et en plus de passer à la ligne dans la chaîne de caractères pour rendre votre code plus lisible._
 	> </details>
 
 	<br/>
 
-	> <details><summary>ℹ️ Ça fait quoi la ligne "document.querySelector(...)..." ?</summary>
+	> <details><summary>ℹ️ <em>Ça fait quoi la ligne <code>"document.querySelector(...)..."</code> ?</em></summary>
 	>
 	> _Cette instruction permet d'injecter dans la page HTML la chaîne de caractères contenue dans `title`._
 	>
@@ -123,7 +123,7 @@ const newEpisode = makeEpisode('Benjen Stark');
 	> _La propriété [`innerHTML` (mdn)](https://developer.mozilla.org/fr/docs/Web/API/Element/innerHTML) permet d'écrire dans la balise la valeur passée après le `=` (ici la chaîne contenue dans `title`)._
 	> </details>
 
-	> <details><summary>ℹ️ C'est quoi ce "!" devant ".innerHTML" ?</summary>
+	> <details><summary>ℹ️ <em>C'est quoi ce "<code>!</code>" devant "<code>.innerHTML</code>" ?</em></summary>
 	>
 	> _Il s'agit d'un opérateur qui n'existe qu'en TypeScript : le ["Non Null Assertion Operator" (doc)](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#non-null-assertion-operator-postfix-)._
 	>
@@ -168,7 +168,7 @@ const newEpisode = makeEpisode('Benjen Stark');
 	```
 	`renderElement` doit retourner la chaîne `'<img />'` (_une balise "auto fermante", c'est-à-dire sans enfants_) et pas `'<img></img>'` (_car ce n'est pas un code HTML valide selon la spec du W3C_).
 
-	> <details><summary>ℹ️ Comment on fait pour dire à TypeScript qu'un paramètre de fonction est facultatif ?</summary>
+	> <details><summary>ℹ️ <em>Comment on fait pour dire à TypeScript qu'un paramètre de fonction est facultatif ?</em></summary>
 	>
 	> _La réponse dans la documentation : https://www.typescriptlang.org/docs/handbook/2/functions.html#optional-parameters_ 🙂
 	> </details>
@@ -182,7 +182,7 @@ const newEpisode = makeEpisode('Benjen Stark');
 
 	> _**NB :** Comme tout à l'heure avec le `h1`, on passe par l'inspecteur d'éléments car visuellement à l'écran, c'est difficile de contrôler le rendu : aucune image ne s'affiche car on n'a pas précisé ni de source ni de taille à l'image !_
 
-	> <details><summary>ℹ️ Les devtools affichent toujours "&lt;img&gt;" et pas "&lt;img /&gt;" ☹️</summary>
+	> <details><summary>🚧 <em>Les devtools affichent toujours "<code>&lt;img&gt;</code>" et pas "<code>&lt;img /&gt;</code>"</em> ☹️</summary>
 	>
 	> _Selon votre navigateur il est en effet possible que l'inspecteur d'éléments n'affiche que `<img>` et pas `<img />`. C'est une simplification faite par les devtools, mais ça ne veut pas dire que votre code ne fonctionne pas. Testez donc votre code avec `console.log(img)`, là vous saurez avec certitude si votre méthode retourne bien `<img />`._
 	> </details>
@@ -207,7 +207,7 @@ const newEpisode = makeEpisode('Benjen Stark');
 	<img src="https://unsplash.uidlt.fr/wOHH-NUTvVc/600x340" />
 	```
 
-	> <details><summary>ℹ️ Comment typer des objets littéraux ?</summary>
+	> <details><summary>ℹ️ <em>Comment typer des objets littéraux ?</em></summary>
 	>
 	> _Ça se fait en utilisant une notation sous accolades et en typant chaque propriété de l'objet : https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#object-types_
 	>
@@ -226,9 +226,9 @@ const newEpisode = makeEpisode('Benjen Stark');
 	> ```
 	> </details>
 
-	> <details><summary>ℹ️ Quand je modifie l'ordre des paramètres, la création de title plante 😭 </summary>
+	> <details><summary>🚧 <em>Quand je modifie l'ordre des paramètres, la création de <code>title</code> plante</em> 😭 </summary>
 	>
-	> _Oui c'est normal, pour title on passait jusque là seulement 2 paramètres à la fonction `renderElement`, le `children` se retrouve donc à la place du `attribute`._
+	> _Oui c'est normal, pour `title` on passait jusque là seulement 2 paramètres à la fonction `renderElement`, le `children` se retrouve donc à la place du `attribute`._
 	>
 	> _Pour régler le problème, vous avez le droit de modifier la création de `title` en passant `null` au paramètre `attribute` :_
 	> ```ts
