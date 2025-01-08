@@ -54,15 +54,23 @@ const makeEpisode = (hero:string) => { // arrow function ("lambda")
 
 > <details><summary>ℹ️ On avait pas dit qu'on pouvait simplifier encore plus l'écriture des arrow functions ?</summary>
 >
-> _Si si, il y a 2 situations où on peut alléger l'écriture des arrow functions :_
-> - _si le corps de la fonction ne contient qu'un return, on peut alors retirer les accolades et le mot clé return :_
-> 	```js
-> 	const makeEpisode = (hero) => `${hero} is dead !`;
-> 	```
-> - _si la fonction ne prend qu'un seul paramètre, on peut retirer les parenthèses autour du paramètre :_
->  	```js
->  	const makeEpisode = hero => `${hero} is dead !`;
-> 	```
+> _Si si, quand le corps de la fonction ne contient qu'un `return`, on peut alors retirer les accolades et le mot clé `return` :_
+> ```ts
+> const makeEpisode = (hero:string) => `${hero} is dead !`; // return implicite
+> ```
+>
+> _NB : Si on est dans une fonction dont le type est connu grâce à l'inférence de type (par exemple dans un callback d'event listener), et si la fonction ne prend qu'un seul paramètre, on peut en plus retirer les parenthèses autour du paramètre :_
+>
+> ```ts
+> // En JS, comme on a pas de typage, on peut retirer les parenthèses autour de hero :
+> const makeEpisode = hero => `${hero} is dead !`;
+> // En TS, les parenthèses ne peuvent être enlevées que si on connait le type du paramètre
+> // par exemple quand on est dans un callback d'event listener :
+> myElement.addEventListener(
+> 	'click',
+> 	event => event.preventDefault(), // ici TS sait que event est de type Event (type inference)
+> );
+> ```
 > </details>
 
 Ces 3 déclarations ont exactement le même effet : elles créent en mémoire une référence qui a le nom `"makeEpisode"` et qui contient une valeur de type [`Function` (_mdn_)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions). \
@@ -115,7 +123,7 @@ const newEpisode = makeEpisode('Benjen Stark');
 	> _La propriété [`innerHTML` (mdn)](https://developer.mozilla.org/fr/docs/Web/API/Element/innerHTML) permet d'écrire dans la balise la valeur passée après le `=` (ici la chaîne contenue dans `title`)._
 	> </details>
 
-	> <details><summary>ℹ️ C'est quoi cet opérateur "!." devant "innerHTML" ?</summary>
+	> <details><summary>ℹ️ C'est quoi ce "!" devant ".innerHTML" ?</summary>
 	>
 	> _Il s'agit d'un opérateur qui n'existe qu'en TypeScript : le ["Non Null Assertion Operator" (doc)](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#non-null-assertion-operator-postfix-)._
 	>
