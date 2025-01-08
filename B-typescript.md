@@ -23,7 +23,7 @@ Heureusement, TypeScript dispose d'un **compilateur** ([tsc _(doc)_](https://www
 Le principe sera donc le suivant :
 - on code en TypeScript dans des fichiers **"source"**
 - on compile ensuite le code TS en JS dans un dossier de **"build"**
-- on utilise enfin les **fichier compilés** JS dans notre **page HTML**
+- on utilise enfin les **fichiers compilés** JS dans notre **page HTML**
 
 ## B.2. Installation et configuration
 **Avant de pouvoir utiliser TypeScript dans notre projet, il faut d'abord l'installer.**

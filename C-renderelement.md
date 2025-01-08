@@ -99,7 +99,7 @@ const newEpisode = makeEpisode('Benjen Stark');
 		```js
 		'<h1></h1>'
 		```
-	> <details><summary>💡 <strong>pro tip :</strong> pour cette exercice utilisez les template strings...</summary>
+	> <details><summary>💡 <strong>pro tip :</strong> pour cet exercice utilisez les template strings...</summary>
 	>
 	> _Cela vous permettra d'injecter facilement des valeurs dans votre chaîne et en plus de passer à la ligne dans la chaîne de caractères pour rendre votre code plus lisible._
 	> </details>
@@ -111,7 +111,7 @@ const newEpisode = makeEpisode('Benjen Stark');
 	> _Cette instruction permet d'injecter dans la page HTML la chaîne de caractères contenue dans `title`._
 	>
 	> _`document.querySelector('.container > header')` ([mdn](https://developer.mozilla.org/fr/docs/Web/API/Document/querySelector)) permet de récupérer une référence vers la balise `<header>` contenue dans la balise de classe CSS `"container"`._ \
-	> _Si vous regardez dans le fichier `index.html` vous allez y trouver en effet une balise `<div class="container">`, qui contient elle-même une sous-balise `<header>` (juste au dessus de `<div class="videoList">`) :_
+	> _Si vous regardez dans le fichier `index.html` vous allez y trouver en effet une balise `<div class="container">`, qui contient elle-même une sous-balise `<header>` (juste au-dessus de `<div class="videoList">`) :_
 	> ```html
 	> <div class="container">
 	> 	<header></header> <!-- 👈 c'est cette balise qu'on cible -->
