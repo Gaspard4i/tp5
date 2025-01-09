@@ -60,6 +60,12 @@ Il y a plusieurs techniques pour configurer tout ça dans vscode mais la solutio
 	```
 	Tout est presque bon, seule l'URL n'est pas correcte car le port indiqué n'est pas celui que l'on utilise (_`8080` au lieu de `8000`. Souvenez-vous : notre site est lancé avec la commande `vite --port 8000` !_)
 
+	Dans les salles TP, il faut par ailleurs préciser le chemin vers l'exécutable en ajoutant :
+
+	```json
+		"runtimeExecutable": "/bin/chromium"
+	```
+
 	> <details><summary>ℹ️ <em>Vous utilisez <strong>Chromium</strong> et pas Chrome ?</em></summary>
 	>
 	> _Dans ce cas il faut que vous rajoutiez la ligne suivante dans la clé configurations :_

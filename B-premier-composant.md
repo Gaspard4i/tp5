@@ -35,7 +35,7 @@ ReactDOM est la librairie qui permet d'injecter des composants React dans une pa
 	> <details><summary>ℹ️ <em>Ça veut dire quoi cette erreur ?</em></summary>
 	>
 	> _TypeScript râle parce que :_
-	> - _d'un côté `querySelector(...)` peut parfois retourner `null` (notamment si il ne trouve pas la balise demandée dans la page HTML)._
+	> - _d'un côté `querySelector(...)` peut parfois retourner `null` (notamment s’il ne trouve pas la balise demandée dans la page HTML)._
 	> - _d'un autre côté, `createRoot` attend quelque chose du type "`Container`"_
 	>
 	> _Si vous essayez d'importer le type `Container` fourni par `react-dom/client`, vous verrez que sa déclaration est la suivante :_
@@ -56,7 +56,7 @@ ReactDOM est la librairie qui permet d'injecter des composants React dans une pa
 	```ts
 	const root = ReactDOM.createRoot(document.querySelector('.container > header')!);
 	```
-	L'erreur a disparue !
+	L'erreur a disparu !
 
 	> <details><summary>ℹ️ <em>On aurait pu aussi utiliser le principe du "type narrowing"...</em></summary>
 	>
@@ -111,7 +111,7 @@ ReactDOM est la librairie qui permet d'injecter des composants React dans une pa
 
 On vient de voir que l'on peut passer à `root.render()` du code JSX tapé inline. Mais en général on va surtout l'employer avec des composants custom !
 
-1. **Toujours dans le `src/app.tsx`** (_on mettra tout ça dans des modules à part plus tard_), **au dessus de l'appel à `root.render()`, créez une fonction nommée `VideoDetail` comme ceci :**
+1. **Toujours dans le `src/app.tsx`** (_on mettra tout ça dans des modules à part plus tard_), **au-dessus de l'appel à `root.render()`, créez une fonction nommée `VideoDetail` comme ceci :**
 	```js
 	function VideoDetail() {
 		return <h1>Le Top 10 des frameworks JS</h1>;
