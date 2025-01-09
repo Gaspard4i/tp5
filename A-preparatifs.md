@@ -13,18 +13,24 @@
 **Ce repo contient une solution commentée du précédent TP.** <br>
 Il va vous servir de base pour ce nouveau TP.
 
-1. **Récupérez les fichiers de ce TP grâce à Git : clonez ce repo dans un dossier de votre choix** (_dans mon exemple /home/thomas/tps-react/tp2_) :
+1. **Récupérez les fichiers de ce TP grâce à Git : clonez ce repo dans un dossier de votre choix** (_dans mon exemple `chemin/vers/votre/workspace/tp2`_) :
 	```bash
-	mkdir ~/tps-react
-	git clone https://framagit.org/formation/react/tp2.git ~/tps-react/tp2
+	cd chemin/vers/votre/workspace
+	git clone https://framagit.org/formation/react/tp2.git
 	```
-	> _**NB1 :** Comme pour le TP1, je clone ici dans mon dossier `/home/thomas/tps-react/tp2`. **Si vous êtes sous Windows faites attention au sens des slashs et au caractère `"~"`** qui représente le dossier de l'utilisateur sur système unix : utilisez **Git bash** (qui comprend cette syntaxe) ou si vous tenez vraiment à utiliser **cmd** ou **powershell** pensez à adapter la commande !_
+	> <details><summary>⚠️ <em>Si vous êtes sous <strong>Windows</strong> attention aux slashs...</em></summary>
+	>
+	> _ici je clone dans le dossier `chemin/vers/votre/workspace/tp2`. **Si vous êtes sous Windows faites attention aux slashs dans le chemin du dossier** : utilisez **Git bash** (qui comprend cette syntaxe) ou si vous tenez vraiment à utiliser **cmd** ou **powershell** pensez à adapter la commande en les remplaçant par des antislash `\` !_
+	> </details>
 
-	> _**NB2 :** Comme pour le TP1 aussi, si vous préférez **cloner en SSH** pour ne pas avoir à taper votre mot de passe à chaque fois que vous clonerez un TP, renseignez votre clé SSH dans votre [compte utilisateur framagit](https://framagit.org/-/profile/keys) et clonez à partir de cette URL : `git@framagit.org:formation/react/tp2.git`_
+	> <details><summary>ℹ️ <em>Si vous préférez <strong>cloner en SSH</strong>...</em></summary>
+	>
+	> _...pour ne pas avoir à taper votre mot de passe à chaque fois que vous clonerez un TP, renseignez votre clé SSH dans votre [compte utilisateur framagit](https://framagit.org/-/profile/keys) et clonez à partir de cette URL : `git@framagit.org:formation/react/tp2.git`_
+	> </details>
 
 2. **Ouvrez le projet dans VSCodium** (pour les différentes façons d'ouvrir le projet, relisez les [instructions du TP0](https://framagit.org/formation/react/tp0/-/blob/master/A-preparatifs.md#a4-ouvrir-le-projet-dans-vscodium) )
 	```bash
-	codium ~/tps-react/tp2
+	codium chemin/vers/votre/workspace/tp2
 	```
 	> ℹ️ _Si vous utilisez VSCode, la commande `codium` doit être remplacée par `code`_
 
