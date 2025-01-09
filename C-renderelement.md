@@ -120,7 +120,7 @@ const newEpisode = makeEpisode('Benjen Stark');
 	> </div>
 	> ```
 	>
-	> _La propriété [`innerHTML` (mdn)](https://developer.mozilla.org/fr/docs/Web/API/Element/innerHTML) permet d'écrire dans la balise la valeur passée après le `=` (ici la chaîne contenue dans `title`)._
+	> _La propriété [`innerHTML` (mdn)](https://developer.mozilla.org/fr/docs/Web/API/Element/innerHTML) quant à elle permet d'injecter dans la balise HTML la valeur passée après le `=` (ici la chaîne contenue dans `title`) ce qui modifie la page à l'écran._
 	> </details>
 
 	> <details><summary>ℹ️ <em>C'est quoi ce "<code>!</code>" devant "<code>.innerHTML</code>" ?</em></summary>
@@ -180,7 +180,7 @@ const newEpisode = makeEpisode('Benjen Stark');
 	```
 	Vérifiez dans **l'inspecteur d'éléments** que votre image est bien ajoutée dans `videoList` :
 
-	> _**NB :** Comme tout à l'heure avec le `h1`, on passe par l'inspecteur d'éléments car visuellement à l'écran, c'est difficile de contrôler le rendu : aucune image ne s'affiche car on n'a pas précisé ni de source ni de taille à l'image !_
+	> ℹ️ _Comme tout à l'heure avec le `h1`, on passe par l'inspecteur d'éléments car visuellement à l'écran, c'est difficile de contrôler le rendu : aucune image ne s'affiche car on n'a pas précisé ni de source ni de taille à l'image !_
 
 	> <details><summary>🚧 <em>Les devtools affichent toujours "<code>&lt;img&gt;</code>" et pas "<code>&lt;img /&gt;</code>"</em> ☹️</summary>
 	>
@@ -216,14 +216,16 @@ const newEpisode = makeEpisode('Benjen Stark');
 	> let personnage: { prenom: string, age: number };
 	> ```
 	>
-	> _On peut aussi définir des [alias de type (doc)](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#type-aliases) pour séparer la définition du type de l'endroit où on l'utilise :_
+	> _On peut aussi définir des [alias de type (doc)](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#type-aliases) ou mieux une [interface (doc)](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#interfaces) pour séparer la définition du type de l'endroit où on l'utilise :_
 	> ```ts
-	> type Humain = {
-	>     prenom: string,
-	>     age: number,
+	> interface Humain {
+	>     prenom: string;
+	>     age: number;
 	> };
 	> let personnage: Humain;
 	> ```
+	>
+	> _Ici on a le choix entre les 2 syntaxes mais la recommandation générale est d'utiliser les interfaces quand c'est possible : https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#differences-between-type-aliases-and-interfaces_
 	> </details>
 
 	> <details><summary>🚧 <em>Quand je modifie l'ordre des paramètres, la création de <code>title</code> plante</em> 😭 </summary>

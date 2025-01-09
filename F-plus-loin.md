@@ -94,9 +94,7 @@ Pour que notre VideoItem ne se limite pas à une image, mais qu'il dispose aussi
 
 	> <details><summary>💡 <em><strong>pro tip :</strong> C'est probablement le moment d'utiliser...</em></summary>
 	>
-	> _les [alias de type (doc)](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#type-aliases)..._
-	>
-	> _...ou mieux : [une "interface" (doc)](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#differences-between-type-aliases-and-interfaces) !_
+	> _les [alias de type (doc)](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#type-aliases) ou mieux : [une "interface" (doc)](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#differences-between-type-aliases-and-interfaces) !_
 	> </details>
 
 ## F.3. la fonction renderVideoList

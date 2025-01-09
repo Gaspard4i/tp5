@@ -16,14 +16,14 @@ Je vous propose d'adopter l'un des outils les plus populaires dans le monde du d
 
 ## E.1. Présentation
 
-<img src="images/readme/header-vite.png" />
+<img src="images/readme/header-vite.jpg" />
 
 _**Vite est un outil qui vise à simplifier le setup d'un projet JS/TS en embarquant plusieurs outils déjà pré-configurés, notamment :**_
 - _**un bundler ([rollup](https://rollupjs.org/)) :**  qui permet de fusionner les modules en un seul fichier (appelé "bundle")_
-- _**un compilateur de code TypeScript et ES6+ ([esbuild](https://esbuild.github.io/)) :** qui compile [selon la doc](https://vite.dev/guide/features.html#typescript) entre 20 et 30 fois plus rapidement que tsc !!_
-- _**différents outils qui simplifient la vie du développeur+** comme par exemple un serveur de développement qui permet de tester son appli sans passer par `npx serve`, un système de ["hot reload"](https://vite.dev/guide/features.html#hot-module-replacement), la [minimisation des CSS](https://vite.dev/guide/features.html#css), le [support de React](https://vite.dev/guide/features.html#jsx), etc._
+- _**un compilateur de code TypeScript et ES6+ ([esbuild](https://esbuild.github.io/)) :** qui permet d'utiliser dans son code les dernières syntaxes ECMAScript/TypeScript les plus modernes et de les compiler dans une version d'ECMAScript (par défaut ES6) largement supportée par un maximum de navigateurs. À noter que esbuild compile [selon la doc](https://vite.dev/guide/features.html#typescript) entre 20 et 30 fois plus rapidement que tsc !_
+- _**différents outils qui améliorent la DX** (Developer Experience) comme par exemple un serveur de développement qui permet de tester son appli en http, un système de ["hot reload"](https://vite.dev/guide/features.html#hot-module-replacement), la [minimisation des CSS](https://vite.dev/guide/features.html#css), le [support de React](https://vite.dev/guide/features.html#jsx), etc._
 
-L'avantage d'utiliser Vite est donc que l'on a, avec un seul package, un environnement de dev et de build prêt à l'emploi, qu'il aurait fallu sinon installer et configurer à la main, et c'est souvent très compliqué (_à titre d'exemple, les précédentes versions de ce TP utilisaient Webpack comme bundler, Babel comme compilateur, webpack-dev-server comme serveur de développement, et enfin react-refresh + react-refresh-webpack-plugin pour le hot reload, ça faisait beaucoup !_).
+L'avantage d'utiliser Vite est donc que l'on a, avec un seul package, **un environnement de dev et de build prêt à l'emploi**, qu'il aurait fallu sinon installer et configurer à la main, et c'est souvent très compliqué (_à titre d'exemple, les précédentes versions de ce TP utilisaient Webpack comme bundler, Babel comme compilateur, webpack-dev-server comme serveur de développement, et enfin react-refresh + react-refresh-webpack-plugin pour le hot reload, ça faisait beaucoup !_).
 
 Par ailleurs, Vite va, comme son nom l'indique... vite ! Il est en effet beaucoup [plus rapide que la solution webpack+babel/tsc](https://storybook.js.org/blog/storybook-performance-from-webpack-to-vite/) par exemple.
 
@@ -50,7 +50,7 @@ _**L'installation de Vite se fait comme pour TypeScript avec npm (Node Package M
 ## E.3. Lancer le serveur de développement
 Le serveur de développement de Vite va nous permettre d'avoir en une commande l'équivalent des deux commandes qu'on lançait jusque là séparément (le serveur http avec `npx serve` et le compilateur avec `tsc --watch`).
 
-1. Avant de pouvoir utiliser le serveur de développement il faut qu'on modifie notre fichier index.html pour faire un truc bizarre :
+1. Avant de pouvoir utiliser le serveur de développement il faut qu'on modifie notre fichier `index.html` pour faire un truc "bizarre" :
 
 	Dans la balise `<script>`, au lieu de charger le fichier compilé `/build/main.js`, chargez le fichier SOURCE à savoir `/src/main.ts` !
 	```html
@@ -77,7 +77,7 @@ Le serveur de développement de Vite va nous permettre d'avoir en une commande l
 
 	<img src="images/readme/vite-reload.gif">
 
-	> _**NB :** ce serveur est utile uniquement pendant la phase de développement, pour le déploiement en production, Vite dispose d'une commande `vite build` qui permet de compiler le TS et de fusionner tous les modules en un seul fichier (le "bundle"). Pour plus d'informations sur cette fonction, ça se passe dans la doc officielle : https://vite.dev/guide/build.html_
+	> ℹ️ _Ce serveur est utile uniquement pendant la phase de développement, mais pour le déploiement en production, Vite dispose d'une commande `vite build` qui permet de compiler le TS et de fusionner tous les modules en un seul fichier (le "bundle"). Pour plus d'informations sur cette fonction, ça se passe dans la doc officielle : https://vite.dev/guide/build.html_
 
 ## E.4. Le fichier `package.json`
 
@@ -135,7 +135,7 @@ Grâce au `package.json` on va créer **un "raccourci"** pour lancer cette comma
 		"dev": "vite --port 8000"
 	},
 	```
-	> _**NB :** Vous noterez que **le chemin `./node_modules/.bin/`** que l'on utilisait jusque là dans notre commande **n'est plus nécessaire** : en effet, comme l'on se trouve dans un script "npm", node va aller automatiquement chercher les exécutables directement dans le dossier `./node_modules/.bin/`, plus besoin donc de le préciser !_
+	> ℹ️ _Vous noterez que **le chemin `./node_modules/.bin/`** que l'on utilisait jusque là dans notre commande **n'est plus nécessaire** : en effet, comme l'on se trouve dans un script "npm", node va aller automatiquement chercher les exécutables directement dans le dossier `./node_modules/.bin/`, plus besoin donc de le préciser !_
 
 5. **Lancez la commande `npm run dev`** et constatez avec émerveillement que le serveur se lance !
 

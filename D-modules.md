@@ -63,7 +63,7 @@ Nous verrons plus tard dans le TP comment rendre nos modules compatibles avec le
 	```html
 	<script src="build/main.js" type="module"></script>
 	```
-	> _**NB :** Vous noterez que l'attribut `"defer"` n'est plus nécessaire car il est implicite pour les modules !_
+	> ℹ️ _Vous noterez que l'attribut `"defer"` n'est plus nécessaire car il est implicite pour les modules !_
 
 3. Si pour les modules avec un bundler (_comme Vite par exemple, cf. suite du TP_) on peut omettre l'extension du fichier qu'on importe, ce n'est pas le cas avec les modules "dans le navigateur" comme on s'apprête à le faire : il faut **obligatoirement préciser à chaque `import ... from ...` l'extension** (_`.ts` dans les fichiers sources, `.js` dans les fichiers compilés_) après le nom du fichier.
 
