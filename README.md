@@ -1,7 +1,7 @@
 <img src="images/readme/header.jpg" />
 
-## Objectifs
-- Savoir utiliser les principaux hooks
+## 🎯 Objectifs
+- Savoir utiliser les principaux hooks/TS
 - Gérer un state local avec useState
 - Utiliser useEffect pour déclencher des traitements
 

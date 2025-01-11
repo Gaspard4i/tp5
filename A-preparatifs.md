@@ -6,9 +6,9 @@ Vous commencez maintenant à avoir l'habitude, je ne rentrerai donc pas dans les
 
 1. **Tapez dans un terminal :**
 	```bash
-	mkdir ~/tps-react
-	git clone https://framagit.org/formation/react/tp3.git ~/tps-react/tp3
-	codium ~/tps-react/tp3
+	cd chemin/vers/votre/workspace
+	git clone https://framagit.org/formation/react/tp3.git
+	codium tp3
 	```
 2. **Puis dans un terminal intégré de VSCodium :**
 	```bash
