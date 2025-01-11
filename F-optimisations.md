@@ -42,14 +42,14 @@ Si vous avez terminé les précédents exercices, bravo ! Voici quelques exercic
 
 	Ce tableau `comments` contient des objets littéraux avec des propriétés :
 	- id : number
-	- created_at : string contenant un datetime au format ISO (ex. `'2024-01-12 13:22:34'`)
+	- created_at : string contenant un datetime au format ISO (ex. `'2025-01-12 13:22:34'`)
 	- content : string contenant le texte du commentaire (ex. `'Superbe ! Ce tp est fantastique.'`)
 
 	Le code HTML de chaque commentaire sera le suivant :
 	```html
 	<article class="commentRenderer">
-		<time dateTime="2024-01-12 13:22:34">
-			Le 12/01/2024 à 13:22:34
+		<time dateTime="2025-01-12 13:22:34">
+			Le 12/01/2025 à 13:22:34
 		</time>
 		<p>Superbe ! Ce tp est fantastique.</p>
 	</article>
