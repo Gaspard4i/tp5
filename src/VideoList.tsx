@@ -1,5 +1,6 @@
 import { MouseEvent, useEffect, useState } from 'react';
 import data from './data';
+import { Video } from './types';
 
 function openPopup(url: string, width: number, height: number) {
 	const top = (window.screen.height - height) / 2,
@@ -9,7 +10,7 @@ function openPopup(url: string, width: number, height: number) {
 }
 
 export default function VideoList() {
-	const [videos, setVideos] = useState([]);
+	const [videos, setVideos] = useState<Video[]>([]);
 
 	// après le premier render simulation d'un chargement AJAX
 	useEffect(() => {
