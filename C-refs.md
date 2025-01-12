@@ -31,7 +31,7 @@ Toutes ces opérations se font obligatoirement via des méthodes JS associées a
 
 	<img src="images/readme/screen-02.png" />
 
-2. **A l'aide des refs, et des [méthodes JS de la balise `<video>`](https://developer.mozilla.org/fr/docs/Web/API/HTMLMediaElement#M%C3%A9thodes), faites en sorte que la lecture commence ou s'arrête quand l'utilisateur clique sur les 2 boutons "play" et "pause".**
+2. **A l'aide des refs, et des [méthodes JS de la balise `<video>` _(mdn)_](https://developer.mozilla.org/fr/docs/Web/API/HTMLMediaElement#M%C3%A9thodes), faites en sorte que la lecture commence ou s'arrête quand l'utilisateur clique sur les 2 boutons "play" et "pause".**
 
 	On pourra ainsi contrôler la vidéo de cette façon :
 
