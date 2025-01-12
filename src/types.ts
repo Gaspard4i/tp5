@@ -7,3 +7,7 @@ export type Video = {
 	likes: number;
 	dislikes: number;
 };
+export interface Comment {
+	created_at: string;
+	content: string;
+}

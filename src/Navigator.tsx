@@ -2,13 +2,32 @@ import { useState } from 'react';
 import VideoList from './VideoList';
 import VideoDetail from './VideoDetail';
 
-export default function Navigator() {
-	const [{ currentPage, params }, setNavigationState] = useState({
-		currentPage: 'list',
-		params: {},
-	});
+// typage useState
+type PageId = 'list' | 'detail';
+interface PageParams {
+	id?: number;
+}
+interface NavigationState {
+	currentPage: PageId;
+	params: PageParams;
+}
 
-	function navigate(newPage, newParams = {}) {
+// création et export d'un type commun pour les props de VideoList et VideoDetail
+// attention : crée des dépendances (imports) croisées VideoXXX <-> Navigator
+// c'est moche mais on réglera ça dans un prochain TP
+export interface PageProps {
+	navigate: (newPage: PageId, newParams?: PageParams) => void;
+	params: PageParams;
+}
+
+export default function Navigator() {
+	const [{ currentPage, params }, setNavigationState] =
+		useState<NavigationState>({
+			currentPage: 'list',
+			params: {},
+		});
+
+	function navigate(newPage: PageId, newParams: PageParams = {}) {
 		setNavigationState({ currentPage: newPage, params: newParams });
 	}
 
