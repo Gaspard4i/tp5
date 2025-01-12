@@ -1,10 +1,11 @@
 import { useEffect, useRef, useState } from 'react';
 import CommentList from './CommentList';
 import data from './data';
+import { Video } from './types';
 
 export default function VideoDetail({ navigate, params: { id } }) {
 	// gestion des infos de la vidéo
-	const [video, setVideo] = useState(null);
+	const [video, setVideo] = useState<Video | null>(null);
 	useEffect(() => {
 		const selectedVideo = data.find(video => video.id === id);
 		setVideo(selectedVideo);
@@ -12,10 +13,14 @@ export default function VideoDetail({ navigate, params: { id } }) {
 
 	// gestion des likes/dislike
 	function handleLikeClick() {
-		setVideo({ ...video, likes: video.likes + 1 });
+		if (video) {
+			setVideo({ ...video, likes: video.likes + 1 });
+		}
 	}
 	function handleDislikeClick() {
-		setVideo({ ...video, dislikes: video.dislikes + 1 });
+		if (video) {
+			setVideo({ ...video, dislikes: video.dislikes + 1 });
+		}
 	}
 
 	// gestion player

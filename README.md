@@ -1,6 +1,6 @@
 <img src="images/readme/header.jpg" />
 
-## Objectifs
+## 🎯 Objectifs
 - Connecter une appli React à une API REST
 - Intégrer des formulaires non contrôlés
 - Intégrer des formulaires contrôlés

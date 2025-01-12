@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
 import data from './data';
+import { Video } from './types';
 import VideoThumbnail from './VideoThumbnail';
 
 export default function VideoList({ navigate }) {
-	const [videos, setVideos] = useState([]);
+	const [videos, setVideos] = useState<Video[]>([]);
 
 	// après le premier render simulation d'un chargement AJAX
 	useEffect(() => {
