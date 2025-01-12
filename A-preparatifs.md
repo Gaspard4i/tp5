@@ -42,7 +42,7 @@ Dans ce TP on va enfin connecter notre appli web à une base de données grâce 
 
 C'est donc le moment de lancer le serveur Node / Express qui fait tourner l'API :
 ```bash
-cd ~/tps-react/api-server
+cd chemin/vers/votre/workspace/api-server
 npm start
 ```
 
