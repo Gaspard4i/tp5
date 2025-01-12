@@ -1,30 +1,40 @@
 import { useEffect, useRef, useState } from 'react';
 import CommentList from './CommentList';
 import data from './data';
+import { Video } from './types';
+import { PageProps } from './Navigator'; // <-- attention dépendance croisée, VideoDetail <-> Navigator, c'est mal
 
-export default function VideoDetail({ navigate, params: { id } }) {
+export default function VideoDetail({ navigate, params: { id } }: PageProps) {
 	// gestion des infos de la vidéo
-	const [video, setVideo] = useState(null);
+	const [video, setVideo] = useState<Video | null>(null);
 	useEffect(() => {
 		const selectedVideo = data.find(video => video.id === id);
-		setVideo(selectedVideo);
+		setVideo(selectedVideo || null);
 	}, []);
 
 	// gestion des likes/dislike
 	function handleLikeClick() {
-		setVideo({ ...video, likes: video.likes + 1 });
+		if (video) {
+			setVideo({ ...video, likes: video.likes + 1 });
+		}
 	}
 	function handleDislikeClick() {
-		setVideo({ ...video, dislikes: video.dislikes + 1 });
+		if (video) {
+			setVideo({ ...video, dislikes: video.dislikes + 1 });
+		}
 	}
 
 	// gestion player
-	const videoRef = useRef(null);
+	const videoRef = useRef<HTMLVideoElement>(null);
 	function handlePlayClick() {
-		videoRef.current.play();
+		videoRef.current?.play();
 	}
 	function handlePauseClick() {
-		videoRef.current.pause();
+		videoRef.current?.pause();
+	}
+	// bouton retour
+	function handleBackPress() {
+		navigate('list');
 	}
 
 	// premier render sans vidéo
@@ -35,7 +45,7 @@ export default function VideoDetail({ navigate, params: { id } }) {
 	const { title, description, file, likes, dislikes } = video;
 	return (
 		<div className="videoDetail">
-			<button className="backButton" onClick={() => navigate('list')}>
+			<button className="backButton" onClick={handleBackPress}>
 				&lt; Retour
 			</button>
 			<video
