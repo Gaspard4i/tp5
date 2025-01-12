@@ -19,7 +19,13 @@ Vous commencez maintenant à avoir l'habitude, je ne rentrerai donc pas dans les
 
 	> ℹ️ _Si vous souhaitez plus de précisions sur les commandes précédentes et l'installation  / configuration du projet, vous pouvez vous référer au chapitre [A. Préparatifs](https://framagit.org/formation/react/tp2/-/blob/master/A-preparatifs.md) du TP2 ou simplement me demander de l'aide_ 😄
 
-3. **Pour afficher votre site, plutôt que d'ouvrir vous-même votre navigateur, utilisez la fonctionnalité de debug dans VSCode configurée lors du précédent TP :**
+3. **Dans un [terminal splitté](https://code.visualstudio.com/docs/terminal/basics#_groups-split-panes)** (_côte à côte avec `npm start`_) lancez le compilateur TypeScript pour vérifier le typage de votre code :
+
+	```bash
+	npx tsc --watch
+	```
+
+4. **Pour afficher votre site, plutôt que d'ouvrir vous-même votre navigateur, utilisez la fonctionnalité de debug dans VSCode configurée lors du précédent TP :**
 
 	> ℹ️ _Ce repo contient déjà un fichier `.vscode/launch.json` avec les configurations pour Chrome et Chromium._
 
@@ -32,7 +38,7 @@ Vous commencez maintenant à avoir l'habitude, je ne rentrerai donc pas dans les
 
 	Choisissez le navigateur que vous souhaitez lancer (_Chrome ou Chromium_), une nouvelle fenêtre de votre navigateur doit s'ouvrir (_on considérera pour la suite que c'est Chrome que vous avez choisi_).
 
-4. **Vérifiez dans le navigateur qui s'est ouvert que la page `index.html` s'affiche correctement** :
+5. **Vérifiez dans le navigateur qui s'est ouvert que la page `index.html` s'affiche correctement** :
 
 	<img src="images/readme/screen-00.png" >
 
