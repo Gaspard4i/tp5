@@ -1,9 +1,11 @@
 import { useEffect, useState } from 'react';
 import data from './data';
+import { Video } from './types';
 import VideoThumbnail from './VideoThumbnail';
+import { PageProps } from './Navigator'; // <-- attention dépendance croisée, VideoList <-> Navigator, c'est mal
 
-export default function VideoList({ navigate }) {
-	const [videos, setVideos] = useState([]);
+export default function VideoList({ navigate }: PageProps) {
+	const [videos, setVideos] = useState<Video[]>([]);
 
 	// après le premier render simulation d'un chargement AJAX
 	useEffect(() => {
@@ -11,6 +13,11 @@ export default function VideoList({ navigate }) {
 		// la fonction de cleanup est appelée si le composant est démonté ou si l'effect est relancé
 		return () => clearTimeout(timeout);
 	}, []);
+
+	// gestion click thumbnail
+	function handleThumbnailClick(id: number) {
+		navigate('detail', { id }); // { id } = { id: id }
+	}
 
 	const classNames = `videoList ${videos?.length ? '' : 'is-loading'}`;
 	return (
@@ -21,7 +28,7 @@ export default function VideoList({ navigate }) {
 			<div className={classNames}>
 				{videos.map(video => (
 					<VideoThumbnail
-						onClick={() => navigate('detail', { id: video.id })}
+						onClick={handleThumbnailClick} // onClick est une prop "custom" de VideoThumbnail
 						video={video}
 						key={video.id}
 					/>
