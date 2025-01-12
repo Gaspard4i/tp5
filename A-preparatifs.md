@@ -6,16 +6,16 @@ Vous commencez maintenant à avoir l'habitude, je ne rentrerai donc pas dans les
 
 1. **Tapez dans un terminal :**
 	```bash
-	mkdir ~/tps-react
-	git clone https://framagit.org/formation/react/tp4.git ~/tps-react/tp4
-	codium ~/tps-react/tp4
+	cd chemin/vers/votre/workspace
+	git clone https://framagit.org/formation/react/tp4.git
+	codium tp4
 	```
 2. **Puis dans un terminal intégré de VSCodium** (<kbb>CTRL/Cmd</kbd>+<kbd>J</kbd>) :
 	```bash
 	npm i
 	npm start
 	```
-	> _**NB :** si vous souhaitez plus de précisions sur les commandes précédentes et l'installation  / configuration du projet, vous pouvez vous référer au chapitre [A. Préparatifs](https://framagit.org/formation/react/tp2/-/blob/master/A-preparatifs.md) du TP2 ou simplement demander de l'aide au formateur_ 😄
+	> ℹ️ _Si vous souhaitez plus de précisions sur les commandes précédentes et l'installation  / configuration du projet, vous pouvez vous référer au chapitre [A. Préparatifs](https://framagit.org/formation/react/tp2/-/blob/master/A-preparatifs.md) du TP2 ou simplement me demander de l'aide_ 😄
 
 3. **Lancez votre site en mode "debug dans vscode"** : tapez <kbd>CTRL</kbd>+<kbd>SHIFT</kbd>+<kbd>P</kbd> puis sélectionnez `"Debug: Select and start debugging"` ou appuyez simplement sur la touche <kbd>F5</kbd>.
 

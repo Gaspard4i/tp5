@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { FormEvent, useEffect, useState } from 'react';
 import data, { comments } from './data';
 
 export default function VideoDetail() {
@@ -16,7 +16,7 @@ export default function VideoDetail() {
 	function handleDislikeClick() {
 		setVideo({ ...video, dislikes: video.dislikes + 1 });
 	}
-	function handleCommentSubmit(event) {
+	function handleCommentSubmit(event: FormEvent) {
 		event.preventDefault();
 		alert('Ajout de commentaire !');
 	}
@@ -52,7 +52,7 @@ export default function VideoDetail() {
 				<form className="commentForm" onSubmit={handleCommentSubmit}>
 					<textarea
 						name="content"
-						rows="2"
+						rows={2}
 						placeholder="Ajouter un commentaire public"
 					/>
 					<button type="submit">Envoyer</button>

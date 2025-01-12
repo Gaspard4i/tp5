@@ -1,7 +1,7 @@
-import { useEffect, useState } from 'react';
+import { MouseEvent, useEffect, useState } from 'react';
 import data from './data';
 
-function openPopup(url, width, height) {
+function openPopup(url: string, width: number, height: number) {
 	const top = (window.screen.height - height) / 2,
 		left = (window.screen.width - width) / 2,
 		windowFeatures = `popup=true,width=${width},height=${height},top=${top},left=${left}`;
@@ -18,7 +18,7 @@ export default function VideoList() {
 		return () => clearTimeout(timeout);
 	}, []);
 
-	function handleClick(event) {
+	function handleClick(event: MouseEvent<HTMLAnchorElement>) {
 		event.preventDefault();
 		openPopup(event.currentTarget.href, 350, 200);
 	}
