@@ -27,5 +27,14 @@ La `VideoList` contiendra autant d'instances de `VideoThumbnail` qu'il y a de vi
 	- d'un composant `CommentForm` contenant le formulaire d'ajout de commentaires,
 	- et de plusieurs composants `CommentRenderer` pour le rendu de chaque commentaire (_une instance de `CommentRenderer` par commentaire dans la liste_).
 
+	> <details><summary>ℹ️ <em>En ce qui concerne le typage...</em></summary>
+	>
+	> _Quand tout le code était rassemblé dans le composant VideoDetail, TypeScript "devinait" le type des commentaires à partir du fichier `data.ts` où se trouvent les commentaires "en dur"._
+	>
+	> _Le fait de séparer le code dans plusieurs fichier et de passer par des props oblige à typer explicitement les données qu'on manipule. Il est donc probable que vous ayez à créer un type `Comment` que vous pouvez placer dans le fichier `src/types.ts`._
+	>
+	> _Pour ce faire, plutôt qu'un type alias, je vous recommande d'utiliser une [interface (doc)](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#interfaces)._
+	> </details>
+
 ## Étape suivante <!-- omit in toc -->
 Une fois cette partie terminée, voyons comment utiliser conjointement React et l'API DOM : [C. Les refs](C-refs.md).
