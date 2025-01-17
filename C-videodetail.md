@@ -74,7 +74,7 @@ Maintenant que ces préparatifs sont faits, créons donc notre deuxième composa
 	> 💡 _**Conseil :** vérifiez régulièrement que vous n'avez pas d'erreur ou de warning dans la console, on ne sait jamais..._
 
 2. **Modifiez le fichier `app.tsx` pour rendre à la fois le composant `VideoDetail` et ce nouveau composant `Menu` côte à côte dans la `<section class="appContainer">`, comme ceci :**
-	```jsx
+	```tsx
 	root.render(
 		<>
 			<Menu />

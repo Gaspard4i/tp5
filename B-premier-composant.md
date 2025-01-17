@@ -19,7 +19,7 @@ ReactDOM est la librairie qui permet d'injecter des composants React dans une pa
 	```
 
 2. **Toujours dans `src/app.tsx`, ajoutez le code suivant :**
-	```jsx
+	```tsx
 	const root = ReactDOM.createRoot(document.querySelector('.container > header'));
 	```
 	Comme vu en cours, ReactDOM expose une méthode statique `ReactDOM.createRoot()` à laquelle on passe **l'élément DOM** (la balise) dans lequel on souhaite travailler.
@@ -83,7 +83,7 @@ ReactDOM est la librairie qui permet d'injecter des composants React dans une pa
 	> </details>
 
 4. L'erreur étant réglée, **affichons du contenu dans la page :** la méthode `createRoot` nous retourne un objet qui dispose d'une méthode `render()` à laquelle on peut simplement envoyer **le JSX** que l'on veut injecter dans la page :
-	```jsx
+	```tsx
 	root.render(<h1>Le Top 10 des frameworks JS</h1>);
 	```
 
