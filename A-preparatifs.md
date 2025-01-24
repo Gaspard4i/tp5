@@ -186,7 +186,7 @@ Comme nous sommes des gens sérieux, allons-y :
 	};
 	```
 
-6. **Supprimez tous les fichiers `.ts` du dossier `src`, à l'exception du fichier `src/data.ts` puis créez un fichier `src/app.tsx`** qui servira de point d'entrée à notre application React.
+6. **Supprimez tous les fichiers `.ts` du dossier `src`, à l'exception des fichiers `src/data.ts` et ``src/types.ts` puis créez un fichier `src/app.tsx`** qui servira de point d'entrée à notre application React.
 
 	Placez-y pour le moment juste un `console.log` :
 	```js
