@@ -1,6 +1,6 @@
-type Attribute = {
-	name: string,
-	value: string,
+interface Attribute {
+	name: string;
+	value: string;
 };
 type Children = string | string[];
 
