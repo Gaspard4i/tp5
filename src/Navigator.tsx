@@ -3,7 +3,7 @@ import VideoList from './VideoList';
 import VideoDetail from './VideoDetail';
 
 // typage useState
-type PageId = 'list' | 'detail';
+type PageId = 'list' | 'detail'; // enum des pages autorisées
 interface PageParams {
 	id?: number;
 }

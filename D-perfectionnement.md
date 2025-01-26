@@ -8,7 +8,7 @@ _**En revanche il reste un certain nombre de choses qui sont encore en dur dans 
 
 ## Sommaire <!-- omit in toc -->
 - [D.1. VideoDetail](#d1-videodetail)
-- [D.2. Redirection VideoForm -\> VideoDetail](#d2-redirection-videoform-videodetail)
+- [D.2. Redirection VideoForm -\> VideoDetail](#d2-redirection-videoform---videodetail)
 - [D.3. API likes/dislikes](#d3-api-likesdislikes)
 - [D.4. Les commentaires](#d4-les-commentaires)
 
@@ -17,13 +17,13 @@ _**En revanche il reste un certain nombre de choses qui sont encore en dur dans 
 
 **En vous inspirant de ce que vous avez fait à la partie [B. AJAX](B-ajax.md) dans la `VideoList`, connectez le composant `VideoDetail` au webservice http://localhost:8080/api/videos/:id** (_où `:id` correspond à l'id de la vidéo à afficher_)
 
-> _**NB :** Pour que ce soit plus simple à tester, je vous conseille de remettre la page `VideoList` comme page par défaut dans le `Navigator`._
+> 💡 _**Conseil :** Pour que ce soit plus simple à tester, je vous conseille de remettre l'écran `VideoList` comme page par défaut dans le `Navigator`._
 
 
 ## D.2. Redirection VideoForm -> VideoDetail
 **Maintenant que le `VideoDetail` est dynamisé, profitons en pour modifier le comportement du `VideoForm`** : une fois l'enregistrement d'une nouvelle vidéo terminé, au lieu de rediriger l'utilisateur vers la page liste, **redirigez le plutôt vers la page détail** de la vidéo qu'il vient d'enregistrer !
 
-> _**Indice :** inspectez bien le corps de la réponse à votre requête POST...)_
+> 💡 _**Indice :** inspectez bien le corps de la réponse à votre requête POST..._
 
 ## D.3. API likes/dislikes
 _**Connectons maintenant les boutons like/dislike de la page `VideoDetail` à l'API.**_
@@ -53,7 +53,7 @@ L'API pour les commentaires est **déjà fournie** dans api-server :
 Plusieurs contraintes :
 - Quand on arrive sur la page de détail d'une vidéo, **la liste des commentaires doit se charger** en fonction de la vidéo affichée
 
-	> _**NB :** une fois les commentaires connectés à l'API, vous pouvez supprimer le fichier `src/data.js` qui n'est plus utile !_
+	> ℹ️ _Une fois les commentaires connectés à l'API, vous pouvez **supprimer** le fichier `src/data.ts` qui n'est plus utile !_
 - Le commentaire le plus récent est **en haut**
 - Le formulaire d'ajout de commentaire doit être un formulaire **contrôlé**
 - Une fois un commentaire ajouté, la **liste des commentaires doit se rafraîchir**
@@ -61,5 +61,5 @@ Plusieurs contraintes :
 - Comme le texte tapé par l'utilisateur est stocké dans un state, il est facile d'adapter le JSX retourné à la valeur saisie : **désactivez donc le bouton submit** tant qu'il n'y a pas plus de 2 caractères saisis
 - Pendant le **chargement** de la liste des commentaires et pendant **l'envoi** d'un nouveau commentaire l'utilisateur ne doit pas pouvoir saisir de texte ou re-cliquer sur le bouton submit
 
-	> _si vous le souhaitez, des styles sont présents dans la CSS pour l'état `disabled` du `textarea` et du `button` submit._ \
+	> ℹ️ _si vous le souhaitez, des styles sont présents dans la CSS pour l'état `disabled` du `textarea` et du `button` submit._ \
 	> _Le bouton submit supporte par ailleurs la classe "is-loading" pour afficher un petit loader à l'intérieur du bouton._
