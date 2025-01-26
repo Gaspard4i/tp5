@@ -1,4 +1,12 @@
-export default function CommentRenderer({ comment: { created_at, content } }) {
+import { Comment } from './types';
+
+interface Props {
+	comment: Comment;
+}
+
+export default function CommentRenderer({
+	comment: { created_at, content },
+}: Props) {
 	const date = new Date(created_at);
 	return (
 		<article className="commentRenderer">

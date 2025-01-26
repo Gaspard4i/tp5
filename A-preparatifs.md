@@ -19,18 +19,24 @@ Vous commencez maintenant à avoir l'habitude, je ne rentrerai donc pas dans les
 
 2. **Tapez dans un terminal :**
 	```bash
-	mkdir ~/tps-react
-	git clone git@github.com:<votre-username>/tp5.git ~/tps-react/tp5
-	codium ~/tps-react/tp5
+	cd chemin/vers/votre/workspace
+	git clone git@github.com:<votre-username>/tp5.git
+	codium tp5
 	```
 3. **Puis dans un terminal intégré de VSCodium** (<kbb>CTRL/Cmd</kbd>+<kbd>J</kbd>) :
 	```bash
 	npm i
 	npm start
 	```
-	> _**NB :** si vous souhaitez plus de précisions sur les commandes précédentes et l'installation  / configuration du projet, vous pouvez vous référer au chapitre [A. Préparatifs](https://github.com/cours-react/tp2/blob/cours-github/A-preparatifs.md) du TP2 ou simplement demander de l'aide au formateur_ 😄😄
+	> ℹ️ _Si vous souhaitez plus de précisions sur les commandes précédentes et l'installation  / configuration du projet, vous pouvez vous référer au chapitre [A. Préparatifs](https://github.com/cours-react/tp2/blob/cours-github/A-preparatifs.md) du TP2 ou simplement me demander de l'aide_ 😄😄
 
-4. **Lancez votre site en mode "debug dans vscode"** : tapez <kbd>CTRL</kbd>+<kbd>SHIFT</kbd>+<kbd>P</kbd> puis sélectionnez `"Debug: Select and start debugging"` ou appuyez simplement sur la touche <kbd>F5</kbd>.
+4. **Dans un [terminal splitté](https://code.visualstudio.com/docs/terminal/basics#_groups-split-panes)** (_côte à côte avec `npm start`_) lancez le compilateur TypeScript pour vérifier le typage de votre code :
+
+	```bash
+	npx tsc --watch
+	```
+
+5. **Lancez votre site en mode "debug dans vscode"** : tapez <kbd>CTRL</kbd>+<kbd>SHIFT</kbd>+<kbd>P</kbd> puis sélectionnez `"Debug: Select and start debugging"` ou appuyez simplement sur la touche <kbd>F5</kbd>.
 
 	Le résultat attendu est le suivant :
 
@@ -39,39 +45,53 @@ Vous commencez maintenant à avoir l'habitude, je ne rentrerai donc pas dans les
 ## A.2. Lancement de l'API REST
 _**Dans ce TP on va enfin connecter notre appli web à une base de données grâce à une API REST qui vous est fournie ici : https://github.com/cours-react/api-server**_
 
-Ce serveur (_basé sur [Express.js](http://expressjs.com/)_) fournit une API REST minimaliste mais qui va être suffisante pour connecter notre appli React à une base de données [SQLite](https://sqlite.org/index.html) (_générée à la volée_).
+Ce serveur (_basé sur [Express.js](http://expressjs.com/)_) fournit une API REST/JSON minimaliste mais qui va être suffisante pour connecter notre appli React à une base de données [SQLite](https://sqlite.org/index.html) (_générée au premier lancement du serveur_).
 
 1. **Commencez par cloner le serveur :**
 	```bash
-	git clone git@github.com:cours-react/api-server.git ~/tps-react/api-server
+	cd chemin/vers/votre/workspace
+	git clone git@github.com:cours-react/api-server.git
 	```
 2. **Installez ensuite les dépendances du serveur :**
 	```bash
-	cd ~/tps-react/api-server
-	npm i
+	cd chemin/vers/votre/workspace/api-server && npm i
 	```
 
-	> _**NB :** Si cette commande déclenche une erreur en rapport avec node-gyp et que vous êtes sur Windows, c'est peut-être que vous avez oublié de cocher la case **"Automatically install the necessary tools. ..."** sur l'écran "Tools for native modules" lors de l'installation de Node.js (comme indiqué dans le premier TP). Si c'est le cas il vous faudra **désinstaller et réinstaller Node en prenant soin de cocher cette case**._
+	> <details><summary>🚧 <em>Si vous rencontrez <strong>une erreur</strong> en rapport avec node-gyp...</em></summary>
 	>
-	> _Si malgré ça l'erreur persiste, alors vous pouvez tenter d'installer les `windows-build-tools` en ouvrant un terminal **en mode ⚠ ADMINISTRATEUR ⚠ (IMPORTANT)** et en lançant la commande :_
-	> ```bash
-	> npm install --global --production --verbose windows-build-tools
-	> ```
+	> _Si vous êtes sur Windows, c'est peut-être que vous avez oublié de cocher la case **"Automatically install the necessary tools. ..."** sur l'écran "Tools for native modules" lors de l'installation de Node.js (comme indiqué dans le premier TP)._ \
+	> _Si c'est le cas **désinstallez et réinstallez Node en prenant soin de cocher cette case**._
 	>
-	> _Patientez 5 ~ 10 minutes que tout s'installe, fermez vos terminaux ouverts (pour mettre à jour le PATH), relancez un terminal, puis retentez d'installer le serveur._
+	> _Vous pouvez aussi tenter d'installer les paquets nécessaires manuellement ([comme le fait normalement l'installeur de node](https://github.com/nodejs/node/blob/1ba508d51b3057768fa068dc3e279450d498c3d9/tools/msvs/install_tools/install_tools.bat#L41-L42)):_
+	> 1. _Si vous ne l'avez pas encore, installez [chocolatey](https://chocolatey.org/) : https://chocolatey.org/install_
+	> 2. _Installez ensuite les paquets [python](https://chocolatey.org/packages/python) et [visualstudio2019-workload-vctools](https://chocolatey.org/packages/visualstudio2019-workload-vctools) :_
+	> 	```bash
+	> 	choco install python visualstudio2019-workload-vctools
+	> 	```
+	> 3. _Supprimez le dossier `node_modules` et relancez la commande `npm i`._
 	>
-	> _Si jamais l'installation de `windows-build-tools` bloque sur la ligne **"Successfully installed Python 2.7"** pendant plus de 5 ~ 10 minutes, vous pouvez tenter la manipulation décrite sur cette issue github pour débloquer l'install : https://github.com/felixrieseberg/windows-build-tools/issues/172#issuecomment-484091133_
+	> <br/>
+	>
+	> _Si l'erreur persiste ou que vous ne souhaitez/pouvez vraiment pas utiliser chocolatey, alors vous pouvez tenter d'installer le paquet npm `windows-build-tools`. Ouvrez un terminal **en tant qu'*ADMINISTRATEUR*** et tapez la commande suivante :_
+    > ```bash
+    > npm install --global --production --verbose windows-build-tools
+    > ```
+	> _**NB :** En cas de blocage de l'installation sur la ligne **"Successfully installed Python 2.7"** pendant plus de 5 ~ 10 minutes, tentez donc la manipulation décrite sur cette issue github : https://github.com/felixrieseberg/windows-build-tools/issues/172#issuecomment-484091133_
+	> </details>
 
-3. **Lancez le serveur à l'aide de la commande :**
+3. **Démarrez ensuite le serveur** en lançant la commande
 	```bash
 	npm start
 	```
 
 	<img src="images/readme/npm-start.gif" />
 
-	> _**NB :** attention de bien lancer cette commande dans le dossier `api-server`_
+	> <details><summary>🚧 <em>Si la commande ne se lance pas...</em></summary>
+	>
+	> _Vérifiez que vous lancez bien cette commande dans le dossier `api-server` et que le dossier `node_modules` a bien été généré par le `npm i` qu'on a fait tout à l'heure._
+	> </details>
 
-4. **Vérifiez que la base de données SQLite a bien été créée** en vérifiant qu'un fichier `db.sqlite` figure bien maintenant dans le dossier `~/tps-react/api-server/`.
+4. **Vérifiez que la base de données SQLite a bien été créée** en vérifiant qu'un fichier `db.sqlite` figure bien maintenant dans le dossier `api-server`.
 
 5. **Enfin, assurez-vous du bon fonctionnement de l'API REST en ouvrant l'URL http://localhost:8080/api/videos dans votre navigateur.** Si tout se passe bien vous devez voir un JSON s'afficher avec des vidéos dedans !
 
