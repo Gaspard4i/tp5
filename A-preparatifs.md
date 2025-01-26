@@ -48,9 +48,9 @@ Vous commencez maintenant à avoir l'habitude, je ne rentrerai donc pas dans les
 	**C'est important de bien comprendre le code qui vous est fourni car il servira de base aux exercices de ce TP** : si des points ne sont pas clairs, interrogez votre encadrant.e de TP !
 
 	**Attention : si vous n'aviez pas eu le temps de terminer le précédent TP**, portez une attention toute particulière aux fichiers :
-	- `Navigator.jsx`
-	- `VideoDetail.jsx` et `CommentList.jsx`
-	- `VideoList.jsx` et `VideoThumbnail.jsx`
+	- `Navigator.tsx`
+	- `VideoDetail.tsx` et `CommentList.tsx`
+	- `VideoList.tsx` et `VideoThumbnail.tsx`
 
 
 
