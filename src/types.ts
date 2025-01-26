@@ -1,4 +1,4 @@
-export type Video = {
+export interface Video {
 	id: number;
 	title: string;
 	description: string;
@@ -6,7 +6,7 @@ export type Video = {
 	thumbnail: string;
 	likes: number;
 	dislikes: number;
-};
+}
 export interface Comment {
 	created_at: string;
 	content: string;
