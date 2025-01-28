@@ -218,13 +218,6 @@ button:active {
 	background-color: #0f0f0f;
 	color: white;
 	transition-duration: .05s, .001s;
-}
-button:hover:disabled,
-button:disabled {
-	color: #ccc;
-	cursor: not-allowed;
-	background-color: transparent;
-	outline: 1px currentColor solid;
 	&.is-loading {
 		cursor: progress;
 		min-height: auto;
@@ -237,6 +230,13 @@ button:disabled {
 			border-top-color: #ccc3;
 		}
 	}
+}
+button:hover:disabled,
+button:disabled {
+	color: #ccc;
+	cursor: not-allowed;
+	background-color: transparent;
+	outline: 1px currentColor solid;
 }
 
 .commentForm button:focus:not(:disabled),
