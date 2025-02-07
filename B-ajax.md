@@ -59,7 +59,7 @@ la fonction `fetch` utilise une syntaxe avec laquelle il facile de chaîner les 
 	> }
 	> myPromise.then( handleResponse );
 	> ```
-	> ⚠️ _Attention :  on passe bien à `.then()` une **RÉFÉRENCE** de fonction et **SURTOUT PAS L'EXÉCUTION** de la fonction (sinon au lieu de s'exécuter "plus tard", quand le serveur aura répondu à notre requête, on l'exécutera dès le départ avant même d'attendre le résultat). N'écrivez donc JAMAIS ceci :_
+	> ⚠️ _Attention :  on passe bien à `.then()` une **RÉFÉRENCE** de fonction et **SURTOUT PAS L'EXÉCUTION** de la fonction (sinon au lieu de s'exécuter "plus tard", quand le serveur aura répondu à notre requête, on l'exécutera dès le départ, avant même d'attendre la réponse). N'écrivez donc JAMAIS ceci :_
 	> ```ts
 	> // ON NE MET JAMAIS LES PARENTHESES APRES LA FONCTION PASSEE À .then(...)
 	> myPromise.then( handleResponse() ); // <-- ❌ NE FAITES JAMAIS ÇA 🤯
@@ -68,7 +68,7 @@ la fonction `fetch` utilise une syntaxe avec laquelle il facile de chaîner les 
 
 	Rechargez la page et regardez ce qui s'affiche dans la console : il s'agit d'un objet de type [`Response` _(mdn)_](https://developer.mozilla.org/en-US/docs/Web/API/Response) retourné par l'API fetch.
 
-	Comme vu en cours, cet objet contient notamment des propriétés `ok`, `status` et `statusText` qui permettent d'en savoir plus sur la réponse HTTP retournée par le serveur.
+	Comme vu en cours, vous pouvez remarquer dans la console que cet objet `response` contient des propriétés `ok`, `status` et `statusText` qui permettent d'en savoir plus sur la réponse HTTP retournée par le serveur.
 
 5. **On va maintenant pouvoir récupérer les données brutes contenues dans la réponse HTTP grâce à la méthode [`response.text()` _(mdn)_](https://developer.mozilla.org/en-US/docs/Web/API/Body/text)** :
 	```ts
