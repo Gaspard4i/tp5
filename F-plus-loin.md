@@ -157,7 +157,7 @@ Cette fonction va nous permettre d'afficher plusieurs vignettes côte à côte g
 		```ts
 		// `data` est le tableau défini dans `src/data.js`
 		const videoList = renderVideoList(data);
-		document.querySelector( '.page' ).innerHTML = videoList;
+		document.querySelector( '.page' )!.innerHTML = videoList;
 		```
 	-  le code HTML retourné `renderVideoList()` sera une balise `<div class="videoList">...</div>`
 	-  pour chaque cellule du tableau `data`, `renderVideoList` appellera `renderVideoItem` et injectera le résultat à l'intérieur de la `<div class="videoList">...</div>`

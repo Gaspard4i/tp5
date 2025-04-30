@@ -151,7 +151,7 @@ L'installation de TypeScript se fait avec **npm** (_Node Package Manager - l'out
 	>
 	> _Par défaut le navigateur autorise certaines aberrations héritées d'ES3 (comme la possibilité de déclarer plusieurs variables avec le même nom dans le même scope par exemple). Le mode strict permet donc de désactiver cette tolérance pour détecter plus facilement les erreurs._
 	>
-	> _La doc : https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Strict_mode_
+	> _La doc : https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Strict\_mode_
 	> </details>
 
 4. Il ne reste plus qu'à **intégrer ce fichier JS compilé dans notre page HTML**, à la place de notre ancien fichier `src/main.js`.
