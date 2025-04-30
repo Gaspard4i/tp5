@@ -103,7 +103,7 @@ la fonction `fetch` utilise une syntaxe avec laquelle il facile de chaîner les 
 	```
 	> <details><summary>ℹ️ <em>C'est quoi <code>as Video[]</code> ?</em></summary>
 	>
-	> _L'opérateur [`as` (doc)](http://localhost:8080/api/videos) permet de faire une **"assertion de type"**._
+	> _L'opérateur [`as` (doc)](https://www.typescriptlang.org/docs/handbook/jsx.html#the-as-operator) permet de faire une **"assertion de type"**._
 	>
 	> _En effet, si vous survolez le paramètre `data` dans vscode, vous verrez que son type détecté est "`any`". C'est logique parce que TS ne peut pas deviner ce que retourne notre webservice http://localhost:8080/api/videos._
 	>
