@@ -1,6 +1,6 @@
 <img src="images/readme/header.jpg" />
 
-## Objectifs
+## 🎯 Objectifs
 - Mettre en place un environnement de développement JS
 - Lancer le projet de base qui servira aux TPs
 - Prendre en main les outils de debug (devtools)
