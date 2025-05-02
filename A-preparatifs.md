@@ -45,7 +45,7 @@ La solution la plus simple pour récupérer les fichiers du TP consiste à clone
 
 		> ℹ️ _Si vous avez déjà VSCode, ça fera très bien l'affaire, VSCodium et VSCode sont quasi identiques (on y reviendra dans la partie [A.3. VSCod\[e/ium\]](#a3-vscodeium)) !_
 
-2. **Ouvrez un terminal** *(si vous êtes sous Windows, utilisez **Git bash** installé automatiquement avec Git)*
+2. **Ouvrez un terminal** (_si vous êtes sous Windows, utilisez **Git bash** installé automatiquement avec Git_)
 
 3. **Récupérez ensuite les fichiers de ce TP grâce à Git : clonez ce repo dans un dossier de votre choix** (_dans mon exemple `chemin/vers/votre/workspace/tp0`_) :
 	```bash

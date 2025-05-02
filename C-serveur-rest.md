@@ -18,7 +18,7 @@ Ce serveur (_basé sur [Express.js](http://expressjs.com/)_) fournit une API RES
 
 	> <details><summary>🚧 <em>Si vous rencontrez <strong>une erreur</strong> en rapport avec node-gyp...</em></summary>
 	>
-	> _Si vous êtes sur Windows, c'est peut-être que vous avez oublié de cocher la case **"Automatically install the necessary tools. ..."** sur l'écran "Tools for native modules" lors de l'installation de Node.js (comme indiqué dans le premier TP)._ \
+	> _Si vous êtes sur Windows, c'est peut-être que vous avez oublié de cocher la case **"Automatically install the necessary tools. ..."** sur l'écran "Tools for native modules" lors de l'installation de Node.js (comme indiqué à la partie [A. Préparatifs](./A-preparatifs.md))._ \
 	> _Si c'est le cas **désinstallez et réinstallez Node en prenant soin de cocher cette case**._
 	>
 	> _Vous pouvez aussi tenter d'installer les paquets nécessaires manuellement ([comme le fait normalement l'installeur de node](https://github.com/nodejs/node/blob/1ba508d51b3057768fa068dc3e279450d498c3d9/tools/msvs/install_tools/install_tools.bat#L41-L42)):_
