@@ -1,18 +1,18 @@
 <img src="images/readme/header-small.jpg" >
 
-# C. Les modules <!-- omit in toc -->
+# D. Les modules <!-- omit in toc -->
 
 _**Notre application Reactube a bien progressé.**_
 
-Malheureusement tout notre code réside dans le seul fichier `main.js` : **ça commence par conséquent à être un peu le "bazar" puisque tout est mélangé.**
+Malheureusement tout notre code réside dans le seul fichier `main.ts` : **ça commence par conséquent à être un peu le "bazar" puisque tout est mélangé.**
 
 **L'objectif de ce chapitre va être de nous permettre de mieux organiser notre code en le répartissant dans plusieurs fichiers grâce aux modules ES6.**
 
 ## Sommaire <!-- omit in toc -->
-- [C.1. Rappels](#c1-rappels)
-- [C.2. Mise en oeuvre](#c2-mise-en-oeuvre)
+- [D.1. Rappels](#d1-rappels)
+- [D.2. Mise en oeuvre](#d2-mise-en-oeuvre)
 
-## C.1. Rappels
+## D.1. Rappels
 **Comme vu en cours, le système de modules ES6 permet de répartir son code dans plusieurs fichiers et de gérer les dépendances de l'application fichier par fichier** (_plutôt que d'avoir à maintenir une longue liste de balises `<script>` dans le fichier html_).
 
 Par exemple, si l'on a deux fichiers `main.js` et `vehicle.js`, on peut partager une variable de l'un à l'autre grâce aux instructions `import` et `export` :
@@ -58,30 +58,32 @@ Dans un premier temps nous ferons de toute façon abstraction de ces questions d
 
 Nous verrons plus tard dans le TP comment rendre nos modules compatibles avec les vieux navigateurs grâce à un bundler.
 
-## C.2. Mise en oeuvre
-1.  **Avant d'utiliser le système de modules et les instructions `import`/`export`, il faut d'abord indiquer au navigateur que notre fichier `main.js` est lui-même un module.** Pour cela, ajoutez un attribut `type="module"` dans la balise `<script>` du fichier `index.html` :
+## D.2. Mise en oeuvre
+1.  **Avant d'utiliser le système de modules et les instructions `import`/`export`, il faut d'abord indiquer au navigateur que notre fichier `build/main.js` est lui-même un module.** Pour cela, ajoutez un attribut `type="module"` dans la balise `<script>` du fichier `index.html` :
 	```html
-	<script type="module" src="src/main.js"></script>
+	<script src="build/main.js" type="module"></script>
 	```
-	> _**NB :** Vous noterez que l'attribut `"defer"` n'est plus nécessaire car il est implicite pour les modules !_
+	> ℹ️ _Vous noterez que l'attribut `"defer"` n'est plus nécessaire car il est implicite pour les modules !_
 
-3. Si pour les modules avec un bundler (_comme Vite par exemple, cf. suite du TP_) on peut omettre l'extension du fichier qu'on importe, ce n'est pas le cas avec les modules "dans le navigateur" comme on s'apprête à le faire : il faut **obligatoirement préciser à chaque `import ... from ...` l'extension `.js` après le nom du fichier**.
+3. Si pour les modules avec un bundler (_comme Vite par exemple, cf. suite du TP_) on peut omettre l'extension du fichier qu'on importe, ce n'est pas le cas avec les modules "dans le navigateur" comme on s'apprête à le faire : il faut **obligatoirement préciser à chaque `import ... from ...` l'extension** (_`.ts` dans les fichiers sources, `.js` dans les fichiers compilés_) après le nom du fichier.
 
-	Pour que vscode vous aide à créer les instructions import correctement, **Ajoutez un dossier `.vscode` à la racine du TP**  (_à côté du fichier `index.html`_) **et placez y un fichier nommé `settings.json`** avec le contenu suivant :
+	Pour que vscode vous aide à créer les instructions import correctement côté TypeScript, **Ajoutez un dossier `.vscode` à la racine du TP**  (_à côté du fichier `index.html`_) **et placez y un fichier nommé `settings.json`** avec le contenu suivant :
 
 	```json
 	{
-		"[javascript]": {
-			"javascript.preferences.importModuleSpecifierEnding": "js"
-		}
+	    "[typescript]": {
+	        "typescript.preferences.importModuleSpecifierEnding": "js"
+	    }
 	}
 	```
 
-4.  **Créez votre premier module en externalisant la fonction `renderElement` dans un module ES6 distinct `src/renderElement.js`.**
+4.  **Créez votre premier module en externalisant la fonction `renderElement` dans un module distinct `src/renderElement.ts`.**
 
-	> _**NB1 :** Rappelez-vous : tout ce qui est défini dans un module (variables, fonctions, classes), n'existe qu'à l'intérieur de ce module **SAUF** s'il est exporté, puis **importé** dans un autre fichier._
+	> ℹ️ _Rappelez-vous : tout ce qui est défini dans un module (variables, fonctions, classes), n'existe qu'à l'intérieur de ce module **SAUF** s'il est exporté, puis **importé** dans un autre fichier._
 
-	> _**NB2 :** Exporter **par défaut** une constante sur la même ligne que sa création est interdit (cf. la Bible : [stackoverflow](https://stackoverflow.com/a/36261387)):_
+	> <details><summary>⚠️ <em>Exporter <strong>par défaut</strong> une constante sur la même ligne que sa création est interdit !!</em></summary>
+	>
+	> _Source la Bible : [stackoverflow](https://stackoverflow.com/a/36261387) :_
 	> ```js
 	> export default const data = [...]; // ERREUR !
 	> ```
@@ -91,18 +93,23 @@ Nous verrons plus tard dans le TP comment rendre nos modules compatibles avec le
 	> export default data; // OK !
 	> ```
 
-	> _**NB3 :** Un export nommé (pas par défaut) d'une const est en revanche autorisé :_
+	> <details><summary>ℹ️ <em>... par contre un export nommé (pas par défaut) d'une const est autorisé...</em></summary>
+	>
 	> ```js
 	> export const data = [...]; // OK !
 	> ```
+	> </details>
 
-	> _**NB4 :** Cette restriction ne s'applique pas aux fonctions et aux classes ; on peut tout à fait faire :_
+	> <details><summary>ℹ️ <em>... cette restriction ne s'applique pas aux fonctions et aux classes !</em></summary>
+	>
+	> _On peut tout à fait faire :_
 	> ```js
 	> export default class Component {...} // OK !
 	> ```
 	> ```js
 	> export default function checkValue(value){...} // OK aussi !
 	> ```
+	> </details>
 
 5. **Testez la page dans le navigateur**, le résultat doit être identique à celui obtenu précédemment :
 
@@ -112,10 +119,10 @@ Nous verrons plus tard dans le TP comment rendre nos modules compatibles avec le
 
 	<img src="images/readme/modules-network.png" />
 
-	On voit ainsi une des limites des modules ES6 : si l'on a plusieurs dizaines/centaines/milliers de modules dans un projet, on va déclencher en cascade autant de requêtes http que l'on a de modules dans le projet 😱
+	On entrevoit déjà un peu une des limites des modules ES6 : si l'on a plusieurs dizaines/centaines/milliers de modules dans un projet, on va déclencher en cascade autant de requêtes http que l'on a de modules dans le projet 😱
 
 	Heureusement il existe des outils appelés "bundlers", qui permettent de régler ce problème ! Comme la vie est bien faite, c'est justement ce qu'on va voir dans la prochaine partie de ce TP ! 😌
 
 
 ## Étape suivante <!-- omit in toc -->
-Maintenant que les modules sont en place, voyons donc comment configurer un des outils de build JS les plus populaires actuellement : [D. Vite](D-vite.md)
+Maintenant que les modules sont en place, voyons donc comment configurer un des outils de build JS les plus populaires actuellement : [E. Vite](E-vite.md)
