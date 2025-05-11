@@ -11,7 +11,8 @@
   },
   "author": "Thomas Fritsch <thomas@uidlt.fr> (https://uidlt.fr)",
   "homepage": "https://github.com/formation-react/",
-  "license": "ISC",
+  "license": "UNLICENSED",
+  "private": "true",
   "devDependencies": {
     "typescript": "^5.8.3",
     "vite": "^6.3.5"
