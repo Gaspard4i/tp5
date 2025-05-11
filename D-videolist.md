@@ -2,7 +2,7 @@
 
 # D. JSX : Les boucles <!-- omit in toc -->
 
-_**Maintenant que l'on est capables d'afficher des composants, d'injecter des valeurs JS à l'intérieur du JSX, voyons si vous êtes à même d'en créer un autre, qui nécessite une boucle.**_
+_**Maintenant que l'on est capables d'afficher des composants, d'injecter des valeurs JS/TS à l'intérieur du JSX, voyons si vous êtes à même de créer un composant qui nécessite une boucle.**_
 
 ## Sommaire <!-- omit in toc -->
 - [D.1. Création du composant](#d1-création-du-composant)
@@ -10,7 +10,7 @@ _**Maintenant que l'on est capables d'afficher des composants, d'injecter des va
 
 ## D.1. Création du composant
 
-1. **Créez un nouveau composant nommé `VideoList` dans un module `src/VideoList.jsx`.**
+1. **Créez un nouveau composant nommé `VideoList` dans un module `src/VideoList.tsx`.**
 
 	Pour le moment, faites en sorte qu'il retourne juste le code suivant :
 
@@ -23,13 +23,13 @@ _**Maintenant que l'on est capables d'afficher des composants, d'injecter des va
 		</div>
 	```
 
-2. **Modifiez le `app.jsx` pour qu'il rende le composant `VideoList` au lieu du `VideoDetail`.**
+2. **Modifiez le `app.tsx` pour qu'il rende le composant `VideoList` au lieu du `VideoDetail`.**
 
-	> _**Conseil :** comme d'habitude, vérifiez bien que vous n'avez pas d'erreur ou de warning dans la console !_
+	> 💡 _**Conseil :** comme d'habitude, vérifiez bien que vous n'avez pas d'erreur ou de warning dans la console !_
 
 
 ## D.2. Récupération des données
-1. **Commencez par importer la constante `data`** définie dans le module `src/data.js`.
+1. **Commencez par importer la constante `data`** définie dans le module `src/data.ts`.
 2. **Utilisez-la pour retourner à l'intérieur de la `<div class="videoList">` autant de balises de ce type que de cellules dans `data`** :
 	```html
 	<a href="uploads/video1.mp4">

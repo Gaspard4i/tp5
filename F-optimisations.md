@@ -4,9 +4,13 @@
 
 Si vous avez terminé les précédents exercices, bravo ! Voici quelques exercices supplémentaires :
 
-1. **Le champ description devient facultatif :** la balise `<p>` qui la contient ne doit pas s'afficher s'il `description` est vide.
+> ⚠️ _Vérifiez à chaque étape que `npx tsc --watch` ne remonte pas d'erreurs de typage !!_
 
-2. **Faites en sorte que le composant `VideoDetail` aille chercher ses infos depuis le fichier `data.js`** en prenant les infos de la première cellule.
+1. Dans le composant `VideoDetail` **la description devient facultative :** la balise `<p>` qui la contient ne doit pas s'afficher si la constante `description` est vide.
+
+	> ℹ️ _Pensez que pour travailler sur `VideoDetail`, c'est mieux si ce composant est affiché à l'écran. Si vous voyez la `VideoList` dans votre navigateur c'est probablement que quelque chose ne va pas..._
+
+2. **Faites en sorte que le composant `VideoDetail` aille chercher ses infos depuis le fichier `data.ts`** en prenant les infos de la première cellule.
 
 3. **Utilisez la fonction `Math.random()` pour récupérer une vidéo aléatoire dans `VideoDetail`.**
 
@@ -38,16 +42,16 @@ Si vous avez terminé les précédents exercices, bravo ! Voici quelques exercic
 
 	Ce tableau `comments` contient des objets littéraux avec des propriétés :
 	- id : number
-	- created_at : string contenant un datetime au format ISO (ex. `'2024-01-12 13:22:34'`)
+	- created_at : string contenant un datetime au format ISO (ex. `'2025-01-12 13:22:34'`)
 	- content : string contenant le texte du commentaire (ex. `'Superbe ! Ce tp est fantastique.'`)
 
 	Le code HTML de chaque commentaire sera le suivant :
 	```html
 	<article class="commentRenderer">
-		<time dateTime="2024-01-12 13:22:34">
-			Le 12/01/2024 à 13:22:34
+		<time dateTime="2025-01-12 13:22:34">
+			Le 12/01/2025 à 13:22:34
 		</time>
 		<p>Superbe ! Ce tp est fantastique.</p>
 	</article>
 	```
-	Enfin, ajouter en haut de la balise `<aside class="commentList">` une balise `<h2>X commentaires</h2>` où `X` est le nombre de commentaires.
+	Enfin, ajoutez en haut de la balise `<aside class="commentList">` une balise `<h2>X commentaires</h2>` où `X` est le nombre de commentaires.

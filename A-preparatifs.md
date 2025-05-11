@@ -11,34 +11,44 @@
 
 ## A.1. Récupération du projet
 **Ce repo contient une solution commentée du précédent TP.** <br>
-Pour ce TP vous pouvez soit repartir de vos fichiers du précédent TP (si vous l'aviez terminé et que le formateur a validé que tout était correct) ou bien cloner ce repo et vous en servir comme base pour ce TP.
+Il va vous servir de base pour ce nouveau TP.
 
-*Si vous repartez de vos fichiers, **pensez à faire un `git pull`** pour récupérer les dernières modifications du repo (probablement des modifs de CSS ou des corrections de dernière minute).*
-
-1. **Récupérez les fichiers de ce TP grâce à Git : clonez ce repo dans un dossier de votre choix** (_dans mon exemple /home/thomas/tps-react/tp2_):
+1. **Récupérez les fichiers de ce TP grâce à Git : clonez ce repo dans un dossier de votre choix** (_dans mon exemple `chemin/vers/votre/workspace/tp2`_) :
 	```bash
-	mkdir ~/tps-react
-	git clone git@github.com:formation-react/tp2.git ~/tps-react/tp2
+	cd chemin/vers/votre/workspace
+	git clone git@github.com:formation-react/tp2.git
 	```
-	> _**NB1 :** Comme pour le TP1, je clone ici dans mon dossier `/home/thomas/tps-react/tp2`. **Si vous êtes sous Windows faites attention au sens des slashs et au caractère `"~"`** qui représente le dossier de l'utilisateur sur système unix : utilisez **Git bash** (qui comprend cette syntaxe) ou si vous tenez vraiment à utiliser **cmd** ou **powershell** pensez à adapter la commande !_
+	> <details><summary>⚠️ <em>Si vous êtes sous <strong>Windows</strong> attention aux slashs...</em></summary>
+	>
+	> _ici je clone dans le dossier `chemin/vers/votre/workspace/tp2`. **Si vous êtes sous Windows faites attention aux slashs dans le chemin du dossier** : utilisez **Git bash** (qui comprend cette syntaxe) ou si vous tenez vraiment à utiliser **cmd** ou **powershell** pensez à adapter la commande en les remplaçant par des antislash `\` !_
+	> </details>
 
-	> _**NB2 :** Comme pour le TP1 aussi, si vous préférez **cloner en https**, adaptez l'URL du repo en clonant à partir de cette URL : `https://github.com/formation-react/tp2.git`_
+	> <details><summary>ℹ️ <em>Comme pour le TP1 aussi, si vous préférez <strong>cloner en https</strong>...</em></summary>
+	>
+	> _...adaptez l'URL du repo en clonant à partir de cette URL : `https://github.com/formation-react/tp2.git`_
+	> </details>
 
-2. **Ouvrez le projet dans VSCodium** (pour les différentes façon d'ouvrir le projet relisez les [instructions du TP0](https://github.com/formation-react/tp0/blob/github/A-preparatifs.md#a4-ouvrir-le-projet-dans-vscodium) )
+2. **Ouvrez le projet dans VSCodium** (pour les différentes façons d'ouvrir le projet, relisez les [instructions du TP0](https://github.com/formation-react/tp0/blob/github/A-preparatifs.md#a4-ouvrir-le-projet-dans-vscodium) )
 	```bash
-	codium ~/tps-react/tp2
+	codium chemin/vers/votre/workspace/tp2
 	```
-	> _**NB :** Si vous utilisez VSCode, la commande `codium` doit être remplacée par `code`_
+	> ℹ️ _Si vous utilisez VSCode, la commande `codium` doit être remplacée par `code`_
 
-3. **Installez les paquets npm nécessaires au projet** notamment [Vite](https://vitejs.dev).<br>
+3. **Installez les paquets npm nécessaires au projet** notamment [Vite](https://vite.dev) et TypeScript.<br>
 	Ouvrez un terminal intégré à VSCodium (<kbd>CTRL</kbd>+<kbd>J</kbd> *(PC)* / <kbd>CMD</kbd>+<kbd>J</kbd> *(Mac)*) et tapez juste :
 	```bash
 	npm install
 	```
 
-	> _**NB :** Vous noterez qu'on ne précise pas les paquets à installer. npm va en effet les déterminer **automatiquement** à partir du contenu du fichier `package.json` et plus particulièrement à partir des sections `"dependencies"` et `"devDependencies"` qui indiquent quels sont les paquets qui ont été installés précédemment._
+	> <details><summary>ℹ️ <em>Pourquoi on ne dit pas à <code>npm install</code> quels sont les paquets qu'on veut installer ?</em></summary>
 	>
+	> _Effectivement jusque là on a toujours utilisé `npm install nom-de-la-lib` quand on voulait installer un paquet en particulier._
+	>
+	> _Là on ne précise pas les paquets à installer parce que npm va pouvoir les déterminer **automatiquement** grâce à notre fichier `package.json` et plus particulièrement aux sections `"dependencies"` et `"devDependencies"` qui indiquent quels sont les paquets qui ont été installés précédemment._
+	>
+	> _Cette technique permet à une personne qui rejoint le projet d'installer en une seule commande tous les paquets (les dépendances) dont a besoin notre projet (d'où l'importance de le versionner)._ \
 	> **Magique !** 🙌
+	> </details>
 
 
 ## A.2. Configuration de Prettier
@@ -55,17 +65,13 @@ Prettier est un formateur de code automatique qui est le plus populaire à l'heu
 
 	```json
 	{
-		"[javascript]": {
-			"editor.formatOnSave": true,
-			"editor.defaultFormatter": "esbenp.prettier-vscode"
-		},
-		"[javascriptreact]": {
+		"[typescript][typescriptreact]": {
 			"editor.formatOnSave": true,
 			"editor.defaultFormatter": "esbenp.prettier-vscode"
 		}
 	}
 	```
-	> _**NB :** on n'a plus besoin de la clé `"javascript.preferences.importModuleSpecifierEnding"` puisque Vite supporte les import sans l'extension js à la fin, ce qui est ce que fait vscode par défaut._
+	> ℹ️ _On n'a plus besoin de la clé `"typescript.preferences.importModuleSpecifierEnding"` puisque Vite supporte les import sans l'extension js à la fin, ce qui est ce que fait vscode par défaut._
 
 2. **Créez ensuite un fichier `.prettierrc`** à la racine du TP :
 	```json
@@ -83,7 +89,7 @@ Prettier est un formateur de code automatique qui est le plus populaire à l'heu
 	```
 	Avec cette configuration, vos fichiers JS seront maintenant automatiquement formatés à chaque sauvegarde ! Plus besoin de vous tracasser avec les retours à la ligne, les tabulations, les espaces, tout sera géré automatiquement par Prettier !
 
-	> _**NB :** si vous souhaitez en savoir plus sur la liste des configurations possibles, rendez-vous sur https://prettier.io/docs/en/configuration.html_
+	> ℹ️ _Si vous souhaitez en savoir plus sur la liste des configurations possibles, rendez-vous sur https://prettier.io/docs/en/configuration.html_
 
 
 ## A.3. Outils de dev
@@ -99,73 +105,100 @@ Installez l'extension **React Developer Tools** :
 
 **Comme vu en cours React est une _bibliothèque_ JS.**
 
-Pour l'utiliser dans notre appli on va d'abord devoir récupérer le code de cette bibliothèque. Et pour récupérer une bibliothèque quand on fait du JS de manière sérieuse, c'est **`npm`** qu'on utilise ! \
+Pour l'utiliser dans notre appli on va d'abord devoir récupérer le code de cette bibliothèque. Et pour récupérer une bibliothèque quand on fait du JS de manière "sérieuse", c'est **`npm`** qu'on utilise ! \
 Comme nous sommes des gens sérieux, allons-y :
 
 1. **Installez la bibliothèque [`react`](https://www.npmjs.com/package/react) avec npm :** Dans le dossier du TP (`à la racine, là où se trouve le package.json`), lancez la commande
 	```bash
 	npm i react
 	```
-	> _**NB :** `npm i ...` est un raccourci pour `npm install ...`_
+	> ℹ️ _`npm i ...` est un raccourci pour `npm install ...`_
 
-	> _**NB2 :** vous avez peut-être remarqué que contrairement aux autres packages que l'on avait installés jusque là (`vite` et `prettier`), **`react` a été ajouté dans la section `"dependencies"` et pas `"devDependencies"`** du `package.json`._
+	> <details><summary>ℹ️ <em>Si vous regardez le contenu du fichier `package.json`...</em></summary>
 	>
-	> _En effet, tous les paquets que l'on a installés précédemment ne sont utilisés que pendant la **phase de développement** (pour la compilation ou le formatage de code source) mais ne contiennent rien qui soit vraiment utilisé dans "notre" code. C'est la raison pour laquelle on avait installé tous ces paquets avec **l'option `--save-dev`** (par exemple dans le TP1, on avait fait : `npm install --save-dev vite`, vous vous souvenez ?_ 🤔 _) ce qui avait pour conséquence d'ajouter ces paquets dans les **`"devDependencies"`**._
+	> _Vous l'avez peut-être remarqué mais contrairement aux autres packages que l'on avait installés jusque là (`vite` et `prettier`), **`react` a été ajouté dans la section `"dependencies"` et pas `"devDependencies"`** du `package.json`._
+	>
+	> _En effet, tous les paquets que l'on a installés précédemment ne sont utilisés que pendant la **phase de développement** (pour la compilation ou le formatage de code source) mais ne contiennent rien qui soit vraiment utilisé dans "notre" code._
+	>
+	> _C'est pour cette raison qu'on avait installé tous ces paquets avec **l'option `--save-dev`** (par exemple dans le TP1, on avait fait : `npm install --save-dev vite`, vous vous souvenez ?_ 🤔 _) ce qui avait pour conséquence d'ajouter ces paquets dans les **`"devDependencies"`**._
 	>
 	> _**Pour React, on n'a pas utilisé l'option `--save-dev` car on va utiliser React dans notre code, de fait il est installé dans la section `"dependencies"`.**_
 	>
 	> _Documentation officielle :_
-	> - _dependencies : https://docs.npmjs.com/cli/v9/configuring-npm/package-json#dependencies_
-	> - _devDependencies : https://docs.npmjs.com/cli/v9/configuring-npm/package-json#devdependencies_
+	> - _dependencies : https://docs.npmjs.com/cli/v10/configuring-npm/package-json#dependencies_
+	> - _devDependencies : https://docs.npmjs.com/cli/v10/configuring-npm/package-json#devdependencies_
+	> </details>
 
 2. **Comme vous le savez, React permet de développer des applis web mais aussi des apps mobiles** (_avec [React Native](https://reactnative.dev/)_).
 
-	Dans notre cas il faut donc, en plus de [`react`](https://www.npmjs.com/package/react), **installer la lib [`react-dom`](https://www.npmjs.com/package/react-dom)** qui contient le code spécifique aux applis web :
+	On doit donc préciser à React le type de projet qu'on va avoir : dans notre cas on va -en plus de [`react`](https://www.npmjs.com/package/react)- **installer la lib [`react-dom`](https://www.npmjs.com/package/react-dom)** qui contient le code spécifique aux applis web :
 	```bash
 	npm i react-dom
 	```
-3. Puisque l'on souhaite utiliser du JSX, il faut **permettre à Vite de compiler le JSX en JS à l'aide du plugin [@vitejs/plugin-react](https://www.npmjs.com/package/@vitejs/plugin-react)** :
+3. Pour typer correctement ces deux paquets `react` et `react-dom` avec TypeScript on va avoir besoin d'installer des **paquets de définitions TS** :
+
+	```bash
+	npm i -D @types/react @types/react-dom
+	```
+	> ℹ️ _`-D` est un raccourci pour l'option `--save-dev`_
+
+	Ajoutez ensuite dans le fichier `tsconfig.json` la clé `"jsx"` comme ceci :
+	```jsonc
+	{
+	  "compilerOptions": {
+	    //...
+
+	    "jsx": "react-jsx",
+	  }
+	}
+	```
+
+4. Puisque l'on souhaite utiliser du JSX, il faut **permettre à Vite de compiler le JSX en JS à l'aide du plugin [@vitejs/plugin-react](https://www.npmjs.com/package/@vitejs/plugin-react)** :
 	```bash
 	npm i -D @vitejs/plugin-react
 	```
-	> _**NB :** `-D` est un raccourci pour l'option `--save-dev`_
 
 	En plus du support de JSX, `@vitejs/plugin-react` offre le support automatique du **Fast Refresh**.
 
-	Jusqu'ici dans le TP vous bénéficiez grâce à Vite d'une technique qui s'appelle le "live reload" : c'est ce qui permet de recharger automatiquement le navigateur dès qu'un fichier html, js, ou css est modifié. Mais dans l'écosystème React, il existe encore mieux : le **Fast Refresh**.
-
-	Le principe du Fast refresh, c'est que quand un composant de votre application est modifié, SEUL ce composant va être rechargé, sans avoir besoin de rafraîchir toute la page. Quels avantages ? Il y en a plein :
-	- **on ne recharge pas toute la page**, donc pas le html, ni les CSS, ni les images ça va donc **beaucoup plus vite**
-	- l'application **reste dans son état actuel** : notre navigateur reste là où il était dans la page (conservation du scroll, de la navigation, etc.)
+	> <details><summary>ℹ️ <em>C'est quoi le "Fast Refresh" ? Quelle différence avec ce qu'on avait jusque là ?</em></summary>
+	>
+	> _Jusqu'ici dans le TP vous avez bénéficié grâce à Vite d'une technique qui s'appelle le "live reload" : c'est ce qui permet de recharger automatiquement le navigateur dès qu'un fichier html, js, ou css est modifié._
+	>
+	> _Mais dans l'écosystème React, il existe encore mieux : le **Fast Refresh**._
+	>
+	> _Le principe du Fast refresh, c'est que quand un composant de votre application est modifié, SEUL ce composant va être rechargé, sans avoir besoin de rafraîchir toute la page._ \
+	> _Quels avantages ?_
+	> - _**on ne recharge pas toute la page**, donc pas le html, ni les CSS, ni les images ça va donc **beaucoup plus "vite"**_
+	> - _l'application **reste dans son état actuel** : notre navigateur reste là où il était dans la page (conservation du scroll, de la navigation, etc.)_
+	> </details>
 
 	<img src="images/readme/fast-refresh.gif">
 
 	Génial non ? Et tout ça sans avoir rien d'autre à faire que d'intégrer `@vitejs/plugin-react` ! 😎
 
-4. **Pour indiquer à Vite que l'on souhaite donc utiliser ce plugin dans notre code, on va ajouter un fichier de config `vite.config.mjs`** à la racine de notre TP, avec le contenu suivant :
+5. **Pour indiquer à Vite que l'on souhaite donc utiliser ce plugin dans notre code, on va ajouter un fichier de config `vite.config.ts`** à la racine de notre TP, avec le contenu suivant :
 	```js
 	import react from '@vitejs/plugin-react';
 
 	/** @type {import('vite').UserConfig} */
 	export default {
 		plugins: [react()],
-	}
+	};
 	```
-5. **Supprimez tous les fichiers `.js` du dossier `src`, à l'exception du fichier `src/data.js` puis créez un fichier `src/app.jsx`** qui servira de point d'entrée à notre application React.
+
+6. **Supprimez tous les fichiers `.ts` du dossier `src`, à l'exception des fichiers `src/data.ts` et ``src/types.ts` puis créez un fichier `src/app.tsx`** qui servira de point d'entrée à notre application React.
 
 	Placez-y pour le moment juste un `console.log` :
 	```js
 	console.log('REACTube en React !');
 	```
 
-	> _**NB :** on utilise ici l'extension de fichier `.jsx` car c'est l'extension supportée par défaut par Vite._ \
-	> _Personnellement je ne suis pas favorable à l'utilisation de cette extension, qui était celle employée lors des toutes premières alpha de React, mais qui avait été depuis délaissée pour revenir à l'extension `.js` (plus logique car on peut tout à faire faire des composants React qui n'utilisent pas de JSX, qui retournent par exemple juste une chaîne de caractères...)._
+	> <details><summary>ℹ️ <em>C'est quoi cette extension `.tsx` ?</em></summary>
 	>
-	> _Malheureusement le plugin `@vitejs/plugin-react` [bride l'emploi du Fast Refresh si l'on utilise `.js`](https://github.com/vitejs/vite-plugin-react/issues/155) (pour des questions de perfs) et n'offre pour le moment aucune possibilité de configuration._
-	>
-	> _En attendant que le plugin évolue (_🤞_), on est donc contraints à utiliser cette extension `.jsx` pour tous nos fichiers contenant du JSX si l'on veut avoir un refresh rapide des composants..._
+	> _Le `x` de `.tsx` fait référence au `x` de "JSX". Il sert à indiquer à Vite et à TypeScript que notre fichier va contenir du JSX pour optimiser les perfs de compilation._
+	> </details>
 
-6. **Enfin, modifiez le fichier `index.html`** pour lui indiquer que c'est ce fichier `src/app.jsx` qui est désormais le point d'entrée.
+7. **Enfin, modifiez le fichier `index.html`** pour lui indiquer que c'est ce fichier `src/app.tsx` qui est désormais le point d'entrée.
 
 ## A.5. Lancement de l'application
 
@@ -185,7 +218,37 @@ Le résultat attendu est le suivant :
 
 <img src="images/readme/screen-01.png" >
 
-> _**NB : Si la page ne s'affiche pas correctement**, vérifiez dans la `Console` ou dans l'onglet `Sources` (Chrome) ou `Debugger` (Firefox) qu'l n'y a pas d'erreur JS lorsque la page se charge._
+> <details><summary>🚧 <em>La page ne s'affiche pas correctement ?</em></summary>
+>
+> _Vérifiez dans la `Console` ou dans l'onglet `Sources` (Chrome) ou `Debugger` (Firefox) qu’il n'y a pas d'erreur JS lorsque la page se charge._
+>
+> _Êtes-vous certain.e par exemple que la page HTML charge bien le bon script ?_
+> </details>
+
+Pour finir, lancez dans un [terminal splitté](https://code.visualstudio.com/docs/terminal/basics#_groups-split-panes) (_côte à côte avec `npm start`_) lancez le compilateur TypeScript pour vérifier le typage de votre code :
+
+```bash
+npx tsc --watch
+```
+
+> <details><summary>ℹ️ <em>Vite compile déjà notre code TypeScript, Pourquoi lancer en plus le compilateur `tsc` ? </em></summary>
+>
+> _On a effectivement pas besoin de lancer `tsc` pour compiler le code TS, car Vite le fait déjà pour nous._
+>
+> _Mais en réalité lorsque Vite compile (avec esbuild), il se contente d'enlever toutes les instructions de typage et ne vérifie pas du tout nos types 😰. En effet [la doc](https://vite.dev/guide/features.html#transpile-only) explique :_
+> > _"Note that Vite only performs transpilation on `.ts` files and does NOT perform type checking. It assumes type checking is taken care of by your IDE and build process."_
+>
+> _Avec ce système, on va donc devoir faire extrêmement attention à ce que remonte l'IDE comme erreurs de typage, mais comme on n'a pas toujours tous les fichiers ouverts en même temps, on peut vite passer à côté d'une erreur._
+>
+> _En lançant un terminal à part qui ne fait que les vérifications de type, vous allez pouvoir détecter plus facilement les erreurs._
+> </details>
+
+> <details><summary>ℹ️ <em>Comment ça se fait que <code>tsc</code> ne génère pas de dossier build comme dans le TP1 ?</em></summary>
+>
+> _C'est grâce à la clé `"noEmit": true,` du fichier `tsconfig.json`. Elle était commentée dans le premier TP, mais elle est activée dans ce TP ci._
+>
+> _documentation : https://www.typescriptlang.org/tsconfig/#noEmit_
+> </details>
 
 ## Étape suivante <!-- omit in toc -->
 Si tout fonctionne, vous pouvez passer à l'étape suivante : [B. Un premier composant](B-premier-composant.md)
