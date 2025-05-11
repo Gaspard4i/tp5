@@ -1,9 +1,10 @@
-import { useEffect, useState } from 'react';
+import { FormEvent, useEffect, useState } from 'react';
 import data, { comments } from './data';
+import { Video } from './types';
 
 export default function VideoDetail() {
 	// gestion des infos de la vidéo
-	const [video, setVideo] = useState(null);
+	const [video, setVideo] = useState<Video | null>(null);
 	useEffect(() => {
 		const randomIndex = Math.floor(Math.random() * data.length);
 		setVideo(data[randomIndex]);
@@ -11,12 +12,17 @@ export default function VideoDetail() {
 
 	// gestion des likes/dislike
 	function handleLikeClick() {
-		setVideo({ ...video, likes: video.likes + 1 });
+		if (video) {
+			setVideo({ ...video, likes: video.likes + 1 });
+		}
 	}
 	function handleDislikeClick() {
-		setVideo({ ...video, dislikes: video.dislikes + 1 });
+		if (video) {
+			setVideo({ ...video, dislikes: video.dislikes + 1 });
+		}
 	}
-	function handleCommentSubmit(event) {
+	// gestion formulaire commentaire
+	function handleCommentSubmit(event: FormEvent) {
 		event.preventDefault();
 		alert('Ajout de commentaire !');
 	}
@@ -52,7 +58,7 @@ export default function VideoDetail() {
 				<form className="commentForm" onSubmit={handleCommentSubmit}>
 					<textarea
 						name="content"
-						rows="2"
+						rows={2}
 						placeholder="Ajouter un commentaire public"
 					/>
 					<button type="submit">Envoyer</button>

@@ -1,6 +1,6 @@
 <img src="images/readme/header.jpg" />
 
-## Objectifs
+## 🎯 Objectifs
 - Savoir imbriquer des composants
 - Utiliser les props
 - Utiliser les refs
