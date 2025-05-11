@@ -13,7 +13,7 @@
   "homepage": "https://github.com/formation-react/",
   "license": "ISC",
   "devDependencies": {
-    "typescript": "^5.7.3",
-    "vite": "^6.0.7"
+    "typescript": "^5.8.3",
+    "vite": "^6.3.5"
   }
 }
