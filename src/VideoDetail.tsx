@@ -1,10 +1,11 @@
+import { FormEvent } from 'react';
 import data, { comments } from './data';
 
 export default function VideoDetail() {
 	const randomIndex = Math.floor(Math.random() * data.length),
 		{ title, description, file } = data[randomIndex];
 
-	function handleCommentSubmit(event) {
+	function handleCommentSubmit(event: FormEvent) {
 		event.preventDefault();
 		alert('Ajout de commentaire !');
 	}
@@ -26,7 +27,7 @@ export default function VideoDetail() {
 				<form className="commentForm" onSubmit={handleCommentSubmit}>
 					<textarea
 						name="content"
-						rows="2"
+						rows={2}
 						placeholder="Ajouter un commentaire public"
 					/>
 					<button type="submit">Envoyer</button>

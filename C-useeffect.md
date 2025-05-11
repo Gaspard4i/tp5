@@ -2,7 +2,7 @@
 
 # C. useEffect  <!-- omit in toc -->
 
-_**Pour s'exercer à `useEffect`, je vous propose de travailler sur le composant `VideoList` : on va essayer de "simuler" un délai de chargement avant d'afficher la liste des vignettes.** Ça nous permettra d'utiliser useEffect et en même temps de préparer la suite de la formation, notamment pour le moment où l'on connectera notre appli à l'API REST_ 👍
+_**Pour s'exercer à `useEffect`, je vous propose de travailler sur le composant `VideoList` : on va essayer de "simuler" un délai de chargement avant d'afficher la liste des vignettes.** Ça nous permettra d'utiliser `useEffect` et en même temps de préparer la suite de la formation, notamment pour le moment où l'on connectera notre appli à l'API REST_ 👍
 
 ## Sommaire <!-- omit in toc -->
 - [C.1. Ajouter un state](#c1-ajouter-un-state)
@@ -10,20 +10,32 @@ _**Pour s'exercer à `useEffect`, je vous propose de travailler sur le composant
 
 
 ## C.1. Ajouter un state
+1. Commencez par ré-afficher la `VideoList` dans le fichier `app.tsx`
+2. Dans `VideoList.tsx`, créez un state nommé `videos` et initialisé avec un tableau vide (`[]`).
+3. Dans le JSX, utilisez ce state `videos` à la place de `data` dans le `.map` qui génère les vignettes.
 
-1. Au lieu d'utiliser dans notre JSX la valeur du tableau `data` défini dans le fichier `src/data.js`, créez plutôt un state local nommé `videos` et initialisé avec un tableau vide (`[]`).
-2. Utilisez ce state `videos` dans le .map qui génère les vignettes.
+	> 🚧 _TypeScript doit se plaindre de l'`import` de `data` qui est inutilisé, vous pouvez ignorer l'erreur, vous allez bientôt utiliser à nouveau `data` et ainsi régler le problème._
 
-	Rechargez la page, normalement les vignettes ont disparu, normal.
+	Rechargez la page, normalement les vignettes ont disparu, normal :
 
 	<img src="images/readme/screen-02.png" >
 
 ## C.2. Utiliser useEffect
 
-2. **Ajoutez au composant `VideoList` un appel à `useEffect` qui s'exécute uniquement après le premier render** (mettez-y juste un console.log pour le moment).
+1. **Ajoutez au composant `VideoList` un appel à `useEffect` qui s'exécute uniquement après le premier render** (_mettez-y juste un console.log pour le moment_).
 
-3. **Dans ce useEffect, utilisez la fonction [`setTimeout()`](https://developer.mozilla.org/fr/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout) pour injecter dans le state, la liste des vidéos issues de `data` au bout de 2 secondes.**
+2. **Dans ce useEffect, utilisez la fonction [`setTimeout()`](https://developer.mozilla.org/fr/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout) pour injecter dans le state `videos` le tableau contenu dans `data` au bout de 500 millisecondes.**
 
+	> <details><summary>🚧 <em>Vous allez probablement avoir une erreur de typage...</em></summary>
+	>
+	> _En effet, votre state videos n'est pas typé, TypeScript devine donc le type en fonction de la valeur initiale que vous avez passé à useState : un tableau vide._
+	>
+	> _Pour typer un state, il faut utiliser la syntaxe des generics. Par exemple si vous avez un state qui doit contenir un tableau de nombres, alors vous allez faire :_
+	>  ```ts
+	> const [myState, setMyState] = useState<number[]>([]);
+	>  ```
+	> _À vous d'adapter le typage en fonction de ce qui se trouve dans `data` (💡 indice : jetez peut-être un oeil à `/src/types.ts`...)._
+	> </details>
 	Rechargez la page, les vidéos doivent apparaître après ce délai ! Youpi !
 
 ## Étape suivante <!-- omit in toc -->
