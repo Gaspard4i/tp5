@@ -43,9 +43,15 @@ _**Maintenant que l'on est capables de récupérer des informations de la bdd av
 		<button type="submit">Envoyer</button>
 	</form>
 	```
-	> _**NB :** Vous aurez remarqué qu'il n'y a pas de champ pour l'upload du champ `file`. En effet le fichier vidéo sera choisi au hasard côté serveur au moment de l'enregistrement en bdd. Cela nous permet de ne pas nous embêter dans ce TP avec de l'upload de fichiers via une requête multipart et sa [syntaxe un peu complexe](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch#Uploading_a_file)_
+	> <details><summary>ℹ️ <em>Pourquoi on a pas de champ d'upload de vidéo ?</em></summary>
+	>
+	> _Dans notre type `Video` on a normalement une propriété `video.file`, or vous aurez remarqué qu'il n'y a pas de champ pour l'upload du champ `file`._
+	>
+	> _En fait c'est normal, le fichier vidéo sera choisi au hasard côté serveur (par l'API REST) au moment de l'enregistrement en bdd. Cela nous permet de ne pas nous embêter dans ce TP avec de l'upload de fichiers via une requête multipart et sa [syntaxe un peu complexe (mdn)](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch#Uploading_a_file)_
+	> </details>
+
 2. **Ajoutez cet écran dans le `Navigator` avec un identifiant de route associé** (_pour `VideoList` on avait `'list'`, pour `VideoDetail` on avait `'detail'`, je vous propose donc pour `VideoForm` de partir sur... `'form'`, original non ?_)
-3. **Affichez `VideoForm` par défaut au chargement de l'appli en modifiant le `state` par défaut du `Navigator`**
+3. **Affichez `VideoForm` par défaut au chargement de l'appli en modifiant la valeur du `state` initial du `Navigator`**
 
 	<img src="images/readme/screen-05.png" />
 
@@ -55,9 +61,9 @@ _**Maintenant que l'on est capables de récupérer des informations de la bdd av
 
 	Aidez-vous pour cela de :
 	- la documentation (_[openapi/swagger](https://swagger.io/specification/)_) de l'API REST directement à la racine de votre serveur REST : http://localhost:8080/ (_si vous souhaitez accéder au fichier de description de l'API au format yaml vous le trouverez à la racine du dossier `api-server` : https://github.com/formation-react/api-server/blob/master/openapi.yaml_)
-	- la documentation de `fetch` avec POST : https://developer.mozilla.org/fr/docs/Web/API/Fetch_API/Using_Fetch#corps
+	- la documentation de `fetch` avec POST : https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch#setting_a_body
 
-	> _**NB :** Pour envoyer vos données dans le `body` de votre `fetch`, il faut que ces données soient **encodées sous forme de chaîne de caractères JSON**. Pensez donc à utiliser `JSON.stringify()` autour de l'objet que vous souhaitez envoyer dans le `body` !_
+	> ℹ️ _Pour envoyer vos données dans le `body` de votre `fetch`, il faut que ces données soient **encodées sous forme de chaîne de caractères au format JSON**. Pensez donc à utiliser `JSON.stringify()` autour de l'objet que vous souhaitez envoyer dans le `body` !_
 
 3. **Enfin, quand l'enregistrement en bdd a été effectué par le webservice, et si aucune erreur n'a été remontée, alors redirigez l'utilisateur vers la page liste, en principe la nouvelle vidéo doit y apparaître !**
 
