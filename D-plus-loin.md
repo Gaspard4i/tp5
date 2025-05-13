@@ -1,6 +1,6 @@
 <img src="images/readme/header-small.jpg" >
 
-_**Si vous êtes arrivé•e à cette partie du TP bravo* ! 🎉🥂😎 Vous avez terminé les exercices de base du TP !**_
+**_Si vous êtes arrivé·e à cette partie du TP bravo !_ 🎉🥂😎 _Vous avez terminé les exercices de base du TP !_**
 
 Dans cette partie bonus, je vous propose quelques exercices supplémentaires pour travailler les hooks `useState` et `useEffect`.
 
