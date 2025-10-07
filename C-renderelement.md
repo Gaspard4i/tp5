@@ -148,12 +148,12 @@ const newEpisode = makeEpisode('Benjen Stark');
 	<img src="images/readme/screen-01-h1.png"/>
 
 
-3. **Ajoutez un second paramètre à la fonction `renderElement`, nommé `children`** (_string également_). Modifiez le code de la fonction de manière à ce que le code suivant :
+3. **Ajoutez un second paramètre à la fonction `renderElement`, nommé `children`** (_string également_). Modifiez le code de la fonction de manière à ce que le code JS suivant...
     ```ts
 	const title = renderElement( 'h1', 'Recommandations' );
 	document.querySelector('.container > header')!.innerHTML = title;
 	```
-	Injecte dans la page le code suivant :
+	...injecte dans la page le code HTML suivant :
 	```js
 	'<h1>Recommandations</h1>'
 	```
