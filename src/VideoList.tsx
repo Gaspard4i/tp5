@@ -1,4 +1,4 @@
-import { MouseEvent } from 'react';
+import type { MouseEvent } from 'react';
 import data from './data';
 
 function openPopup(url: string, width: number, height: number) {

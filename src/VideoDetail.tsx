@@ -1,4 +1,4 @@
-import { FormEvent } from 'react';
+import type { FormEvent } from 'react';
 import data, { comments } from './data';
 
 export default function VideoDetail() {
