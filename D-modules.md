@@ -27,7 +27,7 @@ import vehicle from './vehicle.js';
 console.log( vehicle ); // 'The RV'
 ```
 
-Dans l'exemple ci-dessus, on utilise un **export par défaut** (_`export default ...`_) mais il existe un deuxième type d'export : les **exports nommés** (_`named exports` en anglais_). \
+Dans l'exemple ci-dessus, on utilise un **export par défaut** (_`export default ...`_) mais il existe un deuxième type d'export : les [**exports nommés** (_mdn_)](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Statements/export#description) (_`named exports` en anglais_). \
 Si l'on réécrit l'exemple ci-dessus avec un export nommé cela donnera :
 ```js
 // vehicle.js
@@ -44,9 +44,9 @@ Les export nommés diffèrent des `export default` parce que :
 - pour importer une valeur exportée avec un export nommé, on est obligé de mettre des **accolades** autour du nom de la variable dans l'import
 - on est obligés d'écrire le nom de la variable qu'on importe **EXACTEMENT** comme elle est écrite dans le module qui exporte (_pas de faute de frappe, même casse, etc._), alors que pour les `export default` on peut importer en mettant n'importe quel nom (_le nom de l'export est en fait "default"_)
 
-Le [support navigateur des modules ES6](https://caniuse.com/#feat=es6-module) est plutôt bon (_peut-être un peu juste certaines applications qui nécessiteraient le support de IE et android 4.4_) :
+Le [support navigateur des modules ES6](https://caniuse.com/#feat=es6-module) est plutôt bon (_en gros ça fonctionne partout sauf sur IE et android 4.4_) :
 
-<a href="http://caniuse.com/#feat=es6-module">
+<a href="https://caniuse.com/#feat=es6-module">
 	<picture>
 		<source type="image/webp" srcset="https://caniuse.bitsofco.de/image/es6-module.webp">
 		<source type="image/png" srcset="https://caniuse.bitsofco.de/image/es6-module.png">
@@ -93,14 +93,14 @@ Nous verrons plus tard dans le TP comment rendre nos modules compatibles avec le
 	> export default data; // OK !
 	> ```
 
-	> <details><summary>ℹ️ <em>... par contre un export nommé (pas par défaut) d'une const est autorisé...</em></summary>
+	> <details><summary>👌 <em>... par contre un export <strong>nommé</strong> (pas par défaut) d'une <code>const</code> est autorisé...</em></summary>
 	>
 	> ```js
 	> export const data = [...]; // OK !
 	> ```
 	> </details>
 
-	> <details><summary>ℹ️ <em>... cette restriction ne s'applique pas aux fonctions et aux classes !</em></summary>
+	> <details><summary>🙌 <em>... cette restriction ne s'applique pas aux fonctions et aux classes !</em></summary>
 	>
 	> _On peut tout à fait faire :_
 	> ```js

@@ -8,14 +8,18 @@
 
 ## A.1. Récupération du projet
 
-1. **Récupérez les fichiers de ce TP grâce à Git : clonez ce repo dans un dossier de votre choix** (_dans mon exemple `chemin/vers/votre/workspace/tp1`_):
+1. **Ouvrez un terminal**
+
+	> ⚠️ _Si vous êtes sous Windows, utilisez **Git bash** installé automatiquement avec Git, ça simplifiera la suite !_
+
+2. **Récupérez les fichiers de ce TP grâce à Git : clonez ce repo dans un dossier de votre choix** (_dans mon exemple `chemin/vers/votre/workspace/tp1`_):
 	```bash
 	cd chemin/vers/votre/workspace
 	git clone git@github.com:formation-react/tp1.git
 	```
 	> <details><summary>⚠️ <em>Si vous êtes sous <strong>Windows</strong> attention aux slashs...</em></summary>
 	>
-	> _ici je clone dans le dossier `chemin/vers/votre/workspace/tp1`. **Si vous êtes sous Windows faites attention aux slashs dans le chemin du dossier** : utilisez **Git bash** (qui comprend cette syntaxe) ou si vous tenez vraiment à utiliser **cmd** ou **powershell** pensez à adapter la commande en les remplaçant par des antislash `\` !_
+	> _ici je clone dans le dossier `chemin/vers/votre/workspace/tp1`. **Si vous êtes sous Windows faites attention aux slashs dans le chemin du dossier** : comme dit plus haut, utilisez **Git bash** (qui comprend cette syntaxe) ou si vous tenez vraiment à utiliser **cmd** ou **powershell** pensez à adapter la commande en les remplaçant par des antislash `\` !_
 	> </details>
 
 	> <details><summary>ℹ️ <em>Si vous préférez <strong>cloner en https</strong>...</em></summary>
@@ -23,7 +27,7 @@
 	> _Comme pour le TP0, adaptez l'URL du repo en clonant à partir de cette URL : `https://github.com/formation-react/tp1.git`_
 	> </details>
 
-2. **Ouvrez le projet dans VSCodium** (pour les différentes façons d'ouvrir le projet, relisez les [instructions du TP0](https://github.com/formation-react/tp0/blob/github/A-preparatifs.md#a4-ouvrir-le-projet-dans-vscodium) )
+3. **Ouvrez le projet dans VSCodium** (pour les différentes façons d'ouvrir le projet, relisez les [instructions du TP0](https://github.com/formation-react/tp0/blob/github/A-preparatifs.md#a4-ouvrir-le-projet-dans-vscodium) )
 	```bash
 	codium chemin/vers/votre/workspace/tp1
 	```
@@ -33,7 +37,7 @@
 
 **Comme dans le précédent TP (cf. [TP0 / B.1. Lancement d'un serveur HTTP](https://github.com/formation-react/tp0/blob/github/B-integration.md#b1-lancement-dun-serveur-http) ) lancez un serveur HTTP dans un terminal intégré de VSCodium :**
 
-1. **Ouvrez un terminal intégré dans VSCodium** en tapant <kbd>CTRL</kbd>+<kbd>J</kbd> (PC) / <kbd>CMD</kbd>+<kbd>J</kbd> (Mac) (ou <kbd>CTRL</kbd>+<kbd>SHIFT</kbd>+<kbd>P</kbd> puis `View: toggle panel`).
+1.  **Ouvrez un [terminal intégré](https://code.visualstudio.com/docs/terminal/basics) directement dans VSCodium** en tapant <kbd>CTRL</kbd>+<kbd>J</kbd> (PC) / <kbd>CMD</kbd>+<kbd>J</kbd> (Mac) (_ou <kbd>CTRL</kbd>+<kbd>SHIFT</kbd>+<kbd>P</kbd> puis `View: toggle panel`_) : il devrait vous placer directement dans le dossier `tp1` (_si ce n'est pas le cas, c'est que vous n'avez pas ouvert le bon dossier dans VSCodium : cf. point précédent_).
 
 2. **Lancez un serveur http** :
 	```bash

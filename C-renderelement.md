@@ -6,7 +6,7 @@ _**Nous allons développer dans ce TP une fonction nommée `renderElement` qui v
 
 A chaque étape du TP vous allez perfectionner cette fonction pour la rendre capable de gérer des paramètres supplémentaires.
 
-> _**NB :** Dans ce TP vous coderez dans un premier temps tout dans le fichier `src/main.ts` **sans passer par des fichiers (modules) séparés**._
+> ℹ️ _Dans ce TP vous coderez dans un premier temps tout dans le fichier `src/main.ts` **sans passer par des fichiers (modules) séparés**._
 >
 > _Dans la suite du TP on organisera notre code plus proprement en le répartissant dans des modules différents._ \
 > _Mais pour le moment on va simplifier les choses en remettant ça à plus tard (ne faites pas ça dans la vraie vie !)._
@@ -99,9 +99,9 @@ const newEpisode = makeEpisode('Benjen Stark');
 		```js
 		'<h1></h1>'
 		```
-	> <details><summary>💡 <em><strong>pro tip :</strong> pour cet exercice utilisez les template strings...</em></summary>
+	> <details><summary>💡 <em><strong>Pro tip :</strong> pour cet exercice utilisez les template strings ! …</em></summary>
 	>
-	> _Cela vous permettra d'injecter facilement des valeurs dans votre chaîne et en plus de passer à la ligne dans la chaîne de caractères pour rendre votre code plus lisible._
+	> _Cela vous permettra d'injecter facilement des valeurs dans votre chaîne et en plus de passer des lignes dans la chaîne de caractères pour rendre votre code plus lisible._
 	> </details>
 
 	<br/>
@@ -131,19 +131,34 @@ const newEpisode = makeEpisode('Benjen Stark');
 	>
 	> _C'est important parce que sinon TypeScript râle (à juste titre) sur le fait que ce que retourne `querySelector(...)` peut être `null` (par exemple si il ne trouve pas la balise dans la page HTML) et qu'on ne peut pas appeler une propriété (`.innerHTML`) sur quelque chose de `null`._ \
 	> _Dans notre situation on est quasi certains que cette balise existera toujours, on peut donc "forcer la main" à TS pour lui dire de considérer que cette valeur ne sera jamais nulle._
+	> </details>
+
+	> <details><summary>ℹ️ <em>A la place du "<code>!</code>", on aurait pu aussi utiliser le principe du "type narrowing"…</em></summary>
 	>
-	> _Dans la vraie vie on aurait sans doute plutôt rajouté un test pour vérifier que la valeur retournée par `querySelector` n'est pas nulle avant de manipuler le DOM :_
+	> _Dans le cas où un doute existe bel et bien sur le fait qu'une valeur puisse être `null` ou pas, le "non null assertion operator" n'est pas adapté puisque tout ce qu'il permet de faire c'est de faire "comme si" le problème n'existait pas._ 🙈 \
+	> _Le [type narrowing (doc)](https://www.typescriptlang.org/docs/handbook/2/narrowing.html) va nous permettre au contraire de montrer à TypeScript qu'on gère bien tous les cas de figure proprement._
+	>
+	> _Par exemple, si comme dans notre code on utilise `querySelector` mais qu'on a un doute sur l’existence ou non de la balise HTML, on va simplement rajouter un test pour vérifier que la valeur n'est pas nulle avant de manipuler le DOM :_
 	> ```ts
 	> const headerElement = document.querySelector('.container > header');
 	> if (headerElement) {
-	>      headerElement.innerHTML = title;
+	>      headerElement.innerHTML = title; // 👈 ici TS sait que headerElement n'est pas null grâce au if
+	> }
+	> ```
+	> _Ca fonctionne pour `null` mais aussi pour n'importe quel type :_
+	> ```ts
+	> function myFunction(param: string | number):string {
+	> 	if (typeof param === 'number') {
+	> 		return param.toFixed(2); // ici TS sait qu'on a un number
+	> 	}
+	> 	return param.toUpperCase(); // ici TS sait qu'on a une chaîne
 	> }
 	> ```
 	> </details>
 
 	**Vérifiez que votre fonction "fonctionne" correctement en inspectant le code généré par votre application avec l'Inspecteur d'éléments des devtools du navigateur.**
 
-	> _**NB :** On passe par l'inspecteur d'éléments car visuellement à l'écran, c'est difficile de contrôler le rendu : rien ne s'affiche car notre balise `<h1>` est vide !_
+	> ℹ️ _On passe par l'inspecteur d'éléments car visuellement à l'écran, c'est difficile de contrôler le rendu : rien ne s'affiche car pour l'instant notre balise `<h1>` est vide !_
 
 	<img src="images/readme/screen-01-h1.png"/>
 
@@ -182,9 +197,9 @@ const newEpisode = makeEpisode('Benjen Stark');
 
 	> ℹ️ _Comme tout à l'heure avec le `h1`, on passe par l'inspecteur d'éléments car visuellement à l'écran, c'est difficile de contrôler le rendu : aucune image ne s'affiche car on n'a pas précisé ni de source ni de taille à l'image !_
 
-	> <details><summary>🚧 <em>Les devtools affichent toujours "<code>&lt;img&gt;</code>" et pas "<code>&lt;img /&gt;</code>"</em> ☹️</summary>
+	> <details><summary>🚧 <em>Les devtools affichent toujours "<code>&lt;img&gt;</code>" et pas "<code>&lt;img /&gt;</code>"…</em> ☹️</summary>
 	>
-	> _Selon votre navigateur il est en effet possible que l'inspecteur d'éléments n'affiche que `<img>` et pas `<img />`. C'est une simplification faite par les devtools, mais ça ne veut pas dire que votre code ne fonctionne pas. Testez donc votre code avec `console.log(img)`, là vous saurez avec certitude si votre méthode retourne bien `<img />`._
+	> _Selon votre navigateur il est en effet possible que l'inspecteur d'éléments n'affiche que `<img>` et pas `<img />`. C'est une simplification faite par les devtools, mais ça ne veut pas dire que votre code ne fonctionne pas. Testez donc votre code avec `console.log(img)`, là vous saurez avec certitude si votre fonction retourne bien `<img />`._
 	> </details>
 
 	<img src="images/readme/screen-02-inspecteur.png">

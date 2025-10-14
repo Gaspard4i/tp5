@@ -5,7 +5,7 @@
 <img src="images/readme/header-typescript.jpg">
 
 _**Comme vu en cours TypeScript est un langage qui permet (principalement) d'ajouter du typage statique par dessus JavaScript.**_ \
-Ajouter du typage statique à un projet permet d'améliorer à la fois l'expérience de développement (DX) et la robustesse du code produit (tout en permettant d'alléger les tests unitaires, même si ça ce n'est pas dans le scope de cette formation).
+Ajouter du typage statique à un projet permet d'améliorer à la fois **l'expérience de développement** (DX) et la **robustesse** du code produit (_tout en permettant d'alléger les tests unitaires, même si ça ce n'est pas dans le scope de cette formation_).
 
 ## Sommaire <!-- omit in toc -->
 - [B.1. Principe](#b1-principe)
@@ -21,9 +21,9 @@ Comme ce n'est pas un standard "officiel" du W3C, ce langage n'est pas supporté
 Heureusement, TypeScript dispose d'un **compilateur** ([tsc _(doc)_](https://www.typescriptlang.org/docs/handbook/compiler-options.html)) qui permet de compiler/transpiler le code TypeScript en code JavaScript !
 
 Le principe sera donc le suivant :
-- on code en TypeScript dans des fichiers **"source"**
-- on compile ensuite le code TS en JS dans un dossier de **"build"**
-- on utilise enfin les **fichiers compilés** JS dans notre **page HTML**
+1. on code en TypeScript dans des fichiers **"source"**
+2. on compile ensuite le code TS en JS dans un dossier de **"build"**
+3. on utilise enfin les **fichiers compilés** JS dans notre **page HTML**
 
 ## B.2. Installation et configuration
 **Avant de pouvoir utiliser TypeScript dans notre projet, il faut d'abord l'installer.**

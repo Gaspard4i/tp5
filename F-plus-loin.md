@@ -33,14 +33,16 @@ Pour que notre VideoItem ne se limite pas à une image, mais qu'il dispose aussi
 
 1. **Modifiez le code de la fonction `renderElement()`** pour lui permettre de recevoir dans le paramètre `children` :
 	- soit une **chaîne de caractères** (comme c'est déjà le cas actuellement)
-	- soit un **tableau de chaînes de caractères.** <br>Par exemple : si `tagName` vaut `"div"` et que `children` vaut `[ "youpi", "ça", "marche" ]` alors `renderElement` retournera la chaîne `"<div>youpiçamarche</div>"`.
+	- soit un **tableau de chaînes de caractères.**
+
+	Par exemple, si `tagName` vaut `"div"` et que `children` vaut `[ "youpi", "ça", "marche" ]` alors `renderElement` retournera la chaîne `"<div>youpiçamarche</div>"`.
 
 	> <details><summary>ℹ️ <em>Comment on fait pour tester si children est un tableau ?</em></summary>
 	>
 	> _Pour tester si une valeur est un `Array`, vous pouvez utiliser l'opérateur [`instanceof` (mdn)](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Op%C3%A9rateurs/instanceof) ou alors la fonction [Array.isArray (mdn)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/isArray)_
 	> </details>
 
-	> <details><summary>ℹ️ <em>On type comment déjà les tableaux ?</em></summary>
+	> <details><summary>📖 <em>On type comment déjà les tableaux ?</em></summary>
 	>
 	> _C'est expliqué dans le pdf du cours !_ 🤓
 	> </details>
@@ -92,7 +94,7 @@ Pour que notre VideoItem ne se limite pas à une image, mais qu'il dispose aussi
 
 	<img src="images/readme/screen-04.png" >
 
-	> <details><summary>💡 <em><strong>pro tip :</strong> C'est probablement le moment d'utiliser...</em></summary>
+	> <details><summary>💡 <em><strong>Pro tip :</strong> C'est probablement le moment d'utiliser...</em></summary>
 	>
 	> _les [alias de type (doc)](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#type-aliases) ou mieux : [une "interface" (doc)](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#differences-between-type-aliases-and-interfaces) !_
 	> </details>
@@ -162,7 +164,7 @@ Cette fonction va nous permettre d'afficher plusieurs vignettes côte à côte g
 	-  le code HTML retourné `renderVideoList()` sera une balise `<div class="videoList">...</div>`
 	-  pour chaque cellule du tableau `data`, `renderVideoList` appellera `renderVideoItem` et injectera le résultat à l'intérieur de la `<div class="videoList">...</div>`
 
-	> _**NB :** c'est le moment d'utiliser la méthode [Array.map](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Array/map)_ 🙂
+	> 💡 _C'est le moment d'utiliser la méthode [Array.map](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Array/map)_ 🙂
 
 	Le résultat attendu est le suivant :
 

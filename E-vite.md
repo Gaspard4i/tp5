@@ -20,20 +20,37 @@ Je vous propose d'adopter l'un des outils les plus populaires dans le monde du d
 
 _**Vite est un outil qui vise à simplifier le setup d'un projet JS/TS en embarquant plusieurs outils déjà pré-configurés, notamment :**_
 - _**un bundler ([rollup](https://rollupjs.org/)) :**  qui permet de fusionner les modules en un seul fichier (appelé "bundle")_
-- _**un compilateur de code TypeScript et ES6+ ([esbuild](https://esbuild.github.io/)) :** qui permet d'utiliser dans son code les dernières syntaxes ECMAScript/TypeScript les plus modernes et de les compiler dans une version d'ECMAScript (par défaut ES6) largement supportée par un maximum de navigateurs. À noter que esbuild compile [selon la doc](https://vite.dev/guide/features.html#typescript) entre 20 et 30 fois plus rapidement que tsc !_
+- _**un compilateur de code TypeScript et ES6+ ([esbuild](https://esbuild.github.io/))** qui permet d'utiliser dans son code les dernières syntaxes ECMAScript/TypeScript les plus modernes et de les compiler dans une version d'ECMAScript (par défaut ES6) largement supportée par un maximum de navigateurs. À noter que esbuild compile [selon la doc](https://vite.dev/guide/features.html#typescript) entre 20 et 30 fois plus rapidement que tsc !_
 - _**différents outils qui améliorent la DX** (Developer Experience) comme par exemple un serveur de développement qui permet de tester son appli en http, un système de ["hot reload"](https://vite.dev/guide/features.html#hot-module-replacement), la [minimisation des CSS](https://vite.dev/guide/features.html#css), le [support de React](https://vite.dev/guide/features.html#jsx), etc._
 
 L'avantage d'utiliser Vite est donc que l'on a, avec un seul package, **un environnement de dev et de build prêt à l'emploi**, qu'il aurait fallu sinon installer et configurer à la main, et c'est souvent très compliqué (_à titre d'exemple, les précédentes versions de ce TP utilisaient Webpack comme bundler, Babel comme compilateur, webpack-dev-server comme serveur de développement, et enfin react-refresh + react-refresh-webpack-plugin pour le hot reload, ça faisait beaucoup !_).
 
 Par ailleurs, Vite va, comme son nom l'indique... vite ! Il est en effet beaucoup [plus rapide que la solution webpack+babel/tsc](https://storybook.js.org/blog/storybook-performance-from-webpack-to-vite/) par exemple.
 
+> <details><summary>🧐 <em>A quel point c'est populaire Vite par rapport à Webpack et Babel ?</em></summary>
+>
+> _Vite est un projet beaucoup plus récent que les deux autres, il part donc de plus loin et pourtant dans les statistiques de téléchargement il est en train de rattraper les deux autres (ne faites pas attention au pic de téléchargement à la fin, c'est probablement pas significatif) : https://npmtrends.com/@babel/core-vs-vite-vs-webpack_
+>
+> ![](images/readme/npmtrends-vite.png)
+> </details>
+
+> <details><summary>🗓️ <em>La prochaine version majeure de Vite va changer pas mal de choses...</em></summary>
+>
+> _En effet, l'équipe a annoncé qu'au lieu d'utiliser 2 outils différents pour le build (esbuild) et le bundle (rollup), ils allaient utiliser un fork de rollup codé en Rust et appelé ["rolldown"](https://rolldown.rs)._
+>
+> _Les avantages promis sont principalement orientés performances et rapidité de compilation._ \
+> _On attend donc ça avec impatience !_
+>
+> _Plus d'infos ici : https://vite.dev/guide/rolldown.html#benefits-of-trying-rolldown-vite_
+> </details>
+
 ## E.2. Installation
 
 _**L'installation de Vite se fait comme pour TypeScript avec npm (Node Package Manager).**_
 
-1. **Tout d'abord, stoppez les commandes `npx serve -l 8000` et `./node_modules/.bin/tsc --watch`**. Nous n'allons plus en avoir besoin puisque Vite intègre un serveur http de développement et compile pour nous à la volée.
+1. **Tout d'abord, stoppez les commandes `npx serve -l 8000` et `./node_modules/.bin/tsc --watch`**. Nous n'allons plus en avoir besoin puisque Vite intègre un serveur http de développement (_comme npx serve mais en mieux_) et compile le code automatiquement (_comme tsc mais en plus rapide_).
 
-2. **Installez vite :**
+2. **Puis, installez vite :**
 	```bash
 	npm install --save-dev vite
 	```
@@ -52,14 +69,14 @@ Le serveur de développement de Vite va nous permettre d'avoir en une commande l
 
 1. Avant de pouvoir utiliser le serveur de développement il faut qu'on modifie notre fichier `index.html` pour faire un truc "bizarre" :
 
-	Dans la balise `<script>`, au lieu de charger le fichier compilé `/build/main.js`, chargez le fichier SOURCE à savoir `/src/main.ts` !
+	Dans la balise `<script>`, au lieu de charger le fichier compilé `/build/main.js`, indiquez **le fichier SOURCE** à savoir `/src/main.ts` comme ceci :
 	```html
 	<script src="/src/main.ts" type="module"></script>
 	```
 
 	> <details><summary>ℹ️ <em>Mais ?!!</em> 🤯 <em>On avait pas dit que le navigateur comprenait pas TypeScript et qu'il fallait le compiler en JS ????</em></summary>
 	>
-	> _Oui c'est vrai, mais en fait Vite va le faire de manière transparente : quand le navigateur recevra le contenu du fichier `src/main.ts` Vite l'aura au préalable compilé en JS à la volée !_
+	> _Oui oui, c'est vrai, mais en fait Vite va le faire de manière transparente : quand le navigateur recevra le contenu du fichier `src/main.ts` Vite l'aura au préalable compilé en JS à la volée !_
 	>
 	> _Plus d'infos ici : https://vite.dev/guide/#index-html-and-project-root_
 	> </details>
@@ -73,11 +90,10 @@ Le serveur de développement de Vite va nous permettre d'avoir en une commande l
 
 	Rafraîchissez votre navigateur sur http://localhost:8000, notre application doit s'afficher comme avant avec `npx serve -l 8000`.
 
-	Par contre le premier gros avantage par rapport à l'ancienne commande c'est que maintenant on a directement le live-reload activé ! (_en attendant le Hot Reload quand on utilisera React_) : modifiez le code de `/src/main.ts`, en remplaçant par exemple le texte du `h1`, vite va détecter automatiquement le changement et rafraîchir le navigateur pour refléter les changements ! Pratique !!
+	Par contre le premier gros avantage par rapport à l'ancienne commande c'est qu'on a maintenant le "live-reload" activé (_en attendant le Hot Reload quand on utilisera React_) !!! \
+	Modifiez le code de `src/main.ts`, en remplaçant par exemple le texte du `<h1>`, vous verrez que vite va détecter les modifications et rafraîchir automatiquement le navigateur ! Pratique !!
 
-	<img src="images/readme/vite-reload.gif">
-
-	> ℹ️ _Ce serveur est utile uniquement pendant la phase de développement, mais pour le déploiement en production, Vite dispose d'une commande `vite build` qui permet de compiler le TS et de fusionner tous les modules en un seul fichier (le "bundle"). Pour plus d'informations sur cette fonction, ça se passe dans la doc officielle : https://vite.dev/guide/build.html_
+	> ℹ️ _Ce serveur est utile uniquement pendant la phase de développement, mais pour le déploiement en production, Vite dispose d'une commande `vite build` qui permet de compiler le JS/TS et de fusionner tous les modules en un seul fichier (le "bundle"). Pour plus d'informations sur cette fonction, ça se passe dans la doc officielle : https://vite.dev/guide/build.html_
 
 ## E.4. Le fichier `package.json`
 
@@ -91,13 +107,18 @@ Ce fichier sert à plusieurs choses et notamment :
 	1. le paquet en question se télécharge dans le dossier `node_modules` (_vous devez normalement voir un dossier `/node_modules/vite` dans votre projet_)
 	2. puis le nom du paquet ainsi que sa version sont automatiquement ajoutés dans le fichier `package.json`.
 
-	> <details><summary>⚠️ <em>Le dossier <code>node_modules</code> n'est <strong>JAMAIS</strong> versionné</em></summary>
+	> <details><summary>⚠️ <em>Le fichier <code>package.json</code> est un fichier à commit dans git !</em></summary>
+	>
+	> _C'est important car il servira de "recette" pour indiquer aux prochaines personnes qui rejoindront le projet quels sont les paquets nécessaires._
+	>
+	> _En effet, grâce au `package.json`, on n'a qu'à exécuter la commande `npm install` (sans préciser de nom de paquet) pour installer automatiquement toutes les dépendances du projet (c'est d'ailleurs ce que vous ferez dans les prochains TPs_ 🙂 _) !_
+	> </details>
+
+	> <details><summary>⚠️ <em>Par contre le dossier <code>node_modules</code> ne doit <strong>JAMAIS</strong> être versionné...</em></summary>
 	>
 	> _En effet c'est en général un dossier relativement volumineux et plein de tout petits fichiers._
 	>
-	> _Par contre le fichier **`package.json` lui doit être versionné** car il servira de "recette" pour indiquer aux prochaines personnes qui rejoindront le projet quels sont les paquets nécessaires._
-	>
-	> _En effet, grâce au `package.json`, on n'a qu'à exécuter la commande `npm install` (sans préciser de nom de paquet) pour installer automatiquement toutes les dépendances du projet (c'est d'ailleurs ce que vous ferez dans les prochains TPs_ 🙂 _) !_
+	> _En plus de ça, ce dossier peut être intégralement re-généré à partir du `package.json`, aucune utilité donc à le versionner !_
 	> </details>
 
 2. **Dans ce fichier on va également pouvoir ajouter des "scripts personnalisés" que l'on pourra lancer à l'aide de la commande `npm run xxxxx`.** C'est cette dernière possibilité que l'on va maintenant exploiter pour nous simplifier la vie dans la suite du TP.
@@ -126,7 +147,7 @@ Grâce au `package.json` on va créer **un "raccourci"** pour lancer cette comma
 
 	<img src="images/readme/npm-run-test.gif" />
 
-	`"test"` est donc une sorte d'**alias**, de **"raccourci"**, permettant de lancer une commande plus complexe grâce à [`npm run` (_doc_)](https://docs.npmjs.com/cli/v9/using-npm/scripts?v=true#npm-run-user-defined).
+	`"test"` est donc une sorte d'**alias**, de **"raccourci"**, permettant de lancer une commande plus complexe grâce à [`npm run` (_doc_)](https://docs.npmjs.com/cli/v11/commands/npm-run).
 
 4. **Ajoutez maintenant dans le `package.json` un nouveau script qu'on appellera "dev"** et qui permettra de lancer le serveur de développement :
 	```json
@@ -148,7 +169,7 @@ Grâce au `package.json` on va créer **un "raccourci"** pour lancer cette comma
 	> - _soit la section "scripts" n'est pas correctement formatée (pensez qu'il s'agit d'un fichier JSON, par conséquent l'oubli d'une **virgule** entre chaque script ou au contraire l'ajout d'une virgule à la fin du dernier script, sont considérés comme des **erreurs** de syntaxe_ 👀 _)_
 	> </details>
 
-6. Voilà c'est déjà mieux, mais on peut faire encore plus simple en utilisant le script "start" ! **Changez le nom de votre script `"dev"` en `"start"`**. Maintenant plutôt que de devoir taper `npm run dev`, on va pouvoir omettre le mot "run" et taper simplement :
+6. C'est déjà pas mal tout ça, mais on peut faire encore plus simple : **changez le nom de votre script `"dev"` en `"start"`** dans le `package.json`. Maintenant, plutôt que de devoir taper `npm run dev` dans le terminal, on va pouvoir omettre le mot "run" et taper simplement :
 	```bash
 	npm start
 	```
