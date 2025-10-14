@@ -1,18 +1,18 @@
 {
   "name": "reactube",
   "version": "1.0.0",
-  "description": "TP de la formation React par uidlt.fr",
   "main": "index.js",
+  "private": true,
+  "description": "TP de la formation React par UIDLT - reproduction interdite",
+  "author": "Thomas Fritsch <thomas@uidlt.fr> (https://uidlt.fr)",
+  "homepage": "https://github.com/formation-react/",
+  "license": "UNLICENSED",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "vite --port 8000",
     "build": "tsc && vite build",
     "preview": "vite preview"
   },
-  "author": "Thomas Fritsch <thomas@uidlt.fr> (https://uidlt.fr)",
-  "homepage": "https://github.com/formation-react/",
-  "license": "UNLICENSED",
-  "private": "true",
   "devDependencies": {
     "typescript": "^5.9.3",
     "vite": "^7.1.10"
