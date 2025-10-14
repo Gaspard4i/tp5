@@ -16,7 +16,8 @@ _**Pour débugger notre code, on a jusqu'ici toujours utilisé les devtools int�
 
 ## E.1. Configuration
 
-**Pour pouvoir debugger directement dans vscode, vscode a besoin d'une instance de Chrome en mode debug, ce qui va lui permettre de communiquer avec les devtools de Chrome.**
+Pour pouvoir debugger directement dans vscode, vscode a besoin d'**une instance de Chrome en mode debug**, ce qui va lui permettre de communiquer avec les devtools.
+
 
 > <details><summary>🚧 <em>Il est aussi possible d'utiliser Firefox mais je ne vous le recommande pas...</em></summary>
 >
@@ -27,21 +28,21 @@ _**Pour débugger notre code, on a jusqu'ici toujours utilisé les devtools int�
 > _Si vous souhaitez absolument utiliser Firefox, alors suivez donc les instructions de la doc officielle https://github.com/firefox-devtools/vscode-firefox-debug?tab=readme-ov-file#getting-started avant de revenir ici_
 > </details>
 
-**On peut s'amuser à lancer Chrome en mode debug en le lançant en ligne de commande, mais le plus simple c'est de laisser vscode lancer Chrome tout seul, comme un grand.**
+On peut s'amuser à lancer Chrome en mode debug en le lançant nous-même en ligne de commande, mais le plus simple c'est de laisser vscode lancer Chrome avec la configuration qui va bien, tout seul, comme un grand.
 
-Il y a plusieurs techniques pour configurer tout ça dans vscode mais la solution la plus simple est la suivante :
+Il y a plusieurs techniques pour configurer ça dans vscode mais la solution la plus simple est la suivante :
 1. **Ouvrez le fichier `src/app.tsx` dans vscode** (_avec_ <kbd>CTRL</kbd>+<kbd>P</kbd>)
 2. **Lancez une session de Debug :**
 	- soit en appuyant sur la touche <kbd>F5</kbd>
 	- soit en ouvrant le menu 'Run' > 'Start Debugging'
-	- soit en lançant la Command palette avec <kbd>CTRL</kbd>+<kbd>SHIFT</kbd>+<kbd>P</kbd> et en sélectionnant 'Debug: Start Debugging'
+	- soit en lançant la Command palette avec <kbd>CTRL</kbd>+<kbd>SHIFT</kbd>+<kbd>P</kbd> et en sélectionnant `"Debug: Start Debugging"`
 3. **Vscode vous affiche une liste déroulante avec les différents types de debugger supportés, ici sélectionnez le debugger nommé "Web App (Chrome)"** :
 
 	<img src="images/readme/vscode-launch.png">
 
 	À ce stade, vscode crée un fichier `/.vscode/launch.json` avec une configuration par défaut. Ce fichier doit ressembler à ceci :
 
-	```json
+	```jsonc
 	{
 		// Use IntelliSense to learn about possible attributes.
 		// Hover to view descriptions of existing attributes.
@@ -58,9 +59,9 @@ Il y a plusieurs techniques pour configurer tout ça dans vscode mais la solutio
 		]
 	}
 	```
-	Tout est presque bon, seule l'URL n'est pas correcte car le port indiqué n'est pas celui que l'on utilise (_`8080` au lieu de `8000`. Souvenez-vous : notre site est lancé avec la commande `vite --port 8000` !_)
+	Tout est presque bon dans ce fichier généré automatiquement, seule l'URL n'est pas correcte car le port indiqué n'est pas celui que l'on utilise (_`8080` au lieu de `8000`. Souvenez-vous : notre site est lancé avec la commande `vite --port 8000` !_)
 
-	> <details><summary>⚠️ <em>Si vous utilisez <strong>Chromium</strong> et pas Chrome il faut modifier un peu la config...</em></summary>
+	> <details><summary>⚠️ <em>Si vous utilisez <strong>Chromium</strong> et pas Chrome il faut modifier un peu la config…</em></summary>
 	>
 	> _Dans ce cas il faut préciser le chemin vers l'exécutable en ajoutant la clé `"runtimeExecutable"` dans la clé `"configurations"` :_
 	> ```diff
@@ -88,13 +89,11 @@ Il y a plusieurs techniques pour configurer tout ça dans vscode mais la solutio
 
 	<img src="images/readme/vscode-run.png">
 
-	> ℹ️ _Cette fenêtre de Chrome est ouverte en mode debug et avec un compte utilisateur "vide", c'est donc normal que vous ne retrouviez pas vos extensions et paramétrages_
-
-	**Profitez-en pour installer l'extension chrome "React Developer Tools"** dans cette instance de Chrome !
+	> ℹ️ _Cette fenêtre de Chrome est ouverte en mode debug et avec un compte utilisateur "vide", c'est donc normal que vous ne retrouviez pas vos extensions et paramétrages. On y reviendra plus tard…_
 
 ## E.2. Utilisation du mode debug
 
-Cette nouvelle fenêtre de Chrome (ou Firefox) communique maintenant avec vscode. C'est ce qui va permettre à vscode d'offrir plusieurs fonctionnalités de debug intéressantes :
+Cette nouvelle fenêtre de Chrome ouverte en mode "debug" communique maintenant avec vscode. C'est ce qui va permettre à vscode d'offrir plusieurs fonctionnalités de debug intéressantes :
 
 ### E.2.1. La Debug console
 **La "Debug console" qui s'affiche en bas, correspond plus ou moins à la "Console" de Chrome.**
@@ -130,13 +129,26 @@ Cliquez simplement à gauche d'un numéro de ligne, et une puce rouge s'affiche 
 
 6. **Dans le panneau de gauche** (_affiché automatiquement mais qu'on peut refaire apparaître en tapant <kbd>CTRL</kbd>+<kbd>SHIFT</kbd>+<kbd>D</kbd> ou <kbd>CTRL</kbd>+<kbd>SHIFT</kbd>+<kbd>P</kbd> puis `View: Show Run and Debug`_) **vous pouvez aussi voir toutes les variables locales**, la call stack, etc. exactement comme dans l'onglet "Sources" des devtools de Chrome !
 
-	**Cliquez maintenant sur le bouton "Continue (F5)"** pour poursuivre l'exécution normale du reste du code JS, la page doit maintenant s'afficher dans Chrome.
+	**Cliquez ensuite sur le bouton "Continue (F5)"** pour poursuivre l'exécution normale du reste du code JS, la page doit maintenant s'afficher dans Chrome.
 
-**Une fois que vous avez testé ça, pensez à enlever le point d'arrêt de la ligne 6 !**
+**Une fois que vous avez testé ça, pensez à enlever le point d'arrêt !**
 
-> ℹ️ _Même si vous utilisez le debug dans vscode, **les devtools de Chrome continuent de fonctionner** et sont même **synchronisés avec vscode** (les actions dans une interface se répercutent dans l'autre !)_
+> <details><summary>ℹ️ <em>Même si vous utilisez le debug dans vscode, les devtools de Chrome continuent de fonctionner…</em></summary>
+>
+> _En fait les devtools du navigateur sont même **synchronisés avec vscode** (les actions dans une interface se répercutent dans l'autre !)_
+> </details>
 
-> ℹ️ _Si vous souhaitez plus d'informations sur les possibilités offertes par ce mode debug, je vous invite à faire un tour sur la **doc officielle** ici : https://code.visualstudio.com/docs/nodejs/browser-debugging_
+> <details><summary>📖 <em>Besoin de plus d'informations sur ce mode debug ? …</em></summary>
+>
+> _Pour en savoir plus sur les possibilités offertes par cet outil, je vous invite à faire un tour sur la **doc officielle** ici : https://code.visualstudio.com/docs/nodejs/browser-debugging_
+> </details>
+
+> <details><summary>💡 <em>vscode inclut aussi un inspecteur réseau ! …</em></summary>
+>
+> _Effectivement, ça ne figure pas dans la doc, mais depuis la version 1.93, vscode inclut un panneau permettant d'inspecter les requêtes http, un peu comme l'onglet "Network" des devtools de Chrome mais en plus simple : https://code.visualstudio.com/updates/v1\_93#\_experimental-network-view :_
+>
+> <img src="https://code.visualstudio.com/assets/updates/1_93/js-debug-network.png" />
+> </details>
 
 ## Étape suivante <!-- omit in toc -->
 Une fois cette partie terminée, passons à quelques exercices avancés dans la partie [F. Pour aller plus loin](F-optimisations.md).
