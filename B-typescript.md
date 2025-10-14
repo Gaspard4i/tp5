@@ -52,17 +52,18 @@ L'installation de TypeScript se fait avec **npm** (_Node Package Manager - l'out
 	```json
 	{
 	  "compilerOptions": {
-	    "target": "ES2020",
+	    "target": "ES2022",
 	    "useDefineForClassFields": true,
 	    "module": "ESNext",
-	    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+	    "lib": ["ES2022", "DOM", "DOM.Iterable"],
 	    "skipLibCheck": true,
 	    "outDir": "build",
+
 	    /* Bundler mode */
 	    "moduleResolution": "bundler",
 	    "allowImportingTsExtensions": true,
 	    "rewriteRelativeImportExtensions": true,
-	    "isolatedModules": true,
+	    "verbatimModuleSyntax": true,
 	    // "moduleDetection": "force",
 	    // "noEmit": true,
 
@@ -70,6 +71,7 @@ L'installation de TypeScript se fait avec **npm** (_Node Package Manager - l'out
 	    "strict": true,
 	    "noUnusedLocals": true,
 	    "noUnusedParameters": true,
+	    "erasableSyntaxOnly": true,
 	    "noFallthroughCasesInSwitch": true,
 	    "noUncheckedSideEffectImports": true
 	  },
