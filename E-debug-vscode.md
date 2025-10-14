@@ -13,6 +13,7 @@ _**Pour débugger notre code, on a jusqu'ici toujours utilisé les devtools int�
 - [E.2. Utilisation du mode debug](#e2-utilisation-du-mode-debug)
 	- [E.2.1. La Debug console](#e21-la-debug-console)
 	- [E.2.2. Les points d'arrêt](#e22-les-points-darrêt)
+	- [E.2.3. Mode debug \& extensions Chrome](#e23-mode-debug--extensions-chrome)
 
 ## E.1. Configuration
 
@@ -149,6 +150,45 @@ Cliquez simplement à gauche d'un numéro de ligne, et une puce rouge s'affiche 
 >
 > <img src="https://code.visualstudio.com/assets/updates/1_93/js-debug-network.png" />
 > </details>
+
+### E.2.3. Mode debug & extensions Chrome
+
+Pour terminer, je vous invite à installer 2 extensions dans votre navigateur de debug.
+
+Vous vous dites peut-être que c'est simple : il suffit d'aller sur le store d'extensions de Chrome et de cliquer sur un bouton, mais NON ! Ce serait trop facile !
+
+En fait, le problème c'est que quand on utilise le mode "debug" comme on vient de le faire, vscode crée un nouveau profil Chrome "vide", dédié au projet qu'on est en train de coder. Du coup, si vous installez des extensions Chrome dans ce TP, vous allez les perdre au TP suivant et devoir **les réinstaller à chaque fois**. C'est triste. 😢
+
+Heureusement il est possible de configurer vscode pour **"réutiliser" le même profil Chrome à chaque TP** !
+
+Éditez le fichier `/.vscode/launch.json` pour ajouter dans la config la clé `"userDataDir"` :
+```diff
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"type": "chrome",
+			"request": "launch",
+			"name": "Launch Chrome against localhost",
+			"url": "http://localhost:5173",
+-			"webRoot": "${workspaceFolder}"
++			"webRoot": "${workspaceFolder}",
++			"userDataDir": "${workspaceFolder}/../.vscode-chrome"
+		}
+	]
+}
+```
+> ⚠️ _Attention à bien ajouter une virgule sur la ligne précédente !_
+
+Grâce à cette config on indique à vscode d'utiliser comme dossier de stockage du profil de Chrome, un dossier nommé `.vscode-chrome` qui sera placé "à côté" de notre projet. En utilisant toujours le même dossier dans les futurs TP, ça nous permettra de conserver la config et les extensions Chrome d'un TP à l'autre (_à condition de placer tous nos TP dans le même dossier parent !_).
+
+> ℹ️ _Vous pouvez bien entendu adapter si besoin le chemin ou le nom du dossier !_
+
+Maintenant que c'est fait, stoppez le debug (<kbd>SHIFT</kbd>+<kbd>F5</kbd>) et relancez le navigateur de debug en appuyant à nouveau sur <kbd>F5</kbd> : le dossier `.vscode-chrome` doit se créer automatiquement, et vous pouvez maintenant installer (_dans la fenêtre de chrome qui s'est ouverte_) les extensions suivantes :
+- **React Developer Tools** : https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi
+- **Redux Devtools** : https://chromewebstore.google.com/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd
+
+On jouera avec ces deux extensions plus tard (_tp3 pour les React Developer Tools et tp7 pour les Redux Devtools_) mais maintenant que le profil de Chrome est correctement renseigné, ces 2 extensions vous suivront désormais à chaque TP !
 
 ## Étape suivante <!-- omit in toc -->
 Une fois cette partie terminée, passons à quelques exercices avancés dans la partie [F. Pour aller plus loin](F-optimisations.md).

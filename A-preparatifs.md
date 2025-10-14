@@ -5,9 +5,8 @@
 ## Sommaire <!-- omit in toc -->
 - [A.1. Récupération du projet](#a1-récupération-du-projet)
 - [A.2. Configuration de Prettier](#a2-configuration-de-prettier)
-- [A.3. Outils de dev](#a3-outils-de-dev)
-- [A.4. Installation de React](#a4-installation-de-react)
-- [A.5. Lancement de l'application](#a5-lancement-de-lapplication)
+- [A.3. Installation de React](#a3-installation-de-react)
+- [A.4. Lancement de l'application](#a4-lancement-de-lapplication)
 
 ## A.1. Récupération du projet
 **Ce repo contient une solution commentée du précédent TP.** <br>
@@ -91,15 +90,7 @@ Prettier est un formateur de code automatique qui est le plus populaire à l'heu
 
 	> ℹ️ _Si vous souhaitez en savoir plus sur la liste des configurations possibles, rendez-vous sur https://prettier.io/docs/en/configuration.html_
 
-
-## A.3. Outils de dev
-
-Installez l'extension **React Developer Tools** :
-- sur Chrome : https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi
-- ou sur Firefox : https://addons.mozilla.org/en-US/firefox/addon/react-devtools/
-
-
-## A.4. Installation de React
+## A.3. Installation de React
 
 <img src="images/readme/header-react.jpg" />
 
@@ -200,7 +191,7 @@ Comme nous sommes des gens sérieux, allons-y :
 
 7. **Enfin, modifiez le fichier `index.html`** pour lui indiquer que c'est ce fichier `src/app.tsx` qui est désormais le point d'entrée.
 
-## A.5. Lancement de l'application
+## A.4. Lancement de l'application
 
 Comme dans le précédent TP, **lancez le serveur de développement de Vite** dans un terminal intégré de VSCodium (<kbd>CTRL</kbd>+<kbd>J</kbd> *(PC)* / <kbd>CMD</kbd>+<kbd>J</kbd> *(Mac)*) :
 
