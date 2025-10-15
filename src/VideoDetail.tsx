@@ -1,8 +1,9 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import CommentList from './CommentList';
 import data from './data';
 import type { Video } from './types';
 import type { PageProps } from './Navigator'; // <-- attention dépendance croisée, VideoDetail <-> Navigator, c'est mal
+import VideoPlayer from './VideoPlayer';
 
 export default function VideoDetail({ navigate, params: { id } }: PageProps) {
 	// gestion des infos de la vidéo
@@ -23,15 +24,6 @@ export default function VideoDetail({ navigate, params: { id } }: PageProps) {
 			setVideo({ ...video, dislikes: video.dislikes + 1 });
 		}
 	}
-
-	// gestion player
-	const videoRef = useRef<HTMLVideoElement>(null);
-	function handlePlayClick() {
-		videoRef.current?.play();
-	}
-	function handlePauseClick() {
-		videoRef.current?.pause();
-	}
 	// bouton retour
 	function handleBackPress() {
 		navigate('list');
@@ -48,15 +40,7 @@ export default function VideoDetail({ navigate, params: { id } }: PageProps) {
 			<button className="backButton" onClick={handleBackPress}>
 				&lt; Retour
 			</button>
-			<video
-				style={{ width: '100%', backgroundColor: 'black' }}
-				height="400"
-				controls
-				src={'./uploads/' + file}
-				ref={videoRef}
-			></video>
-			<button onClick={handlePlayClick}>play</button>
-			<button onClick={handlePauseClick}>pause</button>
+			<VideoPlayer file={file} />
 			<header>
 				<h1>{title}</h1>
 				<div className="likesContainer">
