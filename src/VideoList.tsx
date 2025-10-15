@@ -1,6 +1,6 @@
 import { useEffect, useState, type MouseEvent } from 'react';
 import data from './data';
-import { Video } from './types';
+import type { Video } from './types';
 
 function openPopup(url: string, width: number, height: number) {
 	const top = (window.screen.height - height) / 2,

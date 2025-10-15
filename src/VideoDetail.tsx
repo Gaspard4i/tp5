@@ -1,6 +1,6 @@
 import { useEffect, useState, type FormEvent } from 'react';
 import data, { comments } from './data';
-import { Video } from './types';
+import type { Video } from './types';
 
 export default function VideoDetail() {
 	// gestion des infos de la vidéo
