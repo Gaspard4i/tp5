@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import CommentList from './CommentList';
 import data from './data';
 import type { Video } from './types';
-import { PageProps } from './Navigator'; // <-- attention dépendance croisée, VideoDetail <-> Navigator, c'est mal
+import type { PageProps } from './Navigator'; // <-- attention dépendance croisée, VideoDetail <-> Navigator, c'est mal
 
 export default function VideoDetail({ navigate, params: { id } }: PageProps) {
 	// gestion des infos de la vidéo

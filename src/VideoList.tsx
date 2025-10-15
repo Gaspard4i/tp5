@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import data from './data';
 import type { Video } from './types';
 import VideoThumbnail from './VideoThumbnail';
-import { PageProps } from './Navigator'; // <-- attention dépendance croisée, VideoList <-> Navigator, c'est mal
+import type { PageProps } from './Navigator'; // <-- attention dépendance croisée, VideoList <-> Navigator, c'est mal
 
 export default function VideoList({ navigate }: PageProps) {
 	const [videos, setVideos] = useState<Video[]>([]);

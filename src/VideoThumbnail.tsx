@@ -1,4 +1,4 @@
-import { Video } from './types';
+import type { Video } from './types';
 
 interface Props {
 	video: Video;
