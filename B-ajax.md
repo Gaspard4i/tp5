@@ -94,7 +94,7 @@ la fonction `fetch` utilise une syntaxe avec laquelle il facile de chaîner les 
 
 	<img src="images/readme/screen-03b.png">
 
-7. **Maintenant que vous avez réussi à récupérer les infos de la base, que vous les avez converties en données exploitables en JS, reste à les exploiter dans notre `VideoList` simplement à l'aide de `setState()` !**
+7. **Maintenant que vous avez réussi à récupérer les infos de la base, que vous les avez converties en données exploitables en JS, reste à les exploiter dans notre `VideoList` simplement à l'aide du setter de notre state `setVideos()` !**
 
 	```ts
 	fetch('http://localhost:8080/api/videos')
