@@ -15,9 +15,12 @@ export default function VideoList() {
 	// après le premier render simulation d'un chargement AJAX
 	useEffect(() => {
 		const timeout = setTimeout(() => setVideos(data), 500);
-		// la fonction de cleanup est appelée si le composant est démonté ou si l'effect est relancé
+
+		// la fonction qu'on retourne est une fonction de "cleanup",
+		// elle est appelée automatiquement quand le composant est démonté
+		// ou si l'effect est relancé :
 		return () => clearTimeout(timeout);
-	}, []);
+	}, []); // le tableau de dépendances vide permet que l'effect ne se lance qu'après le premier render !
 
 	function handleClick(event: MouseEvent<HTMLAnchorElement>) {
 		event.preventDefault();
