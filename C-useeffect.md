@@ -24,6 +24,8 @@ _**Pour s'exercer à `useEffect`, je vous propose de travailler sur le composant
 
 1. **Ajoutez au composant `VideoList` un appel à `useEffect` qui s'exécute uniquement après le premier render** (_mettez-y juste un console.log pour le moment_).
 
+	> 📖 _**Rappel :** le hook [`useEffect` (_doc_)](https://react.dev/reference/react/useEffect) permet de déclencher une fonction automatiquement après le render du composant._
+
 2. **Dans ce useEffect, utilisez la fonction [`setTimeout()`](https://developer.mozilla.org/fr/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout) pour injecter dans le state `videos` le tableau contenu dans `data` au bout de 500 millisecondes.**
 
 	> <details><summary>🚧 <em>Vous allez probablement avoir une erreur de typage...</em></summary>
@@ -36,6 +38,13 @@ _**Pour s'exercer à `useEffect`, je vous propose de travailler sur le composant
 	>  ```
 	> _À vous d'adapter le typage en fonction de ce qui se trouve dans `data` (💡 indice : jetez peut-être un oeil à `/src/types.ts`...)._
 	> </details>
+
+	> <details><summary>⚠️ <em>Risque de boucle infinie ! </em>⚠️</summary>
+	> _**N'oubliez pas que la fonction qu'on passe à `useEffect` se lance par défaut après CHAQUE render !!**. Si on n'y prend pas garde, on a vite fait de tomber dans une **boucle infinie** (1er render > useEffect > mise à jour d'un state > re-render > re-useEffect > re-mise à jour d 'un state > re-re-render > re-re-useEffect > ...)._ 😬
+	>
+	> _Pour contrôler le moment où se lance la fonction, il existe un 2e paramètre à `useEffect`, je vous invite à reprendre le pdf du chapitre **"3. Les composants React"** du cours pour revoir les différentes possibilités !_
+	> </details>
+
 	Rechargez la page, les vidéos doivent apparaître après ce délai ! Youpi !
 
 ## Étape suivante <!-- omit in toc -->
