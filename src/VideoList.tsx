@@ -1,4 +1,4 @@
-import { MouseEvent, useEffect, useState } from 'react';
+import { useEffect, useState, type MouseEvent } from 'react';
 import data from './data';
 import { Video } from './types';
 
