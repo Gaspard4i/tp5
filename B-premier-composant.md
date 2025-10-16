@@ -11,7 +11,7 @@ _**Maintenant que votre environnement de développement est prêt, que votre ser
 
 ## B.1. ReactDOM
 
-ReactDOM est la librairie qui permet d'injecter des composants React dans une page web. Elle fournit une fonction `render()` qui permet d'associer un composant React à un élément du DOM (une balise).
+ReactDOM est la bibliothèque qui permet d'injecter des composants React dans une page web. Elle fournit une fonction `render()` qui permet d'associer un composant React à un élément du DOM (une balise).
 
 1. **Dans votre fichier `src/app.tsx`, commencez par importer `ReactDOM` :**
 	```js
