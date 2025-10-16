@@ -44,7 +44,7 @@ L'installation de TypeScript se fait avec **npm** (_Node Package Manager - l'out
 	```
 	Ouvrez le fichier `package.json` dans VSCodium (<kbd>CTRL</kbd>+<kbd>P</kbd>). Vous noterez que le paquet `typescript` a été rajouté dans les dépendances du projet !
 
-	Vous remarquerez aussi qu'un dossier `/node_modules` a également été créé à la racine du TP. C'est lui qui contient le code de toutes les dépendances du projet (_toutes les librairies js/ts qu'on installera avec npm_) dont `typescript`.
+	Vous remarquerez aussi qu'un dossier `/node_modules` a également été créé à la racine du TP. C'est lui qui contient le code de toutes les dépendances du projet (_tous les paquets js/ts qu'on installera avec npm_) dont `typescript`.
 
 3. **Pour fonctionner, tsc a besoin d'un fichier de configuration** [`tsconfig.json` _(doc)_](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html).
 
