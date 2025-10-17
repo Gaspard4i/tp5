@@ -1,6 +1,10 @@
 import { useRef } from 'react';
 
-export default function VideoPlayer({ file }: { file: string }) {
+interface Props {
+	file: string;
+}
+
+export default function VideoPlayer({ file }: Props) {
 	const videoRef = useRef<HTMLVideoElement>(null);
 	function handlePlayClick() {
 		videoRef.current?.play();
