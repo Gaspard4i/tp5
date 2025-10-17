@@ -20,7 +20,7 @@ Comme vu en cours (_récupérez si ce n'est pas déjà fait le pdf !_) c'est l'[
 > _Dans le passé, on utilisait une classe [`XMLHttpRequest`](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest) mais la syntaxe était lourde et pas facile à maintenir. Aujourd'hui, `fetch` étant supporté par la [quasi totalité des navigateurs](https://caniuse.com/fetch) on peut sans soucis oublier l'ancienne syntaxe._
 > </details>
 
-la fonction `fetch` utilise une syntaxe avec laquelle il facile de chaîner les traitements : les [Promises _(mdn)_](https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide/Utiliser_les_promesses). Voyons ça tout de suite.
+la fonction `fetch` utilise une syntaxe avec laquelle il est facile de chaîner les traitements : les [Promises _(mdn)_](https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide/Utiliser_les_promesses). Voyons ça tout de suite.
 
 
 ## B.2. Chargement de la liste des vidéos
