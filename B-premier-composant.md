@@ -82,7 +82,7 @@ ReactDOM est la bibliothèque qui permet d'injecter des composants React dans un
 	> ```
 	> </details>
 
-4. L'erreur étant réglée, **affichons du contenu dans la page :** la méthode `createRoot` nous retourne un objet qui dispose d'une méthode `render()` à laquelle on peut simplement envoyer **le JSX** que l'on veut injecter dans la page :
+4. L'erreur étant réglée, **affichons du contenu dans la page :** la méthode `createRoot` nous retourne un objet qui dispose d'une méthode `render()` à laquelle on peut simplement envoyer **le JSX** que l'on veut injecter dans la page. Par exemple, essayez ceci :
 	```tsx
 	root.render(<h1>Le Top 10 des frameworks JS</h1>);
 	```
@@ -93,9 +93,7 @@ ReactDOM est la bibliothèque qui permet d'injecter des composants React dans un
 
 	> <details><summary>ℹ️ <em>Vous voulez voir à quoi ça ressemble du JSX compilé en JS ?</em></summary>
 	>
-	> _Si vous inspectez le code compilé par Vite dans les devtools (onglet "Sources" sur Chrome / "Debugger" sur Firefox) vous verrez que la méthode utilisée en remplacement du JSX n'est pas l'instruction `React.createElement()` comme vu en cours mais une fonction `jsxDEV()` avec une syntaxe un peu différente de `createElement` (les children sont dans les attributs et pas dans un paramètre distinct)._
-	>
-	> _En effet, depuis la version 17 de React sortie en 2020, une [nouvelle méthode de compilation du JSX](https://reactjs.org/blog/2020/10/20/react-v17.html#new-jsx-transform) est disponible. Vite, contrairement à Babel 7, [l'active par défaut](https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#jsxruntime) !_
+	> _Si vous inspectez le code compilé par Vite dans les devtools (onglet "Sources" sur Chrome / "Debugger" sur Firefox) vous verrez que la méthode utilisée en remplacement du JSX n'est pas l'instruction `React.createElement()` ou `jsx()` comme vu en cours mais une fonction `jsxDEV()` (qui au final fonctionne comme la fonction `jsx` avec en plus des aides au développement comme des messages d'erreur plus précis)._
 	> </details>
 
 6. **Notez que la méthode `ReactDOM.createRoot()` est en fait une fonction qu'on peut importer indépendamment.** À la place de `import ReactDOM from 'react-dom/client';` écrivez :

@@ -97,7 +97,7 @@ Prettier est un formateur de code automatique qui est le plus populaire à l'heu
 **Comme vu en cours React est une _bibliothèque_ JS.**
 
 Pour l'utiliser dans notre appli on va d'abord devoir récupérer le code de cette bibliothèque. Et pour récupérer une bibliothèque quand on fait du JS de manière "sérieuse", c'est **`npm`** qu'on utilise ! \
-Comme nous sommes des gens sérieux, allons-y :
+Comme nous sommes des gens sérieux, c'est donc ce qu'on va faire. Allons-y :
 
 1. **Installez la bibliothèque [`react`](https://www.npmjs.com/package/react) avec npm :** Dans le dossier du TP (`à la racine, là où se trouve le package.json`), lancez la commande
 	```bash
@@ -122,7 +122,7 @@ Comme nous sommes des gens sérieux, allons-y :
 
 2. **Comme vous le savez, React permet de développer des applis web mais aussi des apps mobiles** (_avec [React Native](https://reactnative.dev/)_).
 
-	On doit donc préciser à React le type de projet qu'on va avoir : dans notre cas on va -en plus de [`react`](https://www.npmjs.com/package/react)- **installer la lib [`react-dom`](https://www.npmjs.com/package/react-dom)** qui contient le code spécifique aux applis web :
+	On doit donc préciser à React le type de projet sur lequel on va travailler : puisqu'ici on fait du web, on va -_en plus de [`react`](https://www.npmjs.com/package/react)_- **installer la lib [`react-dom`](https://www.npmjs.com/package/react-dom)** qui contient le code spécifique aux applis web :
 	```bash
 	npm i react-dom
 	```
@@ -144,12 +144,12 @@ Comme nous sommes des gens sérieux, allons-y :
 	}
 	```
 
-4. Puisque l'on souhaite utiliser du JSX, il faut **permettre à Vite de compiler le JSX en JS à l'aide du plugin [@vitejs/plugin-react](https://www.npmjs.com/package/@vitejs/plugin-react)** :
+4. Comme on va faire une app React, on va assez vite utiliser la syntaxe JSX, et comme ce n'est pas une syntaxe "native" de JS, il faut **permettre à Vite de compiler le JSX en JS à l'aide du plugin [@vitejs/plugin-react](https://www.npmjs.com/package/@vitejs/plugin-react)**. Installez donc ce petit plugin :
 	```bash
 	npm i -D @vitejs/plugin-react
 	```
 
-	En plus du support de JSX, `@vitejs/plugin-react` offre le support automatique du **Fast Refresh**.
+	Notez qu'en plus du support de JSX, `@vitejs/plugin-react` offre le support automatique du **Fast Refresh**.
 
 	> <details><summary>ℹ️ <em>C'est quoi le "Fast Refresh" ? Quelle différence avec ce qu'on avait jusque là ?</em></summary>
 	>
@@ -167,7 +167,7 @@ Comme nous sommes des gens sérieux, allons-y :
 
 	Génial non ? Et tout ça sans avoir rien d'autre à faire que d'intégrer `@vitejs/plugin-react` ! 😎
 
-5. **Pour indiquer à Vite que l'on souhaite donc utiliser ce plugin dans notre code, on va ajouter un fichier de config `vite.config.ts`** à la racine de notre TP, avec le contenu suivant :
+5. Une fois le plugin installé il ne reste plus qu'à indiquer à Vite que l'on souhaite l'utiliser. **Ajoutez un fichier `vite.config.ts`** à la racine de votre TP, avec le contenu suivant :
 	```js
 	import react from '@vitejs/plugin-react';
 
@@ -177,7 +177,7 @@ Comme nous sommes des gens sérieux, allons-y :
 	};
 	```
 
-6. **Supprimez tous les fichiers `.ts` du dossier `src`, à l'exception des fichiers `src/data.ts` et ``src/types.ts` puis créez un fichier `src/app.tsx`** qui servira de point d'entrée à notre application React.
+6. Voilà, maintenant qu'on a installé React et configuré Vite, on va faire un peu le ménage dans notre code et repartir d'un projet vierge : **supprimez tous les fichiers `.ts` du dossier `src`, à l'exception des fichiers `src/data.ts` et `src/types.ts` puis créez un fichier `src/app.tsx`** qui servira de point d'entrée à notre application React.
 
 	Placez-y pour le moment juste un `console.log` :
 	```js
@@ -213,10 +213,10 @@ Le résultat attendu est le suivant :
 >
 > _Vérifiez dans la `Console` ou dans l'onglet `Sources` (Chrome) ou `Debugger` (Firefox) qu’il n'y a pas d'erreur JS lorsque la page se charge._
 >
-> _Êtes-vous certain.e par exemple que la page HTML charge bien le bon script ?_
+> _Êtes-vous certain·e par exemple que la page HTML charge bien le bon script ?_
 > </details>
 
-Pour finir, lancez dans un [terminal splitté](https://code.visualstudio.com/docs/terminal/basics#_groups-split-panes) (_côte à côte avec `npm start`_) lancez le compilateur TypeScript pour vérifier le typage de votre code :
+Pour finir, dans un [terminal splitté](https://code.visualstudio.com/docs/terminal/basics#_groups-split-panes) (_côte à côte avec `npm start`_), lancez le compilateur TypeScript pour vérifier le typage de votre code :
 
 ```bash
 npx tsc --watch
