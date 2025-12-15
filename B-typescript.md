@@ -49,7 +49,7 @@ L'installation de TypeScript se fait avec **npm** (_Node Package Manager - l'out
 3. **Pour fonctionner, tsc a besoin d'un fichier de configuration** [`tsconfig.json` _(doc)_](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html).
 
 	Créez donc un fichier `tsconfig.json` à la racine du projet :
-	```json
+	```jsonc
 	{
 	  "compilerOptions": {
 	    "target": "ES2022",
