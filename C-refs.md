@@ -37,14 +37,14 @@ Toutes ces opérations se font obligatoirement via des méthodes JS associées a
 
 	<img src="images/readme/play-pause.gif" />
 
-	> <details><summary>ℹ️ <em>Comment on type les `refs` ? </em></summary>
+	> <details><summary>ℹ️ <em>Comment on doit typer notre `ref` ? </em></summary>
 	>
-	> _Pour rappel, pour typer une ref, il faut passer le type de la balise ciblée à `useRef` (sous forme de ["generic"](https://www.typescriptlang.org/docs/handbook/2/generics.html#handbook-content)) en utilisant cette syntaxe :_
+	> _Pour typer une ref, il faut passer à `useRef` le type de la balise ciblée sous forme de ["generic"](https://www.typescriptlang.org/docs/handbook/2/generics.html#handbook-content), en utilisant cette syntaxe :_
 	> ```ts
 	> const maRef = useRef<MonType>(...);
 	> ```
 	>
-	> _Dans `VideoDetail`, ce que va contenir notre ref est une balise HTML de type `HTMLVideoElement`._
+	> _Dans `VideoDetail`, ce que va contenir notre ref est une balise HTML `<video>` dont le type TS est `HTMLVideoElement`._
 	> </details>
 
 
