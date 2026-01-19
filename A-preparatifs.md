@@ -12,24 +12,27 @@
 ## A.1. Récupération du projet
 Vous commencez maintenant à avoir l'habitude, je ne rentrerai donc pas dans les détails mais voici les différentes étapes pour le lancement du projet en mode [TL;DR](https://en.wiktionary.org/wiki/tl;dr)
 
-1. **Commencez par fork le TP sur https://gitlab.univ-lille.fr/react/tp5/-/forks/new**
+1. **Commencez par fork le TP sur https://gitlab.univ-lille.fr/react/tps/tp5/-/forks/new**
 
-	- **placé dans VOTRE profil utilisateur** (`namespace`)
-	- **en mode "private"** (`Visibility Level`)
-	- ⚠️ **ajoutez votre encadrant de TP (`@gery.casiez` ou `@thomas.fritsch`) en `"reporter"`** ⚠️
+	- **placé dans le dossier qui a été créé pour vous ici `https://gitlab.univ-lille.fr/react/2025-2026/groupe-X/NOM-prenom`** (_champ `namespace`_)
+
+		> ⚠️ _attention, remplacez bien vos groupe, nom et prénom !_
+	- **en mode "private"** (_champ `Visibility Level`_)
 
 2. **Tapez dans un terminal :**
 	```bash
 	cd chemin/vers/votre/workspace
-	git clone https://gitlab.univ-lille.fr/<votre-username>/tp5.git
+	git clone https://gitlab.univ-lille.fr/react/2025-2026/groupe-X/NOM-prenom/tp5.git
 	codium tp5
 	```
-3. **Puis dans un terminal intégré de VSCodium** (<kbb>CTRL/Cmd</kbd>+<kbd>J</kbd>) :
+	> 🧠 _Pensez à nouveau à bien remplacer vos groupe, nom et prénom !_
+
+3. **Puis dans un terminal intégré de VSCodium :**
 	```bash
 	npm i
 	npm start
 	```
-	> ℹ️ _Si vous souhaitez plus de précisions sur les commandes précédentes et l'installation  / configuration du projet, vous pouvez vous référer au chapitre [A. Préparatifs](https://gitlab.univ-lille.fr/react/tp2/-/blob/cours-iut/A-preparatifs.md) du TP2 ou simplement demander de l'aide_ 😄
+	> ℹ️ _Si vous souhaitez plus de précisions sur les commandes précédentes et l'installation  / configuration du projet, vous pouvez vous référer au chapitre [A. Préparatifs](https://gitlab.univ-lille.fr/react/tps/tp2/-/blob/cours-iut/A-preparatifs.md) du TP2 ou simplement demander de l'aide_ 😄
 
 4. **Dans un [terminal splitté](https://code.visualstudio.com/docs/terminal/basics#_groups-split-panes)** (_côte à côte avec `npm start`_) lancez le compilateur TypeScript pour vérifier le typage de votre code :
 
@@ -108,6 +111,7 @@ Ce serveur (_basé sur [Express.js](http://expressjs.com/)_) fournit une API RES
 5. **Enfin, assurez-vous du bon fonctionnement de l'API REST en ouvrant l'URL http://localhost:8080/api/videos dans votre navigateur.** Si tout se passe bien vous devez voir un JSON s'afficher avec des vidéos dedans !
 
 	<img src="images/readme/screen-01.png" />
+
 
 
 ## Étape suivante <!-- omit in toc -->
