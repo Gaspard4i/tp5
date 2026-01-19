@@ -58,14 +58,14 @@ Vous commencez maintenant à avoir l'habitude, je ne rentrerai donc pas dans les
 
 
 ## A.2. Lancement de l'API REST
-_**Dans ce TP on va enfin connecter notre appli web à une base de données grâce à une API REST qui vous est fournie ici : https://gitlab.univ-lille.fr/react/api-server**_
+_**Dans ce TP on va enfin connecter notre appli web à une base de données grâce à une API REST qui vous est fournie ici : https://gitlab.univ-lille.fr/react/tps/api-server**_
 
 Ce serveur (_basé sur [Express.js](http://expressjs.com/)_) fournit une API REST/JSON minimaliste mais qui va être suffisante pour connecter notre appli React à une base de données [SQLite](https://sqlite.org/index.html) (_générée au premier lancement du serveur_).
 
 1. **Commencez par cloner le serveur :**
 	```bash
 	cd chemin/vers/votre/workspace
-	git clone https://gitlab.univ-lille.fr/react/api-server.git
+	git clone https://gitlab.univ-lille.fr/react/tps/api-server.git
 	```
 2. **Installez ensuite les dépendances du serveur :**
 	```bash

@@ -60,7 +60,7 @@ _**Maintenant que l'on est capables de récupérer des informations de la bdd av
 2. **Une fois les valeurs récupérées, envoyez une requête POST vers le webservice http://localhost:8080/api/videos**
 
 	Aidez-vous pour cela de :
-	- la documentation (_[openapi/swagger](https://swagger.io/specification/)_) de l'API REST directement à la racine de votre serveur REST : http://localhost:8080/ (_si vous souhaitez accéder au fichier de description de l'API au format yaml vous le trouverez à la racine du dossier `api-server` : https://gitlab.univ-lille.fr/react/api-server/-/blob/cours-iut/openapi.yaml_)
+	- la documentation (_[openapi/swagger](https://swagger.io/specification/)_) de l'API REST directement à la racine de votre serveur REST : http://localhost:8080/ (_si vous souhaitez accéder au fichier de description de l'API au format yaml vous le trouverez à la racine du dossier `api-server` : https://gitlab.univ-lille.fr/react/tps/api-server/-/blob/cours-iut/openapi.yaml_)
 	- la documentation de `fetch` avec POST : https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch#setting_a_body
 
 	> ℹ️ _Pour envoyer vos données dans le `body` de votre `fetch`, il faut que ces données soient **encodées sous forme de chaîne de caractères au format JSON**. Pensez donc à utiliser `JSON.stringify()` autour de l'objet que vous souhaitez envoyer dans le `body` !_
