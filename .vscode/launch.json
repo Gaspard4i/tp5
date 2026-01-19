@@ -13,7 +13,7 @@
 			// Dossier de stockage du profil de Chrome en mode debug :
 			// Permet de conserver la config et les extensions chrome d'un TP à l'autre (utile pour les react developer tools par ex.).
 			// Adaptez si besoin le chemin vers le dossier (par défaut crée un dossier "à côté" du tp)
-			"userDataDir": "${workspaceFolder}/../.vscode-chrome"
+			"userDataDir": "${workspaceFolder}/../vscode-chrome-profile"
 		},
 		{
 			"type": "chrome",
@@ -22,7 +22,7 @@
 			"url": "http://localhost:8000",
 			"webRoot": "${workspaceFolder}",
 			"runtimeExecutable": "/bin/chromium",
-			"userDataDir": "${workspaceFolder}/../.vscode-chrome"
+			"userDataDir": "${workspaceFolder}/../vscode-chrome-profile"
 		}
 	]
 }
