@@ -18,9 +18,9 @@ Comme vu en cours (_récupérez si ce n'est pas déjà fait le pdf !_) c'est l'[
 > _C'est ce qu'on utilise pour interroger des webservices, envoyer ou récupérer des données d'une base de données, charger des fichiers, etc._
 >
 > _Dans le passé, on utilisait une classe [`XMLHttpRequest`](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest) mais la syntaxe était lourde et pas facile à maintenir. Aujourd'hui, `fetch` étant supporté par la [quasi totalité des navigateurs](https://caniuse.com/fetch) on peut sans soucis oublier l'ancienne syntaxe._
-> </details> des requêtes HTTP en "sous-marin", sans rechargement de page.
+> </details>
 
-la fonction `fetch` utilise une syntaxe avec laquelle il facile de chaîner les traitements : les [Promises _(mdn)_](https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide/Utiliser_les_promesses). Voyons ça tout de suite.
+la fonction `fetch` utilise une syntaxe avec laquelle il est facile de chaîner les traitements : les [Promises _(mdn)_](https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide/Utiliser_les_promesses). Voyons ça tout de suite.
 
 
 ## B.2. Chargement de la liste des vidéos
@@ -94,7 +94,7 @@ la fonction `fetch` utilise une syntaxe avec laquelle il facile de chaîner les 
 
 	<img src="images/readme/screen-03b.png">
 
-7. **Maintenant que vous avez réussi à récupérer les infos de la base, que vous les avez converties en données exploitables en JS, reste à les exploiter dans notre `VideoList` simplement à l'aide de `setState()` !**
+7. **Maintenant que vous avez réussi à récupérer les infos de la base, que vous les avez converties en données exploitables en JS, reste à les exploiter dans notre `VideoList` simplement à l'aide du setter de notre state `setVideos()` !**
 
 	```ts
 	fetch('http://localhost:8080/api/videos')

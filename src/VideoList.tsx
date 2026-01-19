@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import data from './data';
-import { Video } from './types';
+import type { Video } from './types';
 import VideoThumbnail from './VideoThumbnail';
-import { PageProps } from './Navigator'; // <-- attention dépendance croisée, VideoList <-> Navigator, c'est mal
+import type { PageProps } from './Navigator'; // <-- attention dépendance croisée, VideoList <-> Navigator, c'est mal
 
 export default function VideoList({ navigate }: PageProps) {
 	const [videos, setVideos] = useState<Video[]>([]);
@@ -10,9 +10,12 @@ export default function VideoList({ navigate }: PageProps) {
 	// après le premier render simulation d'un chargement AJAX
 	useEffect(() => {
 		const timeout = setTimeout(() => setVideos(data), 500);
-		// la fonction de cleanup est appelée si le composant est démonté ou si l'effect est relancé
+
+		// la fonction qu'on retourne est une fonction de "cleanup",
+		// elle est appelée automatiquement quand le composant est démonté
+		// ou si l'effect est relancé :
 		return () => clearTimeout(timeout);
-	}, []);
+	}, []); // le tableau de dépendances vide permet que l'effect ne se lance qu'après le premier render !
 
 	// gestion click thumbnail
 	function handleThumbnailClick(id: number) {
